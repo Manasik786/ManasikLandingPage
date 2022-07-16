@@ -4,7 +4,6 @@ const cookieParser = require("cookie-parser");
 const errorMiddleware = require("./middleware/error");
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
-// const path = require("path");
 const sliderroutes = require("./routes/SliderRoutes")
 const Applicantsroutes = require("./routes/ApplicantsRoutes")
 const CardDetailsRoutes = require("./routes/CardDetailsRoutes")
@@ -18,6 +17,7 @@ const Service_N_PackageRoutes = require("./routes/Service_N_PackageRoutes")
 const SocialLink_N_LogoRoutes = require("./routes/SocialLink_N_LogoRoutes")
 const AirAmbulanceRoutes = require("./routes/AirAmbulanceRoutes")
 const GalleryRoutes = require("./routes/GalleryRoutes")
+
 if (process.env.NODE_ENV !== "PRODUCTION") {
   require("dotenv").config({ path: "backend/config/config.env" });
 }
@@ -39,6 +39,13 @@ app.use("/api/v1", Service_N_PackageRoutes)
 app.use("/api/v1", SocialLink_N_LogoRoutes)
 app.use("/api/v1", AirAmbulanceRoutes)
 app.use("/api/v1", GalleryRoutes)
+app.use(express.static(path.join(__dirname, "../landinpage/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../landinpage/build/index.html"));
+});
+
 app.use(errorMiddleware);
+
 
 module.exports = app;

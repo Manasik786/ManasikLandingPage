@@ -1,0 +1,78 @@
+.contactus {
+    .info-details {
+        h2 {
+            font-family: 'DM Serif Text', serif;
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        h3 {
+            color: $primary;
+            font-size: 1.8rem;
+
+            i {
+                color: #e0e0e0;
+                font-size: 1.5rem;
+                margin-right: 10px;
+            }
+        }
+
+        .socail-icons {
+            i {
+                color: $primary;
+                font-size: 1.5rem;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .contactus-form {
+        padding: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+
+        form {
+            input {
+                text-transform: uppercase;
+                margin: 10px 0;
+                padding-left: 20px;
+                border:  none;
+                width: 100%;
+                height: 50px;
+                font-size: 16px;
+
+                &::placeholder {
+                    letter-spacing: 4px;
+                }
+            }
+
+            textarea {
+                text-transform: uppercase;
+                margin: 10px 0;
+                padding-top: 20px;
+                padding-left: 20px;
+                border: none;
+                width: 100%;
+                font-size: 16px;
+                height: 150px;
+
+                &::placeholder {
+                    letter-spacing: 4px;
+                }
+            }
+            button{
+                background-color: $black;
+                width: 100%;
+                color: $white;
+                border: none;
+                height: 60px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: bold;
+            }
+        }
+    }
+}

@@ -1,0 +1,103 @@
+.maindiv{
+   
+}
+.innermain{
+background-color: #d4af37;
+height: 100px;
+width: 70vw;
+display: flex;
+position: absolute;
+}
+
+.text1{
+flex: 1;
+}
+.text1 h4{
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+}
+.textfields{
+flex: 4;
+}
+
+.textfields1{
+    display: flex;
+}
+.buttondiv{
+flex: 1;
+}
+
+.modal {
+    font-size: 12px;
+  }
+  .modal > .header {
+    width: 100%;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+  }
+  .modal > .content {
+    width: 100%;
+    padding: 10px 5px;
+  }
+  .modal > .actions {
+    width: 100%;
+    padding: 10px 5px;
+    margin: auto;
+    text-align: center;
+  }
+  .modal > .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: -10px;
+    top: -10px;
+    font-size: 24px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #cfcece;
+  }
+
+  .loader {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+   background-image: url('./assets/images/spinner1.png');
+   background-position: center;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    background-repeat: no-repeat;
+    margin-top: 20vh;
+transform-origin: center;
+  }
+  .outerloader{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { 
+ transform-origin: 50% 50% 0;
+       -webkit-transform: rotate(0deg); }
+    100% { 
+ transform-origin: 50% 50% 0;
+       -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { 
+ transform-origin: 50% 50% 0;
+ 
+      transform: rotate(0deg); }
+    100% { 
+ transform-origin: 50% 50% 0;
+ 
+      transform: rotate(360deg); }
+  }

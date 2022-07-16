@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+@import "variable";
+// @import "fontface";
+@import 'utilities';
+@import 'animation';
+@import 'button';
+@import 'tooltip';
+@import "toast";
+@import "header";
+@import "home";
+@import "contactus";
+@import "technology";
+@import "footer";
+@import 'responsive';
+
+body{
+    font-family: "DM Serif Text", serif;;
+}
+body > iframe{
+  z-index: -1 !important;
+  display: none !important;
+}
+.color-white{
+  color: $white !important;
+}
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;         
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px $light-green; 
+    border-radius: 0px;
+    scroll-margin: 2px !important;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $primary; 
+    border-radius: 0px;
+}
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $red; 
+  }
+

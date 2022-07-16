@@ -1,0 +1,181 @@
+.technology {
+    .ourmission-section {
+        background-color: $black;
+        padding: 4rem 0;
+
+        h1 {
+            color: $primary;
+            font-family: graphik-semibold;
+            text-align: center;
+        }
+
+        h2 {
+            color: $primary;
+            font-family: graphik-semibold;
+        }
+
+        p {
+            color: #858585;
+        }
+
+    }
+
+    .network {
+        background-image: url("../assets/images/network.png");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        padding: 4rem 0;
+        width: 100%;
+        height: 100%;
+
+        h1 {
+            color: $primary;
+            font-family: graphik-semibold;
+            text-align: center;
+        }
+
+        h2 {
+            color: $primary;
+            font-family: graphik-semibold;
+        }
+
+        p {
+            color: #858585;
+        }
+
+    }
+
+    .trades-section {
+        position: relative;
+        padding-top: 6rem;
+
+        .bg-trades {
+            position: absolute;
+        }
+
+        h2 {
+            color: $primary;
+            font-family: graphik-semibold;
+        }
+
+        p {
+            color: #858585;
+        }
+    }
+    .image-section{
+        .dataInt{
+            width: 100%;
+        }   
+    }
+
+    .values-section {
+        margin: 4rem 0;
+
+        .values {
+            margin: 4rem 0;
+
+            h2 {
+                font-family: graphik-semibold;
+                font-size: 2.5rem;
+                color: $primary;
+                text-align: center;
+                text-transform: uppercase;
+            }
+
+            .btn-main {
+                margin-top: 3rem;
+
+                .custom-btn {
+                    margin-right: 0 !important;
+                }
+            }
+        }
+
+        .solution-image-container {
+            .vso-img {
+                position: relative;
+                background-image: url("../assets/images/VSO.png");
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                width: 450px;
+                height: 450px;
+
+                .tooltip>.tooltip-inner {
+                    background-color: $white !important;
+                }
+
+                .importer-img {
+                    cursor: help;
+                    width: 200px;
+                    position: absolute;
+                    right: -30%;
+                    top: 50px;
+                    transition: all .5s ease-out;
+
+                    &:hover {
+                        filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.185));
+                        transition: all .5s ease-out;
+                    }
+                }
+
+                .producer-img {
+                    cursor: help;
+                    width: 200px;
+                    transition: all .5s ease-out;
+                    position: absolute;
+                    left: -30%;
+                    top: 50px;
+
+                    &:hover {
+                        filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.185));
+                        transition: all .5s ease-out;
+                    }
+                }
+
+                .consumer-img {
+                    cursor: help;
+                    width: 200px;
+                    position: absolute;
+                    bottom: 0%;
+                    left: 35%;
+                    transition: all .5s ease-out;
+                    transform: translateX(-50%);
+
+                    &:hover {
+                        filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.185));
+                        transition: all .5s ease-out;
+                    }
+                }
+
+                .investor-img {
+                    width: 200px;
+                    position: absolute;
+                    top: 50%;
+                    left: 45%;
+                    transform: translate(-50%, -50%)
+                }
+            }
+        }
+
+        .foodchain {
+            img {
+                width: 100%;
+            }
+
+            h2 {
+                font-family: graphik-semibold;
+                font-size: 2.5rem;
+                color: $primary;
+                text-transform: none !important;
+                text-align: center;
+            }
+
+            p {
+                text-align: center;
+                color: #666666;
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &.line-1 {
+    -webkit-line-clamp: 1 !important;
+  }
+
+  &.line-2 {
+    -webkit-line-clamp: 2 !important;
+  }
+
+  &.line-3 {
+    -webkit-line-clamp: 3 !important;
+  }
+
+  &.line-4 {
+    -webkit-line-clamp: 4 !important;
+  }
+
+  &.line-5 {
+    -webkit-line-clamp: 5 !important;
+  }
+}
+
+.custom-container {
+  margin: 0 20rem;
+}
+
+.bg-light-green {
+  background-color: $light-green;
+}
+
+.vh-50 {
+  height: 50vh !important;
+}
+.z-index{
+  z-index: 100;
+}

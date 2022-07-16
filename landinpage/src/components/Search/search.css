@@ -1,0 +1,10 @@
+.innersearch{
+    display: flex;
+}
+.textbox{
+    background-color: aquamarine;
+    display: flex;
+    width: 200px;
+    height: 100px;
+    flex-wrap: nowrap;
+}

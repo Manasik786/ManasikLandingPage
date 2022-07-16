@@ -1,0 +1,51 @@
+.custom-btn {
+  margin-top: 12px;
+  height: 50px;
+  background-color: transparent;
+  padding: 0 2rem;
+  border: 1px solid $primary;
+  border-bottom-width: 2px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 3px;
+  transition: all .5s ease-out;
+  z-index: 100;
+
+  &:hover {
+    background: $primary;
+    transition: all .5s ease-out;
+  }
+  span{
+    img{
+      margin-left: 2rem;
+    }
+  }
+}
+
+
+
+.custom-btn1 {
+  height: 110px;
+  background-color: black;
+  padding: 0 2rem;
+  border-bottom-width: 2px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  transition: all .5s ease-out;
+  z-index: 100;
+  font-size: 20px;
+  color: #fff;
+  width: 100%;
+  margin-top: 40px;
+
+  &:hover {
+    background: $white;
+    transition: all .5s ease-out;
+    color: #000;
+  }
+  span{
+    img{
+      margin-left: 2rem;
+    }
+  }
+}

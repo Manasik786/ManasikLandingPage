@@ -1,0 +1,346 @@
+.home-main {
+
+  .hotel-services {
+    margin: 7rem 0;
+    padding: 2rem 0;
+    position: relative;
+
+    .cloud-img-left{
+      position: absolute;
+      height: 500px;
+      width: 100%;
+      bottom: 0;
+    }
+    .cloud-img-right{
+      position: absolute;
+      width: 100%;
+      height: 500px;
+      bottom: 0;
+    }
+    h2 {
+      line-height: 1.5rem;
+      color: $primary;
+      font-family: 'DM Serif Text', serif;
+      margin: 0;
+    }
+
+    p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .services-list {
+      .services-list-main {
+        display: flex;
+        align-content: center;
+        align-items: center;
+
+        i {
+          color: $primary;
+          margin-right: 10px;
+          padding-left: 8px;
+        }
+      }
+    }
+
+    .image-section {
+      img {
+        width: auto;
+        height: 500px;
+      }
+
+      .image-container {
+        position: relative;
+        margin-top: 2rem;
+
+        width: fit-content;
+
+        .border-white-img {
+          position: absolute;
+          height: 110px;
+          width: 122px;
+          border-radius: 100px;
+          border: 2px solid #fff;
+          padding: 10px;
+          top: 5px;
+          bottom: 5px;
+          right: -18px;
+          z-index: 1;
+
+          .bg-white-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 100px;
+            background-color: $white;
+          }
+
+          &.right-radius {
+            right: -15px;
+          }
+
+          &.left-radius {
+            left: -15px;
+          }
+        }
+
+        img {
+          position: relative;
+          height: 120px;
+          width: 122px;
+          z-index: 100;
+        }
+      }
+    }
+  }
+
+  .aircraft-section {
+    background-image: url("../assets/images/aircraftpng.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 999;
+    height: 100vh;
+    // position: relative;
+ 
+    .about {
+      // position: absolute;
+      margin-top: 20rem;
+      background-color: $white;
+      padding: 6rem 3rem 3rem 3rem;
+     
+
+      // top: 10%;
+      // left: 50%;
+      h2 {
+        line-height: 1.5rem;
+        color: $primary;
+        font-family: 'DM Serif Text', serif;
+        margin: 0;
+      }
+
+      p {
+        font-size: 14px;
+        margin: 0;
+      }
+    }
+
+  }
+
+  .package-section {
+    background-image: url("../assets//images/package.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    // height: 90vh;
+    padding: 9rem 0;
+
+    h2 {
+      color: $primary;
+      font-family: 'DM Serif Text', serif;
+      margin: 0;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+    }
+
+    .card {
+      padding: 4rem 2rem;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+
+      .card-img {
+        width: 142px;
+        height: 142px;
+
+      }
+
+      .card-body {
+        margin-top: 1rem;
+        h3 {
+          text-align: center;
+          line-height: 1.5rem;
+          color: $primary;
+          font-family: 'DM Serif Text', serif;
+          margin: 0;
+        }
+
+        p {
+          text-align: center;
+          font-size: .9rem;
+          margin: 0;
+          color: #b5b5b5;
+        }
+      }
+    }
+  }
+
+  .onlineplatform-section {
+    position: relative;
+
+    .right-top-img {
+      height: 1300px;
+      position: absolute;
+      right: 0;
+      top: -20%;
+      z-index: -1;
+    }
+
+    .left-top-img {
+      height: 500px;
+      position: absolute;
+      left: 0;
+      top: -20%;
+      z-index: -1;
+
+    }
+
+    .left-bottom-img {
+      height: 1000px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+
+    .online-platform {
+      margin-top: 10rem;
+
+      h2 {
+        font-family: graphik-semibold;
+        color: $primary;
+        text-transform: uppercase;
+      }
+
+      b {
+        color: $grey;
+        font-family: graphik-bold;
+        font-size: 0.9rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: $dark-grey;
+      }
+    }
+
+    .mobile-platform {
+      height: 600px;
+      z-index: 100;
+    }
+
+    .solution {
+      margin-top: 10rem;
+
+      h2 {
+        font-family: graphik-semibold;
+        font-size: 2.5rem;
+        color: $primary;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .btn-main {
+        margin-top: 7rem;
+
+        .custom-btn {
+          margin-right: 0 !important;
+        }
+      }
+
+      .solution-image-container {
+        .vso-img {
+          position: relative;
+          background-image: url("../assets/images/VSO.png");
+          background-size: cover;
+          background-position: center center;
+          background-repeat: no-repeat;
+          width: 450px;
+          height: 450px;
+
+          .tooltip>.tooltip-inner {
+            background-color: $white !important;
+          }
+
+          .importer-img {
+            width: 200px;
+            position: absolute;
+            right: -30%;
+            top: 50px;
+            cursor: help;
+            transition: all .5s ease-out;
+
+            &:hover {
+              filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.185));
+              transition: all .5s ease-out;
+            }
+          }
+
+          .producer-img {
+            width: 200px;
+
+            position: absolute;
+            left: -30%;
+            top: 50px;
+            cursor: help;
+            transition: all .5s ease-out;
+
+            &:hover {
+              filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.185));
+              transition: all .5s ease-out;
+            }
+          }
+
+          .consumer-img {
+            width: 200px;
+            position: absolute;
+            bottom: -15%;
+            left: 45%;
+            transform: translateX(-50%);
+            cursor: help;
+            transition: all .5s ease-out;
+
+            &:hover {
+              filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.185));
+              transition: all .5s ease-out;
+            }
+          }
+
+          .investor-img {
+            width: 200px;
+            position: absolute;
+            top: 50%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+            cursor: help;
+            transition: all .5s ease-out;
+
+            &:hover {
+              filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.185));
+              transition: all .5s ease-out;
+            }
+          }
+        }
+      }
+    }
+
+    .ourfriends {
+      margin-top: 7rem;
+      margin-bottom: 7rem;
+
+      h2 {
+        font-family: graphik-semibold;
+        font-size: 2.5rem;
+        color: $primary;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      img {
+        filter: grayscale(100%);
+      }
+    }
+  }
+}

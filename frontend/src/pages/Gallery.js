@@ -34,7 +34,7 @@ const Aviation_Destination = () => {
             card.map((item) => {
               return(
                 <>
-                <div className='popular-card'>
+                <div className='popular-card1'>
             <div className='images1'>
               <img src={item.images[0].url}/>
 

@@ -25,7 +25,7 @@ const ServiceDetails = () => {
   }, []);
   let str = pathname;
   str = str.substring(16);
-  // let newpath = str.replace(/([A-Z])/g, ' $1').trim()
+  let newpath = str.replace(/([A-Z])/g, ' $1').trim()
   // console.log("Path is 1",newpath)
 
 
@@ -36,11 +36,11 @@ const ServiceDetails = () => {
       card.map((item) => {
         return(
           
-            (item.CardTitle === 'Hotel Services' ?
+            (item.CardTitle === newpath ?
              <>
                <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                <h2 className='applyfromclass'>{item.CardDetail}</h2>
+                <h2 className='applyfromclass'>{item.CardTitle}</h2>
                 </Modal.Header>
                 <Popup />
               </Modal>
@@ -59,8 +59,8 @@ const ServiceDetails = () => {
                 <img src={item.images[0].url} />
               </div>
               <div className="packagesdetails_content">
-                    <h2>{item.CardDetail} </h2>
-                   {item.PkgDetail}
+                    <h2>{item.CardTitle} </h2>
+                   
                     <div className="packagesdetails_include">
                       <p>{item.CardDescriptions}</p>
                     </div>
@@ -69,7 +69,7 @@ const ServiceDetails = () => {
                       className="primarybutton"
                       onClick={handleShow}
                     >
-                      <Buttn1 text={"APPLY NOW"} />
+                      <Buttn1 text={"BOOK NOW"} />
                     </Button>
                   </div>
             </div>

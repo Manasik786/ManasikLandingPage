@@ -60,7 +60,7 @@ const Careers = () => {
                         className="primarybutton "
                         onClick={handleShow}
                       >
-                        <Buttn1 text={"BUY NOW"} />
+                        <Buttn1 text={"BOOK NOW"} />
                       </Button>
         </div>
       </div>

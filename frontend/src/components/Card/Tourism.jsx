@@ -47,7 +47,7 @@ const Index = () => {
                       </div>
                     </div>
                       <br />
-                      <Button text={"Buy Now"} />
+                      <Button text={"BOOK Now"} />
                     </div>
                   </div>
                 </div>

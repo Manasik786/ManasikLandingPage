@@ -43,7 +43,7 @@ const Index = () => {
                       </p>
                       <br />
                       <Button variant="primary" className='primarybutton' onClick={handleShow}>
-                  <Buttn1 text={"BUY NOW"}/>
+                  <Buttn1 text={"BOOK NOW"}/>
                 </Button>
                     </div>
                   </div>

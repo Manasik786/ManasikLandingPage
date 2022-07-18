@@ -1358,3 +1358,16 @@ iframe {
 .card2 img {
   height: 110px;
 }
+
+.popular-card1 {
+  background-color: #f7f5f1;
+  height: 360px;
+  width: 245px;
+  margin: 20px;
+  box-shadow: 2px 2px 12px rgb(170 168 168);
+  transform: scaleX(20deg);
+}
+
+.modal-header {
+  height: 80px !important;
+}

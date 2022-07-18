@@ -11,6 +11,15 @@ const Banner = ({ selectedBanner }) => {
   
   const [getlanguage,setLanguage] = useState(cookies.get("language"));
 
+  // const [card,setCard] = useState([]);
+  // useEffect(() => {
+  //   const getdata = async () => {
+  //     const { data } = await axios.get(`/api/v1/CardItems`);
+  //     setCard(data.data);
+  //     console.log("New Data",card)
+  //   };
+  //   getdata();
+  // }, []);
   
 
   var dataText = ["Trust", "Transparency", "Traceability"];
@@ -96,6 +105,7 @@ const Banner = ({ selectedBanner }) => {
             <div class="overlay">
             </div>
             <section class="banner-main ml3">
+              
               <h1>How to choose the</h1>
               <h1>best airline?</h1>
               <p>Manasik aviation is basically airline</p>

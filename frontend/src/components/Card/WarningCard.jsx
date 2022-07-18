@@ -28,7 +28,7 @@ const WarningCard = () => {
          </div>
          <div className="warning-right">
            <div className="warning-section">
-             <h2>{item.CardType}</h2>
+             <h2>{item.CardTitle}</h2>
              <p>{item.CardDescriptions}</p>
            </div>
          </div>

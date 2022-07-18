@@ -28,7 +28,7 @@ const Index = () => {
         (item.CardType) === 'about' ? 
         <>
        <div className="col-12 col-xxl-10 col-xl-10 col-lg-10 col-md-11 " key={item._id}>
-                    <h2>{item.CardDetail}</h2>
+                    <h2>{item.CardTitle}</h2>
                     <p>{item.CardDescriptions}</p>
                   </div>
         </>

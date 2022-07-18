@@ -40,7 +40,7 @@ const Index = () => {
           </div>
           <div className='destination-right'>
            <div className='text-dest'>
-           <h2>{item.CardDetail}</h2>
+           <h2>{item.CardTitle}</h2>
             <p>{item.CardDescriptions}</p>
            </div>
           </div>

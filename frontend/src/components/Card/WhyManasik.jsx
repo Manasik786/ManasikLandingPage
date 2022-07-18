@@ -21,7 +21,7 @@ const WhyManasik = () => {
         (item.CardType) === 'whymanasik' ? 
         <>
        <div className="whymanasikleft" key={item._id}>
-          <h2>{item.CardDetail}</h2>
+          <h2>{item.CardTitle}</h2>
           <p>{item.CardDescriptions}</p>
           </div>
         <div className="whymanasikright">

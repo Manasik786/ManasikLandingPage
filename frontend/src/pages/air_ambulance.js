@@ -81,7 +81,7 @@ const Air_ambulance = () => {
                 <div className="airambulance-cards air_rowreverse" key={item._id}>
                   <div className="ambulance-item">
                     <div className="ambulancetext">
-                    <h2>{item.CardDetail}</h2>
+                    <h2>{item.CardTitle}</h2>
                     <p>
                       {item.CardDescriptions}
                     </p>

@@ -20,7 +20,7 @@ const CEOMessage = () => {
         (item.CardType) === 'message' ? 
         <>
         <div className="warning-section newceo" key={item._id}>
-             <h2>{item.CardDetail}</h2>
+             <h2>{item.CardTitle}</h2>
             {item.CardDescriptions}
               <h6>Yousef A. AlJehani</h6>
            </div>

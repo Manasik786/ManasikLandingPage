@@ -38,12 +38,12 @@ const Packages = () => {
         return(
           
             ((item.CardDetail).substring(0,5) === checkpath ?
-             <>
+             < >
              <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>{item.CardDetail}</Modal.Header>
             <Popup />
           </Modal>
-           <div className="contact-banner">
+           <div className="contact-banner" key={item._id}>
             <div className="banner-content">
                 <h1>{item.CardDetail}</h1>
                 <p>Manasik aviation is basically airline</p>

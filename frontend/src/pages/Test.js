@@ -1,41 +1,19 @@
-import React,{useState,useEffect} from 'react'
-import axios from 'axios';
+import React from 'react'
+import { Timeline } from 'react-twitter-widgets'
 
 const Test = () => {
-    const [data, setData] = useState();
-  const [card, setCard] = useState([]);
-  useEffect(() => {
-    const getdata = async () => {
-      const { data } = await axios.get(`/api/v1/CardItems`);
-      setCard(data.data);
-      console.log("New Data",card)
-    };
-    getdata();
-  }, []);
-
-  // function isCategory(item) {
-  //   return item.CardType === 'Vission';
-  // }
-  // const Category1 = card.find(isCategory)
-  // card = Category1
-  // console.log("Category is",card);
-  
   return (
     <>
-     {
-       card.map((item) => { 
-      return(
-        (item.CardType) === 'About Manasik' ? 
-        <>
-        <p>{item.CardType}</p>
-        </>
-         : 
-         <>
-          
-         </>
-      )  
-      })
-      }
+    <Timeline
+  dataSource={{
+    sourceType: 'profile',
+    screenName: 'Ali22063062'
+  }}
+  options={{
+    height: '200',
+    width:'200'
+  }}
+/>
     </>
   )
 }

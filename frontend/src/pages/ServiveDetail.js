@@ -1,10 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios';
 import { useLocation } from "react-router-dom";
-import img1 from "../assets/images/gallery.png";
 import Buttn1 from "../components/Button/index";
-import img2 from "../assets/images/Yanbu.jpg";
-import ArabicButton from "../components/Button/Arabic";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Popup from "../components/Form/Popup";
@@ -27,7 +24,11 @@ const ServiceDetails = () => {
     getdata();
   }, []);
   let str = pathname;
-  str = str.substring(1);
+  str = str.substring(16);
+  // let newpath = str.replace(/([A-Z])/g, ' $1').trim()
+  // console.log("Path is 1",newpath)
+
+
   return (
     <>
    
@@ -35,7 +36,7 @@ const ServiceDetails = () => {
       card.map((item) => {
         return(
           
-            (item.CardDetail === 'Hotel Services' ?
+            (item.CardTitle === 'Hotel Services' ?
              <>
                <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -45,7 +46,7 @@ const ServiceDetails = () => {
               </Modal>
             <div className="contact-banner">
             <div className="banner-content">
-                <h1>{item.CardDetail}</h1>
+                <h1>{item.CardTitle}</h1>
                 <p>Manasik aviation is basically airline</p>
                 <p>and does business of airline</p>
               </div>

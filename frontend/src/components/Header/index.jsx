@@ -132,7 +132,13 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
                                 <li onClick={() => setShow(!isShow)}>
                             <Link
                               className="dropdown-item"
-                              to={item.PkgName}
+                              
+                              to={{
+                                pathname: `packages/${(item.PkgName)}`,
+                                state: {
+                                  // whatever you need to send with the route transition
+                                },
+                              }}
                             >
                             {item.PkgName}
                             </Link>
@@ -173,15 +179,15 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
                                 className="dropdown-item"
                                 
                                   to={{
-                                    pathname:'/ServicesDetail',
-                                    // pathname: `ServicesDetail/${(item.CardDetail).replace(/ /g,'')}`,
+                                    // pathname:'/ServicesDetail',
+                                    pathname: `ServicesDetail`,
                                     state: {
                                       // whatever you need to send with the route transition
                                     },
                                   }}
                                 >
                                 
-                                {item.CardDetail}
+                                {item.CardTitle}
                                 </Link>
                                   </li>
                                 </> : <></>

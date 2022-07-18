@@ -49,7 +49,7 @@ console.log("The Main",data)
                 data.slice(0,3).map((item,i) => {
                     return(
                       <div className="row g-0 g-lg-4 g-xxl-4 justify-content-center align-items-center mappingstylehome" key={item._id}>
-                      <div className="image-section d-none d-md-flex col-0 col-md-6 col-xxl-5">
+                      <div className="image-section d-md-flex col-0 col-md-6 col-xxl-5">
                         <div className="row g-0 flex-column justify-content-center align-items-center align-content-center cardimg">
                           <img src={item.images[0].url} />
                         </div>
@@ -57,7 +57,7 @@ console.log("The Main",data)
                       <div className="col-12 col-md-6 col-xxl-5 z-index cardtext1">
                         <div className="row g-0">
                           <div className="col-12 col-xxl-10 col-xl-10 col-lg-10 col-md-11 ">
-                            <h3 className="servicespage1">{item.CardDetail}</h3>
+                            <h3 className="servicespage1">{item.CardTitle}</h3>
                             <br />
                             <p>
                               {item.CardDescriptions}

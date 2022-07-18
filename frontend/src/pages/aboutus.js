@@ -5,21 +5,16 @@ import MobilePlatform from "../assets/images/onlinePlatform.png";
 import HotelServiceImage from "../assets/images/catering.png";
 import LeftCloud from '../assets/images/leftcloud.png'
 import Card from '../components/Card/vision'
-import Card1 from '../components/Card/mission'
 import Footer from "../components/Footer/index1";
 import Cookies from "universal-cookie";
 import BackArrow from '../components/Button/Arabic'
 import Img1 from "../assets/images/Makkah.jpg";
 import Img2 from "../assets/images/madinah1.png";
-import Img3 from "../assets/images/VSO.png";
 import axios from "axios";
-import WhyManasik from '../components/Card/WhyManasik'
 import CEOMessage from "../components/Card/CEOMessage";
 import AboutManasik from '../components/Card/About'
-const Whoweare = ({onHandleClick}) => {
-  useEffect(()=>{
-    onHandleClick('whoweare');
-  },[])
+const Whoweare = () => {
+  
   const cookies = new Cookies();
   const [getlanguage,setLanguage] = useState(cookies.get("language"));
 
@@ -111,28 +106,8 @@ const Whoweare = ({onHandleClick}) => {
         </div>
        <div className="vision">
        <Card/>
-        <Card1/>
+       
        </div>
-       {
-        getlanguage != 'english' ? <>
-        <WhyManasik/>
-        </> : <>
-        <div className="whymanasik arabicstyle">
-        <div className="whymanasikleft whymanasikarabic">
-          <h2 className="arabic-align">لماذا المناسك</h2>
-          <p className="arabic-align">الحج والعمرة أقدس وأثمن الفروض الدينية التي يؤديها المسلمون.</p>
-          <p className="arabic-align">لمساعدتك على أداء ذلك ، نوفر لك جوًا إسلاميًا يؤكد على قيمنا الدينية والثقافية لتوفير رحلة الحج لدينا.</p>
-          <p className="arabic-align">نحن نؤمن أنه في هذه الرحلة المقدسة ، يجب على المرء أن يكون مركزًا وأن يظل هادئًا حتى يتمكن من أداء هذا الواجب المقدس بجدية.</p>
-          <p className="arabic-align">لمساعدة الحجاج على تحقيق هذه المهمة ، نقدم العديد من المرافق الدينية التي تشمل مكتبة إسلامية وبيئة إسلامية بحيث يمكن للفرد الاسترخاء عقليًا والهدوء لأداء المناسك.</p>
-          <h6 className="arabic-align">سنقوم بأعمالها بطريقة تضمن سلامة وصحة موظفيها وعملائها وعامة الناس ومقاوليها ووكلائها والشركات التابعة لها والشركات المرتبطة بها مع الوفاء بالتزاماتها بموجب جميع اللوائح المعمول بها.</h6>
-          <p className="arabic-align">مع مرافق عالمية المستوى وثلاث فئات مختلفة تشمل الدرجة الأولى ودرجة رجال الأعمال والدرجة السياحية ، نحن على استعداد لخدمتك في كل جانب.</p>
-        </div>
-        <div className="whymanasikright">
-          <div className="blackdiv"></div>
-        </div>
-       </div>
-        </>
-       }
        {
         getlanguage != 'english' ? <>
         <div className="about-bg">

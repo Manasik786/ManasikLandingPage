@@ -46,11 +46,9 @@ const Popup = () => {
       const response = await axios.post(
         `/api/v1/createapplicants`,data,config
       );
-      
-     console.log(response)
+    alert(response.data);
     } catch (err) {
       const Error = err.response.data;
-      console.log(Error.message)
       alert(Error.message)
      
     }

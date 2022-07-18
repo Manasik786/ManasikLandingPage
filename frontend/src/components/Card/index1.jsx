@@ -20,11 +20,13 @@ const Index = () => {
   const handleShow = () => setShow(true);
 
   const [data, setData] = useState([]);
+  const [isLoading, setLoading] = useState(true)
 
   useEffect(() => {
     const getdata = async () => {
       const { data } = await axios.get(`/api/v1/CardItems`);
       setData(data.data);
+      
       // console.log("Response",data.data)
       // console.log("Data is",data.data)
     };
@@ -47,11 +49,11 @@ const Index = () => {
                     (item.CardType) === 'service' ? <>
                     <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton></Modal.Header>
-                    <h2 className="h2.applyfromclass"> {item.CardType}</h2>
+                    <h2 className="h2.applyfromclass"> {item.CardTitle}</h2>
                     <Popup />
                   </Modal>
                 <div className="row g-0 g-lg-4 g-xxl-4 justify-content-center align-items-center mappingstyle" key={item._id}>
-                  <div className="image-section d-none d-md-flex col-0 col-md-6 col-xxl-5">
+                  <div className="image-section d-md-flex col-0 col-md-6 col-xxl-5">
                     <div className="row g-0 flex-column justify-content-center align-items-center align-content-center cardimg">
                       <img src={item.images[0].url} />
                     </div>
@@ -59,7 +61,7 @@ const Index = () => {
                   <div className="col-12 col-md-6 col-xxl-5 z-index cardtext1">
                     <div className="row g-0">
                       <div className="col-12 col-xxl-10 col-xl-10 col-lg-10 col-md-11 ">
-                        <h3 className="servicespage1">{item.CardDetail}</h3>
+                        <h3 className="servicespage1">{item.CardTitle}</h3>
                         <br />
                         <p>
                         {item.CardDescriptions}

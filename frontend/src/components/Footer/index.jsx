@@ -6,7 +6,6 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
 import axios from "axios";
-import { Timeline } from 'react-twitter-widgets'
 
 
 const Footer = ({}) => {
@@ -299,17 +298,17 @@ const Footer = ({}) => {
                     </div>
 
                     <div className="col-lg-3 footer-links">
-                    <Timeline
-                      dataSource={{
-                        sourceType: 'profile',
-                        screenName: 'Ali22063062'
-                      }}
-                      options={{
-                        height: '200',
-                        width:'250'
-                      }}
-                    />
- 
+                      <h4>Newsletter</h4>
+                      <form action="" method="post">
+                        <div className="applynow">
+                          <input
+                            placeholder="Email"
+                            type="email"
+                            name="email"
+                          />
+                          <img src={Arrow} />
+                        </div>
+                      </form>
                       <div className="socail-icons">
                         <i class="fa-brands fa-facebook-f"></i>
                         <i class="fa-brands fa-instagram"></i>

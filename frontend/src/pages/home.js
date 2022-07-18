@@ -32,15 +32,7 @@ const Home = ({ onHandleClick }) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [card, setCard] = useState([]);
-  useEffect(() => {
-    const getdata = async () => {
-      const { data } = await axios.get(`/api/v1/GalleryItems`);
-      setCard(data.data);
-      console.log("New Data",card)
-    };
-    getdata();
-  }, []);
+
 
 
   const settings = {
@@ -232,20 +224,38 @@ const Home = ({ onHandleClick }) => {
                 <h6> To guide you with legal procedure, Manasik aviation online portal will assist you to get your process done ,for apply please fill the forum below</h6>
                 </span>
                  <div class="row2">
+                  <div class="column2">
+                    <div class="card2">
+                      <img src={GalleryImage}/>
+                    </div>
+                  </div>
+
+                  <div class="column2">
+                    <div class="card2">
+                    <img src={GalleryImage}/>
+                    </div>
+                  </div>
+                  <div class="column2">
+                    <div class="card2">
+                    <img src={GalleryImage}/>
+                    </div>
+                  </div>
+                  <div class="column2">
+                    <div class="card2">
+                    <img src={GalleryImage}/>
+                    </div>
+                  </div>
                   
-                  {
-                    card.map((item) => {
-                      return(
-                        <>
-                          <div class="column2">
-                            <div class="card2">
-                              <img src={item.images[0].url}/>
-                            </div>
-                          </div>
-                        </>
-                      )
-                    })
-                  }
+                  <div class="column2">
+                    <div class="card2">
+                    <img src={GalleryImage}/>
+                    </div>
+                  </div>
+                  <div class="column2">
+                    <div class="card2">
+                    <img src={GalleryImage}/>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="gallery-right1">

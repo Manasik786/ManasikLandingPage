@@ -20,7 +20,7 @@ const WhyManasik = () => {
       return(
         (item.CardType) === 'whymanasik' ? 
         <>
-       <div className="whymanasikleft" key={item._id}>
+       <div className="whymanasikleft">
           <h2>{item.CardDetail}</h2>
           <p>{item.CardDescriptions}</p>
           </div>

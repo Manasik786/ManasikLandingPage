@@ -19,7 +19,7 @@ const WarningCard = () => {
       return(
         (item.CardType) === 'Recruitment Fraud Warning' ? 
         <>
-        <div className="career-warning" key={item._id}>
+        <div className="career-warning">
        <div className="warning-card">
          <div className="warning-left">
            <div className="img1">

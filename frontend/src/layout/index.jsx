@@ -42,7 +42,7 @@ const Layout = () => {
     return (
         <React.Fragment>
             <div className="header-banner1">
-                <Header /> 
+                <Header selectedBanner={selectedBanner} onHandleClick={onHandleClick} /> 
             </div>
             
             {
@@ -55,21 +55,22 @@ const Layout = () => {
                 <div className='row g-0'>
                 <div className='col-12'>
                     <Routes>
-                        <Route path='/' element={<Home />} />
-                        <Route path='/test' element={<Test />} />
-                        <Route path='/aboutus' element={<Aboutus />} />
-                        <Route path='/contactus' element={<Contactus />} />
-                        <Route path='/careers' element={<Careers />} />
-                        <Route path='/aviationdestination' element={<Aviation_Destination />} />
-                        <Route path='/ambulance' element={<Ambulance />} />
-                        <Route path='/services' element={<Services />} />
-                        <Route path='/ServicesDetail/:data' element={<ServiceDetails />} /> 
-                        <Route path='/packages/:path' element={<Packages />} />
-                        <Route path='/ambulance/AmbulanceDetail/:id' element={<AmbulanceDetail />} /> 
-                        <Route path='/privacy' element={<Privacy />} />
-                        <Route path='/term&condition' element={<Term />} />
-                        <Route path='/gallery' element={<Gallery />} />
-                        <Route path='/*' element={<NotFound/>} />
+                        <Route path='/' element={<Home selectedBanner={selectedBanner} onHandleClick={onHandleClick} />} />
+                        <Route path='/technology' element={<Technology selectedBanner={selectedBanner} onHandleClick={onHandleClick} />} />
+                        <Route path='/test' element={<Test selectedBanner={selectedBanner} onHandleClick={onHandleClick} />} />
+                        <Route path='/aboutus' element={<Aboutus selectedBanner={selectedBanner} onHandleClick={onHandleClick} />} />
+                        <Route path='/contactus' element={<Contactus selectedBanner={selectedBanner} onHandleClick={onHandleClick} />} />
+                        <Route path='/careers' element={<Careers selectedBanner={selectedBanner} onHandleClick={onHandleClick} />} />
+                        <Route path='/aviationdestination' element={<Aviation_Destination selectedBanner={selectedBanner} onHandleClick={onHandleClick} />} />
+                        <Route path='/ambulance' element={<Ambulance selectedBanner={selectedBanner} onHandleClick={onHandleClick} />} />
+                        <Route path='/services' element={<Services selectedBanner={selectedBanner} onHandleClick={onHandleClick} />} />
+                        <Route path='/ServicesDetail' element={<ServiceDetails selectedBanner={selectedBanner} onHandleClick={onHandleClick} />} /> 
+                        <Route path='/:path' element={<Packages selectedBanner={selectedBanner} onHandleClick={onHandleClick} />} />
+                        <Route path='/ambulance/AmbulanceDetail/:id' element={<AmbulanceDetail selectedBanner={selectedBanner} onHandleClick={onHandleClick} />} /> 
+                        <Route path='/privacy' element={<Privacy selectedBanner={selectedBanner} onHandleClick={onHandleClick} />} />
+                        <Route path='/term&condition' element={<Term selectedBanner={selectedBanner} onHandleClick={onHandleClick} />} />
+                        <Route path='/gallery' element={<Gallery selectedBanner={selectedBanner} onHandleClick={onHandleClick} />} />
+                        <Route element={NotFound} />
                     </Routes>
                 </div>
             </div>

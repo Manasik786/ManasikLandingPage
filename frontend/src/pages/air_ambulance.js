@@ -78,7 +78,7 @@ const Air_ambulance = () => {
             card.map((item) => {
               return(
                 <>
-                <div className="airambulance-cards air_rowreverse" key={item._id}>
+                <div className="airambulance-cards air_rowreverse">
                   <div className="ambulance-item">
                     <div className="ambulancetext">
                     <h2>{item.CardDetail}</h2>

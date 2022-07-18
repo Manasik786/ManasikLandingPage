@@ -13,6 +13,7 @@ const Packages = () => {
 
   const [card, setCard] = useState([]);
   const { pathname } = useLocation();
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -26,7 +27,7 @@ const Packages = () => {
     getdata();
   }, []);
   let str = pathname;
-  str = str.substring(10);
+  str = str.substring(1);
   return (
     <>
     <Modal show={show} onHide={handleClose}>

@@ -1853,7 +1853,6 @@
     }
     .home-main .hotel-services p { 
         font-size: .8rem !important;
-        
     }
     .home-main .aircraft-section .about h2 {
         font-size: 1.5rem !important;
@@ -2047,8 +2046,7 @@
     .vision {
         width: 90%;
         margin: auto;
-        height: auto;
-        margin-bottom: 50px;
+        height: 1150px;
     }
     .whymanasikright {
         flex: 2 1;
@@ -2072,15 +2070,9 @@
     }
     .career-left {
         height: 650;
-        width: 100%;
+        width: 450px;
         margin: 10px;
         
-    }
-    .career-left img {
-        height: 320px;
-        width: 90%;
-        margin: auto;
-        /* margin: 10px; */
     }
     .career-warning {
         height: 400px;
@@ -2113,7 +2105,6 @@
         background-color: #d4af37;
         width: 90%;
         margin: auto;
-        margin-top: 30px;
     }
     .form-destination {
         display: none;
@@ -2142,66 +2133,5 @@
         padding-top: 0px;
         width: 70px;
         height: 70px;
-    }
-    .home-main {
-        margin-top: 70px;
-    }
-    .destination-cards {
-        display: block;
-        
-    }
-    .destination-right {
-        height: 290px;
-        width: 90%;
-        margin-top: 15px;
-    }
-    .destination-left {
-        height: 320px;
-        width: 90%;
-        margin: auto;
-    }
-    .mappingstyabout:nth-child(even) {
-        margin-top: 50px;
-        flex-direction: row-reverse;
-        height: auto;
-    }
-    .warning-card {
-        width: 90%;
-        display: block;
-        height: auto;
-        margin: auto;
-    }
-    .imgceo {
-        background-color: #c5c5c5;
-        height: 260px;
-        margin-top: 70px;
-    }
-    .career-warning1 {
-        height: auto;
-        width: 100%;
-    }
-    .aboutcard11 {
-        /* margin-left: 30px; */
-        margin: auto;
-        margin-top: 10vh;
-        width: 60%;
-    }
-    .images1 img {
-        height: 234px;
-        width: 240px;
-        z-index: 999;
-    }
-    .popular-card {
-        background-color: #f7f5f1;
-        height: 298px;
-        width: 245px;
-        margin: 20px;
-        box-shadow: 2px 2px 12px rgb(170 168 168);
-        transform: scaleX(20deg);
-    }
-    .about-bg {
-      
-        height: 680px;
-        width: 100%;
     }
 }

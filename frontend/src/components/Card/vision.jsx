@@ -28,12 +28,12 @@ const Index = () => {
        {
        card.map((item) => { 
       return(
-        (item.CardType) === 'aboutpage' ? 
+        (item.CardType) === 'Vision' ? 
         <>
        
-       <div className='destination-cards mappingstyabout' key={item._id}>
+       <div className='destination-cards'>
           <div className='destination-right'>
-              <h2>{item.CardTitle}</h2>
+              <h2>{item.CardDetail}</h2>
               <p>{item.CardDescriptions}</p>
               
             </div>

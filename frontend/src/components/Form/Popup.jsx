@@ -55,7 +55,7 @@ const Popup = () => {
             </Form.Group>
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="Family Name" 
-              name="FamilyName"
+              name="FullName"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -64,7 +64,7 @@ const Popup = () => {
             <Form.Group as={Col} controlId="formGridEmail">
               
               <Form.Control type="date" placeholder="Date of Birth" 
-              name="DOB"
+              name="FullName"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -89,7 +89,7 @@ const Popup = () => {
             <Form.Group as={Col} controlId="formGridName">
               
               <Form.Control type="number" placeholder="Mobile" 
-              name="Mobile"
+              name="FullName"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -98,7 +98,7 @@ const Popup = () => {
             <Form.Group as={Col} controlId="formGridEmail">
               
               <Form.Control type="text" placeholder="Passport Number" 
-              name="Passport"
+              name="FullName"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -106,7 +106,7 @@ const Popup = () => {
             <Form.Group as={Col} controlId="formGridName">
               
               <Form.Control type="number" placeholder=" National ID#"
-              name="Nationalid"
+              name="FullName"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -115,7 +115,7 @@ const Popup = () => {
             <Form.Group as={Col} controlId="formGridEmail">
               
               <Form.Control type="text" placeholder="Upload Document" 
-              name="Document"
+              name="FullName"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -123,7 +123,7 @@ const Popup = () => {
             <Form.Group as={Col} controlId="formGridName">
               
               <Form.Control type="text" placeholder="Stay Period" 
-               name="StayPeriod"
+               name="FullName"
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -154,7 +154,7 @@ const Popup = () => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formGridAddress2">
-            <Form.Control placeholder="Religion"   />
+            <Form.Control placeholder="Region"   />
           </Form.Group>
           <SubmitButton text={"Submit"}/>
         </Form>

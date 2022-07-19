@@ -7,11 +7,20 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Popup = () => {
   const [data,setData] = useState({
-    FullName: "",
+    Name:"",
+    FamilyName: "",
+    DOB:"",
     Email: "",
+    Country:"",
     Phone:"",
-    Nationality:"",
-    ProfilePhoto:[]
+    PassportNo:"",
+    NationalID:"",
+    UploadDocuments:"",
+    StayPeriod:"",
+    IsVisited:"",
+    RelativeContact:"",
+    ReasonToVisit:"",
+    Religion:"",
   })
 //   const [images, setImages] = useState([]);
 
@@ -49,7 +58,7 @@ const Popup = () => {
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridName">     
               <Form.Control type="text" placeholder="Name" 
-              name="FullName"
+              name="Name"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -81,7 +90,7 @@ const Popup = () => {
             <Form.Group as={Col} controlId="formGridEmail">
               
               <Form.Control type="text" placeholder="Country" 
-              name="Nationality"
+              name="Country"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -89,7 +98,7 @@ const Popup = () => {
             <Form.Group as={Col} controlId="formGridName">
               
               <Form.Control type="number" placeholder="Mobile" 
-              name="Mobile"
+              name="Phone"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -98,7 +107,7 @@ const Popup = () => {
             <Form.Group as={Col} controlId="formGridEmail">
               
               <Form.Control type="text" placeholder="Passport Number" 
-              name="Passport"
+              name="PassportNo"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -106,7 +115,7 @@ const Popup = () => {
             <Form.Group as={Col} controlId="formGridName">
               
               <Form.Control type="number" placeholder=" National ID#"
-              name="Nationalid"
+              name="NationalID"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -115,7 +124,7 @@ const Popup = () => {
             <Form.Group as={Col} controlId="formGridEmail">
               
               <Form.Control type="text" placeholder="Upload Document" 
-              name="Document"
+              name="UploadDocuments"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -132,7 +141,7 @@ const Popup = () => {
             <Form.Group as={Col} controlId="formGridEmail">
               
               <Form.Control type="text" placeholder="Have you visited KSA before?" 
-               name="FullName"
+               name="IsVisited"
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -140,7 +149,7 @@ const Popup = () => {
             <Form.Group as={Col} controlId="formGridName">
               
               <Form.Control type="number" placeholder="Relative contact in KSA" 
-               name="FullName"
+               name="RelativeContact"
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -148,7 +157,7 @@ const Popup = () => {
 
           <Form.Group className="mb-13 " controlId="formGridAddress1">
             <Form.Control placeholder="Reason to visit Saudi Arabia" className="largetextreason" 
-             name="FullName"
+             name="ReasonToVisit"
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>

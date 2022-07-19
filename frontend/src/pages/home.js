@@ -29,6 +29,7 @@ const Home = ({ onHandleClick }) => {
   const cookies = new Cookies();
   const [getlanguage,setLanguage] = useState(cookies.get("language"));
   const [show, setShow] = useState(false);
+  const [toggle, setToggle] = useState("1");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -232,24 +233,33 @@ const Home = ({ onHandleClick }) => {
                 <h6> To guide you with legal procedure, Manasik aviation online portal will assist you to get your process done ,for apply please fill the forum below</h6>
                 </span>
                  <div class="row2">
+                 {card.map((item) => {
+                  return (
+                    <>
+                      <div className="column2">
+                        <div className="card2">
+                          <img src={item.images[0].url} onClick={() => setToggle(item._id)}/>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
                   
-                  {
-                    card.map((item) => {
-                      return(
-                        <>
-                          <div class="column2">
-                            <div class="card2">
-                              <img src={item.images[0].url}/>
-                            </div>
-                          </div>
-                        </>
-                      )
-                    })
-                  }
                 </div>
               </div>
               <div className="gallery-right1">
-              <img src={GalleryImage}/>
+              {
+        card.map((item) => {
+          return(
+            <>
+            {toggle === item._id ? (
+                   <img src={item.images[0].url} key={item._id}/>
+                ) : <div className="zero"></div>}
+            </>
+          )
+        })
+      }
+             
               </div>
             </div>
             <div className="row g-3 justify-content-center align-items-center">

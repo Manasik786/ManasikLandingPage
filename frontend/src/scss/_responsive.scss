@@ -992,6 +992,16 @@
         margin-top: 30px;
         font-family: 'DM SERIF TEXT';
     }
+    .header-banner .search-main .button-section {
+        background-color: #fff;
+        box-shadow: 2px 0px 20px -5px rgb(128 128 128 / 41%);
+        width: 135px;
+        height: 150px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
     .blackdiv {
         height: 600px;
         margin-top: 70px;
@@ -1410,7 +1420,7 @@
     }
    
     .header-banner .bg-video-wrap {
-        height: 40vh;
+        height: 36vh;
     }
     .header-banner {
         height: 40vh;
@@ -1442,7 +1452,7 @@
     }
     .home-main .hotel-services {
         margin: 1rem 0;
-        margin-top: 2vh;
+        margin-top: 12vh;
     }
     
     .home-main .hotel-services h2 {
@@ -2144,7 +2154,7 @@
         height: 70px;
     }
     .home-main {
-        margin-top: 70px;
+        margin-top: 3vh;
     }
     .destination-cards {
         display: block;

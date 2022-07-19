@@ -37,7 +37,6 @@ const Aviation_Destination = () => {
                 <div className='popular-card1'>
             <div className='images1'>
               <img src={item.images[0].url}/>
-
             </div>
             {/* <h5>{item.CardType}</h5>
             <h6>{item.CardDescriptions}</h6> */}

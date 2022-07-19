@@ -34,10 +34,7 @@ console.log("The Main",data)
 
   return (
     <>
-    <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton></Modal.Header>
-        <Popup />
-      </Modal>
+    
     <section className="hotel-services">
     <div className="destination-main">
         
@@ -48,6 +45,13 @@ console.log("The Main",data)
             {
                 data.slice(0,3).map((item,i) => {
                     return(
+                      <>
+                      <Modal show={show} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                          <h2>{item.CardTitle}</h2>
+                        </Modal.Header>
+                        <Popup />
+                      </Modal>
                       <div className="row g-0 g-lg-4 g-xxl-4 justify-content-center align-items-center mappingstylehome" key={item._id}>
                       <div className="image-section d-md-flex col-0 col-md-6 col-xxl-5">
                         <div className="row g-0 flex-column justify-content-center align-items-center align-content-center cardimg">
@@ -75,6 +79,7 @@ console.log("The Main",data)
                         </div>
                       </div>
                     </div>
+                      </>
                     )
                 })
             }

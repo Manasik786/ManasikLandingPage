@@ -3,7 +3,6 @@ import Buttn1 from "../components/Button";
 import HajjImage from "../assets/images/hajj.png";
 import HolidayImage from "../assets/images/holiday.png";
 import HotelImage from "../assets/images/hotel.png";
-import HotelServiceImage from "../assets/images/hotelservice.png";
 import GalleryImage from "../assets/images/gallery.png";
 import { Tooltip } from "bootstrap/dist/js/bootstrap.esm.min.js";
 import Banner from "../components/Banner";
@@ -23,7 +22,7 @@ import Services from '../components/ServicesHome/Services'
 import '../search.css'
 import axios from 'axios'
 import AboutManasik from '../components/Card/About'
-
+import BaannerTest from '../pages/Test'
 
 const Home = ({ onHandleClick }) => {
   const cookies = new Cookies();

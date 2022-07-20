@@ -1,102 +1,162 @@
-import React,{useState} from 'react'
-import Button from "../Button/large";
-import Cookies from "universal-cookie";
-import BackArrow from "../Button/ArabicLarge";
+import React,{useState,useEffect} from "react";
+import { Form, Row, Col, Button } from "react-bootstrap";
+import SubmitButton from '../Button/large'
+import axios from "axios";
+import 'react-toastify/dist/ReactToastify.css';
+import Capcha from '../../pages/Translator'
 
-const Index = () => {
-  const cookies = new Cookies();
-  const [getlanguage,setLanguage] = useState(cookies.get("language"));
-  return (
-    <>
-     <div className='form-destination'>
-     {
-      getlanguage != 'english' ? <>
-      <form>
-     <div className="grid-container">
-        <div>
-        <input type='text' placeholder='Name' />
-        </div>
-        <div>
-        <input type='text' placeholder='Family Name' />
-        </div>
-        <div>
-        <input id="date" type="date" required placeholder="Date"/>  
-        </div>  
-        <div>
-        <input type='text' placeholder='Email' />
-        </div>
-        <div>
-        <input type='text' placeholder='Country' />
-        </div>
-        <div>
-        <input type='text' placeholder='Mobile' />
-        </div>
-        <div>
-        <input type='text' placeholder='Passport Number' />
-        </div>
-        <div><input type='text' placeholder='National ID#' /></div>
-        <div>
-        <input type='text' placeholder='Upload Document' />
-        </div>
-        <div>
-        <input type='text' placeholder='Stay Period' />
-        </div>
-        <div>
-          <input type='text' placeholder='Have you visited KSA before?' />
-          </div>
-        <div><input type='text' placeholder='Relative contact in KSA' /></div>
-        
-      </div>
-      <div className='largeItem'><input type='text' placeholder='Reason to visit Saudi Arabia' /></div>
-      <div className='smallItem'><input type='text' placeholder='Religion' /></div>
-      <Button text={"Submit"}/>
-     </form>
-      </> : <>
-      <form className="arabicplaceholder">
-     <div className="grid-container">
-        <div>
-        <input type='text' placeholder='اسم' />
-        </div>
-        <div>
-        <input type='text' placeholder='اسم العائلة' />
-        </div>
-        <div>
-        <input id="date" type="date" required placeholder="تاريخ"/>  
-        </div>  
-        <div>
-        <input type='text' placeholder='البريد الإلكتروني' />
-        </div>
-        <div>
-        <input type='text' placeholder='دولة' />
-        </div>
-        <div>
-        <input type='text' placeholder='التليفون المحمول' />
-        </div>
-        <div>
-        <input type='text' placeholder='رقم جواز السفر' />
-        </div>
-        <div><input type='text' placeholder='الهوية الوطنية#' /></div>
-        <div>
-        <input type='text' placeholder='تحميل المستند' />
-        </div>
-        <div>
-        <input type='text' placeholder='فترة البقاء' />
-        </div>
-        <div>
-          <input type='text' placeholder='هل زرت المملكة العربية السعودية من قبل؟' />
-          </div>
-        <div><input type='text' placeholder='الاتصال النسبي في المملكة العربية السعودية' /></div>
-        
-      </div>
-      <div className='largeItem'><input type='text' placeholder='سبب زيارة المملكة العربية السعودية' /></div>
-      <div className='smallItem'><input type='text' placeholder='دِين' /></div>
-      <BackArrow text={"يُقدِّم"}/>
-     </form>
-      </>
-     }
-     </div>
-    </>
-  )
+
+const Popup = () => {
+  const [data,setData] = useState({
+    Name:"",
+    familyname: "",
+    DOB:"",
+    Email: "",
+    country:"",
+    Phone:"",
+    passportno:"",
+    nationalid:"",
+    upload:"",
+    StayPeriod:"",
+    Visitedbefore: 1,
+    relativecontact:"",
+    Reasontovisitksa:"",
+    Religion:"",
+  })
+//   const [images, setImages] = useState([]);
+
+useEffect(() => {
+  PostForm();
+}, []);
+
+
+const handleChange = (e) => {
+  const { name, value } = e.target;
+  setData({ ...data, [name]: value });
+};
+const PostForm = async (e) => {
+  e.preventDefault();
+  try {
+      const config = {
+          headers: { "Content-Type": "application/json" },
+        };
+    const response = await axios.post(
+      `/api/v1/createBookingForm`,data,config
+    );
+  alert("Submitted");
+  } catch (err) {
+    const Error = err.response.data;
+    alert(Error.message)
+   
+  }
+
+console.log(data)
 }
 
-export default Index
+  return (
+    <>
+      <div className="popup1">
+        <Form className="popupform" onSubmit={PostForm}>
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridName">     
+              <Form.Control type="text" placeholder="Name" 
+              name="Name"
+              onChange={(e) => handleChange(e)}
+              />
+            </Form.Group>
+            <Form.Group as={Col} controlId="formGridName">
+              <Form.Control type="text" placeholder="Email" 
+              name="Email"
+              onChange={(e) => handleChange(e)}
+              />
+            </Form.Group>
+          </Row>
+          
+          
+          <Form.Group className="mb-3" controlId="formGridAddress2">
+          <fieldset>
+              <legend>Hotel Service Needed?</legend>
+              <div className="radiobtnform">
+              <div className="radiofield1">
+                <input type="radio" id="isvisited" name="Hotel" value='1'
+                      checked/>
+                <label for="yes">Yes</label>
+              </div>
+
+              <div className="radiofield1">
+                <input type="radio" id="Visitedbefore" name="Hotel" value='0'/>
+                <label for="no">No</label>
+              </div>
+              </div>
+          </fieldset>
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formGridAddress2">
+          <fieldset>
+              <legend>Visa Service Needed?</legend>
+              <div className="radiobtnform">
+              <div className="radiofield1">
+                <input type="radio" id="isvisited" name="Visa" value='1'
+                      checked/>
+                <label for="yes">Yes</label>
+              </div>
+
+              <div className="radiofield1">
+                <input type="radio" id="Visitedbefore" name="Visa" value='0'/>
+                <label for="no">No</label>
+              </div>
+              </div>
+          </fieldset>
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formGridAddress2">
+          <fieldset>
+              <legend>Catering Service Needed?</legend>
+              <div className="radiobtnform">
+              <div className="radiofield1">
+                <input type="radio" id="isvisited" name="Catering" value='1'
+                      checked/>
+                <label for="yes">Yes</label>
+              </div>
+
+              <div className="radiofield1">
+                <input type="radio" id="Visitedbefore" name="Catering" value='0'/>
+                <label for="no">No</label>
+              </div>
+              </div>
+          </fieldset>
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formGridAddress2">
+          <fieldset>
+              <legend>Transporttation Service Needed?</legend>
+              <div className="radiobtnform">
+              <div className="radiofield1">
+                <input type="radio" id="isvisited" name="Transporttation" value='1'
+                      checked/>
+                <label for="yes">Yes</label>
+              </div>
+
+              <div className="radiofield1">
+                <input type="radio" id="Visitedbefore" name="Transporttation" value='0'/>
+                <label for="no">No</label>
+              </div>
+              </div>
+          </fieldset>
+          </Form.Group>
+          <Form.Group className="mb-13 " controlId="formGridAddress1">
+            <Form.Control placeholder="Note" className="largetextreason" 
+             name="Reasontovisitksa"
+             val
+             onChange={(e) => handleChange(e)}
+            />
+          </Form.Group>
+          <Capcha/>
+          <SubmitButton text={"Submit"}/>
+        </Form>
+      </div>
+    </>
+  );
+};
+
+export default Popup;

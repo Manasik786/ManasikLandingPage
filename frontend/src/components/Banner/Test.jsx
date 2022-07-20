@@ -2,6 +2,8 @@ import React,{useState,useEffect} from 'react'
 import Cookies from "universal-cookie";
 import { useLocation } from "react-router-dom";
 import axios from 'axios';
+import Banner1 from '../../assets/images/destination-banner.png'
+import HajjImage from "../../assets/images/hajj.png";
 
 const Test = () => {
   const cookies = new Cookies();
@@ -21,22 +23,26 @@ const Test = () => {
   if (pathname === "/contactus") return(
     <>
     <div className="contact-banner">
-       {
-        getlanguage != 'english' ? <>
-        <div className="banner-content">
-         <h1>Contact</h1>
-         <p>Manasik Aviation is ready to serve you in</p>
-         <p> every manner for more information please contact us on</p>
-       </div>
-        </> : <>
-        <div className="banner-content arabic-banner">
-         <h1>اتصال</h1>
-         <p>مناسيك للطيران على استعداد لخدمتك</p>
-         <p> بكل طريقة لمزيد من المعلومات يرجى الاتصال بنا على</p>
-       </div>
-        </>
-       }
+    {
+      card.map((item) => {
+        return(
+          (item.CardType === 'cantactbanner' ? <>
+          <div class="container121">
+          <img src={item.images[0].url} alt="Nature"/>
+          <div class="text-block">
+          <section class="banner-main ml3">
+         <h1>{item.CardTitle}</h1>
+         <p>{item.CardDetail}</p>
+         <p>{item.CardDescriptions}</p>
+       </section>
+          </div>
+        </div>
+          </>:<></>)
+        )
+      })
+    }
      </div>
+    
     </>
   );
   else if (pathname === "/careers") return(
@@ -65,6 +71,7 @@ const Test = () => {
      {
             getlanguage != 'english' ? <>
             <div className="banner-content">
+             
             <h1>About Us</h1>
             <p>Manasik aviation is basically airline</p>
             <p>and does business of airline</p>
@@ -122,10 +129,12 @@ const Test = () => {
   else if (pathname === "/ambulance") return(
     <>
     <div className="contact-banner">
+      
           {
             getlanguage != 'english' ? <>
             <div className="banner-content">
               <>
+              
                {
                 card.map((item) => {
                   return(

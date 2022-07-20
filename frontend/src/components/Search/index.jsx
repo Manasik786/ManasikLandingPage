@@ -5,13 +5,26 @@ import userIcon from "../../assets/images/user.png";
 import calenderIcon from "../../assets/images/calender.png";
 import arrowIcon from "../../assets/images/arrow.png";
 import Cookies from "universal-cookie";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import Popup from "../Form/index";
 
 const Search = () => {
   const cookies = new Cookies();
 
   const [getlanguage, setLanguage] = useState(cookies.get("language"));
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [show, setShow] = useState(false);
 
   return (
+    <>
+    <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                <h2 className='applyfromclass'>Search Flight</h2>
+                </Modal.Header>
+                <Popup />
+              </Modal>
     <div className="search-main">
       <div className="search-section">
         <div className="main-heading">
@@ -47,10 +60,18 @@ const Search = () => {
         </form>
         </div>
       </div>
+      <Button
+                      variant="primary"
+                      className="primarybutton"
+                      onClick={handleShow}
+                    >
       <div className="button-section">
         <img src={arrowIcon} />
       </div>
+      </Button>
     </div>
+    </>
+    
   );
 };
 

@@ -32,7 +32,7 @@ const Fly = () => {
             <>
             <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-         <h2 className='applyfromclass'>{item.Designation}</h2>
+         <h2 className='applyfromclass'>{item.Type}</h2>
         </Modal.Header>
         <Popup/>
       </Modal>
@@ -43,7 +43,7 @@ const Fly = () => {
               <h4>{item.Dept}</h4>
             </div>
             <div className="depart-item">
-              <h5 className="career-area">{item.Location}</h5>
+              <h5 className="career-area">{item.Type}</h5>
             </div>
             
             <div className="depart-item">Valid till {item.Valid}</div>

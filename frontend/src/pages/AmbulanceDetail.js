@@ -5,11 +5,14 @@ import Buttn1 from "../components/Button/index";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Popup from "../components/Form/Popup";
+import Cookies from "universal-cookie";
 
-const Packages = () => {
+
+const Packages = (props) => {
 
   const [card, setCard] = useState([]);
   const { pathname } = useLocation();
+  const cookies = new Cookies();
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -40,7 +43,9 @@ const Packages = () => {
             ((item.CardDetail).substring(0,5) === checkpath ?
              < >
              <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>{item.CardDetail}</Modal.Header>
+            <Modal.Header closeButton>
+            <h2 className='applyfromclass'>{item.CardDetail}</h2>
+            </Modal.Header>
             <Popup />
           </Modal>
            <div className="contact-banner" key={item._id}>

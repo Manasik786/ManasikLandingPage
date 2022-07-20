@@ -1,13 +1,22 @@
-import React from 'react';
+import React,{Suspense} from "react";
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-// import reportWebVitals from './reportWebVitals';
+
+
+const loadingPage = (
+  <div className='outerloader'>
+                <div class="loader">
+                </div>
+                </div>
+)
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Suspense fallback = {loadingPage}>
+    <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
+  </Suspense>,
   document.getElementById('root')
 );
 

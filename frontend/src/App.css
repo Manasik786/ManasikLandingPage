@@ -10,14 +10,18 @@ font-family: 'Roboto', sans-serif;
 }
 .contact-banner{
  height: 200px;
- background-image: url('./assets/images/destination-banner.png');
+ background-image: url('./assets/images/banner11.jpeg');
  background-position: center;
  background-size: cover;
  background-repeat: no-repeat;
-
  width: 100%;
  height: 250px;
 
+
+}
+.contact-banner img{
+  height: 200px;
+  width: 100%;
 }
 .banner-content {
   color: #fff;
@@ -28,7 +32,6 @@ font-family: 'Roboto', sans-serif;
 
 
 .banner-content p{
- line-height: 10px;
  font-size: 16px ;
  font-weight: 300;
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -565,7 +568,7 @@ input[type=date]:focus::-webkit-datetime-edit {
 }
 .hotel-services{
  background-image: url('./assets/images/leftcloud.png');
- background-position: right 10 top 160px;
+ background-position: center;
 }
 .cattering{
  background-image: url('./assets/images/rightcloud.png');
@@ -724,6 +727,7 @@ flex: 1;
 .gallery-right1{
   height: 500px;
   flex: 1;
+  background-image: url('./assets/images/gallery.png');
 }
 .row2{
   display: flex;
@@ -1126,11 +1130,13 @@ p.serviceheading {
   font-family: 'Font Awesome 6 Free';
   margin-top: 30px;
 }
-.servicespage1{
-  font-size: 28px !important;
+.servicespage1 {
+  font-size: 2.2rem !important;
   color: #d4af37;
   font-family: serif;
-  font-weight: 500px;
+  font-weight: bold;
+  font-family: 'Font Awesome 5 Brands';
+  font-weight: 500px !important;
 }
 .packagesdetails{
   min-height: 800px;
@@ -1254,8 +1260,10 @@ p.serviceheading {
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 h2.applyfromclass {
-  text-align: center;
-  color: rgb(71, 70, 70);
+  font-size: 1.5rem !important;
+  /* text-align: center; */
+  margin-top: 10px;
+  color: #d4af37;
 }
 
 .header .custom-nav .navbar-nav li {
@@ -1278,9 +1286,7 @@ h2.applyfromclass {
   height: 90vh;
   width: 100%;
 }
-.notfound h2,h3{
-  text-align: center !important;
-}
+
 
 
 .mainbox {
@@ -1373,7 +1379,7 @@ iframe {
 }
 
 .modal-header {
-  height: 80px !important;
+  height: 50px !important;
 }
 
 
@@ -1398,4 +1404,123 @@ iframe {
 .zero{
   height: 2px;
   width: 2px;
+}
+
+fieldset {
+  margin-left: 8px !important;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+legend {
+  font-size: 1rem;
+  color: rgb(66, 65, 65);
+}
+/* .bg-video-wrap .overlay img{
+  background-position: center;
+     background-size: cover;
+   background-repeat: no-repeat;
+} */
+
+legend {
+  font-size: 1rem !important;
+    background: #fff;
+    height: 35px;
+    color: rgb(104, 100, 100);
+    margin-left: -4px;
+    text-align: center;
+    line-height: 33px !important;
+}
+label {
+  display: inline-block;
+  margin: 1px;
+  font-size: 15px;
+  color: rgb(104, 100, 100);
+
+}
+.mgender{
+  color: rgb(104, 100, 100);
+}
+.radiobtnform {
+  display: flex;
+  background-color: #fff;
+  height: 35px;
+}
+.radiofield1 {
+  margin-top: 5px;
+}
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  display: flex !important;
+}
+legend {
+  float: left;
+  width: 85% !important;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: calc(1.275rem + .3vw);
+  line-height: inherit;
+}
+.newabc {
+  height: 75vh;
+  width: 100% !important;
+  position: relative;
+  font-family: Arial;
+}
+
+.text-block {
+  position: absolute;
+  top: 190px;
+  left: 190px; 
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 380px;
+}
+.newabc img{
+  height: 75vh;
+  width: 100%;
+}
+.text-block h1{
+font-size: 3rem;
+font-family: "DM Serif Text", serif;
+}
+.text-block p{
+  color: #fff !important;
+    font-size: 1.6rem !important;
+    letter-spacing: -1px;
+    line-height: 2rem;
+    font-weight: 300;
+}
+
+.abcde{
+  height: 500px;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.rc-anchor-alert {
+  display: none !important;
+}
+.captcha{
+  height: 80px !important;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1pxsolidrgba(0,0,0,.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  overflow: hidden;
 }

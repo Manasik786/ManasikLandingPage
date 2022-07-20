@@ -1,13 +1,12 @@
 import React,{useState,useEffect} from "react";
 import Slider from "react-slick";
-import Buttn1 from "../../components/Button";
 import HajjImage from "../../assets/images/hajj.png";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Popup from '../Form/Popup'
 import axios from 'axios';
 import { Link } from "react-router-dom";
-
+import SimpleBtn from '../Button/SimpleButton'
 
 const Slider1 = () => {
 
@@ -97,9 +96,23 @@ const Slider1 = () => {
               {item.PkgDetail}
               </p>
               <div className="newpack">
-                <Button variant="primary" className='primarybutton' onClick={handleShow}>
-                  <Buttn1 text={"BOOK NOW"}/>
-                </Button>
+              <Link
+                      to={{
+                        pathname: `packages/${(item.PkgName).replace(/ /g,'')}`,
+                        state: {
+                          // whatever you need to send with the route transition
+                        },
+                      }}
+                      onClick={() => {
+                        window.scrollTo({
+                          top: 0,
+                          left: 0,
+                          behavior: "smooth",
+                        });
+                      }}
+                    >
+                    <SimpleBtn text={"Read more"}/>
+                    </Link>
               </div>
             </div>
             {/* <Link to={item.PkgName}>

@@ -33,7 +33,7 @@ const Fly = () => {
             <>
             <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-         <h2 className='applyfromclass'>{item.Designation}</h2>
+         <h2 className='applyfromclass'>{item.Type}</h2>
         </Modal.Header>
         <Popup/>
       </Modal>

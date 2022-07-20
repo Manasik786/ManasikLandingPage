@@ -43,12 +43,13 @@ console.log("The Main",data)
             getlanguage != 'english'? <>
             <>
             {
-                data.slice(0,3).map((item,i) => {
+                data.slice(0,5).map((item,i) => {
                     return(
-                      <>
+                      
+                      (item.CardType) === 'service' ? <>
                       <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
-                          <h2>{item.CardTitle}</h2>
+                        <h2 className='applyfromclass'>{item.CardTitle}</h2>
                         </Modal.Header>
                         <Popup />
                       </Modal>
@@ -79,7 +80,9 @@ console.log("The Main",data)
                         </div>
                       </div>
                     </div>
-                      </>
+                      </>: <></>
+                      
+                      
                     )
                 })
             }

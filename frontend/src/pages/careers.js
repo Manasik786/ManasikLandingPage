@@ -21,7 +21,11 @@ const Careers = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [loading,setLoading] = useState(true);
 
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 1000)
+  })
   const[card,setCard] = useState([]);
   useEffect(() => {
     const getData = async() => {
@@ -33,7 +37,15 @@ const Careers = () => {
 
   return (
    <>
-    <Modal show={show} onHide={handleClose}>
+    {
+      loading ? <>
+      <div className='outerloader'>
+                <div class="loader">
+                </div>
+                </div>
+      </> : <>
+      
+      <Modal show={show} onHide={handleClose}>
     <Modal.Header closeButton></Modal.Header>
     <Popup />
    </Modal>
@@ -55,13 +67,13 @@ const Careers = () => {
           <p className="career-style">
             {item.CardDescriptions}
           </p>
-          <Button
+          {/* <Button
                         variant="primary"
                         className="primarybutton "
                         onClick={handleShow}
                       >
                         <Buttn1 text={"BOOK NOW"} />
-                      </Button>
+                      </Button> */}
         </div>
       </div>
     </div>
@@ -153,7 +165,8 @@ const Careers = () => {
    </div>
     </>
    }
-  
+      </>
+    }
    </>
   );
 };

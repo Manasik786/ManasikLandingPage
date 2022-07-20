@@ -23,11 +23,20 @@ const Whoweare = () => {
     const getdata = async () => {
       const { data } = await axios.get(`/api/v1/CardItems`);
       setCard(data.data);
-      console.log("New Data",card)
+      
     };
     getdata();
   }, []);
 
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const getdata = async () => {
+      const { data } = await axios.get(`/api/v1/GalleryItems`);
+      setData(data.data);
+      
+    };
+    getdata();
+  }, []);
   
   return (
     <>
@@ -112,33 +121,29 @@ const Whoweare = () => {
         getlanguage != 'english' ? <>
         <div className="about-bg">
        <div className="scaleimage-about">
-       <div className="aboutcard11">
-       <div className='popular-card'>
+      
+        {
+           data.slice(0,2).map((item) => {
+            return(
+              <div className="aboutcard11">
+              <div className='popular-card' key={item._id}>
             <div className="about-images1">
             <div className='images1'>
-              <img src={Img1}/>
+              <img src={item.images[0].url}/>
 
             </div>
-            <h5>Makkah</h5>
-            <h6>From USD 47,535</h6>
-            </div>
-            
-          </div>
-       </div>
-
-          <div className="aboutcard11">
-          <div className='popular-card'>
-            <div className="about-images1">
-            <div className='images1'>
-              <img src={Img2}/>
-
-            </div>
-            <h5>Makkah</h5>
-            <h6>From USD 47,535</h6>
+            <h5>{item.CardType}</h5>
+            {/* <h6>From USD 47,535</h6> */}
             </div>
             
           </div>
           </div>
+            )
+          })
+        }
+       
+       
+
        </div>
        </div>
         </> : <>

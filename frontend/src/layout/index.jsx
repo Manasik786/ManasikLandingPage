@@ -21,7 +21,7 @@ import Gallery from '../pages/Gallery';
 import Spinner from '../assets/images/spinner.png'
 import NotFound from '../pages/NotFound'
 import AmbulanceDetail from '../pages/AmbulanceDetail'
-
+import Translator from '../pages/Translator';
 
 import '../search.css'
 import ServiceDetails from '../pages/ServiveDetail';
@@ -70,6 +70,7 @@ const Layout = () => {
                         <Route path='/term&condition' element={<Term />} />
                         <Route path='/gallery' element={<Gallery />} />
                         <Route path='/*' element={<NotFound/>} />
+                        <Route path='/Transtate' element={<Translator />} />
                     </Routes>
                 </div>
             </div>

@@ -65,9 +65,7 @@ const Air_ambulance = () => {
               professional international Air Ambulance services using latest
               medical techniques and equipment.
             </p>
-            <Button variant="primary" className='primarybutton' onClick={handleShow}>
-                  <Buttn1 text={"Book NOW"}/>
-                </Button>
+            
 
           </div>
           <div className="abulance22"></div>
@@ -81,7 +79,7 @@ const Air_ambulance = () => {
                 <div className="airambulance-cards air_rowreverse" key={item._id}>
                   <div className="ambulance-item">
                     <div className="ambulancetext">
-                    <h2>{item.CardTitle}</h2>
+                    <h2>{item.CardDetail}</h2>
                     <p>
                       {item.CardDescriptions}
                     </p>

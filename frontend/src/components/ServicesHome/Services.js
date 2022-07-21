@@ -11,7 +11,7 @@ import Modal from "react-bootstrap/Modal";
 import Popup from "../Form/Popup";
 import axios from 'axios';
 
-const Services = () => {
+const Services = (props) => {
     const cookies = new Cookies();
     const [getlanguage,setLanguage] = useState(cookies.get("language"));
     const [show, setShow] = useState(false);
@@ -43,7 +43,8 @@ console.log("The Main",data)
             getlanguage != 'english'? <>
             <>
             {
-                data.slice(0,5).map((item,i) => {
+              //  data.slice(0,8).map((item,i) => {
+                data.map((item,i) => {
                     return(
                       
                       (item.CardType) === 'service' ? <>

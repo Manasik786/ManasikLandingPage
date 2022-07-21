@@ -16,7 +16,7 @@
     }
     .header-banner .search-main {
         position: absolute;
-        margin-top: 70vh;
+        margin-top: -5vh;
         /* bottom: -6%; */
         width: 70%;
         background-color: #d4af37;
@@ -98,7 +98,7 @@
     }
     .header-banner .search-main {
         position: absolute;
-        margin-top: 70vh;
+        margin-top: -6vh;
         /* bottom: -6%; */
         width: 70%;
         background-color: #d4af37;
@@ -182,7 +182,7 @@
     }
     .header-banner .search-main {
         position: absolute;
-        margin-top: 70vh;
+        margin-top: -6vh;
         /* bottom: -6%; */
         width: 70%;
         background-color: #d4af37;
@@ -244,7 +244,7 @@
 
 @media (max-width: 1441px) and (min-width: 1640){
     .home-main {
-        margin-top: 65%;
+        margin-top: 8vh;
     }
     .header .custom-nav .navbar-nav li .nav-link {
         text-transform: uppercase;
@@ -315,17 +315,37 @@
         height: 100vh;
     }
     
-    .header-banner .bg-video-wrap {
-        height: 75vh;
-    }
-    .header-banner {
-        height: 75vh;
-    }
+    // .header-banner .bg-video-wrap {
+    //     height: 75vh;
+    // }
+    // .header-banner {
+    //     height: 75vh;
+    // }
     .header-banner .search-main .search-section {
         padding: 1rem 1rem 1rem 3rem;
     }
     .header-banner .search-main{
-        margin-top: 68vh;
+        margin-top: -7vh;
+    }
+    .newabc {
+        height: 70vh;
+        width: 100% !important;
+        position: relative;
+        font-family: Arial;
+    }
+    .newabc img{
+        height: 70vh;
+        width: 100%;
+      }
+
+      .text-block {
+        position: absolute;
+        top: 110px;
+        left: 100px;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 380px;
     }
     // .header-banner .search-main {
     //     bottom: -10%;
@@ -521,14 +541,20 @@
         
       }
     .header-banner .bg-video-wrap {
-        height: 55vh;
+        height: 35vh;
     }
+    .newabc {
+        height: 55vh;
+        width: 100% !important;
+        position: relative;
+        font-family: Arial;
+      }
     .home-main .hotel-services .arabicstyle p {
         font-family: 'Cairo', sans-serif !important;
         font-size: 12px !important;
     }
     .header-banner {
-        height: 55vh;
+        height: 35vh;
     }
     .header-banner .search-main .search-section {
         padding: 1rem 1rem 1rem 3rem;
@@ -624,7 +650,7 @@
     }
     .header-banner .search-main {
         width:100% ;
-        margin-top: 50vh;
+        margin-top: -6vh;
     }
     .header-banner .banner-main {
         z-index: 5;
@@ -635,7 +661,9 @@
         justify-content: center;
         margin-left: 22vw;
     }
-    
+    .home-main {
+        margin-top: 26vh;
+    }
     .home-main .package-section {
         height: 730px;
     }
@@ -655,6 +683,16 @@
         width: 90%;
         margin: auto;
     }
+    .newabc {
+        height: 50vh;
+        width: 100% !important;
+        position: relative;
+        font-family: Arial;
+    }
+    .newabc img{
+        height: 50vh;
+        width: 100%;
+      }
     .whymanasik {
         height: 580px;
         width: 80%;
@@ -924,7 +962,7 @@
     }
     .header-banner .search-main {
         width:100% ;
-        margin-top: 45vh;
+        margin-top: -6vh;
     }
     .col-12.col-md-6.col-xxl-5.about {
         margin-top: 60px !important;
@@ -983,6 +1021,32 @@
 @media (max-width: 768px) and (min-width: 690px) {
     .header .navbar .navbar-toggler .arabictoggle{
         float: right !important;
+    }
+    .text-block {
+        position: absolute;
+        top: 110px;
+        left: 10px;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 380px;
+    }
+    
+    
+    
+    
+    .text-block p {
+        color: #fff !important;
+        font-size: 1.1rem !important;
+        letter-spacing: -1px;
+        line-height: 2rem;
+        font-weight: 300;
+    }
+    
+    
+    .text-block h1 {
+        font-size: 1.8rem;
+        font-family: "DM Serif Text", serif;
     }
     .ambulance-item h2 {
         color: #d4af37;
@@ -1109,7 +1173,7 @@
         height: 102px;
     }
     .home-main .hotel-services {
-        margin: 2rem 0;
+        margin: 7rem 0;
     }
     .home-main .hotel-services h2 {
         line-height: 1rem;
@@ -1181,7 +1245,7 @@
     .header-banner .search-main {
         width:100% ;
         position: absolute;
-        margin-top: 45vh;
+        margin-top: -6vh;
     }
 
     .col-12.col-md-6.col-xxl-5.about {
@@ -1262,12 +1326,59 @@
     .warning-section p {
         font-size: 14px !important;
     }
+    .newabc {
+        height: 50vh;
+        width: 100% !important;
+        position: relative;
+        font-family: Arial;
+    }
+    .newabc img{
+        height: 50vh;
+        width: 100%;
+      }
 }
 @media (max-width: 689px) and (min-width: 576px){
     .vision {
         width: 90%;
         margin: auto;
     }
+    .text-block {
+        position: absolute;
+        top: 110px;
+        left: 10px;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 380px;
+    }
+    
+    
+    
+    
+    .text-block p {
+        color: #fff !important;
+        font-size: 1.1rem !important;
+        letter-spacing: -1px;
+        line-height: 2rem;
+        font-weight: 300;
+    }
+    
+    
+    .text-block h1 {
+        font-size: 1.8rem;
+        font-family: "DM Serif Text", serif;
+    }
+    
+    .newabc {
+        height: 50vh;
+        width: 100% !important;
+        position: relative;
+        font-family: Arial;
+    }
+    .newabc img{
+        height: 50vh;
+        width: 100%;
+      }
     .ambulance-item h2 {
         color: #d4af37;
         font-size: 22px;
@@ -1416,7 +1527,7 @@
     }
     .home-main .package-section {
         padding: 4rem 0;
-        min-height: 1700px;
+        // min-height: 1700px;
     }
    
     .header-banner .bg-video-wrap {
@@ -1452,7 +1563,7 @@
     }
     .home-main .hotel-services {
         margin: 1rem 0;
-        margin-top: 12vh;
+        margin-top: 25vh;
     }
     
     .home-main .hotel-services h2 {
@@ -1526,7 +1637,7 @@
     .header-banner .search-main {
         width:100% ;
         position: absolute;
-        margin-top: 35vh;
+        margin-top: -6vh;
     }
 
     .col-12.col-md-6.col-xxl-5.about {
@@ -1653,7 +1764,38 @@
 }
 }
 @media (max-width: 576px) and (min-width: 320px) {
-   
+    .newabc {
+        height: 45vh;
+        width: 100% !important;
+        position: relative;
+        font-family: Arial;
+    }
+    .text-block {
+        position: absolute;
+        top: 110px;
+        left: 20px;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 380px;
+    }
+    .text-block p {
+        color: #fff !important;
+        font-size: 1.1rem !important;
+        letter-spacing: -1px;
+        line-height: 2rem;
+        font-weight: 300;
+    }
+    
+    
+    .text-block h1 {
+        font-size: 1.8rem;
+        font-family: "DM Serif Text", serif;
+    }
+    .newabc img{
+        height: 45vh;
+        width: 100%;
+      }
     .home-main .hotel-services .image-section img {
         width: auto;
         height: 300px;
@@ -1855,8 +1997,9 @@
         height: 182px;
     }
     .home-main .hotel-services {
-        margin: 1rem 0;
+        margin: 10rem 0;
     }
+    
     .home-main .hotel-services h2 {
         line-height: 1rem;
         font-size: 2rem !important;

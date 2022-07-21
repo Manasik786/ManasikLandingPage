@@ -17,12 +17,12 @@ const Test = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 800,
     autoplay: true,
     slidesToShow: 1,
     centerMargin: "20px",
     slidesToScroll: 1,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     cssEase: "linear",
     
   };

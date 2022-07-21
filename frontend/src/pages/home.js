@@ -23,6 +23,8 @@ import '../search.css'
 import axios from 'axios'
 import AboutManasik from '../components/Card/About'
 import BaannerTest from '../pages/Test'
+import Slider1 from '../pages/Test'
+
 
 const Home = ({ onHandleClick }) => {
   const cookies = new Cookies();
@@ -87,7 +89,7 @@ const Home = ({ onHandleClick }) => {
     <>
     
       <div className="header-banner">
-        <Banner />
+        <Slider1 />
         <Search />
       </div>
       <Modal show={show} onHide={handleClose} className='modalclass'>

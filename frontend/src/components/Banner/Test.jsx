@@ -20,29 +20,25 @@ const Test = () => {
 
   
  
-  if (pathname === "/contactus") return(
+   if (pathname === "/contactus") return(
     <>
     <div className="contact-banner">
-    {
-      card.map((item) => {
-        return(
-          (item.CardType === 'cantactbanner' ? <>
-          <div class="container121">
-          <img src={item.images[0].url} alt="Nature"/>
-          <div class="text-block">
-          <section class="banner-main ml3">
-         <h1>{item.CardTitle}</h1>
-         <p>{item.CardDetail}</p>
-         <p>{item.CardDescriptions}</p>
-       </section>
-          </div>
-        </div>
-          </>:<></>)
-        )
-      })
-    }
+       {
+        getlanguage != 'english' ? <>
+        <div className="banner-content ">
+         <h1>Contact</h1>
+         <p>Manasik Aviation is basically airline</p>
+         <p>and does business of airline</p>
+       </div>
+        </> : <>
+        <div className="banner-content arabic-banner">
+         <h1>وظائف</h1>
+         <p>ماناسيك للطيران هي في الأساس شركة طيران</p>
+         <p>ويقوم بأعمال الطيران</p>
+       </div>
+        </>
+       }
      </div>
-    
     </>
   );
   else if (pathname === "/careers") return(

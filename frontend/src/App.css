@@ -10,7 +10,7 @@ font-family: 'Roboto', sans-serif;
 }
 .contact-banner{
  height: 200px;
- background-image: url('./assets/images/banner11.jpeg');
+ background-image: url('./assets/images/banner.png');
  background-position: center;
  background-size: cover;
  background-repeat: no-repeat;
@@ -1524,3 +1524,4 @@ p {
   outline: 0;
   overflow: hidden;
 }
+

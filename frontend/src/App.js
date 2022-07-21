@@ -11,7 +11,7 @@ import Cookies from "universal-cookie";
 import AOS from 'aos';
 import "aos/dist/aos.css";
 import CookieConsent from "react-cookie-consent";
-
+// import './new.css';
 
 
 function App() {

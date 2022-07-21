@@ -31,6 +31,7 @@ const Fly = () => {
       {
         card.map((item) => {
           return(
+            (item.Type === 'MANASIK HOTEL'? <>
             <>
             <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -51,9 +52,9 @@ const Fly = () => {
             <div className="depart-item">Valid till {item.Valid}</div>
           </div>
           <div className="department-description">
-            <p>
+            {/* <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only.
-            </p>
+            </p> */}
           </div>
           <Button variant="primary" className='primarybutton' onClick={handleShow}>
           <Buttn1 className={"mt-4"} text="APPLY NOW" />
@@ -61,6 +62,7 @@ const Fly = () => {
       </div>
       <hr className="hr-color"/>
             </>
+            </> : <></>)
           )
         })
       }

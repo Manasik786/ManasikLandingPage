@@ -71,6 +71,7 @@ const Layout = () => {
                         <Route path='/gallery' element={<Gallery />} />
                         <Route path='/*' element={<NotFound/>} />
                         <Route path='/Transtate' element={<Translator />} />
+                        <Route path='/abc' element={Technology}/>
                     </Routes>
                 </div>
             </div>

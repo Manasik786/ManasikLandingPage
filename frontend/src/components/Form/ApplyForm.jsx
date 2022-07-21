@@ -5,7 +5,7 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 import Capcha from '../../pages/Translator'
 
-const Popup = () => {
+const Popup = (props) => {
 
   const [data,setData] = useState({
     Name: "",
@@ -28,7 +28,7 @@ const Popup = () => {
 
   useEffect(() => {
     const getData = async() => {
-      const {data} = await axios.get(`/api/v1/AirAmbulance`);
+      const {data} = await axios.get(`/api/v1/CareerInquiry`);
       setCard(data.data)
     }
     getData()
@@ -60,6 +60,7 @@ console.log(data)
     <>
     {
       getlanguage != 'english'? <>
+
        <div className="popup1">
         <Form className="popupform" onSubmit={PostForm}>
           <Row className="mb-3">
@@ -101,13 +102,37 @@ console.log(data)
           
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
-              
-              <Form.Control type="text" placeholder="Position"
+            {/* <select class="form-select" aria-label="Default select example" name="Position"
+            onChange={(e) => handleChange(e)}
+            >
+             {
+              card.map((item) => {
+                return(
+                  <div key={item._id}>
+                  <option value={item.Designation}>{item.Designation}</option>
+                  </div>
+                )
+              })
+             }
+            </select> */}
+            <Form.Control type="text" placeholder="Position" 
               name="Position"
-              
-              required
+              required = {true} 
+            
               onChange={(e) => handleChange(e)}
               />
+            {/* {
+              card.map((item) => {
+                return(
+              <Form.Control type="text" placeholder="Position" 
+              name="Position"
+              required = {true} value={item.Designation}
+              onChange={(e) => handleChange(e)}
+              />
+                )
+              })
+            } */}
+              
             </Form.Group>
           </Row>
           <div className="radionbtnfoem">

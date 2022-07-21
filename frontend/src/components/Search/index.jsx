@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import airlineIcon from "../../assets/images/airplane.png";
 import airline2Icon from "../../assets/images/airplane_2.png";
 import userIcon from "../../assets/images/user.png";
@@ -20,11 +20,11 @@ const Search = () => {
   return (
     <>
     <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                <h2 className='applyfromclass'>Search Flight</h2>
-                </Modal.Header>
-                <Popup />
-              </Modal>
+      <Modal.Header closeButton>
+       <h2 className='applyfromclass'>Search Flight</h2>
+        </Modal.Header>
+        <Popup />
+        </Modal>
     <div className="search-main">
       <div className="search-section">
         <div className="main-heading">

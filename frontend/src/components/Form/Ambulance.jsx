@@ -18,9 +18,11 @@ const [getlanguage,setLanguage] = useState(cookies.get("language"));
 const { pathname } = useLocation();
 
 let str = pathname;
-  str = str.substring(16);
-  let newpath = str.replace(/([A-Z])/g, ' $1').trim()
-  console.log("Path is 1",newpath)
+str = str.substring(27);
+let checkpath = str.substring(0,5)
+console.log("new one",str)
+console.log("new one",checkpath)
+
   const [data,setData] = useState({
 
     Name:"",
@@ -37,7 +39,7 @@ let str = pathname;
     relativecontact:"",
     Reasontovisitksa:"",
     Religion:"",
-    Servicetype: newpath
+    Servicetype: str
   })
 //   const [images, setImages] = useState([]);
 useEffect(() => {

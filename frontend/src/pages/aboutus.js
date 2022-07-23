@@ -13,6 +13,8 @@ import Img2 from "../assets/images/madinah1.png";
 import axios from "axios";
 import CEOMessage from "../components/Card/CEOMessage";
 import AboutManasik from '../components/Card/About'
+import WhyManasik from '../components/Card/WhyManasik'
+
 const Whoweare = () => {
   
   const cookies = new Cookies();
@@ -71,6 +73,7 @@ const Whoweare = () => {
               <div className="col-12 col-md-6 col-xxl-5 z-index">
                 <div className="row g-0">
                   <AboutManasik/>
+                  
                 </div>
               </div>
             </div>
@@ -115,7 +118,6 @@ const Whoweare = () => {
         </div>
        <div className="vision">
        <Card/>
-       
        </div>
        {
         getlanguage != 'english' ? <>

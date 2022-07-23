@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import Buttn1 from "../components/Button/index";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Popup from "../components/Form/Popup";
+import Popup from "../components/Form/Ambulance";
 import Cookies from "universal-cookie";
 
 

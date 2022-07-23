@@ -2,7 +2,6 @@ import React, { useState,useEffect } from 'react'
 import Header from '../components/Header';
 import { Routes, Route } from "react-router-dom";
 import Home from '../pages/home';
-import Technology from '../pages/technology';
 import Aboutus from '../pages/aboutus';
 import Contactus from '../pages/contactUs';
 import Footer from '../components/Footer/index';
@@ -22,9 +21,11 @@ import Spinner from '../assets/images/spinner.png'
 import NotFound from '../pages/NotFound'
 import AmbulanceDetail from '../pages/AmbulanceDetail'
 import Translator from '../pages/Translator';
-
+import Technology from '../pages/technology'
 import '../search.css'
 import ServiceDetails from '../pages/ServiveDetail';
+
+
 const Layout = () => {
     const [selectedBanner, setSelectedBanner] = useState('home');
     let id1 = 'contactus'
@@ -55,6 +56,7 @@ const Layout = () => {
                 <div className='row g-0'>
                 <div className='col-12'>
                     <Routes>
+                        
                         <Route path='/' element={<Home />} />
                         <Route path='/test' element={<Test />} />
                         <Route path='/aboutus' element={<Aboutus />} />
@@ -71,7 +73,7 @@ const Layout = () => {
                         <Route path='/gallery' element={<Gallery />} />
                         <Route path='/*' element={<NotFound/>} />
                         <Route path='/Transtate' element={<Translator />} />
-                        <Route path='/abc' element={Technology}/>
+                        <Route path='/abc' element={ <Technology />}/>
                     </Routes>
                 </div>
             </div>

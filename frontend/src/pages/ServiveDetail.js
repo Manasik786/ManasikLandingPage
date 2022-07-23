@@ -26,7 +26,7 @@ const ServiceDetails = () => {
   let str = pathname;
   str = str.substring(16);
   let newpath = str.replace(/([A-Z])/g, ' $1').trim()
-  // console.log("Path is 1",newpath)
+  console.log("Path is 1",newpath)
 
 
   return (

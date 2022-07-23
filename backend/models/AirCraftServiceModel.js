@@ -63,6 +63,8 @@ const AircraftServiceModel = new mongoose.Schema({
     CateringService: {
         type: Boolean,
         default: 1,
+
+
     },
     Notes: {
         type: String,

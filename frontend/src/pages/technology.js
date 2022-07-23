@@ -1,22 +1,204 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Form, Row, Col, Button } from "react-bootstrap";
 
-const technology = () => {
+export default function ServicesAddition() {
+  const [images, setImages] = useState([]);
+  const [imagesPreview, setImagesPreview] = useState([]);
+  const [oldImages, setOldImages] = useState([]);
+  const [Name, setName] = useState(" ");
+  const [Email, setEmail] = useState(" ");
+  const [Gender, setGender] = useState(" ");
+  const [Phone, setPhone] = useState("");
+  const [Nationality, setNationality] = useState(" ");
+  const [Position, setPosition] = useState(" ");
+  const [Cv, setCv] = useState([]);
+
+  const [data, setData] = useState({
+    Name: Name,
+    Email: Email,
+    Phone: Phone,
+    Nationality: Nationality,
+    Position: Position,
+    Gender: Gender,
+    Cv: " ",
+    images: " ",
+  });
+  const handleChange = (event) => {
+    setData({
+      ...data,
+      [event.target.name]: event.target.value,
+    });
+    console.log(data);
+  };
+  useEffect(() => {}, []);
+  const createProductSubmitHandler = async (e) => {
+    e.preventDefault();
+    setName(Name);
+    setEmail(Email);
+    setPhone(Phone);
+    setNationality(Nationality);
+    setPosition("ABCD");
+    setGender('male')
+
+    const myForm = new FormData();
+    myForm.append("Name", data.Name);
+    myForm.append("Email", data.Email);
+    myForm.append("Phone", data.Phone);
+    myForm.append("Nationality", data.Nationality);
+    myForm.append("Position", "abcd");
+    myForm.append("Gender", "abcd");
+
+
+    // myForm.append("images", data.images);
+
+    images.forEach((image) => {
+      myForm.append("images", image);
+    });
+    Cv.forEach((cv) => {
+      myForm.append("Cv", cv);
+    });
+    console.log(data, "dsad");
+    try {
+      const response = await axios.post(`/api/v1/createapplicants`, myForm);
+      console.log(response);
+      console.log(myForm);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const createServiceImagesChange = (e) => {
+    const files = Array.from(e.target.files);
+
+    setImages([]);
+
+    files.forEach((file) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          setImagesPreview((old) => [...old, reader.result]);
+          setImages((old) => [...old, reader.result]);
+        }
+      };
+      console.log(file);
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const createServiceImagesChange1 = (e) => {
+    const files = Array.from(e.target.files);
+
+    setCv([]);
+
+    files.forEach((file) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          setCv((old) => [...old, reader.result]);
+        }
+      };
+      console.log(file);
+      reader.readAsDataURL(file);
+    });
+  };
   return (
     <>
-     <div class="container">
-    <h1>Checkout Form</h1>
-    <form class="form cf">
-      <section class="plan cf">
-        <h2>Choose a plan:</h2>
-        <input type="radio" name="radio1" id="free" value="free"/><label class="free-label four col" for="free">Free</label>
-        <input type="radio" name="radio1" id="basic" value="basic" checked/><label class="basic-label four col" for="basic">Basic</label>
-        <input type="radio" name="radio1" id="premium" value="premium"/><label class="premium-label four col" for="premium">Premium</label>
-      </section>
+      <Form className="popupform">
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridName">
+            <Form.Control
+              type="text"
+              placeholder="Name"
+              name="Name"
+              required
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group as={Col} controlId="formGridName">
+            <Form.Control
+              type="email"
+              placeholder="Email"
+              name="Email"
+              required
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </Row>
 
-    </form>
-  </div>
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Control
+              type="number"
+              placeholder="Phone"
+              name="Phone"
+              required
+              onChange={handleChange}
+            />
+          </Form.Group>
+
+          <Form.Group as={Col} controlId="formGridName">
+            <Form.Control
+              type="text"
+              placeholder="Nationality"
+              name="Nationality"
+              required
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </Row>
+
+        <Row className="mb-3">
+          <Form.Group
+            as={Col}
+            controlId="formGridEmail"
+           
+          >
+            <Form.Control
+              type="text"
+              placeholder="Position"
+              name="Position"
+              
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </Row>
+        <div className="radionbtnfoem">
+          <input
+            type="radio"
+            name="Gender"
+            value="male"
+            onChange={handleChange}
+          />{" "}
+          <span className="mgender">Male</span>
+          <input
+            type="radio"
+            name="Gender"
+            value="female"
+            onChange={handleChange}
+          />{" "}
+          <span className="mgender">Female</span>
+        </div>
+        <Form.Group className="mb-3" controlId="formGridAddress2">
+          <Form.Control
+            type="file"
+            name="images"
+            accept="image/*"
+            onChange={createServiceImagesChange}
+            multiple
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formGridAddress2">
+          <Form.Control
+            type="file"
+            name="Cv"
+            accept="image/*"
+            onChange={createServiceImagesChange1}
+            multiple
+          />
+        </Form.Group>
+
+        <button onClick={createProductSubmitHandler}>SubmitSS</button>
+      </Form>
     </>
-  )
+  );
 }
-
-export default technology

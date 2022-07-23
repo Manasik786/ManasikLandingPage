@@ -7,7 +7,7 @@ import img2 from "../assets/images/Yanbu.jpg";
 import ArabicButton from "../components/Button/Arabic";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Popup from "../components/Form/Popup";
+import Popup from "../components/Form/Packages";
 
 const Packages = () => {
 
@@ -63,9 +63,9 @@ const Packages = () => {
                     <h2>{item.PkgName} </h2>
                    {item.PkgDetail}
                     <div className="packagesdetails_include">
-                      <p>Hotel Include</p>
-                      <p>{item.DaysOfstay}</p>
-                      <p>Valid till {item.ValidTill}</p>
+                      {/* <p>Hotel Include</p> */}
+                      <p>Number of Days <span className='DaysOfstay'>{item.DaysOfstay}</span></p>
+                      <p>Valid till <span className='DaysOfstay'>{item.ValidTill}</span></p>
                     </div>
                     <Button
                       variant="primary"

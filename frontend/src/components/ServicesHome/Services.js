@@ -29,8 +29,20 @@ const Services = (props) => {
     };
     getdata();
   }, []);
+  const Service = async id => {
 
-console.log("The Main",data)
+    const { data } = await axios.get('/api/v1/CardItems');
+    console.log(data.data[0]._id)
+    for (let i = 0; i < data.data.length; i++) {
+      console.log(data.data[i])
+      if (id == data.data[i]._id) {
+        console.log(data.data[i])
+        await window.localStorage.setItem("D", JSON.stringify(data.data[i]))
+      }
+
+    }
+  }
+
 
   return (
     <>
@@ -44,13 +56,13 @@ console.log("The Main",data)
             <>
             {
               //  data.slice(0,8).map((item,i) => {
-                data.map((item,i) => {
+                data.slice(0,9).map((item,i) => {
                     return(
                       
                       (item.CardType) === 'service' ? <>
                       <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
-                        <h2 className='applyfromclass'>{item.CardTitle}</h2>
+                        <h2 className='applyfromclass'>Services</h2>
                         </Modal.Header>
                         <Popup />
                       </Modal>

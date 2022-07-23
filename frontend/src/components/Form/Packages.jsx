@@ -18,9 +18,8 @@ const [getlanguage,setLanguage] = useState(cookies.get("language"));
 const { pathname } = useLocation();
 
 let str = pathname;
-  str = str.substring(16);
-  let newpath = str.replace(/([A-Z])/g, ' $1').trim()
-  console.log("Path is 1",newpath)
+  str = str.substring(10);
+
   const [data,setData] = useState({
 
     Name:"",
@@ -31,13 +30,13 @@ let str = pathname;
     Phone:"",
     passportno:"",
     nationalid:"",
-    upload: " ",
+    upload:"",
     StayPeriod:"",
     Visitedbefore: "",
     relativecontact:"",
     Reasontovisitksa:"",
     Religion:"",
-    Servicetype: newpath
+    Servicetype: str
   })
 //   const [images, setImages] = useState([]);
 useEffect(() => {
@@ -92,11 +91,10 @@ console.log(data)
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
               
-              <Form.Control type="date" placeholder="Date of Birth"  id="dob"
+              <Form.Control type="date" placeholder="Date of Birth" 
               name="DOB"
               onChange={(e) => handleChange(e)}
               />
-             <label for="img1">Enter Date Of Birth</label>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridEmail">
@@ -144,12 +142,10 @@ console.log(data)
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
               
-              <Form.Control type="text" placeholder="Upload Document"
+              <Form.Control type="text" placeholder="Upload Document" 
               name="upload"
-              id="upload1"
               onChange={(e) => handleChange(e)}
               />
-              <label for="upload1">Click me to upload Profile Pic</label>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="Stay Period (Number of Days)" 

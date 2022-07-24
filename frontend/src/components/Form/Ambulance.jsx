@@ -18,64 +18,128 @@ const [getlanguage,setLanguage] = useState(cookies.get("language"));
 const { pathname } = useLocation();
 
 let str = pathname;
-str = str.substring(27);
-let checkpath = str.substring(0,5)
-console.log("new one",str)
-console.log("new one",checkpath)
-
-  const [data,setData] = useState({
-
-    Name:"",
-    familyname: "",
-    DOB:"",
-    Email: "",
-    country:"",
-    Phone:"",
-    passportno:"",
-    nationalid:"",
-    upload: " ",
-    StayPeriod:"",
-    Visitedbefore: "",
-    relativecontact:"",
-    Reasontovisitksa:"",
-    Religion:"",
-    Servicetype: str
-  })
-//   const [images, setImages] = useState([]);
-useEffect(() => {
-  PostForm();
-}, []);
+  str = str.substring(16);
+  let newpath = str.replace(/([A-Z])/g, ' $1').trim()
+  console.log("Path is 1",newpath)
+  const [upload, setupload] = useState([]);
+  const [imagesPreview, setImagesPreview] = useState([]);
+  const [oldImages, setOldImages] = useState([]);
+  const [Name, setName] = useState(" ");
+  const [Email, setEmail] = useState(" ");
+  const [country,setcountry] = useState(" ");
+  const [Phone, setPhone] = useState("");
+  const [DOB, setDOB] = useState(" ");
+  const [familyname,setfamilyname] = useState(" ")
+  const [passportno, setpassportno] = useState(" ");
+  const [nationalid, setnationalid] = useState(" ");
+  const [StayPeriod, setStayPeriod] = useState(" ");
+  const [Visitedbefore, setVisitedbefore] = useState(" ");
+  const [relativecontact, setrelativecontact] = useState(" ");
+  const [Reasontovisitksa, setReasontovisitksa] = useState(" ");
+  const [Religion, setReligion] = useState(" ");
+  const [Servicetype,SetservicesType] = useState("Transpotation ")
 
 
-const handleChange = (e) => {
-  const { name, value } = e.target;
-  setData({ ...data, [name]: value });
-};
-const PostForm = async (e) => {
-  e.preventDefault();
-  try {
-      const config = {
-          headers: { "Content-Type": "application/json" },
-        };
-    const response = await axios.post(
-      `/api/v1/createBookingForm`,data,config
-    );
-  alert("Submitted");
-  } catch (err) {
-    const Error = err.response.data;
-    alert(Error.message)
-   
-  }
+  const [data, setData] = useState({
+    Name: Name,
+    familyname: familyname,
+    DOB:DOB,
+    Email: Email,
+    country:country,
+    Phone:Phone,
+    passportno:passportno,
+    nationalid:nationalid,
+    StayPeriod:StayPeriod,
+    Visitedbefore: Visitedbefore,
+    relativecontact:relativecontact,
+    Reasontovisitksa:Reasontovisitksa,
+    Religion:Religion,
+    Servicetype: Servicetype,
+    upload:" ",
+    
+  });
+  const handleChange = (event) => {
+    setData({
+      ...data,
+      [event.target.name]: event.target.value,
+    });
+    console.log(data);
+  };
+  useEffect(() => {}, []);
+  const createProductSubmitHandler = async (e) => {
+    e.preventDefault();
+    setName(Name);
+    setEmail(Email);
+    setPhone(Phone);
+    setDOB(DOB);
+    setfamilyname(familyname);
+    setpassportno(passportno);
+    setnationalid(nationalid);
+    setStayPeriod(StayPeriod);
+    setVisitedbefore(Visitedbefore);
+    setReasontovisitksa(Reasontovisitksa);
+    setReligion(Religion);
+    setcountry(country);
+    SetservicesType(Servicetype);
 
-console.log(data)
-}
+    const myForm = new FormData();
+    myForm.append("Name", data.Name);
+    myForm.append("Email", data.Email);
+    myForm.append("Phone", data.Phone);
+    myForm.append("familyname", data.familyname);
+    myForm.append("DOB",data.DOB);
+    myForm.append("country",data.country)
+    myForm.append("passportno",data.passportno)
+    myForm.append("nationalid",data.nationalid)
+    myForm.append("StayPeriod",data.StayPeriod)
+    myForm.append("Visitedbefore",data.Visitedbefore)
+    myForm.append("relativecontact",data.relativecontact)
+    myForm.append("Reasontovisitksa",data.Reasontovisitksa)
+    myForm.append("Religion",data.Religion)
+    myForm.append("ServicesType",data.Servicetype)
+
+
+    // myForm.append("images", data.images);
+
+    upload.forEach((image) => {
+      myForm.append("upload", image);
+    });
+    
+    console.log(data, "dsad");
+    try {
+      const response = await axios.post(`/api/v1/createBookingForm`, myForm);
+      console.log(response);
+      console.log(myForm);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const createServiceImagesChange = (e) => {
+    const files = Array.from(e.target.files);
+
+    setupload([]);
+
+    files.forEach((file) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          setImagesPreview((old) => [...old, reader.result]);
+          setupload((old) => [...old, reader.result]);
+        }
+      };
+      console.log(file);
+      reader.readAsDataURL(file);
+    });
+  };
+
+  
 
   return (
     <>
     {
       getlanguage != 'english'? <>
       <div className="popup1">
-        <Form className="popupform" onSubmit={PostForm}>
+      <Form className="popupform">
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridName">     
               <Form.Control type="text" placeholder="Name" 
@@ -98,7 +162,7 @@ console.log(data)
               name="DOB"
               onChange={(e) => handleChange(e)}
               />
-             <label for="img1">Enter Date Of Birth</label>
+             <label for="img1" className="label11">Enter Date Of Birth</label>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridEmail">
@@ -146,12 +210,13 @@ console.log(data)
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
               
-              <Form.Control type="text" placeholder="Upload Document"
+              <Form.Control type="file" placeholder="Upload Document"
               name="upload"
-              id="upload1"
-              onChange={(e) => handleChange(e)}
+              accept="image/*"
+            onChange={createServiceImagesChange}
+            multiple
               />
-              <label for="upload1">Click me to upload Profile Pic</label>
+              <label for="upload1" className="label11">Click to upload Profile Pic</label>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="Stay Period (Number of Days)" 
@@ -208,13 +273,13 @@ console.log(data)
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          <Capcha/>
-          <SubmitButton text={"Submit"}/>
+         
+          <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
         </Form>
       </div>
       </> : <>
       <div className="popup1">
-        <Form className="popupform" onSubmit={PostForm}>
+        <Form className="popupform">
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridName" className="arabicfont">     
               <Form.Control type="text" placeholder="اسم" 

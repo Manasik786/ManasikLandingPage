@@ -10,6 +10,7 @@ import axios from "axios";
 import { Form, Row, Col } from "react-bootstrap";
 import SubmitButton from "../Button/large";
 import Capcha from "../../pages/Translator";
+import Moment from 'react-moment';
 
 const Fly = () => {
   const cookies = new Cookies();
@@ -62,16 +63,16 @@ const Fly = () => {
     setEmail(Email);
     setPhone(Phone);
     setNationality(Nationality);
-    setPosition("ABCD");
-    setGender('male')
+    setPosition(Position);
+    setGender(Gender)
 
     const myForm = new FormData();
     myForm.append("Name", data.Name);
     myForm.append("Email", data.Email);
     myForm.append("Phone", data.Phone);
     myForm.append("Nationality", data.Nationality);
-    myForm.append("Position", "abcd");
-    myForm.append("Gender", "abcd");
+    myForm.append("Position", data.Position);
+    myForm.append("Gender", data.Gender);
 
 
     // myForm.append("images", data.images);
@@ -87,8 +88,12 @@ const Fly = () => {
       const response = await axios.post(`/api/v1/createapplicants`, myForm);
       console.log(response);
       console.log(myForm);
+      alert("Submitted")
     } catch (err) {
-      console.log(err);
+      
+      const Error = err.response.data;
+    alert(Error.message)
+
     }
   };
   const createServiceImagesChange = (e) => {
@@ -226,7 +231,7 @@ const Fly = () => {
             multiple
             id="image"
           />
-          <label for="image">Upload Profile Picture</label>
+          <label for="image" className="label11">Upload Profile Picture</label>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formGridAddress2">
           <Form.Control
@@ -236,10 +241,11 @@ const Fly = () => {
             onChange={createServiceImagesChange1}
             multiple
             id="cv"
+           
           />
-          <label for="id">Upload CV</label>
+          <label for="id" className="label11">Upload CV</label>
         </Form.Group>
-
+        <Capcha/>
         <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
       </Form>
                 </div>
@@ -254,7 +260,11 @@ const Fly = () => {
                     <h5 className="career-area">{item.Location}</h5>
                   </div>
 
-                  <div className="depart-item">Valid till {item.Valid}</div>
+                  <div className="depart-item">
+                    <Moment format="YYYY/MM/DD">
+                {item.valid}
+            </Moment>
+                    </div>
                 </div>
                 <div className="department-description">
                   {/* <p>

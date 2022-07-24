@@ -1424,6 +1424,22 @@ fieldset {
 legend {
   font-size: 1rem;
   color: rgb(66, 65, 65);
+  padding-left: 12px;
+}
+
+button:active {
+  outline: none;
+  border: none;
+}
+*:focus {
+  outline: 0 !important;
+}
+.btn:focus {
+  outline: none !important;
+}
+
+.btn:focus {
+  box-shadow: none;
 }
 /* .bg-video-wrap .overlay img{
   background-position: center;
@@ -1534,7 +1550,9 @@ p {
   overflow: hidden;
 }
 
-
+.label11{
+  color: #fff !important;
+}
 
 /* .DaysOfstay{
   border: 2px solid #d4af37;

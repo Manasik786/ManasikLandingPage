@@ -62,7 +62,7 @@ const Services = (props) => {
                       (item.CardType) === 'service' ? <>
                       <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
-                        <h2 className='applyfromclass'>Services</h2>
+                        <h2 className='applyfromclass '>Services</h2>
                         </Modal.Header>
                         <Popup />
                       </Modal>
@@ -110,7 +110,7 @@ const Services = (props) => {
                       (item.CardType) === 'service' ? <>
                       <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
-                        <h2 className='applyfromclass'>Services</h2>
+                        <h2 className='applyfromclass '>خدمات</h2>
                         </Modal.Header>
                         <Popup />
                       </Modal>

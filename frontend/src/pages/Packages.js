@@ -118,7 +118,7 @@ const Packages = () => {
               </div>
               <div className="packagesdetails_content">
                     <h2 className='arabic-align'>{item.PkgNamear} </h2>
-                   {item.PkgDetailar}
+                   <p className='arabic-align'> {item.PkgDetailar}</p>
                     <div className="packagesdetails_include">
                       {/* <p>Hotel Include</p> */}
                       <p className='arabic-align'>مدة <span className='DaysOfstay'><span className='pkgstyle'>{item.DaysOfstay}</span> أيام</span></p>

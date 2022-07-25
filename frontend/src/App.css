@@ -1152,7 +1152,7 @@ p.serviceheading {
 }
 
 .packagesdetails_include{
-  width: 70%;
+  width: 100%;
   display: block;
   justify-content: space-between;
 }

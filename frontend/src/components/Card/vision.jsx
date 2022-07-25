@@ -53,28 +53,31 @@ const Index = () => {
 
 
             </>: <>
-            <div className='destination-cards cardarabic'>
+            {
+       card.map((item) => { 
+      return(
+        (item.CardType) === 'aboutpage' ? 
+        <>
+       
+       <div className='destination-cards mappingstyabout' key={item._id}>
           <div className='destination-right'>
-              <h2 className="arabic-align">بعثة</h2>
-              <p className="arabic-align">
-              لدينا نظام مخطط وجبات مصمم خصيصًا لخطة الطريق المحددة ، مع توفير طعام حلال كامل ، لدينا أفضل خدمة تموين للضيف              
-               </p>
-
-               <p className="arabic-align"> 
-             مع الأخذ في الاعتبار الثقافة الجغرافية لوجهتنا ، فقد خصصنا وجبة مع التأكيد على الأطعمة الثقافية مقدمًا ، مما يجعل الضيف أكثر رضا خلال رحلتهم
-             </p>
-
-             <p className="arabic-align"> 
-             مع الأخذ في الاعتبار الثقافة الجغرافية لوجهتنا ، فقد خصصنا وجبة مع التأكيد على الأطعمة الثقافية مقدمًا ، مما يجعل الضيف أكثر رضا خلال رحلتهم
-             </p>
-
+              <h2>{item.CardTitlear}</h2>
+              <p>{item.CardDescriptionsar}</p>
               
             </div>
             <div className='destination-left'>
-              <img src={Img4}/>
+              <img src={item.images[0].url}/>
             </div>
             
           </div>
+        </>
+         : 
+         <>
+          
+         </>
+      )  
+      })
+      }
             </>
           }
           

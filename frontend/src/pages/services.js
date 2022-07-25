@@ -15,7 +15,7 @@ const Services = () => {
         <DestinationCard1/>
         <div className="gap"></div>
       </div>
-      {/* <Footer/> */}
+      
     </>
   );
 };

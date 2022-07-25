@@ -13,6 +13,7 @@ const Packages = (props) => {
   const [card, setCard] = useState([]);
   const { pathname } = useLocation();
   const cookies = new Cookies();
+  const [getlanguage,setLanguage] = useState(cookies.get("language"));
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -35,8 +36,9 @@ const Packages = (props) => {
   return (
    
     <>
-    
     {
+      getlanguage !='english' ? <>
+      {
       card.map((item) => {
         return(
           
@@ -82,6 +84,56 @@ const Packages = (props) => {
           
         )
       })
+    }
+      </> : <>
+      {
+      card.map((item) => {
+        return(
+          
+            ((item.CardDetail).substring(0,5) === checkpath ?
+             < >
+             <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+            <h2 className='applyfromclass'>{item.CardDetail}</h2>
+            </Modal.Header>
+            <Popup />
+          </Modal>
+           <div className="contact-banner" key={item._id}>
+            <div className="banner-content">
+                <h1>{item.CardDetailar}</h1>
+                <p>ماناسيك للطيران هي في الأساس شركة طيران</p>
+                <p>ويقوم بأعمال الطيران</p>
+              </div>
+              
+              </div>
+            
+            <div className="gap"></div>
+            <div className="packagesdetails">
+              <div className="packagesdetails_image">
+                <img src={item.images[0].url} />
+              </div>
+              <div className="packagesdetails_content">
+                    <h2 className='arabic-align'>{item.CardDetailar} </h2>
+                   {item.PkgDetailar}
+                    <div className="packagesdetails_include">
+                      <p className='arabic-align'>{item.CardDescriptionsar}</p>
+                    </div>
+                    <Button
+                      variant="primary"
+                      className="primarybutton"
+                      onClick={handleShow}
+                    >
+                      <Buttn1 text={"BOOK NOW"} />
+                    </Button>
+                  </div>
+            </div>
+            
+            </> :  <></>)
+          
+        )
+      })
+    }
+      </>
     }
     </>
   )

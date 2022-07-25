@@ -8,7 +8,7 @@ const BookingFormSchema = new mongoose.Schema({
     },
     Servicetype: {
         type: String,
-
+        // required: [true, "Please Enter Your Service Type"],
         trim: true
     },
     Name: {

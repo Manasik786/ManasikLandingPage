@@ -56,7 +56,7 @@ const Services = (props) => {
             <>
             {
               //  data.slice(0,8).map((item,i) => {
-                data.slice(0,9).map((item,i) => {
+                data.slice(0,4).map((item,i) => {
                     return(
                       
                       (item.CardType) === 'service' ? <>
@@ -100,62 +100,55 @@ const Services = (props) => {
                 })
             }
             </>
-            </>:<>
-            <div className="row g-0 g-lg-4 g-xxl-4 justify-content-center align-items-center arabicstyle">
-              <div className="image-section d-md-flex col-0 col-md-6 col-xxl-5">
-                <div className="row g-0 flex-column justify-content-center align-items-center align-content-center">
-                  <img src={HotelServiceImage} />
-                </div>
-              </div>
-              <div className="col-12 col-md-6 col-xxl-5 z-index">
-                <div className="row g-0">
-                  <div className="col-12 col-xxl-10 col-xl-10 col-lg-10 col-md-11 ">
-                    <h2 className="arabic-align">خدمات فندقية</h2>
-                    <br />
-                    <p className="arabic-align">
-                    الآن يمكنك حجز فندقك مع طيران مناسيك من خلال
-                      موقعنا الإلكتروني مع نظام حجز سهل
-                    </p>
-                    <br />
-                    <p className="arabic-align">
-                    الآن يمكنك حجز فندقك مع طيران مناسيك من خلال
-                      موقعنا الإلكتروني مع نظام حجز سهل
-                    </p>
-                    <br />
-                    <p className="arabic-align">
-                    الآن يمكنك حجز فندقك مع طيران مناسيك من خلال
-                      موقعنا الإلكتروني مع نظام حجز سهل
-                    </p>
-                    <br />
-                    <p className="arabic-align">يوفر فندقنا جميع الخدمات الأساسية بما في ذلك</p>
-                    <br />
-                    <div className="services-list">
-                      <div className="services-list-main arabic-align">
-                        <i class="fa fa-check"></i> <p>24/7 المساعدة</p>
+            </>:
+            <>
+            {
+              //  data.slice(0,8).map((item,i) => {
+                data.slice(0,4).map((item,i) => {
+                    return(
+                      
+                      (item.CardType) === 'service' ? <>
+                      <Modal show={show} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                        <h2 className='applyfromclass'>Services</h2>
+                        </Modal.Header>
+                        <Popup />
+                      </Modal>
+                      <div className="row g-0 g-lg-4 g-xxl-4 justify-content-center align-items-center mappingstylehome " key={item._id}>
+                      <div className="image-section d-md-flex col-0 col-md-6 col-xxl-5">
+                        <div className="row g-0 flex-column justify-content-center align-items-center align-content-center cardimg">
+                          <img src={item.images[0].url} />
+                        </div>
                       </div>
-                      <div className="services-list-main arabic-align">
-                        <i class="fa fa-check"></i> <p>مطعم</p>
-                      </div>
-                      <div className="services-list-main arabic-align">
-                        <i class="fa fa-check"></i> <p>مغسلة</p>
-                      </div>
-                      <div className="services-list-main arabic-align">
-                        <i class="fa fa-check"></i> <p>خدمات الكابينة</p>
-                      </div>
-                      <div className="services-list-main arabic-align">
-                        <i class="fa fa-check"></i> <p>خدمات تأجير السيارات</p>
+                      <div className="col-12 col-md-6 col-xxl-5 z-index cardtext1">
+                        <div className="row g-0">
+                          <div className="col-12 col-xxl-10 col-xl-10 col-lg-10 col-md-11 ">
+                            <h3 className="servicespage1 arabic-align">{item.CardTitlear}</h3>
+                            <br />
+                            <p className="arabic-align">
+                              {item.CardDescriptionsar}
+                            </p>
+      
+                            <br />
+                            <Button
+                              variant="primary"
+                              className="primarybutton"
+                              onClick={handleShow}
+                            >
+                              <Buttn1 text={"BOOK NOW"} />
+                            </Button>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <br />
-                    <Button variant="primary" className='primarybutton' onClick={handleShow}>
-                    <BackArrow text={"اشتري الآن"} className="backarrowbutton" />
-                    </Button>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
+                      </>: <></>
+                      
+                      
+                    )
+                })
+            }
             </>
+            
            }
           </div>
           </div>

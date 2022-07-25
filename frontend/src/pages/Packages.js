@@ -8,6 +8,7 @@ import ArabicButton from "../components/Button/Arabic";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Popup from "../components/Form/Packages";
+import Cookies from "universal-cookie";
 
 const Packages = () => {
 
@@ -16,6 +17,8 @@ const Packages = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const cookies = new Cookies();
+  const [getlanguage,setLanguage] = useState(cookies.get("language"));
 
   useEffect(() => {
     const getdata = async () => {
@@ -33,7 +36,9 @@ const Packages = () => {
     <Modal.Header closeButton></Modal.Header>
     <Popup />
    </Modal>
-    {
+   {
+    getlanguage != "english" ? <>
+     {
       card.map((item) => {
         return(
           
@@ -64,8 +69,8 @@ const Packages = () => {
                    {item.PkgDetail}
                     <div className="packagesdetails_include">
                       {/* <p>Hotel Include</p> */}
-                      <p>Number of Days <span className='DaysOfstay'>{item.DaysOfstay}</span></p>
-                      <p>Valid till <span className='DaysOfstay'>{item.ValidTill}</span></p>
+                      <p>Duration <span className='DaysOfstay'><span className='pkgstyle'>{item.DaysOfstay}</span> Days</span></p>
+                      <p>Valid till <span className='DaysOfstay'><span className='pkgstyle'>{item.ValidTill}</span> </span></p>
                     </div>
                     <Button
                       variant="primary"
@@ -77,11 +82,67 @@ const Packages = () => {
                   </div>
             </div>
             
-            </> :  <></>)
-          
+            </> :  
+            <>
+            </>
+            ) 
         )
       })
     }
+    </> : <>
+    {
+      card.map((item) => {
+        return(
+          
+            (item.PkgName === str ?
+             <>
+             <Modal show={show} onHide={handleClose}>
+              <Modal.Header closeButton>
+              <h2 className='applyfromclass'>{item.PkgNamear}</h2>
+              </Modal.Header>
+              <Popup />
+            </Modal>
+            <div className="contact-banner">
+            <div className="banner-content">
+                <h1>{item.PkgNamear}</h1>
+                <p>ماناسيك للطيران هي في الأساس شركة طيران</p>
+                <p>ويقوم بأعمال الطيران</p>
+              </div>
+              
+              </div>
+            
+            <div className="gap"></div>
+            <div className="packagesdetails">
+              <div className="packagesdetails_image">
+                <img src={img1} />
+              </div>
+              <div className="packagesdetails_content">
+                    <h2>{item.PkgNamear} </h2>
+                   {item.PkgDetailar}
+                    <div className="packagesdetails_include">
+                      {/* <p>Hotel Include</p> */}
+                      <p>Duration <span className='DaysOfstay'><span className='pkgstyle'>{item.DaysOfstay}</span> Days</span></p>
+                      <p>Valid till <span className='DaysOfstay'><span className='pkgstyle'>{item.ValidTill}</span> </span></p>
+                    </div>
+                    <Button
+                      variant="primary"
+                      className="primarybutton"
+                      onClick={handleShow}
+                    >
+                      <Buttn1 text={"BOOK NOW"} />
+                    </Button>
+                  </div>
+            </div>
+            
+            </> :  
+            <>
+            </>
+            ) 
+        )
+      })
+    }
+    </>
+   }
     </>
   )
 }

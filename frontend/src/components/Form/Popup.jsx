@@ -37,7 +37,7 @@ let str = pathname;
   const [relativecontact, setrelativecontact] = useState(" ");
   const [Reasontovisitksa, setReasontovisitksa] = useState(" ");
   const [Religion, setReligion] = useState(" ");
-  const [Servicetype,SetservicesType] = useState("Transpotation ")
+  const [Servicetype,SetservicesType] = useState(newpath)
 
 
   const [data, setData] = useState({
@@ -54,7 +54,7 @@ let str = pathname;
     relativecontact:relativecontact,
     Reasontovisitksa:Reasontovisitksa,
     Religion:Religion,
-    Servicetype: Servicetype,
+    Servicetype: newpath,
     upload:" ",
     
   });
@@ -80,7 +80,7 @@ let str = pathname;
     setReasontovisitksa(Reasontovisitksa);
     setReligion(Religion);
     setcountry(country);
-    SetservicesType(Servicetype);
+    SetservicesType(newpath);
 
     const myForm = new FormData();
     myForm.append("Name", data.Name);
@@ -96,7 +96,7 @@ let str = pathname;
     myForm.append("relativecontact",data.relativecontact)
     myForm.append("Reasontovisitksa",data.Reasontovisitksa)
     myForm.append("Religion",data.Religion)
-    myForm.append("ServicesType",data.Servicetype)
+    myForm.append("ServiceType",newpath)
 
 
     // myForm.append("images", data.images);

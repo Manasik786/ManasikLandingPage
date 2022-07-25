@@ -18,9 +18,11 @@ const [getlanguage,setLanguage] = useState(cookies.get("language"));
 const { pathname } = useLocation();
 
 let str = pathname;
-  str = str.substring(16);
-  let newpath = str.replace(/([A-Z])/g, ' $1').trim()
-  console.log("Path is 1",newpath)
+  str = str.substring(27);
+  let checkpath = str.substring(0,5)
+  console.log("new one",str)
+  console.log("new one",checkpath)
+
   const [upload, setupload] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
   const [oldImages, setOldImages] = useState([]);
@@ -37,10 +39,11 @@ let str = pathname;
   const [relativecontact, setrelativecontact] = useState(" ");
   const [Reasontovisitksa, setReasontovisitksa] = useState(" ");
   const [Religion, setReligion] = useState(" ");
-  const [Servicetype,SetservicesType] = useState("Transpotation ")
+  const [Servicetype,SetservicesType] = useState(checkpath)
 
 
   const [data, setData] = useState({
+    Servicetype: checkpath,
     Name: Name,
     familyname: familyname,
     DOB:DOB,
@@ -54,7 +57,7 @@ let str = pathname;
     relativecontact:relativecontact,
     Reasontovisitksa:Reasontovisitksa,
     Religion:Religion,
-    Servicetype: Servicetype,
+    
     upload:" ",
     
   });
@@ -80,9 +83,10 @@ let str = pathname;
     setReasontovisitksa(Reasontovisitksa);
     setReligion(Religion);
     setcountry(country);
-    SetservicesType(Servicetype);
+    SetservicesType(checkpath);
 
     const myForm = new FormData();
+    myForm.append("Servicetype",checkpath)
     myForm.append("Name", data.Name);
     myForm.append("Email", data.Email);
     myForm.append("Phone", data.Phone);
@@ -96,7 +100,7 @@ let str = pathname;
     myForm.append("relativecontact",data.relativecontact)
     myForm.append("Reasontovisitksa",data.Reasontovisitksa)
     myForm.append("Religion",data.Religion)
-    myForm.append("ServicesType",data.Servicetype)
+    
 
 
     // myForm.append("images", data.images);
@@ -105,7 +109,6 @@ let str = pathname;
       myForm.append("upload", image);
     });
     
-    console.log(data, "dsad");
     try {
       const response = await axios.post(`/api/v1/createBookingForm`, myForm);
       console.log(response);

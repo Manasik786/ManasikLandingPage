@@ -284,57 +284,56 @@ const Home = ({ onHandleClick }) => {
               </>:<>
               <div className="gallerydiv">
               <div className="gallery-left1">
-                <span className="gallery-text">
-                <h3>معرضنا</h3>
-                <h6> المملكة العربية السعودية تفتح باباً على العالم من خلال تأشيرتها السياحية الجديدة ويمكن لجميع الزوار الدوليين من الدول المؤهلة التقدم للحصول على تأشيرة سياحية.</h6>
-                <h6> لإرشادك في الإجراءات القانونية ، ستساعدك بوابة الطيران عبر الإنترنت على إنجاز العملية الخاصة بك ، للتقديم ، يرجى ملء المنتدى أدناه</h6>
+              <span className="gallery-text">
+                <h3 className="arabic-align">معرضنا</h3>
+                <h6 className="arabic-align"> المملكة العربية السعودية تفتح باباً على العالم من خلال تأشيرتها السياحية الجديدة ويمكن لجميع الزوار الدوليين من الدول المؤهلة التقدم للحصول على تأشيرة سياحية.</h6>
+                <h6 className="arabic-align"> لإرشادك في الإجراءات القانونية ، ستساعدك بوابة الطيران عبر الإنترنت على إنجاز العملية الخاصة بك ، للتقديم ، يرجى ملء المنتدى أدناه</h6>
                
                 </span>
                  <div class="row2">
-                  <div class="column2">
-                    <div class="card2">
-                      <img src={GalleryImage}/>
-                    </div>
-                  </div>
-
-                  <div class="column2">
-                    <div class="card2">
-                    <img src={GalleryImage}/>
-                    </div>
-                  </div>
-                  <div class="column2">
-                    <div class="card2">
-                    <img src={GalleryImage}/>
-                    </div>
-                  </div>
-                  <div class="column2">
-                    <div class="card2">
-                    <img src={GalleryImage}/>
-                    </div>
-                  </div>
+                 {card.map((item) => {
+                  return (
+                    <>
+                      <div className="column2">
+                        <div className="card2">
+                          <img src={item.images[0].url} onClick={() => setToggle(item._id)}/>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
                   
-                  <div class="column2">
-                    <div class="card2">
-                    <img src={GalleryImage}/>
-                    </div>
-                  </div>
-                  <div class="column2">
-                    <div class="card2">
-                    <img src={GalleryImage}/>
-                    </div>
-                  </div>
                 </div>
               </div>
               <div className="gallery-right1">
-              <img src={GalleryImage}/>
+              {
+        card.map((item) => {
+          return(
+            <>
+            {toggle === item._id ? (
+                   <img src={item.images[0].url} key={item._id}/>
+                ) : <div className="zero"></div>}
+            </>
+          )
+        })
+      }
+             
               </div>
             </div>
             <div className="row g-3 justify-content-center align-items-center">
               <div className="col-12 col-md-6 col-xxl-5"></div>
               <div className="d-flex col-0 col-md-6 col-xxl-6">
                 <div className="row g-0 flex-column justify-content-center align-items-center align-content-center">
-                 <div className="ctmbtn">
-                 <BackArrow className={"mt-4"} text="مشاهدة الكل" />
+                 <div className="ctmbtn" onClick={() => {
+                                window.scrollTo({
+                                  top: 0,
+                                  left: 0,
+                                  behavior: "smooth",
+                                });
+                              }}>
+                 <Link to='/gallery'>
+                 <Buttn1 className={"mt-4"} text="View ALL" />
+                 </Link>
                  </div>
                 </div>
               </div>

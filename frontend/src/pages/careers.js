@@ -87,7 +87,7 @@ const Careers = () => {
       <Tabs
         defaultActiveKey="profile"
         id="uncontrolled-tab-example"
-        className="mb-3 tab"
+        className="mb-3 tab careertabs"
       >
         <Tab eventKey="home" title="fly manasik" className="manasiktabs">
         <Fly/>

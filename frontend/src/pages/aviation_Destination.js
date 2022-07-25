@@ -52,6 +52,37 @@ const Aviation_Destination = () => {
         </div>
         </div>
         </> : <>
+        <div className="ambulance">
+        <div className="contact-banner">
+          <div className="banner-content arabic-banner">
+            <h1>الوجهات المشهورة</h1>
+            <p>ماناسيك للطيران هي في الأساس شركة طيران</p>
+            <p>ويقوم بأعمال الطيران</p>
+          </div>
+        </div>
+        <div className="gap"></div>
+        <div className='popular-Gallery'>
+          {
+            card.map((item) => {
+              return(
+                <>
+                <div className='popular-card'>
+            <div className='images1'>
+              <img src={item.images[0].url}/>
+
+            </div>
+            <h5 className='arabic-align'>{item.CardTypear}</h5>
+            <h6 className='arabic-align'>{item.CardDescriptionsar}</h6>
+          </div>
+                </>
+              )
+            })
+          }
+        </div>
+        <div className="gap">
+          
+        </div>
+        </div>
         {/* <div className="ambulance">
       <div className="contact-banner">
           <div className="banner-content arabic-banner">

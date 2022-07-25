@@ -512,6 +512,37 @@
     .custom-container {
         margin: 0 2rem;
     }
+    .career-left img {
+        height: 320px;
+        width: 100%;
+        /* margin: 10px; */
+    }
+    .career_section {
+        height: 360px;
+        width: 80%;
+        margin: auto;
+        margin-top: 40px;
+    }
+    .career-cards {
+        display: block;
+    }
+    .career-left {
+        height: 320px;
+        width: 75%;
+        margin: auto;
+    }
+    .career-right {
+        height: 300px;
+        width: 75%;
+        margin: auto;
+        margin-top: 10px;
+    }
+    .career_section {
+        height: 500px;
+        width: 80%;
+        margin: auto;
+        margin-top: 40px;
+    }
     .ambulanec-content p {
         font-size: 12px !important;
         width: 76%;
@@ -682,6 +713,62 @@
     .vision {
         width: 90%;
         margin: auto;
+    }
+    .careertabs {
+        display: block;
+        width: 50%;
+        margin: auto;
+        height: 180px !important;
+    }
+    
+    button#uncontrolled-tab-example-tab-contact {
+        text-transform: uppercase;
+        color: #000;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+    }
+    button#uncontrolled-tab-example-tab-profile {
+        text-transform: uppercase;
+        color: #000;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+    }
+    button#uncontrolled-tab-example-tab-home {
+        text-transform: uppercase;
+        color: #000;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+    }
+    .career-left img {
+        height: 320px;
+        width: 100%;
+        /* margin: 10px; */
+    }
+    .career-cards {
+        display: block;
+    }
+    .career-left {
+        height: 320px;
+        width: 75%;
+        margin: auto;
+    }
+    .career-right {
+        height: 300px;
+        width: 75%;
+        margin: auto;
+        margin-top: 10px;
+    }
+    .career_section {
+        height: 500px;
+        width: 80%;
+        margin: auto;
+        margin-top: 40px;
     }
     .newabc {
         height: 50vh;
@@ -1022,6 +1109,62 @@
     .header .navbar .navbar-toggler .arabictoggle{
         float: right !important;
     }
+    .careertabs {
+        display: block;
+        width: 50%;
+        margin: auto;
+        height: 180px !important;
+    }
+    
+    button#uncontrolled-tab-example-tab-contact {
+        text-transform: uppercase;
+        color: #000;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+    }
+    button#uncontrolled-tab-example-tab-profile {
+        text-transform: uppercase;
+        color: #000;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+    }
+    button#uncontrolled-tab-example-tab-home {
+        text-transform: uppercase;
+        color: #000;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+    }
+    .career-left img {
+        height: 320px;
+        width: 100%;
+        /* margin: 10px; */
+    }
+    .career-cards {
+        display: block;
+    }
+    .career-left {
+        height: 320px;
+        width: 100%;
+        margin: auto;
+    }
+    .career-right {
+        height: 300px;
+        width: 100%;
+        margin: auto;
+        margin-top: 10px;
+    }
+    .career_section {
+        height: 500px;
+        width: 80%;
+        margin: auto;
+        margin-top: 40px;
+    }
     .text-block {
         position: absolute;
         top: 110px;
@@ -1229,7 +1372,7 @@
     .header .custom-nav .navbar-nav li .nav-link {
         padding-right: 0.5rem;
         padding-left: .5rem;
-        font-size: 9px;
+        font-size: 12px;
     }
     .header .custom-nav .navbar-nav li .header-search-btn {
         padding: 2px 5px;
@@ -1336,20 +1479,89 @@
         height: 50vh;
         width: 100%;
       }
+      label {
+        display: inline-block;
+        margin: 1px;
+        font-size: 13px;
+        color: rgb(153, 151, 151) !important;
+    }
 }
 @media (max-width: 689px) and (min-width: 576px){
     .vision {
         width: 90%;
         margin: auto;
     }
+    label {
+        display: inline-block;
+        margin: 1px;
+        font-size: 13px;
+        color: rgb(153, 151, 151) !important;
+    }
+    .careertabs {
+        display: block;
+        width: 100%;
+        margin: auto;
+        height: 180px !important;
+    }
+    
+    button#uncontrolled-tab-example-tab-contact {
+        text-transform: uppercase;
+        color: #000;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+    }
+    button#uncontrolled-tab-example-tab-profile {
+        text-transform: uppercase;
+        color: #000;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+    }
+    button#uncontrolled-tab-example-tab-home {
+        text-transform: uppercase;
+        color: #000;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+    }
+    .career-left img {
+        height: 320px;
+        width: 100%;
+        /* margin: 10px; */
+    }
+    .career-cards {
+        display: block;
+    }
+    .career-left {
+        height: 320px;
+        width: 100%;
+        margin: auto;
+    }
+    .career-right {
+        height: 300px;
+        width: 100%;
+        margin: auto;
+        margin-top: 10px;
+    }
+    .career_section {
+        min-height: 540px;
+        width: 80%;
+        margin: auto;
+        margin-top: 40px;
+    }
     .text-block {
         position: absolute;
         top: 110px;
-        left: 10px;
+        left: 50px;
         color: white;
         padding-left: 20px;
         padding-right: 20px;
         width: 380px;
+        // background-color: rgb(165, 164, 164) !important;
     }
     
     
@@ -1770,6 +1982,84 @@
         position: relative;
         font-family: Arial;
     }
+    .header .custom-nav .navbar-nav li .nav-link {
+        padding-right: 0.5rem;
+        padding-left: .5rem;
+        font-size: 12px;
+    }
+    .header .custom-nav .navbar-nav li .header-search-btn {
+        padding: 2px 5px;
+        border-radius: 5px;
+        margin-right: 1rem;
+    }
+    .header .custom-nav .navbar-nav li .header-search-btn i{
+        font-size: 12px;
+    }
+    .header-banner .search-main .search-section .search-form .form-control input[type=number] {
+        width: 40px;
+    }
+    .header-banner .search-main {
+        width:100% ;
+        position: absolute;
+        margin-top: -6vh;
+    }
+    .careertabs {
+        display: block;
+        width: 100%;
+        margin: auto;
+        height: 180px !important;
+    }
+    
+    button#uncontrolled-tab-example-tab-contact {
+        text-transform: uppercase;
+        color: #000;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+    }
+    button#uncontrolled-tab-example-tab-profile {
+        text-transform: uppercase;
+        color: #000;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+    }
+    button#uncontrolled-tab-example-tab-home {
+        text-transform: uppercase;
+        color: #000;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+    }
+    .career-left img {
+        height: 320px;
+        width: 100%;
+        /* margin: 10px; */
+    }
+    .career-cards {
+        display: block;
+    }
+    .career-left {
+        height: 320px;
+        width: 100%;
+        margin: auto;
+    }
+    .career-right {
+        height: 300px;
+        width: 100%;
+        margin: auto;
+        margin-top: 10px;
+    }
+    .career_section {
+        min-height: 540px;
+        width: 80%;
+        margin: auto;
+        margin-top: 40px;
+    }
+    
     .text-block {
         position: absolute;
         top: 110px;
@@ -2077,7 +2367,7 @@
     .header .custom-nav .navbar-nav li .nav-link {
         padding-right: 0.5rem;
         padding-left: .5rem;
-        font-size: 9px;
+        font-size: 12px;
     }
     .header .custom-nav .navbar-nav li .header-search-btn {
         padding: 2px 5px;
@@ -2218,7 +2508,7 @@
         display: block;
     }
     .career_section {
-        height: 780px;
+        min-height: 550px;
         width: 90%;
         /* margin: auto; */
         margin-top: 40px;
@@ -2244,9 +2534,8 @@
         max-height: 820px;
         width: 100%;
         margin: auto;
-        background-color: #c5c5c5;
+        background-color: #f1f1f1;
         margin-top: 20px;
-        display: none;
     }
     .col-md-6 {
         flex: 0 0 auto;
@@ -2341,13 +2630,19 @@
     }
     .images1 img {
         height: 234px;
-        width: 240px;
+        width: 190px;
         z-index: 999;
+    }
+    label {
+        display: inline-block;
+        margin: 1px;
+        font-size: 13px;
+        color: rgb(153, 151, 151) !important;
     }
     .popular-card {
         background-color: #f7f5f1;
         height: 298px;
-        width: 245px;
+        width: 180px;
         margin: 20px;
         box-shadow: 2px 2px 12px rgb(170 168 168);
         transform: scaleX(20deg);

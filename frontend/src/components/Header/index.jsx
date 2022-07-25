@@ -297,36 +297,72 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
                           class="dropdown-menu dropdown-menu-dark"
                           aria-labelledby="navbarDarkDropdownMenuLink"
                         >
-                          <li onClick={() => setShow(!isShow)}>
+                          {
+                            data.map((item) => {
+                              return(
+                                <li onClick={() => setShow(!isShow)}>
                             <Link
-                              className="dropdown-item arabic-align"
-                              to="/packages/1"
+                              className="dropdown-item"
+                              
+                              to={{
+                                pathname: `packages/${(item.PkgName).replace(/ /g,'')}`,
+                                state: {
+                                  // whatever you need to send with the route transition
+                                },
+                              }}
                             >
-                            باقات العمرة
+                            {item.PkgNamear}
                             </Link>
                           </li>
-                          <li onClick={() => setShow(!isShow)}>
-                            <Link
-                              className="dropdown-item arabic-align"
-                              to="/packages/2"
-                            >
-                             حزم الحج
-                            </Link>
-                          </li>
-                          <li onClick={() => setShow(!isShow)}>
-                            <Link
-                              className="dropdown-item arabic-align"
-                              to="/packages/3"
-                            >
-                            حزم العطلة
-                            </Link>
-                          </li>
+                              )
+                            })
+                          }
+                         
                         </ul>
                       </li>
-                      <li className="nav-item" onClick={() => setShow(!isShow)}>
-                        <Link className="nav-link" to="services">
+                     
+                      <li class="nav-item dropdown">
+                        <a
+                          class="nav-link dropdown-toggle"
+                          href="#"
+                          id="navbarDarkDropdownMenuLink"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
                           خدمات
-                        </Link>
+                        </a>
+                        <ul
+                          class="dropdown-menu dropdown-menu-dark"
+                          aria-labelledby="navbarDarkDropdownMenuLink"
+                        >
+                          {
+                            card.map((item) => {
+                              return(
+                                (item.CardType) === 'service' ? <>
+                                
+                                <li onClick={() => setShow(!isShow)}>
+                                <Link
+                                className="dropdown-item"
+                                
+                                  to={{
+                                    // pathname:'/ServicesDetail',
+                                   pathname: `ServicesDetail/${(item.CardTitle).replace(/ /g,'')}`,
+                                    state: {
+                                      // whatever you need to send with the route transition
+                                    },
+                                  }}
+                                >
+                                
+                                {item.CardTitlear}
+                                </Link>
+                                  </li>
+                                </> : <></>
+                                      )
+                                    })
+                                  }
+                         
+                        </ul>
                       </li>
                       <li className="nav-item" onClick={() => setShow(!isShow)}>
                         <Link className="nav-link" to="/aboutus">

@@ -914,13 +914,16 @@ li.nav-item.flag {
 text-align: end !important;
 }
 .arabic-align p{
-  text-align: end;
+  text-align: center;
   }
 .services-list-main.arabic-align {
   flex-direction: row-reverse;
 }
 .arabic-banner{
   text-align: center;
+}
+.arabicform1{
+  text-align: end;
 }
 
 .aligncard{
@@ -1020,7 +1023,7 @@ width: 100%;
 ul.mb-3.tab.nav.nav-tabs {
   padding-top: 25px;
   flex-direction: column;
-  padding-left: 80px;
+  padding-left: 30px;
   font-size: 20px;
   /* text-transform: uppercase; */
   /* border: 1px solid; */
@@ -1150,7 +1153,7 @@ p.serviceheading {
 
 .packagesdetails_include{
   width: 70%;
-  display: flex;
+  display: block;
   justify-content: space-between;
 }
 .packagesdetails_content h2 {
@@ -1329,6 +1332,7 @@ h2.applyfromclass {
   height: 60px;
   background-color: #000;
   color: #fff;
+  font-size: 22px;
 }
 .msg {
     text-align: center;
@@ -1424,7 +1428,7 @@ fieldset {
 legend {
   font-size: 1rem;
   color: rgb(66, 65, 65);
-  padding-left: 12px;
+  padding-left: 12px !important;
 }
 
 button:active {
@@ -1558,3 +1562,8 @@ p {
   border: 2px solid #d4af37;
   
 } */
+
+
+.pkgstyle{
+  font-weight: 600;
+}

@@ -21,6 +21,7 @@ const { pathname } = useLocation();
 let str = pathname;
   str = str.substring(10);
 
+  console.log(str)
 
   const [upload, setupload] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
@@ -38,10 +39,11 @@ let str = pathname;
   const [relativecontact, setrelativecontact] = useState(" ");
   const [Reasontovisitksa, setReasontovisitksa] = useState(" ");
   const [Religion, setReligion] = useState(" ");
-  const [Servicetype,SetservicesType] = useState("Transpotation ")
+  const [Servicetype,setservicesType] = useState(str)
 
 
   const [data, setData] = useState({
+    Servicetype: str,
     Name: Name,
     familyname: familyname,
     DOB:DOB,
@@ -55,7 +57,7 @@ let str = pathname;
     relativecontact:relativecontact,
     Reasontovisitksa:Reasontovisitksa,
     Religion:Religion,
-    Servicetype: Servicetype,
+    
     upload:" ",
     
   });
@@ -81,9 +83,10 @@ let str = pathname;
     setReasontovisitksa(Reasontovisitksa);
     setReligion(Religion);
     setcountry(country);
-    SetservicesType(Servicetype);
+    setservicesType(str);
 
     const myForm = new FormData();
+    myForm.append("Servicetype",str)
     myForm.append("Name", data.Name);
     myForm.append("Email", data.Email);
     myForm.append("Phone", data.Phone);
@@ -97,7 +100,7 @@ let str = pathname;
     myForm.append("relativecontact",data.relativecontact)
     myForm.append("Reasontovisitksa",data.Reasontovisitksa)
     myForm.append("Religion",data.Religion)
-    myForm.append("ServicesType",data.Servicetype)
+   
 
 
     // myForm.append("images", data.images);
@@ -111,8 +114,11 @@ let str = pathname;
       const response = await axios.post(`/api/v1/createBookingForm`, myForm);
       console.log(response);
       console.log(myForm);
+      alert("Submitted")
     } catch (err) {
       console.log(err);
+      const Error = err.response.data;
+    alert(Error.message)
     }
   };
   const createServiceImagesChange = (e) => {

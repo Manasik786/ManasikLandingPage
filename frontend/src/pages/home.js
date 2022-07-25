@@ -1,5 +1,6 @@
 import React, { useEffect,useState } from "react";
 import Buttn1 from "../components/Button";
+import Buttn2 from "../components/Button/Arabic";
 import HajjImage from "../assets/images/hajj.png";
 import HolidayImage from "../assets/images/holiday.png";
 import HotelImage from "../assets/images/hotel.png";
@@ -168,52 +169,7 @@ const Home = ({ onHandleClick }) => {
                 <h2>الحزم</h2>
                 <br />
                 <div>
-                  <div class="row1">
-                    <div class="column1">
-                      <div class="card1">
-                        <img src={HajjImage} className='card-images'/>
-                        <h3>الحج والعمرة</h3>
-                        <p>
-                        الآن يمكنك حجز فندقك معنا
-                          من خلال موقعنا الإلكتروني مع نظام حجز سهل. الآن أنت
-                          يمكنك حجز فندقك مع طيران مناسيك من خلال.
-                        </p>
-                        <div className="newpack">
-                          <BackArrow text={"اشتري الآن"}  className="backarrowbutton"/>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="column1">
-                      <div class="card1">
-                        <img src={HotelImage} />
-                        <h3>خدمات فندقية</h3>
-                        <p>
-                        الآن يمكنك حجز فندقك معنا
-                          من خلال موقعنا الإلكتروني مع نظام حجز سهل. الآن أنت
-                          يمكنك حجز فندقك مع طيران مناسيك من خلال.
-                        </p>
-                        <div className="newpack">
-                        <BackArrow text={"اشتري الآن"}  className="backarrowbutton"/>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="column1">
-                      <div class="card1">
-                        <img src={HolidayImage} />
-                        <h3>حزم العطلة</h3>
-                        <p>
-                        الآن يمكنك حجز فندقك معنا
-                          من خلال موقعنا الإلكتروني مع نظام حجز سهل. الآن أنت
-                          يمكنك حجز فندقك مع طيران مناسيك من خلال.
-                        </p>
-                        <div className="newpack">
-                        <BackArrow text={"اشتري الآن"}  className="backarrowbutton"/>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <Slider/>
                 </div>
               </div>
             </div>
@@ -332,7 +288,7 @@ const Home = ({ onHandleClick }) => {
                                 });
                               }}>
                  <Link to='/gallery'>
-                 <Buttn1 className={"mt-4"} text="View ALL" />
+                 <Buttn2 className={"mt-4"} text="مشاهدة الكل" />
                  </Link>
                  </div>
                 </div>

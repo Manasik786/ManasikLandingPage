@@ -298,7 +298,9 @@ useEffect(() => {
     }
         </Modal>
     <div className="search-main">
-      <div className="search-section">
+      {
+        getlanguage != 'english' ? <>
+        <div className="search-section">
         <div className="main-heading">
           <h1>Chartered Flight</h1>
         </div>
@@ -345,6 +347,57 @@ useEffect(() => {
         </form>
         </div>
       </div>
+        </> : <>
+        <div className="search-section">
+        
+        <div>
+        <form className="search-form myform">
+          <div className="form-control">
+            <div className="img-section">
+              <img src={airlineIcon} />{" "}
+            </div>
+            <input type="text" placeholder="من" 
+            name="DestinationFrom"
+            onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <div className="form-control">
+            <div className="img-section">
+              <img src={airline2Icon} />{" "}
+            </div>
+            <input type="text" placeholder="إلى"
+            name="DestinationTo"
+            onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <div className="form-control">
+            <div className="img-section">
+              <img src={userIcon} />{" "}
+            </div>
+            <input type="number" placeholder="2" 
+            name="NumberOfPasseneger"
+            onChange={(e) => handleChangeUserName(e)}
+            pattern="^(?=.*[1-9])\d*(?:\.\d{1,2})?$"
+            />
+          </div>
+          <div className="form-control">
+            <div className="img-section">
+              <img src={calenderIcon} />{" "}
+            </div>
+            <input type="date" placeholder="تاريخ" 
+            name="Date"
+            onChange={(e) => handleChange(e)}
+            />
+          </div>
+        </form>
+        </div>
+        <div className="main-heading">
+          <h1>طيران مستأجر</h1>
+        </div>
+        <span className="Flight-line"></span>
+      </div>
+        </>
+      }
       <Button
                       variant="primary"
                       className="primarybutton"

@@ -169,6 +169,7 @@ const Popup = (props) => {
                     type="text"
                     placeholder="اسم"
                     name="Name"
+                    className="arabicform1"
                     required
                     onChange={(e) => handleChange(e)}
                   />

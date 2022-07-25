@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from "react";
-import Buttn1 from "../Button";
+import Buttn1 from "../Button/Arabic";
 import HotelServiceImage from "../../assets/images/hotelservice.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import BackArrow from '../Button/Arabic'
@@ -135,7 +135,7 @@ const Services = (props) => {
                               className="primarybutton"
                               onClick={handleShow}
                             >
-                              <Buttn1 text={"BOOK NOW"} />
+                              <Buttn1 text={"احجز الآن"} />
                             </Button>
                           </div>
                         </div>

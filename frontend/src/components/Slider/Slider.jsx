@@ -7,6 +7,8 @@ import Popup from '../Form/Popup'
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import SimpleBtn from '../Button/SimpleButton'
+import Cookies from "universal-cookie";
+
 
 const Slider1 = () => {
 
@@ -14,6 +16,8 @@ const Slider1 = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const cookies = new Cookies();
+const [getlanguage,setLanguage] = useState(cookies.get("language"));
 
   
   const [data, setData] = useState([]);
@@ -78,13 +82,9 @@ const Slider1 = () => {
   };
   return (
     <>
-    <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-        </Modal.Header>
-        <Popup/>
-      </Modal>
-     
-      <Slider {...settings}>
+   {
+    getlanguage != 'english' ? <>
+     <Slider {...settings}>
          {
          data.map((item) => {
           return(
@@ -123,6 +123,50 @@ const Slider1 = () => {
          })
          }
         </Slider>
+    </> : <>
+    <Slider {...settings}>
+         {
+         data.map((item) => {
+          return(
+            <div class="column1" key={item._id}>
+              <div class="card1" >
+              <img src={HajjImage} className="card-images" />
+              <h3>{item.PkgNamear}</h3>
+              <p>
+              {item.PkgDetailar}
+              </p>
+              <div className="newpack">
+              <Link
+                      to={{
+                        pathname: `packages/${(item.PkgName).replace(/ /g,'')}`,
+                        state: {
+                          // whatever you need to send with the route transition
+                        },
+                      }}
+                      onClick={() => {
+                        window.scrollTo({
+                          top: 0,
+                          left: 0,
+                          behavior: "smooth",
+                        });
+                      }}
+                    >
+                    <SimpleBtn  text={"اقرأ أكثر"}/>
+                    </Link>
+              </div>
+            </div>
+            {/* <Link to={item.PkgName}>
+            
+            </Link> */}
+          </div>
+          )
+         })
+         }
+        </Slider>
+    </>
+   }
+     
+     
       
     </>
   );

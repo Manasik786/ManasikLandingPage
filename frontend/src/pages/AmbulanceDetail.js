@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Popup from "../components/Form/Ambulance";
 import Cookies from "universal-cookie";
+import Buttn2 from "../components/Button/Arabic";
 
 
 const Packages = (props) => {
@@ -94,7 +95,7 @@ const Packages = (props) => {
              < >
              <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-            <h2 className='applyfromclass'>{item.CardDetail}</h2>
+            <h2 className='applyfromclass'>{item.CardDetailar}</h2>
             </Modal.Header>
             <Popup />
           </Modal>
@@ -123,7 +124,7 @@ const Packages = (props) => {
                       className="primarybutton"
                       onClick={handleShow}
                     >
-                      <Buttn1 text={"BOOK NOW"} />
+                      <Buttn2 text={"احجز الآن"} />
                     </Button>
                   </div>
             </div>

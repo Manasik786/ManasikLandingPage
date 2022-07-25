@@ -137,46 +137,40 @@ const Contact = () => {
               </>
             ) : (
               <>
-                <div className="online-platform ">
-                  <div className="row g-0 justify-content-start align-items-center cardarabic">
+                <>
+                <div className="online-platform">
+                  <div className="row g-0 justify-content-start align-items-center">
                     <div className="col-12 col-lg-4 info-details mb-4 mb-lg-0">
-                      <div className="row g-0 ">
-                        <div className="col-11 col-xxl-10 col-xl-10 col-lg-10 col-md-11 ">
-                          <div className="contact-icon arabic0">
-                            {" "}
-                            <img src={Img2} />
-                            <span className="contacttext1">
-                              <span>السعودية</span>
-                              <br />
-                              <span className="contacttext1">العربية</span>
-                            </span>
-                            <br />
+                      {data.map((item, i) => {
+                        return (
+                          <div className="row g-0">
+                            <div className="col-11 col-xxl-10 col-xl-10 col-lg-10 col-md-11">
+                              <div className="contact-icon">
+                                {" "}
+                                <img src={Img2} />
+                                <span className="contacttext1">
+                                  <span>{item.location}</span>
+                                </span>
+                                <br />
+                              </div>
+                              <div className="contact-icon">
+                                <img src={Img3} />
+                                <span className="contacttext1">
+                                  <span>{item.phone}</span>
+                                </span>
+                                <br />
+                              </div>
+                              <div className="contact-icon">
+                                <img src={Img1} />
+                                <span className="contacttext1">
+                                  <span>{item.email}</span>
+                                </span>
+                              </div>
+                            </div>
                           </div>
-                          <div className="contact-icon arabic0">
-                            <img src={Img3} />
-                            <span className="contacttext1">
-                              <span>0122259999</span>
-                              <br />
-                              <span className="contacttext1">
-                                00966122259999
-                              </span>
-                            </span>
-                            <br />
-                          </div>
-                          <div className="contact-icon arabic0">
-                            <img src={Img1} />
-                            <span className="contacttext1">
-                              <span>customer@manasikaviation.com</span>
-                              <br />
-                              <span className="contacttext1">
-                                info@manasikaviation.com
-                              </span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
+                        );
+                      })}
                     </div>
-
                     <div className="col-12 col-lg-7  contactus-form">
                       <div className="row">
                         <div className="col-12">
@@ -194,6 +188,7 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
+              </>
               </>
             )}
           </div>

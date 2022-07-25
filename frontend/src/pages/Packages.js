@@ -117,19 +117,19 @@ const Packages = () => {
                 <img src={img1} />
               </div>
               <div className="packagesdetails_content">
-                    <h2>{item.PkgNamear} </h2>
+                    <h2 className='arabic-align'>{item.PkgNamear} </h2>
                    {item.PkgDetailar}
                     <div className="packagesdetails_include">
                       {/* <p>Hotel Include</p> */}
-                      <p>Duration <span className='DaysOfstay'><span className='pkgstyle'>{item.DaysOfstay}</span> Days</span></p>
-                      <p>Valid till <span className='DaysOfstay'><span className='pkgstyle'>{item.ValidTill}</span> </span></p>
+                      <p className='arabic-align'>مدة <span className='DaysOfstay'><span className='pkgstyle'>{item.DaysOfstay}</span> أيام</span></p>
+                      <p className='arabic-align'>صالح لغاية <span className='DaysOfstay'><span className='pkgstyle'>{item.ValidTillar}</span> </span></p>
                     </div>
                     <Button
                       variant="primary"
                       className="primarybutton"
                       onClick={handleShow}
                     >
-                      <Buttn1 text={"BOOK NOW"} />
+                      <ArabicButton text={"احجز الآن"} />
                     </Button>
                   </div>
             </div>

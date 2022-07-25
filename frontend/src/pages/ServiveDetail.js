@@ -6,6 +6,9 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Popup from "../components/Form/Popup";
 import Cookies from "universal-cookie";
+import Buttn2 from "../components/Button/Arabic";
+
+
 const ServiceDetails = () => {
 
   const [card, setCard] = useState([]);
@@ -119,7 +122,7 @@ const ServiceDetails = () => {
                       className="primarybutton"
                       onClick={handleShow}
                     >
-                      <Buttn1 text={"BOOK NOW"} />
+                      <Buttn2 text={"احجز الآن"} />
                     </Button>
                   </div>
             </div>

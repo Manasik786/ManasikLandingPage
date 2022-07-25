@@ -64,53 +64,9 @@ const Whoweare = () => {
           <div className="custom-container">
             {
               getlanguage != 'english' ? <>
-              <div className="row g-0 g-lg-4 g-xxl-4 justify-content-center align-items-center">
-              <div className="image-section d-md-flex col-0 col-md-6 col-xxl-5">
-                <div className="row g-0 flex-column justify-content-center align-items-center align-content-center">
-                  <img src={HotelServiceImage} />
-                </div>
-              </div>
-              <div className="col-12 col-md-6 col-xxl-5 z-index">
-                <div className="row g-0">
-                  <AboutManasik/>
-                  
-                </div>
-              </div>
-            </div>
+              
               </>: <>
-              <div className="row g-0 g-lg-4 g-xxl-4 justify-content-center align-items-center arabicstyle">
-              <div className="image-section d-md-flex col-0 col-md-6 col-xxl-5">
-                <div className="row g-0 flex-column justify-content-center align-items-center align-content-center">
-                  <img src={HotelServiceImage} />
-                </div>
-              </div>
-              <div className="col-12 col-md-6 col-xxl-5 z-index">
-                <div className="row g-0">
-                  <div className="col-12 col-xxl-10 col-xl-10 col-lg-10 col-md-11">
-                    <h2 className="arabic-align">خدمات النقل</h2>
-                    <br />
-                    <p className="arabic-align">
-                    نحن نقدم خدمات النقل لدينا
-                      الضيوف الذين يسافرون داخل المدينة أو خارجها نحن
-                      تقديم الخدمات للأفراد وكذلك للمجموعات ،
-                      لدينا جميع أنواع المشاوير من السيارات إلى الحافلات.{" "}
-                    </p>
-                    <br />
-                    <p className="arabic-align">
-                    الآن يمكنك حجز فندقك مع طيران مناسيك من خلال
-                      موقعنا الإلكتروني مع نظام حجز سهل
-                    </p>
-                    <br />
-                    <p className="arabic-align">
-                    الآن يمكنك حجز فندقك مع طيران مناسيك من خلال
-                      موقعنا الإلكتروني مع نظام حجز سهل
-                    </p>
-                    <br />
-                    <BackArrow text={"اشتري الآن"}  className="backarrowbutton"/>
-                  </div>
-                </div>
-              </div>
-            </div>
+              
               </>
             }
           </div>
@@ -151,34 +107,26 @@ const Whoweare = () => {
         </> : <>
         <div className="about-bg">
        <div className="scaleimage-about">
-       <div className="aboutcard11">
-       <div className='popular-card'>
+       
+       {
+           data.slice(0,2).map((item) => {
+            return(
+              <div className="aboutcard11">
+              <div className='popular-card' key={item._id}>
             <div className="about-images1">
             <div className='images1'>
-              <img src={Img1}/>
+              <img src={item.images[0].url}/>
 
             </div>
-            <h5>المدينة المنورة</h5>
-            <h6>من 47535 دولار أمريكي</h6>
-          
-            </div>
-            
-          </div>
-       </div>
-
-          <div className="aboutcard11">
-          <div className='popular-card'>
-            <div className="about-images1">
-            <div className='images1'>
-              <img src={Img2}/>
-
-            </div>
-            <h5>مكه </h5>
-            <h6>من 47535 دولار أمريكي</h6>
+            <h5>{item.CardTypear}</h5>
+            {/* <h6>From USD 47,535</h6> */}
             </div>
             
           </div>
           </div>
+            )
+          })
+        }
        </div>
        </div>
         </>

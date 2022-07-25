@@ -133,8 +133,10 @@ const Fly = () => {
 
   return (
     <>
-      {card.map((item) => {
-        return item.Type == "MANASIK HOTEL" || item.Type == "MANASIK hOTEL" ? (
+      {
+        getlanguage != "english"?<>
+        {card.map((item) => {
+        return item.Type == "MANASIK HOTEL" || item.Type == "Manasik hotel" ? (
           
           <>
             <>
@@ -259,7 +261,7 @@ const Fly = () => {
                   </div>
 
                   <div className="depart-item">
-                  <Moment format="YYYY/MM/DD">
+                     <Moment format="YYYY/MM/DD">
                 {item.valid}
             </Moment>
                   </div>
@@ -269,7 +271,9 @@ const Fly = () => {
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only.
             </p> */}
                 </div>
+                
                 <Button 
+               
                  key={item._id}
                   variant="primary"
                   className="primarybutton"
@@ -285,6 +289,168 @@ const Fly = () => {
           <></>
         );
       })}
+        </> :<>
+        {card.map((item) => {
+        return item.Type == "MANASIK HOTEL" || item.Type == "Manasik hotel" ? (
+          
+          <>
+            <>
+            
+              <Modal show={show} onHide={handleClose} key={item._id}
+        
+              >
+                <Modal.Header closeButton>
+                  <h2 className="applyfromclass arabic-align">{item.Typear}</h2>
+                </Modal.Header>
+                <div className="popup1" key={item._id}>
+                <Form className="popupform">
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridName">
+            <Form.Control
+              type="text"
+              placeholder="اسم"
+              name="Name"
+              required
+              className="arabic-align"
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group as={Col} controlId="formGridName">
+            <Form.Control
+              type="email"
+              placeholder="البريد الإلكتروني"
+              name="Email"
+              className="arabic-align"
+              required
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </Row>
+
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Control
+              type="number"
+              placeholder="هاتف"
+              className="arabic-align"
+              name="Phone"
+              required
+              onChange={handleChange}
+            />
+          </Form.Group>
+
+          <Form.Group as={Col} controlId="formGridName">
+            <Form.Control
+              type="text"
+              placeholder="جنسية"
+              name="Nationality"
+              className="arabic-align"
+              required
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </Row>
+
+        <Row className="mb-3">
+          <Form.Group
+            as={Col}
+            controlId="formGridEmail"
+           
+          >
+            <Form.Control
+              type="text"
+              placeholder="موقع"
+              name="Position"
+              value={item.Designationar}
+              onChange={handleChange}
+              className="arabic-align"
+            />
+          </Form.Group>
+        </Row>
+        <div className="radionbtnfoem">
+          <input
+            type="radio"
+            name="Gender"
+            value="male"
+            onChange={handleChange}
+          />{" "}
+          <span className="mgender">ذكر</span>
+          <input
+            type="radio"
+            name="Gender"
+            value="female"
+            onChange={handleChange}
+          />{" "}
+          <span className="mgender">Femaأنثىle</span>
+        </div>
+        <Form.Group className="mb-3" controlId="formGridAddress2">
+          <Form.Control
+            type="file"
+            name="images"
+            accept="image/*"
+            onChange={createServiceImagesChange}
+            multiple
+            id="image"
+          />
+          <label for="image"  className="label11 arabic-align">تحميل صورة الملف الشخصي</label>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formGridAddress2">
+          <Form.Control
+            type="file"
+            name="Cv"
+            accept="image/*"
+            onChange={createServiceImagesChange1}
+            multiple
+            id="cv"
+          />
+          <label for="id"  className="label11 arabic-align">تحميل السيرة الذاتية</label>
+        </Form.Group>
+        <Capcha/>
+        <button className="btnsubmit" onClick={createProductSubmitHandler}>يُقدِّم</button>
+      </Form>
+                </div>
+              </Modal>
+              <div className="career-duty">
+                <div className="career-department">
+                  <div className="depart-item">
+                    <h2>{item.Designationar}</h2>
+                    <h4>{item.Deptar}</h4>
+                  </div>
+                  <div className="depart-item">
+                    <h5 className="career-area">{item.Locationar}</h5>
+                  </div>
+
+                  <div className="depart-item">
+                     <Moment format="YYYY/MM/DD">
+                {item.valid}
+            </Moment>
+                  </div>
+                </div>
+                <div className="department-description">
+                  {/* <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only.
+            </p> */}
+                </div>
+                
+                <Button 
+               
+                 key={item._id}
+                  variant="primary"
+                  className="primarybutton"
+                  onClick={handleShow}
+                >
+                  <Buttn1 className={"mt-4"} text="قدم الآن" />
+                </Button>
+              </div>
+              <hr className="hr-color" />
+            </>
+          </>
+        ) : (
+          <></>
+        );
+      })}
+        </>
+      }
     </>
   );
 };

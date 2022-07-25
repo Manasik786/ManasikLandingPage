@@ -108,20 +108,34 @@ const Careers = () => {
    </div>
     </> : <>
     <div className="contact-form1">
-     <div className="career_section">
-       <div className="career-cards">
-         <div className="career-right">
-           <p className="career-style arabic-align">
-           لدينا تصميم خاص. نأخذ هذا الأمر على محمل الجد. من خلال زيادة الوعي ، نأمل أن نمنع الباحثين عن عمل من الوقوع ضحية لهذه الحيل. لا تتدخل إذا كنت تعتقد أن الاتصال احتيالي           </p>
-           <p className="career-style arabic-align">
-           لدينا تصميم خاص. نأخذ هذا الأمر على محمل الجد. من خلال زيادة الوعي ، نأمل أن نمنع الباحثين عن عمل من الوقوع ضحية لهذه الحيل. لا تتدخل إذا كنت تعتقد أن الاتصال احتيالي           </p>
-           <p className="career-style arabic-align">
-           لدينا تصميم خاص. نأخذ هذا الأمر على محمل الجد. من خلال زيادة الوعي ، نأمل أن نمنع الباحثين عن عمل من الوقوع ضحية لهذه الحيل. لا تتدخل إذا كنت تعتقد أن الاتصال احتيالي           </p>
-           <BackArrow text={"ابحث الآن"}  className="backarrowbutton"/>
-         </div>
-
-       </div>
-     </div>
+    {
+      card.map((item) => {
+        return(
+          (item.CardType) === 'career' ? <>
+          <div className="career_section">
+      
+      <div className="career-cards">
+        <div className="career-left">
+         <img src={item.images[0].url}/>
+        </div>
+        <div className="career-right">
+          <p className="career-style">
+            {item.CardDescriptionsar}
+          </p>
+          {/* <Button
+                        variant="primary"
+                        className="primarybutton "
+                        onClick={handleShow}
+                      >
+                        <Buttn1 text={"BOOK NOW"} />
+                      </Button> */}
+        </div>
+      </div>
+    </div>
+          </> : <></>
+        )
+      })
+     }
 
      <div className="hq-careers">
       <div className="inner-careers">

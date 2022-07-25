@@ -173,7 +173,7 @@ const Air_ambulance = () => {
                         });
                       }}
                     >
-                    <SimpleBtn text={"Read more"}/>
+                    <SimpleBtn text={"اقرأ أكثر"}/>
                     </Link>
                     </div>
                   </div>

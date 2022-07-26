@@ -1,66 +1,89 @@
-import React, { useState, useEffect } from "react";
+import React,{useState,useEffect} from 'react'
 import Button from "../Button";
-import Img3 from "../../assets/images/airplane1.jpg";
-import Img4 from "../../assets/images/Makkah.jpg";
-import Form from "../AmbulanceBook/index";
+import Img4 from "../../assets/images/mission.jpg";
+import Form from '../AmbulanceBook/index'
 import Cookies from "universal-cookie";
-import axios from "axios";
+import axios from 'axios';
+
 
 const Index = () => {
   const cookies = new Cookies();
-  const [getlanguage, setLanguage] = useState(cookies.get("language"));
+  const [getlanguage,setLanguage] = useState(cookies.get("language"));
 
   const [card, setCard] = useState([]);
   useEffect(() => {
     const getdata = async () => {
       const { data } = await axios.get(`/api/v1/CardItems`);
       setCard(data.data);
-      console.log("New Data", card);
+      console.log("New Data",card)
     };
     getdata();
   }, []);
-
   return (
     <>
-      {getlanguage != "english" ? (
-        <>
-          {card.map((item) => {
-            return item.CardType === "About" ? (
-              <>
-                <div
-                  className="col-12 col-xxl-10 col-xl-10 col-lg-10 col-md-11 "
-                  key={item._id}
-                >
-                  <h2>{item.CardTitle}</h2>
-                  <p>{item.CardDescriptions}</p>
-                </div>
-              </>
-            ) : (
-              <></>
-            );
-          })}
-        </>
-      ) : (
-        <>
-          {card.map((item) => {
-            return item.CardType === "about" ? (
-              <>
-                <div
-                  className="col-12 col-xxl-10 col-xl-10 col-lg-10 col-md-11 "
-                  key={item._id}
-                >
-                  <h2>{item.CardTitlear}</h2>
-                  <p>{item.CardDescriptionsar}</p>
-                </div>
-              </>
-            ) : (
-              <></>
-            );
-          })}
-        </>
-      )}
-    </>
-  );
-};
+    <div className='destination-main'>
+          {
+            getlanguage != 'english' ? <>
 
-export default Index;
+       {
+       card.map((item) => { 
+      return(
+        (item.CardType) === 'About' ? 
+        <>
+       
+       <div className='destination-cards mappingstyabout' key={item._id}>
+          <div className='destination-right'>
+              <h2>{item.CardTitle}</h2>
+              <p>{item.CardDescriptions}</p>
+              
+            </div>
+            <div className='destination-left'>
+              <img src={item.images[0].url}/>
+            </div>
+            
+          </div>
+        </>
+         : 
+         <>
+          
+         </>
+      )  
+      })
+      }
+
+
+            </>: <>
+            {
+       card.map((item) => { 
+      return(
+        (item.CardType) === 'About' ? 
+        <>
+       
+       <div className='destination-cards mappingstyabout' key={item._id}>
+          <div className='destination-right'>
+              <h2>{item.CardTitlear}</h2>
+              <p>{item.CardDescriptionsar}</p>
+              
+            </div>
+            <div className='destination-left'>
+              <img src={item.images[0].url}/>
+            </div>
+            
+          </div>
+        </>
+         : 
+         <>
+          
+         </>
+      )  
+      })
+      }
+            </>
+          }
+          
+        </div>
+    </>
+  )
+}
+
+export default Index

@@ -133,19 +133,25 @@ useEffect(() => {
           <fieldset>
               <legend>Hotel Service Needed?</legend>
               <div className="radiobtnform">
-              <div className="radiofield1">
-                <input type="radio" id="isvisited" name="HotelService" value='1'
-                onChange={(e) => handleChange(e)}
-                      />
-                <label for="yes">Yes</label>
-              </div>
+              <label className="labeltext">
+          <input type="radio"
+          name="HotelService"
+          value="1"
+          className="textbtn2"
+          onChange={handleChange}
+          />
+          <span className="yestext">Yes</span>
+        </label>
 
-              <div className="radiofield1">
-                <input type="radio" id="Visitedbefore" name="HotelService" value='0'
-                onChange={(e) => handleChange(e)}
-                />
-                <label for="no">No</label>
-              </div>
+        <label className="labeltext">
+          <input type="radio"
+          name="HotelService"
+          className="textbtn2"
+          value="0"
+          onChange={handleChange}
+          />
+          <span className="yestext">No</span>
+        </label>
               </div>
           </fieldset>
           </Form.Group>
@@ -154,19 +160,25 @@ useEffect(() => {
           <fieldset>
               <legend>Visa Service Needed?</legend>
               <div className="radiobtnform">
-              <div className="radiofield1">
-                <input type="radio" id="isvisited" name="VisaService" value='1'
-                onChange={(e) => handleChange(e)}
-                      />
-                <label for="yes">Yes</label>
-              </div>
+              <label className="labeltext">
+          <input type="radio"
+          name="VisaService"
+          value="1"
+          className="textbtn2"
+          onChange={handleChange}
+          />
+          <span className="yestext">Yes</span>
+        </label>
 
-              <div className="radiofield1">
-                <input type="radio" id="Visitedbefore" name="VisaService" value='0'
-                onChange={(e) => handleChange(e)}
-                />
-                <label for="no">No</label>
-              </div>
+        <label className="labeltext">
+          <input type="radio"
+          name="VisaService"
+          className="textbtn2"
+          value="0"
+          onChange={handleChange}
+          />
+          <span className="yestext">No</span>
+        </label>
               </div>
           </fieldset>
           </Form.Group>
@@ -175,19 +187,25 @@ useEffect(() => {
           <fieldset>
               <legend>Catering Service Needed?</legend>
               <div className="radiobtnform">
-              <div className="radiofield1">
-                <input type="radio" id="isvisited" name="TransportationService" value='1'
-                onChange={(e) => handleChange(e)}
-                    />
-                <label for="yes">Yes</label>
-              </div>
+              <label className="labeltext">
+          <input type="radio"
+          name="CateringService"
+          value="1"
+          className="textbtn2"
+          onChange={handleChange}
+          />
+          <span className="yestext">Yes</span>
+        </label>
 
-              <div className="radiofield1">
-                <input type="radio" id="Visitedbefore" name="TransportationService" value='0'
-                onChange={(e) => handleChange(e)}
-                />
-                <label for="no">No</label>
-              </div>
+        <label className="labeltext">
+          <input type="radio"
+          name="CateringService"
+          className="textbtn2"
+          value="0"
+          onChange={handleChange}
+          />
+          <span className="yestext">No</span>
+        </label>
               </div>
           </fieldset>
           </Form.Group>
@@ -196,30 +214,36 @@ useEffect(() => {
           <fieldset>
               <legend>Transporttation Service Needed?</legend>
               <div className="radiobtnform">
-              <div className="radiofield1">
-                <input type="radio" id="isvisited" name="CateringService" value='1'
-                onChange={(e) => handleChange(e)}
-                      />
-                <label for="yes">Yes</label>
-              </div>
+              <label className="labeltext">
+          <input type="radio"
+          name="TransportationService"
+          value="1"
+          className="textbtn2"
+          onChange={handleChange}
+          />
+          <span className="yestext">Yes</span>
+        </label>
 
-              <div className="radiofield1">
-                <input type="radio" id="Visitedbefore" name="CateringService" value='0'
-                onChange={(e) => handleChange(e)}
-                />
-                <label for="no">No</label>
-              </div>
+        <label className="labeltext">
+          <input type="radio"
+          name="TransportationService"
+          className="textbtn2"
+          value="0"
+          onChange={handleChange}
+          />
+          <span className="yestext">No</span>
+        </label>
               </div>
           </fieldset>
           </Form.Group>
           <Form.Group className="mb-13 " controlId="formGridAddress1">
             <Form.Control placeholder="Note" className="largetextreason" 
              name="Notes"
-             val
+             
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          <Capcha/>
+          {/* <Capcha/> */}
           <SubmitButton text={"Submit"}/>
         </Form>
       </div>
@@ -363,7 +387,7 @@ useEffect(() => {
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          <Capcha/>
+          {/* <Capcha/> */}
           <SubmitButton text={"يُقدِّم"}/>
         </Form>
       </div>

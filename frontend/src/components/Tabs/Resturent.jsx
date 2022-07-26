@@ -209,20 +209,25 @@ const Fly = () => {
           </Form.Group>
         </Row>
         <div className="radionbtnfoem">
-          <input
-            type="radio"
-            name="Gender"
-            value="male"
-            onChange={handleChange}
-          />{" "}
-          <span className="mgender">Male</span>
-          <input
-            type="radio"
-            name="Gender"
-            value="female"
-            onChange={handleChange}
-          />{" "}
-          <span className="mgender">Female</span>
+        <label>
+          <input type="radio"
+          name="Gender"
+          value="male"
+          className="textbtn2"
+          onChange={handleChange}
+          />
+          <span>Male</span>
+        </label>
+
+        <label>
+          <input type="radio"
+          name="Gender"
+          className="textbtn2"
+          value="female"
+          onChange={handleChange}
+          />
+          <span>Female</span>
+        </label>
         </div>
         <Form.Group className="mb-3" controlId="formGridAddress2">
           <Form.Control
@@ -246,7 +251,7 @@ const Fly = () => {
           />
           <label for="id"  className="label11">Upload CV</label>
         </Form.Group>
-        <Capcha/>
+        {/* <Capcha/> */}
         <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
       </Form>
                 </div>

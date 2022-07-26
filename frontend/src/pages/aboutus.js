@@ -5,6 +5,8 @@ import MobilePlatform from "../assets/images/onlinePlatform.png";
 import HotelServiceImage from "../assets/images/catering.png";
 import LeftCloud from '../assets/images/leftcloud.png'
 import Card from '../components/Card/vision'
+import Mission from '../components/Card/mission'
+
 import Footer from "../components/Footer/index1";
 import Cookies from "universal-cookie";
 import BackArrow from '../components/Button/Arabic'
@@ -64,9 +66,9 @@ const Whoweare = () => {
           <div className="custom-container">
             {
               getlanguage != 'english' ? <>
-              
+              <AboutManasik/>
               </>: <>
-              
+              <AboutManasik/>
               </>
             }
           </div>
@@ -74,6 +76,7 @@ const Whoweare = () => {
         </div>
        <div className="vision">
        <Card/>
+       <Mission/>
        </div>
        {
         getlanguage != 'english' ? <>

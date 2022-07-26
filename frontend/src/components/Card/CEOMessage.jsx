@@ -24,7 +24,7 @@ const CEOMessage = () => {
       {
        card.map((item) => { 
       return(
-        (item.CardType) === 'message' ? 
+        (item.CardType) === ' Ceomessage' ? 
         <>
         <div className="warning-section newceo" key={item._id}>
              <h2>{item.CardTitle}</h2>
@@ -42,7 +42,7 @@ const CEOMessage = () => {
       {
        card.map((item) => { 
       return(
-        (item.CardType) === 'message' ? 
+        (item.CardType) === ' Ceomessage' ? 
         <>
         <div className="warning-section newceo" key={item._id}>
              <h2 className='arabic-align'>{item.CardTitlear}</h2>

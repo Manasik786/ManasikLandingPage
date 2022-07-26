@@ -207,20 +207,25 @@ const Fly = () => {
           </Form.Group>
         </Row>
         <div className="radionbtnfoem">
-          <input
-            type="radio"
-            name="Gender"
-            value="male"
-            onChange={handleChange}
-          />{" "}
-          <span className="mgender">Male</span>
-          <input
-            type="radio"
-            name="Gender"
-            value="female"
-            onChange={handleChange}
-          />{" "}
-          <span className="mgender">Female</span>
+        <label>
+          <input type="radio"
+          name="Gender"
+          value="male"
+          className="textbtn2"
+          onChange={handleChange}
+          />
+          <span>Male</span>
+        </label>
+
+        <label>
+          <input type="radio"
+          name="Gender"
+          className="textbtn2"
+          value="female"
+          onChange={handleChange}
+          />
+          <span>Female</span>
+        </label>
         </div>
         <Form.Group className="mb-3" controlId="formGridAddress2">
           <Form.Control
@@ -244,7 +249,7 @@ const Fly = () => {
           />
           <label for="id"  className="label11">Upload CV</label>
         </Form.Group>
-        <Capcha/>
+        {/* <Capcha/> */}
         <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
       </Form>
                 </div>
@@ -380,9 +385,10 @@ const Fly = () => {
             value="female"
             onChange={handleChange}
           />{" "}
-          <span className="mgender">Femaأنثىle</span>
+          <span className="mgender">أنثى</span>
         </div>
         <Form.Group className="mb-3" controlId="formGridAddress2">
+        <label for="image"  className="label11 arabic-align">تحميل صورة الملف الشخصي</label>
           <Form.Control
             type="file"
             name="images"
@@ -391,7 +397,7 @@ const Fly = () => {
             multiple
             id="image"
           />
-          <label for="image"  className="label11 arabic-align">تحميل صورة الملف الشخصي</label>
+         
         </Form.Group>
         <Form.Group className="mb-3" controlId="formGridAddress2">
           <Form.Control
@@ -404,7 +410,7 @@ const Fly = () => {
           />
           <label for="id"  className="label11 arabic-align">تحميل السيرة الذاتية</label>
         </Form.Group>
-        <Capcha/>
+        {/* <Capcha/> */}
         <button className="btnsubmit" onClick={createProductSubmitHandler}>يُقدِّم</button>
       </Form>
                 </div>

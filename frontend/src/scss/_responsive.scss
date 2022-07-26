@@ -1491,6 +1491,15 @@
         width: 90%;
         margin: auto;
     }
+    legend {
+        text-align: left;
+        float: left;
+        width: 60% !important;
+        padding: 0;
+        margin-bottom: 0.5rem;
+        font-size: calc(1.275rem + .3vw);
+        line-height: inherit;
+      }
     label {
         display: inline-block;
         margin: 1px;
@@ -1982,6 +1991,15 @@
         position: relative;
         font-family: Arial;
     }
+    legend {
+        text-align: left;
+        float: left;
+        width: 60% !important;
+        padding: 0;
+        margin-bottom: 0.5rem;
+        font-size: calc(1.275rem + .3vw);
+        line-height: inherit;
+      }
     .header .custom-nav .navbar-nav li .nav-link {
         padding-right: 0.5rem;
         padding-left: .5rem;

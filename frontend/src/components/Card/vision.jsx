@@ -28,7 +28,7 @@ const Index = () => {
        {
        card.map((item) => { 
       return(
-        (item.CardType) === 'aboutpage' ? 
+        (item.CardType) === 'Vision' ? 
         <>
        
        <div className='destination-cards mappingstyabout' key={item._id}>
@@ -56,7 +56,7 @@ const Index = () => {
             {
        card.map((item) => { 
       return(
-        (item.CardType) === 'aboutpage' ? 
+        (item.CardType) === 'Vision' ? 
         <>
        
        <div className='destination-cards mappingstyabout' key={item._id}>

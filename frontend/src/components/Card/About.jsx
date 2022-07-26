@@ -25,7 +25,7 @@ const Index = () => {
       {getlanguage != "english" ? (
         <>
           {card.map((item) => {
-            return item.CardType === "about" ? (
+            return item.CardType === "About" ? (
               <>
                 <div
                   className="col-12 col-xxl-10 col-xl-10 col-lg-10 col-md-11 "

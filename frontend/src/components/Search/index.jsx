@@ -82,7 +82,12 @@ useEffect(() => {
     <>
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-       <h2 className='applyfromclass'>Search Flight</h2>
+      {
+        getlanguage != 'english' ? <>
+         <h2 className='applyfromclass'>Search Flight</h2>
+        </>:<>
+        <h2 className='applyfromclass arabic-align'>رحلة البحث</h2></>
+      }
         </Modal.Header>
         {
        getlanguage != 'english'? <>
@@ -102,20 +107,43 @@ useEffect(() => {
               />
             </Form.Group>
           </Row>
-          
-          
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridName">     
+              <Form.Control type="text" placeholder="Familyname" 
+              name="familyname"
+              onChange={(e) => handleChange(e)}
+              />
+            </Form.Group>
+            <Form.Group as={Col} controlId="formGridName">
+              <Form.Control type="number" placeholder="Phone" 
+              name="Phone"
+              onChange={(e) => handleChange(e)}
+              />
+            </Form.Group>
+          </Row>
+          <Form.Group className="mb-3" controlId="formGridAddress2">
+          <Form.Group as={Col} controlId="formGridName">
+              <Form.Control type="number" placeholder="Nationalid" 
+              name="nationalid"
+              onChange={(e) => handleChange(e)}
+              />
+            </Form.Group>
+          </Form.Group>
           <Form.Group className="mb-3" controlId="formGridAddress2">
           <fieldset>
               <legend>Hotel Service Needed?</legend>
               <div className="radiobtnform">
               <div className="radiofield1">
-                <input type="radio" id="isvisited" name="Hotel" value='1'
-                      checked/>
+                <input type="radio" id="isvisited" name="HotelService" value='1'
+                onChange={(e) => handleChange(e)}
+                      />
                 <label for="yes">Yes</label>
               </div>
 
               <div className="radiofield1">
-                <input type="radio" id="Visitedbefore" name="Hotel" value='0'/>
+                <input type="radio" id="Visitedbefore" name="HotelService" value='0'
+                onChange={(e) => handleChange(e)}
+                />
                 <label for="no">No</label>
               </div>
               </div>
@@ -127,13 +155,16 @@ useEffect(() => {
               <legend>Visa Service Needed?</legend>
               <div className="radiobtnform">
               <div className="radiofield1">
-                <input type="radio" id="isvisited" name="Visa" value='1'
-                      checked/>
+                <input type="radio" id="isvisited" name="VisaService" value='1'
+                onChange={(e) => handleChange(e)}
+                      />
                 <label for="yes">Yes</label>
               </div>
 
               <div className="radiofield1">
-                <input type="radio" id="Visitedbefore" name="Visa" value='0'/>
+                <input type="radio" id="Visitedbefore" name="VisaService" value='0'
+                onChange={(e) => handleChange(e)}
+                />
                 <label for="no">No</label>
               </div>
               </div>
@@ -145,13 +176,16 @@ useEffect(() => {
               <legend>Catering Service Needed?</legend>
               <div className="radiobtnform">
               <div className="radiofield1">
-                <input type="radio" id="isvisited" name="Catering" value='1'
-                      checked/>
+                <input type="radio" id="isvisited" name="TransportationService" value='1'
+                onChange={(e) => handleChange(e)}
+                    />
                 <label for="yes">Yes</label>
               </div>
 
               <div className="radiofield1">
-                <input type="radio" id="Visitedbefore" name="Catering" value='0'/>
+                <input type="radio" id="Visitedbefore" name="TransportationService" value='0'
+                onChange={(e) => handleChange(e)}
+                />
                 <label for="no">No</label>
               </div>
               </div>
@@ -163,13 +197,16 @@ useEffect(() => {
               <legend>Transporttation Service Needed?</legend>
               <div className="radiobtnform">
               <div className="radiofield1">
-                <input type="radio" id="isvisited" name="Transporttation" value='1'
-                      checked/>
+                <input type="radio" id="isvisited" name="CateringService" value='1'
+                onChange={(e) => handleChange(e)}
+                      />
                 <label for="yes">Yes</label>
               </div>
 
               <div className="radiofield1">
-                <input type="radio" id="Visitedbefore" name="Transporttation" value='0'/>
+                <input type="radio" id="Visitedbefore" name="CateringService" value='0'
+                onChange={(e) => handleChange(e)}
+                />
                 <label for="no">No</label>
               </div>
               </div>
@@ -177,7 +214,7 @@ useEffect(() => {
           </Form.Group>
           <Form.Group className="mb-13 " controlId="formGridAddress1">
             <Form.Control placeholder="Note" className="largetextreason" 
-             name="Reasontovisitksa"
+             name="Notes"
              val
              onChange={(e) => handleChange(e)}
             />
@@ -191,38 +228,65 @@ useEffect(() => {
         <Form className="popupform" onSubmit={PostForm}>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridName">     
-              <Form.Control type="text" placeholder="اسم" 
+              <Form.Control type="text" placeholder="اسم"
+              className="arabic-align"
               name="Name"
-              className="arabicform1"
               onChange={(e) => handleChange(e)}
+
               />
             </Form.Group>
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="البريد الإلكتروني" 
               name="Email"
-              className="arabicform1"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
           </Row>
-          
-          
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridName">     
+              <Form.Control type="text" placeholder="اسم العائلة" 
+              name="familyname"
+              className="arabic-align"
+              onChange={(e) => handleChange(e)}
+              />
+            </Form.Group>
+            <Form.Group as={Col} controlId="formGridName">
+              <Form.Control type="number" placeholder="هاتف" 
+              name="Phone"
+              className="arabic-align"
+              onChange={(e) => handleChange(e)}
+              />
+            </Form.Group>
+          </Row>
+          <Form.Group className="mb-3" controlId="formGridAddress2">
+          <Form.Group as={Col} controlId="formGridName">
+              <Form.Control type="number" placeholder="الهوية الوطنية" 
+              name="nationalid"
+              className="arabic-align"
+              onChange={(e) => handleChange(e)}
+              />
+            </Form.Group>
+          </Form.Group>
           <Form.Group className="mb-3" controlId="formGridAddress2">
           <fieldset>
              
               <div className="radiobtnform">
               <div className="radiofield1">
-                <input type="radio" id="isvisited" name="Hotel" value='1'
-                      checked/>
+                <input type="radio" id="isvisited" name="HotelService" value='1'
+                onChange={(e) => handleChange(e)}
+                      />
                 <label for="yes">نعم</label>
               </div>
 
               <div className="radiofield1">
-                <input type="radio" id="Visitedbefore" name="Hotel" value='0'/>
+                <input type="radio" id="Visitedbefore" name="HotelService" value='0'
+                onChange={(e) => handleChange(e)}
+                />
                 <label for="no">رقم</label>
               </div>
               </div>
-              <legend className="arabicform1">تحتاج خدمة الفندق؟</legend>
+              <legend  className="arabic-align">تحتاج خدمة الفندق؟</legend>
           </fieldset>
           </Form.Group>
 
@@ -231,17 +295,42 @@ useEffect(() => {
              
               <div className="radiobtnform">
               <div className="radiofield1">
-                <input type="radio" id="isvisited" name="Visa" value='1'
-                      checked/>
+                <input type="radio" id="isvisited" name="VisaService" value='1'
+                onChange={(e) => handleChange(e)}
+                      />
                 <label for="yes">نعم</label>
               </div>
 
               <div className="radiofield1">
-                <input type="radio" id="Visitedbefore" name="Visa" value='0'/>
+                <input type="radio" id="Visitedbefore" name="VisaService" value='0'
+                onChange={(e) => handleChange(e)}
+                />
                 <label for="no">رقم</label>
               </div>
               </div>
-               <legend  className="arabicform1">هل تحتاج إلى خدمة التأشيرة؟</legend>
+              <legend  className="arabic-align">هل تحتاج إلى خدمة التأشيرة؟</legend>
+          </fieldset>
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formGridAddress2">
+          <fieldset>
+              
+              <div className="radiobtnform">
+              <div className="radiofield1">
+                <input type="radio" id="isvisited" name="TransportationService" value='1'
+                onChange={(e) => handleChange(e)}
+                    />
+                <label for="yes">نعم</label>
+              </div>
+
+              <div className="radiofield1">
+                <input type="radio" id="Visitedbefore" name="TransportationService" value='0'
+                onChange={(e) => handleChange(e)}
+                />
+                <label for="no">رقم</label>
+              </div>
+              </div>
+              <legend  className="arabic-align">مطلوب خدمة تقديم الطعام؟</legend>
           </fieldset>
           </Form.Group>
 
@@ -250,42 +339,26 @@ useEffect(() => {
              
               <div className="radiobtnform">
               <div className="radiofield1">
-                <input type="radio" id="isvisited" name="Catering" value='1'
-                      checked/>
+                <input type="radio" id="isvisited" name="CateringService" value='1'
+                onChange={(e) => handleChange(e)}
+                      />
                 <label for="yes">نعم</label>
               </div>
 
               <div className="radiofield1">
-                <input type="radio" id="Visitedbefore" name="Catering" value='0'/>
+                <input type="radio" id="Visitedbefore" name="CateringService" value='0'
+                onChange={(e) => handleChange(e)}
+                />
                 <label for="no">رقم</label>
               </div>
               </div>
-              <legend  className="arabicform1">مطلوب خدمة تقديم الطعام؟</legend>
-          </fieldset>
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formGridAddress2">
-          <fieldset>
-             
-              <div className="radiobtnform">
-              <div className="radiofield1">
-                <input type="radio" id="isvisited" name="Transporttation" value='1'
-                      checked/>
-                <label for="yes">نعم</label>
-              </div>
-
-              <div className="radiofield1">
-                <input type="radio" id="Visitedbefore" name="Transporttation" value='0'/>
-                <label for="no">رقم</label>
-              </div>
-              </div>
-              <legend  className="arabicform1">خدمة النقل بحاجة؟</legend>
+               <legend  className="arabic-align">خدمة النقل بحاجة؟</legend>
           </fieldset>
           </Form.Group>
           <Form.Group className="mb-13 " controlId="formGridAddress1">
-            <Form.Control placeholder="ملحوظة" className="largetextreason arabicform1" 
-             name="Reasontovisitksa"
-            
+            <Form.Control placeholder="ملحوظات" className="largetextreason arabic-align" 
+             name="Notes"
+             
              val
              onChange={(e) => handleChange(e)}
             />

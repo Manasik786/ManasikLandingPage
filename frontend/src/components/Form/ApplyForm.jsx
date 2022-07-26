@@ -4,6 +4,8 @@ import SubmitButton from "../Button/large";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import Capcha from "../../pages/Translator";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Popup = (props) => {
   const [data, setData] = useState({
@@ -47,10 +49,10 @@ const Popup = (props) => {
         data,
         config
       );
-      alert("Submitted");
+      toast("Submitted");
     } catch (err) {
       const Error = err.response.data;
-      alert(Error.message);
+      toast(Error.message);
     }
 
     console.log(data);
@@ -219,11 +221,24 @@ const Popup = (props) => {
                 </Form.Group>
               </Row>
               <div className="radionbtnfoem">
-                <input type="radio" value="Male" name="Gender" />{" "}
+                <input
+                  type="radio"
+                  
+                  name="Gender"
+                  value="male"
+                  onChange={(e) => handleChange(e)}
+                />{" "}
                 <span className="mgender">ذكر</span>
-                <input type="radio" value="Female" name="Gender" />{" "}
+                <input
+                  type="radio"
+                  
+                  name="Gender"
+                  value="female"
+                  onChange={(e) => handleChange(e)}
+                />{" "}
                 <span className="mgender">أنثى</span>
               </div>
+              
               <Form.Group className="mb-3" controlId="formGridAddress2">
                 <Form.Control
                   type="text"

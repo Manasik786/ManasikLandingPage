@@ -42,7 +42,7 @@ const Packages = () => {
       card.map((item) => {
         return(
           
-            (item.PkgName === str ?
+            (item._id === str ?
              <>
              <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton>
@@ -94,7 +94,7 @@ const Packages = () => {
       card.map((item) => {
         return(
           
-            (item.PkgName === str ?
+            (item._id === str ?
              <>
              <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton>

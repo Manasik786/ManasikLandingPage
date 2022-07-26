@@ -98,7 +98,7 @@ const [getlanguage,setLanguage] = useState(cookies.get("language"));
               <div className="newpack">
               <Link
                       to={{
-                        pathname: `packages/${(item.PkgName).replace(/ /g,'')}`,
+                        pathname: `packages/${(item._id)}`,
                         state: {
                           // whatever you need to send with the route transition
                         },
@@ -138,7 +138,7 @@ const [getlanguage,setLanguage] = useState(cookies.get("language"));
               <div className="newpack">
               <Link
                       to={{
-                        pathname: `packages/${(item.PkgName).replace(/ /g,'')}`,
+                        pathname: `packages/${(item._id)}`,
                         state: {
                           // whatever you need to send with the route transition
                         },

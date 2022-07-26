@@ -4,6 +4,7 @@ import SubmitButton from '../Button/large'
 import SubmitButton1 from '../Button/ArabicLarge'
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 import Capcha from '../../pages/Translator'
 import Cookies from "universal-cookie";
 import { useLocation } from "react-router-dom";
@@ -39,7 +40,7 @@ let str = pathname;
   const [Reasontovisitksa, setReasontovisitksa] = useState(" ");
   const [Religion, setReligion] = useState(" ");
   const [Servicetype,SetservicesType] = useState(newpath)
-
+  const [CardType,setCardType] = useState('service')
 
   const [data, setData] = useState({
     Name: Name,
@@ -56,6 +57,7 @@ let str = pathname;
     Reasontovisitksa:Reasontovisitksa,
     Religion:Religion,
     Servicetype: newpath,
+    CardType: "service",
     upload:" ",
     
   });
@@ -69,6 +71,7 @@ let str = pathname;
   useEffect(() => {}, []);
   const createProductSubmitHandler = async (e) => {
     e.preventDefault();
+    setCardType('service')
     setName(Name);
     setEmail(Email);
     setPhone(Phone);
@@ -82,6 +85,8 @@ let str = pathname;
     setReligion(Religion);
     setcountry(country);
     SetservicesType(newpath);
+
+    
 
     const myForm = new FormData();
     myForm.append("Name", data.Name);
@@ -98,7 +103,7 @@ let str = pathname;
     myForm.append("Reasontovisitksa",data.Reasontovisitksa)
     myForm.append("Religion",data.Religion)
     myForm.append("ServiceType",newpath)
-
+    myForm.append("CardType",'service')
 
     // myForm.append("images", data.images);
 
@@ -110,9 +115,10 @@ let str = pathname;
     try {
       const response = await axios.post(`/api/v1/createBookingForm`, myForm);
       console.log(response);
-      console.log(myForm);
+      toast("Submitted");
     } catch (err) {
-      console.log(err);
+      const Error = err.response.data;
+      toast(Error.message);
     }
   };
   const createServiceImagesChange = (e) => {
@@ -249,21 +255,25 @@ let str = pathname;
           <fieldset>
               <legend>Have you visited KSA before?</legend>
               <div className="radiobtnform">
-              <div className="radiofield1">
-              <label>Yes</label>
-                <input type="radio" id="isvisited" name="Visitedbefore" value='1' className="radiostylebtn"
-                      onChange={(e) => handleChange(e)}
-                      />
-               
-              </div>
+              <label className="labeltext">
+          <input type="radio"
+          name="Visitedbefore"
+          value="1"
+          className="textbtn2"
+          onChange={handleChange}
+          />
+          <span className="yestext">Yes</span>
+        </label>
 
-              <div className="radiofield1">
-              <label>No</label>
-                <input type="radio" id="Visitedbefore" name="Visitedbefore" value='0' className="radiostylebtn"
-                onChange={(e) => handleChange(e)}
-                />
-              
-              </div>
+        <label className="labeltext">
+          <input type="radio"
+          name="Visitedbefore"
+          className="textbtn2"
+          value="0"
+          onChange={handleChange}
+          />
+          <span className="yestext">No</span>
+        </label>
               </div>
           </fieldset>
           </Form.Group>
@@ -396,19 +406,28 @@ let str = pathname;
           
           <Form.Group className="mb-3 " controlId="formGridAddress2">
           <fieldset>
-              
-              <div className="radiobtnform">
-              <div className="radiofield1">
-                <input type="radio" id="isvisited" name="Visitedbefore" value='1'
-                      checked/>
-                <label for="yes">نعم</label>
-              </div>
+          <div className="radiobtnform">
+              <label className="labeltext">
+          <input type="radio"
+          name="Visitedbefore"
+          value="1"
+          className="textbtn2"
+          onChange={handleChange}
+          />
+          <span className="yestext">نعم</span>
+        </label>
 
-              <div className="radiofield1">
-                <input type="radio" id="Visitedbefore" name="Visitedbefore" value='0'/>
-                <label for="no">رقم</label>
+        <label className="labeltext">
+          <input type="radio"
+          name="Visitedbefore"
+          className="textbtn2"
+          value="0"
+          onChange={handleChange}
+          />
+          <span className="yestext">رقم</span>
+        </label>
               </div>
-              </div>
+             
               <legend className="arabic-align">هل زرت المملكة العربية السعودية من قبل؟</legend>
           </fieldset>
           </Form.Group>
@@ -419,7 +438,7 @@ let str = pathname;
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          <Capcha/>
+          {/* <Capcha/> */}
           <SubmitButton1 text={"يُقدِّم"}/>
         </Form>
       </div>

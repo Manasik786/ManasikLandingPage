@@ -65,9 +65,10 @@ export default function ServicesAddition() {
     try {
       const response = await axios.post(`/api/v1/createapplicants`, myForm);
       console.log(response);
-      console.log(myForm);
+      alert("Submitted");
     } catch (err) {
-      console.log(err);
+      const Error = err.response.data;
+      alert(Error.message);
     }
   };
   const createServiceImagesChange = (e) => {

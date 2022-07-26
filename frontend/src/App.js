@@ -12,7 +12,8 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 import CookieConsent from "react-cookie-consent";
 // import './new.css';
-
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
   const cookies = new Cookies();
@@ -35,6 +36,19 @@ useEffect(() => {
           <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
           <script src="https://kit.fontawesome.com/13cbec302f.js" crossorigin="anonymous"></script>
         </Helmet>
+        <ToastContainer
+          className="impct-toast"
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnVisibilityChange
+          draggable={false}
+          pauseOnHover
+          
+        />
         <Layout />
       </Router>
     </>

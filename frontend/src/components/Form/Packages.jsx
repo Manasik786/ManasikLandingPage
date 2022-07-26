@@ -6,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Capcha from '../../pages/Translator'
 import Cookies from "universal-cookie";
 import { useLocation } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 // import Select from 'react-select'
 // import countryList from 'react-select-country-list'
@@ -40,10 +42,11 @@ let str = pathname;
   const [Reasontovisitksa, setReasontovisitksa] = useState(" ");
   const [Religion, setReligion] = useState(" ");
   const [Servicetype,setservicesType] = useState(str)
-
+  const [CardType,setCardType] = useState('packages')
 
   const [data, setData] = useState({
     Servicetype: str,
+    CardType:"packages",
     Name: Name,
     familyname: familyname,
     DOB:DOB,
@@ -84,9 +87,11 @@ let str = pathname;
     setReligion(Religion);
     setcountry(country);
     setservicesType(str);
+    setCardType("packages")
 
     const myForm = new FormData();
     myForm.append("Servicetype",str)
+    myForm.append("CardType",'packages')
     myForm.append("Name", data.Name);
     myForm.append("Email", data.Email);
     myForm.append("Phone", data.Phone);
@@ -100,6 +105,7 @@ let str = pathname;
     myForm.append("relativecontact",data.relativecontact)
     myForm.append("Reasontovisitksa",data.Reasontovisitksa)
     myForm.append("Religion",data.Religion)
+
    
 
 
@@ -114,11 +120,11 @@ let str = pathname;
       const response = await axios.post(`/api/v1/createBookingForm`, myForm);
       console.log(response);
       console.log(myForm);
-      alert("Submitted")
+      toast("Submitted")
     } catch (err) {
       console.log(err);
       const Error = err.response.data;
-    alert(Error.message)
+    toast(Error.message)
     }
   };
   const createServiceImagesChange = (e) => {
@@ -255,21 +261,25 @@ let str = pathname;
           <fieldset>
               <legend>Have you visited KSA before?</legend>
               <div className="radiobtnform">
-              <div className="radiofield1">
-              <label>Yes</label>
-                <input type="radio" id="isvisited" name="Visitedbefore" value='1' className="radiostylebtn"
-                      onChange={(e) => handleChange(e)}
-                      />
-               
-              </div>
+              <label className="labeltext">
+          <input type="radio"
+          name="Visitedbefore"
+          value="1"
+          className="textbtn2"
+          onChange={handleChange}
+          />
+          <span className="yestext">Yes</span>
+        </label>
 
-              <div className="radiofield1">
-              <label>No</label>
-                <input type="radio" id="Visitedbefore" name="Visitedbefore" value='0' className="radiostylebtn"
-                onChange={(e) => handleChange(e)}
-                />
-              
-              </div>
+        <label className="labeltext">
+          <input type="radio"
+          name="Visitedbefore"
+          className="textbtn2"
+          value="0"
+          onChange={handleChange}
+          />
+          <span className="yestext">No</span>
+        </label>
               </div>
           </fieldset>
           </Form.Group>
@@ -390,19 +400,29 @@ let str = pathname;
           
           <Form.Group className="mb-3 " controlId="formGridAddress2">
           <fieldset>
-              <legend>هل زرت المملكة العربية السعودية من قبل؟</legend>
-              <div className="radiobtnform">
-              <div className="radiofield1">
-                <input type="radio" id="isvisited" name="Visitedbefore" value='1'
-                      checked/>
-                <label for="yes">نعم</label>
-              </div>
+          <div className="radiobtnform">
+              <label className="labeltext">
+          <input type="radio"
+          name="Visitedbefore"
+          value="1"
+          className="textbtn2"
+          onChange={handleChange}
+          />
+          <span className="yestext">نعم</span>
+        </label>
 
-              <div className="radiofield1">
-                <input type="radio" id="Visitedbefore" name="Visitedbefore" value='0'/>
-                <label for="no">رقم</label>
+        <label className="labeltext">
+          <input type="radio"
+          name="Visitedbefore"
+          className="textbtn2"
+          value="0"
+          onChange={handleChange}
+          />
+          <span className="yestext">رقم</span>
+        </label>
               </div>
-              </div>
+             
+              <legend className="arabic-align">هل زرت المملكة العربية السعودية من قبل؟</legend>
           </fieldset>
           </Form.Group>
           <Form.Group className="mb-13 " controlId="formGridAddress1">

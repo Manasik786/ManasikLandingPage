@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Capcha from '../../pages/Translator'
 import Cookies from "universal-cookie";
 import { useLocation } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
 // import Select from 'react-select'
 // import countryList from 'react-select-country-list'
@@ -40,10 +41,11 @@ let str = pathname;
   const [Reasontovisitksa, setReasontovisitksa] = useState(" ");
   const [Religion, setReligion] = useState(" ");
   const [Servicetype,SetservicesType] = useState(checkpath)
-
+  const [CardType,setCardType] = useState('Air Ambulance')
 
   const [data, setData] = useState({
     Servicetype: checkpath,
+    CardType: "Air Ambulance",
     Name: Name,
     familyname: familyname,
     DOB:DOB,
@@ -84,6 +86,7 @@ let str = pathname;
     setReligion(Religion);
     setcountry(country);
     SetservicesType(checkpath);
+    setCardType('Air Ambulance')
 
     const myForm = new FormData();
     myForm.append("Servicetype",checkpath)
@@ -100,7 +103,7 @@ let str = pathname;
     myForm.append("relativecontact",data.relativecontact)
     myForm.append("Reasontovisitksa",data.Reasontovisitksa)
     myForm.append("Religion",data.Religion)
-    
+    myForm.append("CardType",'Air Ambulance')
 
 
     // myForm.append("images", data.images);
@@ -113,8 +116,11 @@ let str = pathname;
       const response = await axios.post(`/api/v1/createBookingForm`, myForm);
       console.log(response);
       console.log(myForm);
+      toast("Submitted")
     } catch (err) {
       console.log(err);
+      const Error = err.response.data;
+      toast(Error.message)
     }
   };
   const createServiceImagesChange = (e) => {
@@ -147,6 +153,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridName">     
               <Form.Control type="text" placeholder="Name" 
               name="Name"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -154,6 +161,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="Family Name" 
               name="familyname"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -163,6 +171,7 @@ let str = pathname;
               
               <Form.Control type="date" placeholder="Date of Birth"  id="dob"
               name="DOB"
+              required
               onChange={(e) => handleChange(e)}
               />
              <label for="img1" className="label11">Enter Date Of Birth</label>
@@ -172,6 +181,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="Email" 
               name="Email"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -181,6 +191,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="Country" 
               name="country"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -189,6 +200,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder="Mobile" 
               name="Phone"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -198,6 +210,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="Passport Number" 
               name="passportno"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -206,6 +219,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder=" National ID#"
               name="nationalid"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -215,6 +229,7 @@ let str = pathname;
               
               <Form.Control type="file" placeholder="Upload Document"
               name="upload"
+              required
               accept="image/*"
             onChange={createServiceImagesChange}
             multiple
@@ -224,6 +239,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="Stay Period (Number of Days)" 
                name="StayPeriod"
+               required
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -232,6 +248,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridEmail">
             <Form.Control placeholder="Religion"   
             name="Religion"
+            required
             onChange={(e) => handleChange(e)}
             />
            
@@ -241,6 +258,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder="Relative contact in KSA" 
                name="relativecontact"
+               required
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -251,27 +269,32 @@ let str = pathname;
           <fieldset>
               <legend>Have you visited KSA before?</legend>
               <div className="radiobtnform">
-              <div className="radiofield1">
-              <label>Yes</label>
-                <input type="radio" id="isvisited" name="Visitedbefore" value='1' className="radiostylebtn"
-                      onChange={(e) => handleChange(e)}
-                      />
-               
-              </div>
+              <label className="labeltext">
+          <input type="radio"
+          name="Visitedbefore"
+          value="1"
+          className="textbtn2"
+          onChange={handleChange}
+          />
+          <span className="yestext">Yes</span>
+        </label>
 
-              <div className="radiofield1">
-              <label>No</label>
-                <input type="radio" id="Visitedbefore" name="Visitedbefore" value='0' className="radiostylebtn"
-                onChange={(e) => handleChange(e)}
-                />
-              
-              </div>
+        <label className="labeltext">
+          <input type="radio"
+          name="Visitedbefore"
+          className="textbtn2"
+          value="0"
+          onChange={handleChange}
+          />
+          <span className="yestext">No</span>
+        </label>
               </div>
           </fieldset>
           </Form.Group>
           <Form.Group className="mb-13 " controlId="formGridAddress1">
             <Form.Control placeholder="Reason to visit Saudi Arabia" className="largetextreason" 
              name="Reasontovisitksa"
+             required
              val
              onChange={(e) => handleChange(e)}
             />
@@ -397,19 +420,29 @@ let str = pathname;
           
           <Form.Group className="mb-3 " controlId="formGridAddress2">
           <fieldset>
-              <legend className="arabicfont">هل زرت المملكة العربية السعودية من قبل؟</legend>
-              <div className="radiobtnform">
-              <div className="radiofield1">
-                <input type="radio" id="isvisited" name="Visitedbefore" value='1'
-                      checked/>
-                <label for="yes">نعم</label>
-              </div>
+          <div className="radiobtnform">
+              <label className="labeltext">
+          <input type="radio"
+          name="Visitedbefore"
+          value="1"
+          className="textbtn2"
+          onChange={handleChange}
+          />
+          <span className="yestext">نعم</span>
+        </label>
 
-              <div className="radiofield1">
-                <input type="radio" id="Visitedbefore" name="Visitedbefore" value='0'/>
-                <label for="no">رقم</label>
+        <label className="labeltext">
+          <input type="radio"
+          name="Visitedbefore"
+          className="textbtn2"
+          value="0"
+          onChange={handleChange}
+          />
+          <span className="yestext">رقم</span>
+        </label>
               </div>
-              </div>
+             
+              <legend className="arabic-align">هل زرت المملكة العربية السعودية من قبل؟</legend>
           </fieldset>
           </Form.Group>
           <Form.Group className="mb-13 " controlId="formGridAddress1">
@@ -419,7 +452,7 @@ let str = pathname;
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          <Capcha/>
+          {/* <Capcha/> */}
           <SubmitButton text={"يُقدِّم"}/>
         </Form>
       </div>

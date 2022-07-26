@@ -5,7 +5,8 @@ import Img1 from "../../assets/images/message.png";
 import Img2 from "../../assets/images/location.png";
 import Img3 from "../../assets/images/phone.png";
 import axios from "axios";
-
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Contact = () => {
   const cookies = new Cookies();
@@ -28,11 +29,11 @@ const Contact = () => {
       const response = await axios.post(
         `/api/v1/createContactLead`,message,config
       );
-      alert("Message Post Successfully")
+      toast("Message Post Successfully")
     } catch (err) {
       const Error = err.response.data;
       console.log(Error.message)
-      alert(Error.message)
+      toast(Error.message)
      
     }
   

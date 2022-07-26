@@ -135,7 +135,8 @@ const Fly = () => {
       {
         getlanguage != "english"?<>
         {card.map((item) => {
-        return item.Type == "FLY MANASIK" || item.Type == "fly Manasik" ? (
+                return item.Type == "FLY MANASIK" || item.Type == "fly Manasik" || item.Type == "fly manasik" || item.Type == "Fly manasik" ? (
+
           
           <>
             <>
@@ -295,7 +296,7 @@ const Fly = () => {
       })}
         </> :<>
         {card.map((item) => {
-        return item.Type == "FLY MANASIK" || item.Type == "fly Manasik" ? (
+        return item.Type == "FLY MANASIK" || item.Type == "fly Manasik" || item.Type == "fly manasik" || item.Type == "Fly manasik" ? (
           
           <>
             <>
@@ -372,21 +373,27 @@ const Fly = () => {
           </Form.Group>
         </Row>
         <div className="radionbtnfoem">
-          <input
-            type="radio"
-            name="Gender"
-            value="male"
-            onChange={handleChange}
-          />{" "}
-          <span className="mgender">ذكر</span>
-          <input
-            type="radio"
-            name="Gender"
-            value="female"
-            onChange={handleChange}
-          />{" "}
-          <span className="mgender">أنثى</span>
+        <label>
+          <input type="radio"
+          name="Gender"
+          value="male"
+          className="textbtn2"
+          onChange={handleChange}
+          />
+          <span>ذكر</span>
+        </label>
+
+        <label>
+          <input type="radio"
+          name="Gender"
+          className="textbtn2"
+          value="female"
+          onChange={handleChange}
+          />
+          <span>أنثى</span>
+        </label>
         </div>
+        
         <Form.Group className="mb-3" controlId="formGridAddress2">
         <label for="image"  className="label11 arabic-align">تحميل صورة الملف الشخصي</label>
           <Form.Control
@@ -402,6 +409,7 @@ const Fly = () => {
         <Form.Group className="mb-3" controlId="formGridAddress2">
           <Form.Control
             type="file"
+            
             name="Cv"
             accept="image/*"
             onChange={createServiceImagesChange1}

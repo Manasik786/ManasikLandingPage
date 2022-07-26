@@ -134,7 +134,7 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
                               className="dropdown-item"
                               
                               to={{
-                                pathname: `packages/${(item.PkgName).replace(/ /g,'')}`,
+                                pathname: `packages/${(item._id)}`,
                                 state: {
                                   // whatever you need to send with the route transition
                                 },
@@ -305,7 +305,7 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
                               className="dropdown-item"
                               
                               to={{
-                                pathname: `packages/${(item.PkgName).replace(/ /g,'')}`,
+                                pathname: `packages/${(item._id)}`,
                                 state: {
                                   // whatever you need to send with the route transition
                                 },

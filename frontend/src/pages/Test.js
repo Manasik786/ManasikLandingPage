@@ -42,7 +42,8 @@ const [getlanguage,setLanguage] = useState(cookies.get("language"));
             <div class="newabc" key={item._id}>
           <img src={item.images[0].url} alt="Nature"/>
           <div class="text-block">
-            <h2>{item.titleEnglish}</h2>
+            <h2>{item.title}</h2>
+            <p>{item.Description}</p>
            
           </div>
         </div>
@@ -60,7 +61,8 @@ const [getlanguage,setLanguage] = useState(cookies.get("language"));
             <div class="newabc" key={item._id}>
           <img src={item.images[0].url} alt="Nature"/>
           <div class="text-block">
-            <h2 className='arabic-align'>{item.titleArabic}</h2>
+            <h2 className='arabic-align'>{item.titlear}</h2>
+            <p>{item.Description}</p>
            
           </div>
         </div>

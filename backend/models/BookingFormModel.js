@@ -8,7 +8,7 @@ const BookingFormSchema = new mongoose.Schema({
     },
     Servicetype: {
         type: String,
-        // required: [true, "Please Enter Your Service Type"],
+
         trim: true
     },
     Name: {
@@ -79,7 +79,15 @@ const BookingFormSchema = new mongoose.Schema({
         trim: true
 
     },
+    Date: {
+        type: Date,
+        default: Date.now()
+    },
     Religion: {
+        type: String,
+        trim: true
+    },
+    CardType: {
         type: String,
         trim: true
     }

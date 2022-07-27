@@ -60,14 +60,15 @@ const Index = () => {
         <>
        
        <div className='destination-cards mappingstyabout' key={item._id}>
-          <div className='destination-right'>
-              <h2>{item.CardTitlear}</h2>
-              <p>{item.CardDescriptionsar}</p>
-              
-            </div>
-            <div className='destination-left'>
+       <div className='destination-left'>
               <img src={item.images[0].url}/>
             </div>
+          <div className='destination-right'>
+              <h2 className='arabic-align'>{item.CardTitlear}</h2>
+              <p className='arabic-align'> {item.CardDescriptionsar}</p>
+              
+            </div>
+            
             
           </div>
         </>

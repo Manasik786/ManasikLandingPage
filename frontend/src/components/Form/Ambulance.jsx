@@ -17,6 +17,9 @@ const Popup = () => {
   const cookies = new Cookies();
 const [getlanguage,setLanguage] = useState(cookies.get("language"));
 const { pathname } = useLocation();
+const [show, setShow] = useState(false);
+
+const handleClose = () => setShow(false);
 
 let str = pathname;
   str = str.substring(27);
@@ -85,7 +88,7 @@ let str = pathname;
     setReasontovisitksa(Reasontovisitksa);
     setReligion(Religion);
     setcountry(country);
-    SetservicesType(str);
+    SetservicesType(Servicetype);
     setCardType('Air Ambulance')
 
     const myForm = new FormData();
@@ -122,6 +125,7 @@ let str = pathname;
       const Error = err.response.data;
       toast(Error.message)
     }
+    
   };
   const createServiceImagesChange = (e) => {
     const files = Array.from(e.target.files);
@@ -141,6 +145,7 @@ let str = pathname;
     });
   };
 
+  console.log("Service Type",str)
   
 
   return (
@@ -301,8 +306,10 @@ let str = pathname;
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
+        
+         <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
          
-          <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
+         
         </Form>
       </div>
       </> : <>

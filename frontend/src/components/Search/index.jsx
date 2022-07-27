@@ -493,21 +493,12 @@ useEffect(() => {
         </div>
         <div>
         <form className="search-form myform">
-          <div className="form-control">
+        <div className="form-control">
             <div className="img-section">
-              <img src={airlineIcon} />{" "}
+              <img src={calenderIcon} />{" "}
             </div>
-            <input type="text" placeholder="من" 
-            name="DestinationFrom"
-            onChange={(e) => handleChange(e)}
-            />
-          </div>
-          <div className="form-control">
-            <div className="img-section">
-              <img src={airline2Icon} />{" "}
-            </div>
-            <input type="text" placeholder="إلى"
-            name="DestinationTo"
+            <input type="date" placeholder="تاريخ" 
+            name="Date"
             onChange={(e) => handleChange(e)}
             />
           </div>
@@ -523,13 +514,25 @@ useEffect(() => {
           </div>
           <div className="form-control">
             <div className="img-section">
-              <img src={calenderIcon} />{" "}
+              <img src={airline2Icon} />{" "}
             </div>
-            <input type="date" placeholder="تاريخ" 
-            name="Date"
+            <input type="text" placeholder="إلى"
+            name="DestinationTo"
             onChange={(e) => handleChange(e)}
             />
           </div>
+          <div className="form-control">
+            <div className="img-section">
+              <img src={airlineIcon} />{" "}
+            </div>
+            <input type="text" placeholder="من" 
+            name="DestinationFrom"
+            onChange={(e) => handleChange(e)}
+            />
+          </div>
+          
+          
+          
         </form>
         </div>
        

@@ -86,7 +86,7 @@ let str = pathname;
     setReasontovisitksa(Reasontovisitksa);
     setReligion(Religion);
     setcountry(country);
-    setservicesType(str);
+    setservicesType(Servicetype);
     setCardType("packages")
 
     const myForm = new FormData();

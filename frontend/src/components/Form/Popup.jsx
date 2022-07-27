@@ -85,7 +85,7 @@ let str = pathname;
     setReasontovisitksa(Reasontovisitksa);
     setReligion(Religion);
     setcountry(country);
-    SetservicesType(newpath);
+    SetservicesType(Servicetype);
 
     
 
@@ -296,9 +296,10 @@ let str = pathname;
       <div className="popup1">
         <Form className="popupform">
           <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridName" className="arabicfont">     
+            <Form.Group as={Col} controlId="formGridName" className="arabic-align">     
               <Form.Control type="text" placeholder="اسم" 
               name="Name"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -306,7 +307,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="اسم العائلة" 
               name="familyname"
-              className="arabicfont"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -316,7 +317,7 @@ let str = pathname;
             <div className="filetostyle">
               <Form.Control type="date" placeholder="تاريخ الولادة" 
               name="DOB"
-              className="arabicfont"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
               <label for="img1" className="label11">تاريخ الولادة</label>
@@ -328,7 +329,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="البريد الإلكتروني" 
               name="Email"
-              className="arabicfont"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -338,7 +339,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="دولة" 
               name="country"
-              className="arabicfont"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -347,7 +348,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder="هاتف" 
               name="Phone"
-              className="arabicfont"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -357,7 +358,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="رقم جواز السفر" 
               name="passportno"
-              className="arabicfont"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -366,7 +367,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder=" الهوية الوطنية#"
               name="nationalid"
-              className="arabicfont"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -376,7 +377,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="تحميل المستند" 
               name="upload"
-              className="arabicfont"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -385,7 +386,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="فترة الإقامة (عدد الأيام)" 
                name="StayPeriod"
-               className="arabicfont"
+               className="arabic-align"
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -394,7 +395,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridEmail">
             <Form.Control placeholder="دِين"   
             name="Religion"
-            className="arabicfont"
+            className="arabic-align"
             onChange={(e) => handleChange(e)}
             />
            
@@ -404,7 +405,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder="الاتصال النسبي في المملكة العربية السعودية" 
                name="relativecontact"
-               className="arabicfont"
+               className="arabic-align"
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>

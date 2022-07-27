@@ -45,30 +45,25 @@ const Air_ambulance = () => {
         <div className="ambulanec-banner"></div>
         <div className="ambulanec-content">
           <div className="ambulance-11">
-          
           <div className="abulance33">
             <p>
               Manasik Aviation proud to announce the addition Citation
               Sovereign, fully equipped with the Life Port, Inc. Ambulatory
               interior configuration. Our Air Ambulance Aircrafts deliver the
               kind of true jet speed that can literary save lives by reducing
-              flight times.{" "}
-            </p>
-            <p>
+              flight times.
               Our Air Ambulance and medical crews operate 24/7 providing a
               professional international Air Ambulance services using latest
               medical techniques and equipment.
-            </p>
-            <p>
               Now Manasik Aviation will be the leader in ambulatory services as
               well. Our Air Ambulance and medical crews operate 24/7 providing a
               professional international Air Ambulance services using latest
               medical techniques and equipment.
             </p>
             
+            
 
           </div>
-          <div className="abulance22"></div>
           </div>
         </div>
         <div className="ambulanceGallery">
@@ -130,20 +125,17 @@ const Air_ambulance = () => {
           
           <div className="abulance33 aligncard">
             <p>
-            تقديم خدمة نقل المرضى بالإسعاف الجوي برحلات آمنه دون أي عناء و توفير كافة الخدمات و سبل الراحة منذ اللحظة الأولى حتى الأخيرة.{" "}
-            </p>
-            <p>
-            تعمل طواقم الإسعاف الجوي والطواقم الطبية لدينا على مدار الساعة طوال أيام الأسبوع لتقديم خدمات إسعاف جوي دولية احترافية باستخدام أحدث التقنيات والمعدات الطبية.
-            </p>
-            <p>
+            تقديم خدمة نقل المرضى بالإسعاف الجوي برحلات آمنه دون أي عناء و توفير كافة الخدمات و سبل الراحة منذ اللحظة الأولى حتى الأخيرة.
             الآن سنكون الشركة الرائدة في الخدمات المتنقلة مثل
               نحن سوف. تعمل طواقم الإسعاف الجوي والطواقم الطبية لدينا على مدار الساعة طوال أيام الأسبوع لتوفير أ
               خدمات الإسعاف الجوي الدولية المهنية باستخدام أحدث
               التقنيات والمعدات الطبية.
+            
             </p>
            
+           
           </div>
-          <div className="abulance22"></div>
+         
           </div>
         </div>
         <div className="ambulanceGallery">

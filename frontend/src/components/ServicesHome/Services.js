@@ -57,7 +57,7 @@ const Services = (props) => {
             <>
             {
               //  data.slice(0,8).map((item,i) => {
-                data.slice(0,4).map((item,i) => {
+                data.slice(0,12).map((item,i) => {
                     return(
                       
                       (item.CardType) === 'service' ? <>
@@ -105,7 +105,7 @@ const Services = (props) => {
             <>
             {
               //  data.slice(0,8).map((item,i) => {
-                data.slice(0,4).map((item,i) => {
+                data.slice(0,12).map((item,i) => {
                     return(
                       
                       (item.CardType) === 'service' ? <>

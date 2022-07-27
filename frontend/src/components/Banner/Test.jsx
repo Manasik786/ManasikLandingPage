@@ -131,17 +131,9 @@ const Test = () => {
             <div className="banner-content">
               <>
               
-               {
-                card.map((item) => {
-                  return(
-                    (item.CardType === 'ambulancebanner' ? <>
-                    <h1>{item.CardTitle}</h1>
+              <h1>Air Ambulance</h1>
                     <p>Manasik aviation is basically airline</p>
                     <p>and does business of airline</p>
-                    </> : <></>)
-                  )
-                })
-               }
               </>
              </div>
             </>:<>

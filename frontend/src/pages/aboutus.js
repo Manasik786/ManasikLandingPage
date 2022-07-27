@@ -62,8 +62,7 @@ const Whoweare = () => {
           }
         </div>
         <div className="home-main aboutustop">
-        <section className="hotel-services">
-          <div className="custom-container">
+        <div className="custom-container">
             {
               getlanguage != 'english' ? <>
               <AboutManasik/>
@@ -72,7 +71,6 @@ const Whoweare = () => {
               </>
             }
           </div>
-        </section>
         </div>
        <div className="vision">
        <Card/>

@@ -208,20 +208,25 @@ const Fly = () => {
           </Form.Group>
         </Row>
         <div className="radionbtnfoem">
-          <input
-            type="radio"
-            name="Gender"
-            value="male"
-            onChange={handleChange}
-          />{" "}
-          <span className="mgender">Male</span>
-          <input
-            type="radio"
-            name="Gender"
-            value="female"
-            onChange={handleChange}
-          />{" "}
-          <span className="mgender">Female</span>
+        <label>
+          <input type="radio"
+          name="Gender"
+          value="male"
+          className="textbtn2"
+          onChange={handleChange}
+          />
+          <span>Male</span>
+        </label>
+
+        <label>
+          <input type="radio"
+          name="Gender"
+          className="textbtn2"
+          value="female"
+          onChange={handleChange}
+          />
+          <span>Female</span>
+        </label>
         </div>
         <Form.Group className="mb-3" controlId="formGridAddress2">
           <div className="filetostyle">
@@ -249,7 +254,7 @@ const Fly = () => {
           <label for="id"  className="label11">Upload CV</label>
           </div>
         </Form.Group>
-        <Capcha/>
+        {/* <Capcha/> */}
         <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
       </Form>
                 </div>
@@ -271,9 +276,7 @@ const Fly = () => {
                   </div>
                 </div>
                 <div className="department-description">
-                  {/* <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only.
-            </p> */}
+                <p>{item.Description}</p>
                 </div>
                 
                 <Button 
@@ -310,92 +313,92 @@ const Fly = () => {
               </Modal.Header>
               <div className="popup1" key={item._id}>
               <Form className="popupform">
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridName">
-          <Form.Control
-            type="text"
-            placeholder="اسم"
-            name="Name"
-            required
-            className="arabic-align"
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Group as={Col} controlId="formGridName">
-          <Form.Control
-            type="email"
-            placeholder="البريد الإلكتروني"
-            name="Email"
-            className="arabic-align"
-            required
-            onChange={handleChange}
-          />
-        </Form.Group>
-      </Row>
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridName">
+            <Form.Control
+              type="text"
+              placeholder="اسم"
+              name="Name"
+              required
+              className="arabic-align"
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group as={Col} controlId="formGridName">
+            <Form.Control
+              type="email"
+              placeholder="البريد الإلكتروني"
+              name="Email"
+              className="arabic-align"
+              required
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </Row>
 
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridEmail">
-          <Form.Control
-            type="number"
-            placeholder="هاتف"
-            className="arabic-align"
-            name="Phone"
-            required
-            onChange={handleChange}
-          />
-        </Form.Group>
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Control
+              type="number"
+              placeholder="هاتف"
+              className="arabic-align"
+              name="Phone"
+              required
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-        <Form.Group as={Col} controlId="formGridName">
-          <Form.Control
-            type="text"
-            placeholder="جنسية"
-            name="Nationality"
-            className="arabic-align"
-            required
-            onChange={handleChange}
-          />
-        </Form.Group>
-      </Row>
+          <Form.Group as={Col} controlId="formGridName">
+            <Form.Control
+              type="text"
+              placeholder="جنسية"
+              name="Nationality"
+              className="arabic-align"
+              required
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </Row>
 
-      <Row className="mb-3">
-        <Form.Group
-          as={Col}
-          controlId="formGridEmail"
-         
-        >
-          <Form.Control
-            type="text"
-            placeholder="موقع"
-            name="Position"
-            value={item.Designationar}
-            onChange={handleChange}
-            className="arabic-align"
+        <Row className="mb-3">
+          <Form.Group
+            as={Col}
+            controlId="formGridEmail"
+           
+          >
+            <Form.Control
+              type="text"
+              placeholder="موقع"
+              name="Position"
+              value={item.Designationar}
+              onChange={handleChange}
+              className="arabic-align"
+            />
+          </Form.Group>
+        </Row>
+        <div className="radionbtnfoem">
+        <label>
+          <input type="radio"
+          name="Gender"
+          value="male"
+          className="textbtn2"
+          onChange={handleChange}
           />
-        </Form.Group>
-      </Row>
-      <div className="radionbtnfoem">
-      <label>
-        <input type="radio"
-        name="Gender"
-        value="male"
-        className="textbtn2"
-        onChange={handleChange}
-        />
-        <span>ذكر</span>
-      </label>
+          <span>ذكر</span>
+        </label>
 
-      <label>
-        <input type="radio"
-        name="Gender"
-        className="textbtn2"
-        value="female"
-        onChange={handleChange}
-        />
-        <span>أنثى</span>
-      </label>
-      </div>
-      
-      <Form.Group className="mb-3" controlId="formGridAddress2">
+        <label>
+          <input type="radio"
+          name="Gender"
+          className="textbtn2"
+          value="female"
+          onChange={handleChange}
+          />
+          <span>أنثى</span>
+        </label>
+        </div>
+        
+        <Form.Group className="mb-3" controlId="formGridAddress2">
         <div className="filetostyle">
         
           <Form.Control
@@ -423,9 +426,9 @@ const Fly = () => {
           <label for="id"  className="label11 arabic-align">تحميل السيرة الذاتية</label>
           </div>
         </Form.Group>
-      {/* <Capcha/> */}
-      <button className="btnsubmit" onClick={createProductSubmitHandler}>يُقدِّم</button>
-    </Form>
+        {/* <Capcha/> */}
+        <button className="btnsubmit" onClick={createProductSubmitHandler}>يُقدِّم</button>
+      </Form>
               </div>
             </Modal>
             <div className="career-duty">
@@ -445,9 +448,7 @@ const Fly = () => {
                 </div>
               </div>
               <div className="department-description">
-                {/* <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only.
-          </p> */}
+              <p>{item.Descriptionar}</p>
               </div>
               
               <Button 

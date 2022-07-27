@@ -263,7 +263,7 @@ const Home = ({ onHandleClick }) => {
               </div>
               <div className="gallery-right1">
               {
-        card.map((item) => {
+        card.slice(0,6).map((item) => {
           return(
             <>
             {toggle === item._id ? (

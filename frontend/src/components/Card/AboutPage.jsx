@@ -28,19 +28,18 @@ const Index = () => {
        {
        card.map((item) => { 
       return(
-        (item.CardType) === 'Vision' ? 
+        (item.CardType) === 'About' ? 
         <>
        
        <div className='destination-cards mappingstyabout' key={item._id}>
-       <div className='destination-left'>
-              <img src={item.images[0].url}/>
-            </div>
           <div className='destination-right'>
               <h2>{item.CardTitle}</h2>
               <p>{item.CardDescriptions}</p>
               
             </div>
-           
+            <div className='destination-left'>
+              <img src={item.images[0].url}/>
+            </div>
             
           </div>
         </>
@@ -57,7 +56,7 @@ const Index = () => {
             {
        card.map((item) => { 
       return(
-        (item.CardType) === 'Vision' ? 
+        (item.CardType) === 'About' ? 
         <>
        
        <div className='destination-cards mappingstyabout' key={item._id}>

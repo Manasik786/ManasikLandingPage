@@ -14,7 +14,7 @@ import Img1 from "../assets/images/Makkah.jpg";
 import Img2 from "../assets/images/madinah1.png";
 import axios from "axios";
 import CEOMessage from "../components/Card/CEOMessage";
-import AboutManasik from '../components/Card/About'
+import AboutManasik from '../components/Card/AboutPage'
 import WhyManasik from '../components/Card/WhyManasik'
 
 const Whoweare = () => {

@@ -230,6 +230,7 @@ const Fly = () => {
         </label>
         </div>
         <Form.Group className="mb-3" controlId="formGridAddress2">
+          <div className="filetostyle">
           <Form.Control
             type="file"
             name="images"
@@ -239,8 +240,10 @@ const Fly = () => {
             id="image"
           />
           <label for="image"  className="label11">Upload Profile Picture</label>
+          </div>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formGridAddress2">
+        <div className="filetostyle">
           <Form.Control
             type="file"
             name="Cv"
@@ -250,6 +253,7 @@ const Fly = () => {
             id="cv"
           />
           <label for="id"  className="label11">Upload CV</label>
+          </div>
         </Form.Group>
         {/* <Capcha/> */}
         <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
@@ -397,29 +401,33 @@ const Fly = () => {
       </div>
       
       <Form.Group className="mb-3" controlId="formGridAddress2">
-      <label for="image"  className="label11 arabic-align">تحميل صورة الملف الشخصي</label>
-        <Form.Control
-          type="file"
-          name="images"
-          accept="image/*"
-          onChange={createServiceImagesChange}
-          multiple
-          id="image"
-        />
-       
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formGridAddress2">
-        <Form.Control
-          type="file"
-          
-          name="Cv"
-          accept="image/*"
-          onChange={createServiceImagesChange1}
-          multiple
-          id="cv"
-        />
-        <label for="id"  className="label11 arabic-align">تحميل السيرة الذاتية</label>
-      </Form.Group>
+        <div className="filetostyle">
+        
+          <Form.Control
+            type="file"
+            name="images"
+            accept="image/*"
+            onChange={createServiceImagesChange}
+            multiple
+            id="image"
+          />
+          <label for="image"  className="label11 arabic-align">تحميل صورة الملف الشخصي</label>
+         </div>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formGridAddress2">
+        <div className="filetostyle">
+          <Form.Control
+            type="file"
+            
+            name="Cv"
+            accept="image/*"
+            onChange={createServiceImagesChange1}
+            multiple
+            id="cv"
+          />
+          <label for="id"  className="label11 arabic-align">تحميل السيرة الذاتية</label>
+          </div>
+        </Form.Group>
       {/* <Capcha/> */}
       <button className="btnsubmit" onClick={createProductSubmitHandler}>يُقدِّم</button>
     </Form>

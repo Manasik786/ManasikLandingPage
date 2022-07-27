@@ -12,6 +12,7 @@ import { Timeline } from 'react-twitter-widgets'
 const Footer = ({}) => {
   const cookies = new Cookies();
   const [getlanguage, setLanguage] = useState(cookies.get("language"));
+  const [data, setData] = useState([]);
   const [message, setMessage] = useState({
     Name: "",
     Email: "",
@@ -44,6 +45,15 @@ const Footer = ({}) => {
   };
   useEffect(() => {
     PostMessage();
+  }, []);
+  useEffect(() => {
+    const getdata = async () => {
+      const { data } = await axios.get(`/api/v1/Contact`);
+      setData(data.data);
+      console.log("Response", data.data);
+      console.log("Data is", data.data);
+    };
+    getdata();
   }, []);
 
 
@@ -122,9 +132,7 @@ const Footer = ({}) => {
                         <div className="col-10 col-xl-8 col-lg-10 ">
                           <img src={FooterLogo}></img>
                           <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Nemo ex qui saepe magni voluptatibus aliquid
-                            dignissimos.
+                          Manasik Aviation is a national Saudi carrier, based in Jeddah, that operates a low-cost flight under the General Authority of civil aviation (GACA).
                           </p>
                         </div>
                       </div>
@@ -132,13 +140,21 @@ const Footer = ({}) => {
                     <div className="col-lg-6 col-md-12 footer-links">
                       <div className="row g-5">
                         <div className="col-4">
-                          <h4>Address</h4>
-                          <p>
-                            DieSachbearbeiter Schonhauser Allee 167c, 10435
-                            Berlin Germany
-                          </p>
-                          <p>0123456789</p>
-                          <p>moin@blindtratorde</p>
+                        <h4>Address</h4>
+                          {
+                            data.map((item) => {
+                              return(
+                                <>
+                               
+                                <p>
+                                 {item.location}
+                                </p>
+                                <p>{item.phone}</p>
+                                <p>{item.email}</p>
+                                </>
+                              )
+                            })
+                          }
                         </div>
                         <div className="col-4">
                           <h4>Quick Links</h4>
@@ -311,9 +327,10 @@ const Footer = ({}) => {
                     />
  
                       <div className="socail-icons">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-linkedin-in"></i>
+                       <a href=""> <i class="fa-brands fa-facebook-f"></i></a>
+                       <a href=""> <i class="fa-brands fa-instagram"></i></a>
+                       <a href=""> <i class="fa-brands fa-linkedin-in"></i></a>
+                       
                       </div>
                     </div>
                   </div>
@@ -364,22 +381,30 @@ const Footer = ({}) => {
                         <div className="col-10 col-xl-8 col-lg-10 ">
                           <img src={FooterLogo}></img>
                           <p>
-                            تستخدم السعودية ملفات تعريف الارتباط الضرورية لتخصيص
-                            المحتوى والإعلانات ، ولتوفير ميزات وسائل التواصل
-                            الاجتماعي ، ولتحليل حركة المرور لدينا..
+                          شركة مناسك للطيران شركة وطنية سعودية , مقرها مدينة جدة , تهتم بتشغيل رحلات منخفضة التكلفة تحت إشراف الهيئة العامة للطيران المدني ( GACA) , تأسست عام ميلادي 2021
                           </p>
                         </div>
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-12 footer-links">
                       <div className="row g-5">
+                        
                         <div className="col-4">
-                          <h4>تبوك</h4>
-                          <p>
-                            ديساشبيربيتر شونهاوزر ألي 167c، 10435 برلين ألمانيا
-                          </p>
-                          <p>0123456789</p>
-                          <p>moin@blindtratorde</p>
+                        <h4>تبوك</h4>
+                          {
+                            data.map((item) => {
+                              return(
+                                <>
+                               
+                                <p>
+                                 {item.location}
+                                </p>
+                                <p>{item.phone}</p>
+                                <p>{item.email}</p>
+                                </>
+                              )
+                            })
+                          }
                         </div>
                         <div className="col-4">
                           <h4>روابط سريعة</h4>

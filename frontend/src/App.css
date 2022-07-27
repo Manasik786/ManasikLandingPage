@@ -728,6 +728,9 @@ flex: 1;
   height: 500px;
   flex: 1;
   background-image: url('./assets/images/gallery.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .row2{
   display: flex;
@@ -744,6 +747,10 @@ flex: 1;
 
 .card2{
   cursor: pointer;
+  cursor: pointer;
+    height: 140px !important;
+    width: 125px !important;
+    
 }
 .card2 img{
 width: 100%;
@@ -889,6 +896,7 @@ margin-top: 24px;
   width: 42px;
   height: 37px;
   cursor: pointer;
+  margin: auto;
 }
 nav.navbar.navbar-expand-lg.navbar-light.bg-white.arabicstyle {
   flex-direction: row-reverse;
@@ -1006,9 +1014,9 @@ width: 100%;
   flex-direction: row-reverse !important;
 
 }
-.contact-icon img{
-  width: 25px;
-  height: 40px;
+.contact-icon img {
+  width: 20px;
+  height: 30px;
 }
 .contacttext1 span{
   margin-left: 18px;
@@ -1331,6 +1339,7 @@ h2.applyfromclass {
   background-color: #000;
   color: #fff;
   font-size: 22px;
+  margin-top: 20px;
 }
 .msg {
     text-align: center;
@@ -1377,6 +1386,7 @@ iframe {
 }
 .card2 img {
   height: 110px;
+  width: 100%;
 }
 
 .popular-card1 {
@@ -1422,11 +1432,13 @@ fieldset {
   padding: 0;
   margin: 0;
   border: 0;
+  height: 35px;
 }
 legend {
   font-size: 0.9rem;
   color: rgb(66, 65, 65);
   padding-left: 12px !important;
+  overflow: hidden;
 }
 
 button:active {
@@ -1453,6 +1465,7 @@ legend {
   font-size: 0.9rem !important;
     background: #fff;
     height: 35px;
+    overflow: hidden;
     color: rgb(104, 100, 100);
     margin-left: -7px;
     text-align: center;
@@ -1484,10 +1497,12 @@ fieldset {
   margin: 0;
   border: 0;
   display: flex !important;
+  height: 35px;
 }
 legend {
   text-align: left;
   float: left;
+  overflow: hidden;
   width: 65% !important;
   padding: 0;
   margin-bottom: 0.5rem;
@@ -1509,6 +1524,7 @@ legend {
   padding-left: 20px;
   padding-right: 20px;
   width: 380px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .newabc img{
   height: 75vh;
@@ -1555,7 +1571,7 @@ p {
 }
 
 .label11{
-  color: #fff !important;
+  color: rgb(73, 72, 72) !important;
   
 }
 
@@ -1702,3 +1718,31 @@ input::-webkit-inner-spin-button {
 input[type="date"]::-webkit-calendar-picker-indicator:hover {
   opacity: 1
 } */
+
+.dropdown-menu-dark {
+  color: #dee2e6;
+  background-color: #EAECEE !important;
+  border-color: rgba(0,0,0,.15);
+}
+
+.dropdown-menu-dark .dropdown-item {
+  color: rgb(39, 39, 39) !important;
+}
+.dropdown-menu-dark .dropdown-item:hover {
+  color: rgb(39, 39, 39) !important;
+}
+
+.filetostyle{
+display: flex;
+background-color: #fff;
+}
+.form-control[type=file] {
+  overflow: hidden;
+  width: 108px;
+  
+}
+.form-control[type=date] {
+  overflow: hidden;
+  width: 108px;
+  
+}

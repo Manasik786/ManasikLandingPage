@@ -93,7 +93,6 @@ const Careers = () => {
         <Fly/>
         </Tab>
         <Tab eventKey="profile" title="manasik Restaurant" className="manasiktabs">
-          
           <Resturent/>
         </Tab>
         <Tab eventKey="contact" title="manasik hotel" className="manasiktabs">

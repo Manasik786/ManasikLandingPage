@@ -1,16 +1,27 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import FooterLogo from "../../assets/images/FooterLogo.png";
 import Arrow from "../../assets/images/forwardarrowbrown.png";
 import BackArrow from "../../assets/images/backwardarrow.png";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
+import axios from "axios";
 
 const Footer = ({ }) => {
   
   const cookies = new Cookies();
   const [getlanguage,setLanguage] = useState(cookies.get("language"));
+  const [data, setData] = useState([]);
 
+  useEffect(() => {
+    const getdata = async () => {
+      const { data } = await axios.get(`/api/v1/Contact`);
+      setData(data.data);
+      console.log("Response", data.data);
+      console.log("Data is", data.data);
+    };
+    getdata();
+  }, []);
   return (
     <footer className="footer">
       <div className="footer-top">
@@ -30,23 +41,29 @@ const Footer = ({ }) => {
                     <div className="col-10 col-xl-8 col-lg-10 ">
                       <img src={FooterLogo}></img>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Nemo ex qui saepe magni voluptatibus aliquid
-                        dignissimos.
+                      Manasik Aviation is a national Saudi carrier, based in Jeddah, that operates a low-cost flight under the General Authority of civil aviation (GACA).
                       </p>
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-6 col-md-12 footer-links">
                       <div className="row g-5">
-                        <div className="col-4">
-                          <h4>Address</h4>
-                          <p>
-                            DieSachbearbeiter Schonhauser Allee 167c, 10435
-                            Berlin Germany
-                          </p>
-                          <p>0123456789</p>
-                          <p>moin@blindtratorde</p>
+                      <div className="col-4">
+                        <h4>Address</h4>
+                          {
+                            data.map((item) => {
+                              return(
+                                <>
+                               
+                                <p>
+                                 {item.location}
+                                </p>
+                                <p>{item.phone}</p>
+                                <p>{item.email}</p>
+                                </>
+                              )
+                            })
+                          }
                         </div>
                         <div className="col-4">
                           <h4>Quick Links</h4>

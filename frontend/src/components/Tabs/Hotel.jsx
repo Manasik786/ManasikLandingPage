@@ -224,6 +224,7 @@ const Fly = () => {
           <span className="mgender">Female</span>
         </div>
         <Form.Group className="mb-3" controlId="formGridAddress2">
+          <div className="filetostyle">
           <Form.Control
             type="file"
             name="images"
@@ -233,8 +234,10 @@ const Fly = () => {
             id="image"
           />
           <label for="image"  className="label11">Upload Profile Picture</label>
+          </div>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formGridAddress2">
+        <div className="filetostyle">
           <Form.Control
             type="file"
             name="Cv"
@@ -244,6 +247,7 @@ const Fly = () => {
             id="cv"
           />
           <label for="id"  className="label11">Upload CV</label>
+          </div>
         </Form.Group>
         <Capcha/>
         <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
@@ -287,156 +291,7 @@ const Fly = () => {
           </>
         ) : (
           <>
-            <>
             
-              <Modal show={show} onHide={handleClose} key={item._id}
-        
-              >
-                <Modal.Header closeButton>
-                  <h2 className="applyfromclass">{item.Type}</h2>
-                </Modal.Header>
-                <div className="popup1" key={item._id}>
-                <Form className="popupform">
-        <Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridName">
-            <Form.Control
-              type="text"
-              placeholder="Name"
-              name="Name"
-              required
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group as={Col} controlId="formGridName">
-            <Form.Control
-              type="email"
-              placeholder="Email"
-              name="Email"
-              required
-              onChange={handleChange}
-            />
-          </Form.Group>
-        </Row>
-
-        <Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Control
-              type="number"
-              placeholder="Phone"
-              name="Phone"
-              required
-              onChange={handleChange}
-            />
-          </Form.Group>
-
-          <Form.Group as={Col} controlId="formGridName">
-            <Form.Control
-              type="text"
-              placeholder="Nationality"
-              name="Nationality"
-              required
-              onChange={handleChange}
-            />
-          </Form.Group>
-        </Row>
-
-        <Row className="mb-3">
-          <Form.Group
-            as={Col}
-            controlId="formGridEmail"
-           
-          >
-            <Form.Control
-              type="text"
-              placeholder="Position"
-              name="Position"
-              value={item.Designation}
-              onChange={handleChange}
-            />
-          </Form.Group>
-        </Row>
-        <div className="radionbtnfoem">
-        <label>
-          <input type="radio"
-          name="Gender"
-          value="male"
-          className="textbtn2"
-          onChange={handleChange}
-          />
-          <span>Male</span>
-        </label>
-
-        <label>
-          <input type="radio"
-          name="Gender"
-          className="textbtn2"
-          value="female"
-          onChange={handleChange}
-          />
-          <span>Female</span>
-        </label>
-        </div>
-        <Form.Group className="mb-3" controlId="formGridAddress2">
-          <Form.Control
-            type="file"
-            name="images"
-            accept="image/*"
-            onChange={createServiceImagesChange}
-            multiple
-            id="image"
-          />
-          <label for="image"  className="label11">Upload Profile Picture</label>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formGridAddress2">
-          <Form.Control
-            type="file"
-            name="Cv"
-            accept="image/*"
-            onChange={createServiceImagesChange1}
-            multiple
-            id="cv"
-          />
-          <label for="id"  className="label11">Upload CV</label>
-        </Form.Group>
-        {/* <Capcha/> */}
-        <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
-      </Form>
-                </div>
-              </Modal>
-              <div className="career-duty">
-                <div className="career-department">
-                  <div className="depart-item">
-                    <h2>{item.Designation}</h2>
-                    <h4>{item.Dept}</h4>
-                  </div>
-                  <div className="depart-item">
-                    <h5 className="career-area">{item.Location}</h5>
-                  </div>
-
-                  <div className="depart-item">
-                     <Moment format="YYYY/MM/DD">
-                {item.valid}
-            </Moment>
-                  </div>
-                </div>
-                <div className="department-description">
-                  {/* <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only.
-            </p> */}
-                </div>
-                
-                <Button 
-               
-                 key={item._id}
-                  variant="primary"
-                  className="primarybutton"
-                  onClick={handleShow}
-                >
-                  <Buttn1 className={"mt-4"} text="APPLY NOW" />
-                </Button>
-              </div>
-              <hr className="hr-color" />
-            </>
           </>
         );
       })}
@@ -541,29 +396,33 @@ const Fly = () => {
       </div>
       
       <Form.Group className="mb-3" controlId="formGridAddress2">
-      <label for="image"  className="label11 arabic-align">تحميل صورة الملف الشخصي</label>
-        <Form.Control
-          type="file"
-          name="images"
-          accept="image/*"
-          onChange={createServiceImagesChange}
-          multiple
-          id="image"
-        />
-       
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formGridAddress2">
-        <Form.Control
-          type="file"
-          
-          name="Cv"
-          accept="image/*"
-          onChange={createServiceImagesChange1}
-          multiple
-          id="cv"
-        />
-        <label for="id"  className="label11 arabic-align">تحميل السيرة الذاتية</label>
-      </Form.Group>
+        <div className="filetostyle">
+        
+          <Form.Control
+            type="file"
+            name="images"
+            accept="image/*"
+            onChange={createServiceImagesChange}
+            multiple
+            id="image"
+          />
+          <label for="image"  className="label11 arabic-align">تحميل صورة الملف الشخصي</label>
+         </div>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formGridAddress2">
+        <div className="filetostyle">
+          <Form.Control
+            type="file"
+            
+            name="Cv"
+            accept="image/*"
+            onChange={createServiceImagesChange1}
+            multiple
+            id="cv"
+          />
+          <label for="id"  className="label11 arabic-align">تحميل السيرة الذاتية</label>
+          </div>
+        </Form.Group>
       {/* <Capcha/> */}
       <button className="btnsubmit" onClick={createProductSubmitHandler}>يُقدِّم</button>
     </Form>
@@ -605,7 +464,8 @@ const Fly = () => {
           </>
           </>
         ) : (
-          <></>
+          <>
+          </>
         );
       })}
         </>

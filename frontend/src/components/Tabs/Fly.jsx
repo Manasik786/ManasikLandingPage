@@ -229,6 +229,7 @@ const Fly = () => {
         </label>
         </div>
         <Form.Group className="mb-3" controlId="formGridAddress2">
+          <div className="filetostyle">
           <Form.Control
             type="file"
             name="images"
@@ -238,8 +239,10 @@ const Fly = () => {
             id="image"
           />
           <label for="image"  className="label11">Upload Profile Picture</label>
+          </div>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formGridAddress2">
+        <div className="filetostyle">
           <Form.Control
             type="file"
             name="Cv"
@@ -249,6 +252,7 @@ const Fly = () => {
             id="cv"
           />
           <label for="id"  className="label11">Upload CV</label>
+          </div>
         </Form.Group>
         {/* <Capcha/> */}
         <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
@@ -395,7 +399,8 @@ const Fly = () => {
         </div>
         
         <Form.Group className="mb-3" controlId="formGridAddress2">
-        <label for="image"  className="label11 arabic-align">تحميل صورة الملف الشخصي</label>
+        <div className="filetostyle">
+        
           <Form.Control
             type="file"
             name="images"
@@ -404,9 +409,11 @@ const Fly = () => {
             multiple
             id="image"
           />
-         
+          <label for="image"  className="label11 arabic-align">تحميل صورة الملف الشخصي</label>
+         </div>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formGridAddress2">
+        <div className="filetostyle">
           <Form.Control
             type="file"
             
@@ -417,6 +424,7 @@ const Fly = () => {
             id="cv"
           />
           <label for="id"  className="label11 arabic-align">تحميل السيرة الذاتية</label>
+          </div>
         </Form.Group>
         {/* <Capcha/> */}
         <button className="btnsubmit" onClick={createProductSubmitHandler}>يُقدِّم</button>

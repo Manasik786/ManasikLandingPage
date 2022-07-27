@@ -479,6 +479,7 @@ useEffect(() => {
             </div>
             <input type="date" placeholder="date" 
             name="Date"
+            min="27-07-1977" max="2022-12-31"
             onChange={(e) => handleChange(e)}
             />
           </div>
@@ -487,7 +488,9 @@ useEffect(() => {
       </div>
         </> : <>
         <div className="search-section">
-        
+        <div className="main-heading">
+          <h1>طيران مستأجر</h1>
+        </div>
         <div>
         <form className="search-form myform">
           <div className="form-control">
@@ -529,9 +532,7 @@ useEffect(() => {
           </div>
         </form>
         </div>
-        <div className="main-heading">
-          <h1>طيران مستأجر</h1>
-        </div>
+       
         <span className="Flight-line"></span>
       </div>
         </>

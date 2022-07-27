@@ -13,6 +13,9 @@ const Contact = () => {
   const [getlanguage, setLanguage] = useState(cookies.get("language"));
 
   const [data, setData] = useState([]);
+  
+  
+
   const [message, setMessage] = useState({
     Name: "",
     Email: "",

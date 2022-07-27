@@ -40,11 +40,11 @@ let str = pathname;
   const [relativecontact, setrelativecontact] = useState(" ");
   const [Reasontovisitksa, setReasontovisitksa] = useState(" ");
   const [Religion, setReligion] = useState(" ");
-  const [Servicetype,SetservicesType] = useState(checkpath)
+  const [Servicetype,SetservicesType] = useState(str)
   const [CardType,setCardType] = useState('Air Ambulance')
 
   const [data, setData] = useState({
-    Servicetype: checkpath,
+    Servicetype: str,
     CardType: "Air Ambulance",
     Name: Name,
     familyname: familyname,
@@ -85,11 +85,11 @@ let str = pathname;
     setReasontovisitksa(Reasontovisitksa);
     setReligion(Religion);
     setcountry(country);
-    SetservicesType(checkpath);
+    SetservicesType(str);
     setCardType('Air Ambulance')
 
     const myForm = new FormData();
-    myForm.append("Servicetype",checkpath)
+    myForm.append("Servicetype",str)
     myForm.append("Name", data.Name);
     myForm.append("Email", data.Email);
     myForm.append("Phone", data.Phone);
@@ -168,13 +168,14 @@ let str = pathname;
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
-              
+            <div className="filetostyle">
               <Form.Control type="date" placeholder="Date of Birth"  id="dob"
               name="DOB"
               required
               onChange={(e) => handleChange(e)}
               />
-             <label for="img1" className="label11">Enter Date Of Birth</label>
+             <label for="img1" className="label11">Date Of Birth</label>
+             </div>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridEmail">
@@ -226,7 +227,7 @@ let str = pathname;
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
-              
+            <div className="filetostyle">
               <Form.Control type="file" placeholder="Upload Document"
               name="upload"
               required
@@ -234,7 +235,8 @@ let str = pathname;
             onChange={createServiceImagesChange}
             multiple
               />
-              <label for="upload1" className="label11">Click to upload Profile Pic</label>
+              <label for="upload1" className="label11">Profile Picture</label>
+              </div>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="Stay Period (Number of Days)" 
@@ -324,14 +326,17 @@ let str = pathname;
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
-              
+            <div className="filetostyle">
               <Form.Control type="date" placeholder="تاريخ الولادة" 
               name="DOB"
               className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
-            </Form.Group>
+              <label for="img1" className="label11">تاريخ الولادة</label>
+              </div>
 
+            </Form.Group>
+            
             <Form.Group as={Col} controlId="formGridEmail">
               
               <Form.Control type="text" placeholder="البريد الإلكتروني" 
@@ -453,7 +458,8 @@ let str = pathname;
             />
           </Form.Group>
           {/* <Capcha/> */}
-          <SubmitButton text={"يُقدِّم"}/>
+          <button className="btnsubmit" onClick={createProductSubmitHandler}>يُقدِّم</button>
+
         </Form>
       </div>
       </>

@@ -836,9 +836,10 @@
     .row.g-0.justify-content-end.w-100.h-100 .col-md-10 {
         width: 100% !important;
        }
-    ul.dropdown-menu.dropdown-menu-dark.show {
+       ul.dropdown-menu.dropdown-menu-dark.show {
         background: transparent;
         border: unset;
+        position: relative;
     }
     ul.dropdown-menu.dropdown-menu-dark.show {
         text-align: center;
@@ -900,6 +901,7 @@
   .gallery-right1{
     height: 400px;
     flex: 1;
+    margin-top: 22px;
   
   }
   .row2{
@@ -1115,7 +1117,22 @@
         margin: auto;
         height: 180px !important;
     }
+    .column2 {
+        height: 70px !important;
+        width: 110px !important;
+        margin-top: 20px;
+        cursor: pointer;
+    }
     
+    .card2 {
+        cursor: pointer;
+        cursor: pointer;
+        height: 70px !important;
+        width: 110px !important;
+    }
+    .card2 img {
+        height: 75px;
+    }
     button#uncontrolled-tab-example-tab-contact {
         text-transform: uppercase;
         color: #000;
@@ -1281,7 +1298,7 @@
     }
     .home-main .package-section {
         padding: 4rem 0;
-        min-height: 1800px;
+        height: auto;
     }
    
     .header-banner .bg-video-wrap {
@@ -1994,12 +2011,18 @@
     legend {
         text-align: left;
         float: left;
-        width: 60% !important;
+        width: 56% !important;
         padding: 0;
         margin-bottom: 0.5rem;
         font-size: calc(1.275rem + .3vw);
         line-height: inherit;
       }
+      .radiobtnform {
+        display: flex;
+        background-color: #fff;
+        height: 35px;
+        padding-right: 18px;
+    }
     .header .custom-nav .navbar-nav li .nav-link {
         padding-right: 0.5rem;
         padding-left: .5rem;
@@ -2302,7 +2325,8 @@
         font-size: 12px;
     }
     .header-banner .search-main .button-section {
-        height: 182px;
+        height: 150px;
+        margin-top: 15px;
     }
     .home-main .hotel-services {
         margin: 10rem 0;
@@ -2416,13 +2440,7 @@
     .header-banner .search-main .search-section .search-form .form-control input[type=number] {
         width: 40px;
     }
-    .header-banner .search-main {
-        display: none;
-        width: 100%;
-        margin-top: 30vh;
-        height: 130px;
-        
-    }
+   
     .gallerydiv {
         height: 730px;
         display: block;
@@ -2461,7 +2479,7 @@
     .header-banner .search-main .search-section {
         width: 100%;
         padding: 3rem 2rem 3rem 3rem;
-        display: flex;
+        display: block;
         align-content: center;
         justify-content: space-between;
         align-items: center;
@@ -2670,4 +2688,22 @@
         height: 680px;
         width: 100%;
     }
+    
+
+.header-banner .search-main {
+    display: flex;
+    width: 100%;
+    /* margin-top: 30vh; */
+    height: 200px;
+}
+
+.header-banner .search-main {
+    display: flex;
+    width: 100%;
+    /* margin-top: 30vh; */
+    height: 200px;
+}
+.home-main {
+    margin-top: 25vh;
+}
 }

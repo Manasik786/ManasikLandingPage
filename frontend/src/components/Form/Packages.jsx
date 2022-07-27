@@ -170,12 +170,13 @@ let str = pathname;
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
-              
+            <div className="filetostyle">
               <Form.Control type="date" placeholder="Date of Birth"  id="dob"
               name="DOB"
               onChange={(e) => handleChange(e)}
               />
              <label for="img1" className="label11">Enter Date Of Birth</label>
+             </div>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridEmail">
@@ -222,14 +223,15 @@ let str = pathname;
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
-              
+            <div className="filetostyle">
               <Form.Control type="file" placeholder="Upload Document"
               name="upload"
               accept="image/*"
             onChange={createServiceImagesChange}
             multiple
               />
-              <label for="upload1" className="label11">Click to upload Profile Pic</label>
+              <label for="upload1" className="label11">Profile Picture</label>
+              </div>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="Stay Period (Number of Days)" 
@@ -308,23 +310,29 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="اسم العائلة" 
               name="familyname"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
-              
+            <div className="filetostyle">
               <Form.Control type="date" placeholder="تاريخ الولادة" 
               name="DOB"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
-            </Form.Group>
+              <label for="img1" className="label11">تاريخ الولادة</label>
+              </div>
 
+            </Form.Group>
+            
             <Form.Group as={Col} controlId="formGridEmail">
               
               <Form.Control type="text" placeholder="البريد الإلكتروني" 
               name="Email"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -334,6 +342,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="دولة" 
               name="country"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -342,6 +351,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder="هاتف" 
               name="Phone"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -351,6 +361,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="رقم جواز السفر" 
               name="passportno"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -359,6 +370,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder=" الهوية الوطنية#"
               name="nationalid"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -368,6 +380,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="تحميل المستند" 
               name="upload"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -376,6 +389,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="فترة الإقامة (عدد الأيام)" 
                name="StayPeriod"
+               className="arabicfont"
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -384,6 +398,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridEmail">
             <Form.Control placeholder="دِين"   
             name="Religion"
+            className="arabicfont"
             onChange={(e) => handleChange(e)}
             />
            
@@ -393,6 +408,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder="الاتصال النسبي في المملكة العربية السعودية" 
                name="relativecontact"
+               className="arabicfont"
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -432,8 +448,9 @@ let str = pathname;
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          <Capcha/>
-          <SubmitButton text={"يُقدِّم"}/>
+          {/* <Capcha/> */}
+          <button className="btnsubmit" onClick={createProductSubmitHandler}>يُقدِّم</button>
+
         </Form>
       </div>
       </>

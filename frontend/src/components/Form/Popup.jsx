@@ -9,6 +9,7 @@ import Capcha from '../../pages/Translator'
 import Cookies from "universal-cookie";
 import { useLocation } from "react-router-dom";
 
+
 // import Select from 'react-select'
 // import countryList from 'react-select-country-list'
 
@@ -164,12 +165,14 @@ let str = pathname;
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
+            <div className="filetostyle">
+              <Form.Control type="date" placeholder="Date of Birth"
               
-              <Form.Control type="date" placeholder="Date of Birth"  id="dob"
               name="DOB"
               onChange={(e) => handleChange(e)}
               />
-             <label for="img1" className="label11">Enter Date Of Birth</label>
+             <label for="img1" className="label11">Date Of Birth</label>
+             </div>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridEmail">
@@ -216,14 +219,15 @@ let str = pathname;
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
-              
+            <div className="filetostyle">
               <Form.Control type="file" placeholder="Upload Document"
               name="upload"
               accept="image/*"
             onChange={createServiceImagesChange}
             multiple
               />
-              <label for="upload1" className="label11">Click to upload Profile Pic</label>
+              <label for="upload1" className="label11">Profile Picture</label>
+              </div>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="Stay Period (Number of Days)" 
@@ -292,10 +296,9 @@ let str = pathname;
       <div className="popup1">
         <Form className="popupform">
           <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridName" >     
+            <Form.Group as={Col} controlId="formGridName" className="arabicfont">     
               <Form.Control type="text" placeholder="اسم" 
               name="Name"
-              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -303,26 +306,29 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="اسم العائلة" 
               name="familyname"
-              className="arabic-align"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
-              
+            <div className="filetostyle">
               <Form.Control type="date" placeholder="تاريخ الولادة" 
               name="DOB"
-              className="arabic-align"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
-            </Form.Group>
+              <label for="img1" className="label11">تاريخ الولادة</label>
+              </div>
 
+            </Form.Group>
+            
             <Form.Group as={Col} controlId="formGridEmail">
               
               <Form.Control type="text" placeholder="البريد الإلكتروني" 
               name="Email"
-              className="arabic-align"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -332,7 +338,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="دولة" 
               name="country"
-              className="arabic-align"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -341,7 +347,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder="هاتف" 
               name="Phone"
-              className="arabic-align"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -351,7 +357,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="رقم جواز السفر" 
               name="passportno"
-              className="arabic-align"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -360,7 +366,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder=" الهوية الوطنية#"
               name="nationalid"
-              className="arabic-align"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -370,7 +376,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="تحميل المستند" 
               name="upload"
-              className="arabic-align"
+              className="arabicfont"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -379,7 +385,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="فترة الإقامة (عدد الأيام)" 
                name="StayPeriod"
-               className="arabic-align"
+               className="arabicfont"
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -388,7 +394,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridEmail">
             <Form.Control placeholder="دِين"   
             name="Religion"
-            className="arabic-align"
+            className="arabicfont"
             onChange={(e) => handleChange(e)}
             />
            
@@ -398,7 +404,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder="الاتصال النسبي في المملكة العربية السعودية" 
                name="relativecontact"
-               className="arabic-align"
+               className="arabicfont"
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -432,14 +438,15 @@ let str = pathname;
           </fieldset>
           </Form.Group>
           <Form.Group className="mb-13 " controlId="formGridAddress1">
-            <Form.Control placeholder="سبب زيارة المملكة العربية السعودية" className="largetextreason arabic-align" 
+            <Form.Control placeholder="سبب زيارة المملكة العربية السعودية" className="largetextreason" 
              name="Reasontovisitksa"
              val
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
           {/* <Capcha/> */}
-          <SubmitButton1 text={"يُقدِّم"}/>
+          <button className="btnsubmit" onClick={createProductSubmitHandler}>يُقدِّم</button>
+
         </Form>
       </div>
       </>

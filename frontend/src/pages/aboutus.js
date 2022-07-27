@@ -134,18 +134,10 @@ const Whoweare = () => {
        </div>
         </>
        }
-       <div className="career-warning1">
-       <div className="warning-card">
-         <div className="warning-left1">
-           <div className="imgceo">
-
-           </div>
-         </div>
-         <div className="warning-right">
-         <CEOMessage/>
-         </div>
+       <div className="vision">
+       <CEOMessage/>
        </div>
-     </div>
+       
       
        {/* <Footer/> */}
     </>

@@ -22,7 +22,12 @@ const Slider1 = () => {
   const cookies = new Cookies();
 const [getlanguage,setLanguage] = useState(cookies.get("language"));
 
-const images_arr = [img1,img2,img3 ]
+const images_arr = [
+  { image: img1 },
+  { image: img2 },
+  { image: img3 }
+  
+]
 
   const [data, setData] = useState([]);
 
@@ -94,7 +99,7 @@ const images_arr = [img1,img2,img3 ]
           return(
             <div class="column1" key={item._id}>
               <div class="card1" >
-              <img src={img1} className="card-images" />
+              <img src={item.images} className="card-images" />
               <h3>{item.PkgName}</h3>
               <p>
               {item.PkgDetail}

@@ -62,7 +62,7 @@ const [getlanguage,setLanguage] = useState(cookies.get("language"));
           <img src={item.images[0].url} alt="Nature"/>
           <div class="text-block">
             <h2 className='arabic-align'>{item.titlear}</h2>
-            <p>{item.Description}</p>
+            <p>{item.Descriptionar}</p>
            
           </div>
         </div>

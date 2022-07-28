@@ -175,7 +175,7 @@ let str = pathname;
               name="DOB"
               onChange={(e) => handleChange(e)}
               />
-             <label for="img1" className="label11">Enter Date Of Birth</label>
+             <label for="img1" className="label11">Date Of Birth</label>
              </div>
             </Form.Group>
 

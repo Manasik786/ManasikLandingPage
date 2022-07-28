@@ -22,10 +22,7 @@ const Slider1 = () => {
   const cookies = new Cookies();
 const [getlanguage,setLanguage] = useState(cookies.get("language"));
 
-const images_arr = [
-   img1,img2,img3
-  
-]
+const images_arr = [img1,img2,img3 ]
 
   const [data, setData] = useState([]);
 

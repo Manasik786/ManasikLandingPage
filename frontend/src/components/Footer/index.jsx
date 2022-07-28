@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
 import axios from "axios";
 import { Timeline } from 'react-twitter-widgets'
-
+import { Form, Row, Col, Button } from "react-bootstrap";
 
 const Footer = ({}) => {
   const cookies = new Cookies();
@@ -318,7 +318,7 @@ const Footer = ({}) => {
                     <Timeline
                       dataSource={{
                         sourceType: 'profile',
-                        screenName: 'Ali22063062'
+                        screenName: 'FlyManasik'
                       }}
                       options={{
                         height: '200',

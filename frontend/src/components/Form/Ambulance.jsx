@@ -62,7 +62,6 @@ let str = pathname;
     relativecontact:relativecontact,
     Reasontovisitksa:Reasontovisitksa,
     Religion:Religion,
-    
     upload:" ",
     
   });

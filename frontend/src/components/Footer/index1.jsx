@@ -241,32 +241,7 @@ const Footer = ({ }) => {
             </div>
           </div>
             </>:<>
-            <div className="contactus">
-            <div className="online-platform">
-              <div className="row g-0 justify-content-start align-items-center">
-                <div className="col-12 col-lg-4 info-details mb-4 mb-lg-0">
-                  <div className="row g-0">
-                    <div className="col-11 col-xxl-10 col-xl-10 col-lg-10 col-md-11">
-                      <h2>إذا كان لديك أي استفسار فلا تتردد في الاتصال بنا</h2>
-                      <br />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12 col-lg-7  contactus-form">
-                  <div className="row">
-                    <div className="col-12">
-                      <form className="arabicplaceholder">
-                        <input type='text' placeholder="اسم" />
-                        <input type='email' placeholder="البريد الإلكتروني" />
-                        <textarea rows={8} placeholder="رسالة" />
-                        <button >إرسال</button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            
           <div className="row justify-content-center mt-5">
             <div className="col-12 col-xxl-12">
               <div className="row  align-items-center">

@@ -44,6 +44,8 @@ let str = pathname;
   const [CardType,setCardType] = useState('service')
 
   const [data, setData] = useState({
+    Servicetype: newpath,
+    CardType: "service",
     Name: Name,
     familyname: familyname,
     DOB:DOB,
@@ -57,8 +59,6 @@ let str = pathname;
     relativecontact:relativecontact,
     Reasontovisitksa:Reasontovisitksa,
     Religion:Religion,
-    Servicetype: newpath,
-    CardType: "service",
     upload:" ",
     
   });
@@ -90,6 +90,7 @@ let str = pathname;
     
 
     const myForm = new FormData();
+    myForm.append("Servicetype",newpath)
     myForm.append("Name", data.Name);
     myForm.append("Email", data.Email);
     myForm.append("Phone", data.Phone);
@@ -103,7 +104,6 @@ let str = pathname;
     myForm.append("relativecontact",data.relativecontact)
     myForm.append("Reasontovisitksa",data.Reasontovisitksa)
     myForm.append("Religion",data.Religion)
-    myForm.append("ServiceType",newpath)
     myForm.append("CardType",'service')
 
     // myForm.append("images", data.images);
@@ -122,6 +122,7 @@ let str = pathname;
       toast(Error.message);
     }
   };
+  
   const createServiceImagesChange = (e) => {
     const files = Array.from(e.target.files);
 

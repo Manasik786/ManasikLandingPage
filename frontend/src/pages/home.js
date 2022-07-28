@@ -108,43 +108,11 @@ const Home = ({ onHandleClick }) => {
               <div className="image-section d-md-flex col-0 col-md-6 col-xxl-5">
                 <div className="row g-0 flex-column justify-content-center align-items-center align-content-center"></div>
               </div>
-              <>
-              {
-                getlanguage != 'english'? <>
-                <div className="col-12 col-md-6 col-xxl-5 about">
+              <div className="col-12 col-md-6 col-xxl-5 about">
                 <div className="row g-0">
                   <AboutManasik/>
                 </div>
               </div>
-                </>:<>
-                <div className="col-12 col-md-6 col-xxl-5 about arabicstyle">
-                <div className="row g-0">
-                  <div className="col-12 col-xxl-10 col-xl-10 col-lg-10 col-md-11">
-                    <h2 className="arabic-align">حول مناسيك</h2>
-                    <br />
-                    <p className="arabic-align">
-                    مناسيك للطيران هي شركة طيران سعودية مقرها
-                      المقر الرئيسي في مدينة جدة.{" "}
-                    </p>
-                    <br />
-                    <p className="arabic-align">
-                    جاء طيران مناسيك إلى الوجود من منظور
-                      القيم الدينية والثقافية ، حيث نعطي الأولوية و
-                      التأكيد على القيم الإسلامية.{" "}
-                    </p>
-                    <br />
-                    <p className="arabic-align">
-                    طيران المناسك هو انعكاس للثقافة السعودية
-                      والضيافة ، حيث نعرض الصورة الحقيقية لنا
-                      الثقافة والقيم ، هذا يجعل رحلتك أكثر
-                      ممتع.{" "}
-                    </p>
-                  </div>
-                </div>
-              </div>
-                </>
-              }
-              </>
             </div>
           </div>
         </section>

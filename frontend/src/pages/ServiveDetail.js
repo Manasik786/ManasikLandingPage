@@ -61,7 +61,10 @@ const ServiceDetails = () => {
             <div className="gap"></div>
             <div className="packagesdetails">
               <div className="packagesdetails_image">
-                <img src={item.images[0].url} />
+                <img src={item.images[0].url}  
+                alt="A beautiful keyboard."
+                // style={{width:"200", height:"200"}} 
+                />
               </div>
               <div className="packagesdetails_content">
                     <h2>{item.CardTitle} </h2>

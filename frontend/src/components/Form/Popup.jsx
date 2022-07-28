@@ -320,7 +320,7 @@ let str = pathname;
               className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
-              <label for="img1" className="label11">تاريخ الولادة</label>
+              <label for="img1" className="label11 arabic-align">تاريخ الولادة</label>
               </div>
 
             </Form.Group>
@@ -439,7 +439,7 @@ let str = pathname;
           </fieldset>
           </Form.Group>
           <Form.Group className="mb-13 " controlId="formGridAddress1">
-            <Form.Control placeholder="سبب زيارة المملكة العربية السعودية" className="largetextreason" 
+            <Form.Control placeholder="سبب زيارة المملكة العربية السعودية" className="largetextreason arabic-align" 
              name="Reasontovisitksa"
              val
              onChange={(e) => handleChange(e)}

@@ -50,14 +50,15 @@
             }
 
             textarea {
-                text-transform: uppercase;
+                text-transform: capitalize;
                 margin: 10px 0;
                 padding-top: 20px;
                 padding-left: 20px;
                 border: none;
                 width: 100%;
-                font-size: 16px;
+                font-size: 20px;
                 height: 150px;
+              
 
                 &::placeholder {
                     letter-spacing: 4px;

@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from "react";
 import Slider from "react-slick";
-import HajjImage from "../../assets/images/hajj.png";
+import img1 from "../../assets/images/hajj.png";
+import img2 from "../../assets/images/holiday.png";
+import img3 from "../../assets/images/hotel.png";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Popup from '../Form/Popup'
@@ -16,10 +18,15 @@ const Slider1 = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
   const cookies = new Cookies();
 const [getlanguage,setLanguage] = useState(cookies.get("language"));
 
+const images_arr = [
+   img1,img2,img3
   
+]
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -86,11 +93,11 @@ const [getlanguage,setLanguage] = useState(cookies.get("language"));
     getlanguage != 'english' ? <>
      <Slider {...settings}>
          {
-         data.map((item) => {
+         data.map((item,i) => {
           return(
             <div class="column1" key={item._id}>
               <div class="card1" >
-              <img src={HajjImage} className="card-images" />
+              <img src={img1} className="card-images" />
               <h3>{item.PkgName}</h3>
               <p>
               {item.PkgDetail}
@@ -126,11 +133,11 @@ const [getlanguage,setLanguage] = useState(cookies.get("language"));
     </> : <>
     <Slider {...settings}>
          {
-         data.map((item) => {
+         data.map((item,i) => {
           return(
             <div class="column1" key={item._id}>
               <div class="card1" >
-              <img src={HajjImage} className="card-images" />
+              <img src={img1} className="card-images" />
               <h3>{item.PkgNamear}</h3>
               <p>
               {item.PkgDetailar}

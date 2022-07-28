@@ -428,14 +428,16 @@
         margin: 10px 0;
         padding-left: 10px;
         height: 50px;
-        font-size: 12px;
+        font-size: 20px;
+        font-family: Noto Sans Arabic;
 
     }
     textarea{
         margin: 10px 0 !important;
         padding-left: 10px !important;
-        font-size: 12px !important;
+        font-size: 20px !important;
         height: 150px !important;
+        font-family: Noto Sans Arabic;
     }
     
     .home-main .onlineplatform-section .right-top-img {
@@ -455,6 +457,7 @@
     }
     .custom-btn {
         font-size: 12px;
+        margin-left: -10px !important;
     }
 
     .header-banner .header .custom-nav .navbar-nav li .nav-link {
@@ -920,6 +923,7 @@
   }
   .custom-btn {
     margin-top: 15px !important;
+    
     
 }
   

@@ -3,33 +3,15 @@
     "data": [
         {
             "_id": "C10",
-            "name": "Madina",
-            "img": "../../assets/images/backwardarrow.png"
+            "img": "../../assets/images/holiday.png"
         },
         {
             "_id": "C10",
-            "name": "Makka",
-            "img": "../../assets/images/backwardarrow.png"
+            "img": "../../assets/images/hajj.png"
         },
         {
             "_id": "C10",
-            "name": "Taif",
-            "img": "../../assets/images/backwardarrow.png"
-        },
-        {
-            "_id": "C10",
-            "name": "Jeddah",
-            "img": "../../assets/images/backwardarrow.png"
-        },
-        {
-            "_id": "C10",
-            "name": "Jeddah",
-            "img": "../../assets/images/backwardarrow.png"
-        },
-        {
-            "_id": "C10",
-            "name": "Jeddah",
-            "img": "../../assets/images/backwardarrow.png"
+            "img": "../../assets/images/hotel.png"
         }
     ]
 }

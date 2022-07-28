@@ -99,7 +99,7 @@ const images_arr = [
           return(
             <div class="column1" key={item._id}>
               <div class="card1" >
-              <img src={item.images} className="card-images" />
+              <img src={item.images[0].url} className="card-images" />
               <h3>{item.PkgName}</h3>
               <p>
               {item.PkgDetail}

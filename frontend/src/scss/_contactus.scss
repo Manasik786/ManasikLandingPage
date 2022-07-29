@@ -44,7 +44,9 @@
                 height: 50px;
                 font-size: 16px;
 
-               
+                &::placeholder {
+                    margin-left: 10px;
+                }
             }
 
             textarea {
@@ -58,7 +60,9 @@
                 height: 150px;
               
 
-               
+                &::placeholder {
+                    margin-left: 10px;
+                }
             }
             button{
                 background-color: $black;
@@ -67,7 +71,7 @@
                 border: none;
                 height: 60px;
                 text-transform: uppercase;
-                letter-spacing: 2px;
+                
                 font-weight: bold;
             }
         }

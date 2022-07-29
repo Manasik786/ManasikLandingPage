@@ -246,6 +246,16 @@
     .home-main {
         margin-top: 8vh;
     }
+    .header-banner .search-main .button-section {
+        background-color: #fff;
+        box-shadow: 2px 0px 20px -5px rgb(128 128 128 / 41%);
+        width: 90px;
+        height: 120px !important;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
     .header .custom-nav .navbar-nav li .nav-link {
         text-transform: uppercase;
         padding-right: 1rem;
@@ -271,6 +281,10 @@
         align-items: center;
         margin-top: 95vh;
     }
+    .btn-primary {
+        margin-left: -10px !important;
+        
+    }
     .header .custom-nav .navbar-nav li .nav-link {
         text-transform: uppercase;
         padding-right: 1rem;
@@ -288,17 +302,18 @@
     .ambulanec-content p {
         font-size: 13px !important;
         width: 76%;
-        margin-left: 5px;
+        
         margin-top: 30px;
     }
     .ambulance-item h2 {
         font-size: 38px !important;
         width: 76%;
-        margin-left: 5px;
+            margin-left: -10px;
         margin-top: 30px;
     }
     .ambulance-item p{
         font-size: 13px !important;
+        margin-left:-10px;
     }
     .banner-content h1 {
         font-size: 50px;
@@ -352,13 +367,13 @@
     // }
     .header-banner .search-main .search-section .search-form .form-control input {
         width: 120px;
-        font-size: 12px;
+        font-size: 0.9rem ;
     }
     .banner-main .ml3 p{
         font-variant: 1.2rem;
     }
     .header-banner .search-main .button-section {
-        height: 102px;
+        height: 90px;
     }
     .home-main .hotel-services {
         margin: 6rem 0;
@@ -557,7 +572,7 @@
     .ambulance-item h2 {
         font-size: 38px !important;
         width: 76%;
-        margin-left: 30px;
+        margin-left: 5px;
         margin-top: 30px;
     }
     .ambulance-item p{
@@ -978,7 +993,7 @@
     }
     .header-banner .search-main .search-section .search-form .form-control input {
         width: 100px;
-        font-size: 12px;
+        font-size: 0.9rem ;
     }
     .header-banner .search-main .button-section {
         height: 102px;

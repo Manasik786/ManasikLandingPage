@@ -4,6 +4,33 @@
 font-family: 'Open Sans', sans-serif;
 font-family: 'Poppins', sans-serif;
 font-family: 'Roboto', sans-serif;
+text-decoration: none;
+}
+nav a{
+  text-decoration: unset !important;
+}
+ul.dropdown-menu.dropdown-menu-dark li:hover{
+  background-color: #d4af37 !important;
+  transition: all 200ms ease-in-out !important; 
+}
+ul.dropdown-menu.dropdown-menu-dark li:hover a{
+  color: #fff !important;
+  background-color: #d4af37 !important;
+  transition: all 200ms ease-in-out;
+}
+ul.dropdown-menu.dropdown-menu-dark li a{
+  padding: 10px 15px;
+  font-size: 14px;
+}
+ul.dropdown-menu.dropdown-menu-dark.show{
+  padding: 0 !important;
+}
+.socail-icons a:hover i{
+  color: #fff !important ;
+  transition: all 200ms ease-in-out;
+}
+.socail-icons a{
+  color: transparent !important ;
 }
 .contact-form{
  width: 100%;
@@ -31,10 +58,11 @@ font-family: 'Roboto', sans-serif;
 }
 
 
-.banner-content p{
- font-size: 16px ;
- font-weight: 400;
- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.banner-content p {
+  font-size: 16px;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .main-contact{
@@ -921,6 +949,20 @@ li.nav-item.flag {
 .arabic-align{
 text-align: end !important;
 padding-right: 12px !important;
+font-weight: 500;
+}
+.arabic-align::placeholder{
+  text-align: end !important;
+}
+h6.arabic-align {
+  font-size: 16px;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+p.arabic-font{
+  font-size: 16px !important;
+
 }
 .arabic-align h5{
   text-align: center;
@@ -1281,7 +1323,7 @@ p.serviceheading {
 }
 h2.applyfromclass {
   font-size: 1.5rem !important;
-  /* text-align: center; */
+  text-align: end;
   margin-top: 10px;
   color: #d4af37;
 }
@@ -1600,7 +1642,10 @@ p {
 
 .label11{
   color: rgb(73, 72, 72) !important;
-  
+ 
+}
+.labelarabic{
+  width: 55%;
 }
 
 /* .DaysOfstay{
@@ -1771,9 +1816,75 @@ background-color: #fff;
 }
 .form-control[type=date] {
   overflow: hidden;
-  width: 108px;
+  width: 120px;
   
 }
+.-macontactp{
+  margin-bottom: -8px;
+}
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+.arabic-icon {
+  flex-direction: row-reverse;
+}
+
+.arabic-icon1{
+  width: 95%;
+}
+
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+}
+
+#myInput {
+  box-sizing: border-box;
+  
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
 
 .navbar-expand-lg .navbar-nav .dropdown-menu {
   position: absolute;
@@ -1785,10 +1896,7 @@ background-color: #fff;
   margin-top: 18px;
 }
 
-.socail-icons a:hover{
-font-size: 20px;
-text-decoration: none;
-}
+
 
 
 .home-main .aboutustop{

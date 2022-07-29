@@ -107,7 +107,7 @@ const images_arr = [
               <div className="newpack">
               <Link
                       to={{
-                        pathname: `packages/${(item._id)}`,
+                        pathname: `packages/${(item.PkgName)}`,
                         state: {
                           // whatever you need to send with the route transition
                         },
@@ -141,13 +141,13 @@ const images_arr = [
               <div class="card1" >
               <img src={item.images[0].url} className="card-images" />
               <h3>{item.PkgNamear}</h3>
-              <p>
+              <h6 className="arabic-align">
               {item.PkgDetailar}
-              </p>
+              </h6>
               <div className="newpack">
               <Link
                       to={{
-                        pathname: `packages/${(item._id)}`,
+                        pathname: `packages/${(item.PkgName)}`,
                         state: {
                           // whatever you need to send with the route transition
                         },

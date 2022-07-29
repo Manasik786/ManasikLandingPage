@@ -88,12 +88,7 @@ useEffect(() => {
     
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-      {
-        getlanguage != 'english' ? <>
-         <h2 className='applyfromclass'>Search Flight</h2>
-        </>:<>
-        <h2 className='applyfromclass arabic-align'>رحلة البحث</h2></>
-      }
+      
         </Modal.Header>
         {
        getlanguage != 'english'? <>
@@ -520,6 +515,7 @@ useEffect(() => {
             </div>
             <input type="text" placeholder="إلى"
             name="DestinationTo"
+            className="arabic-align"
             onChange={(e) => handleChange(e)}
             />
           </div>
@@ -529,6 +525,7 @@ useEffect(() => {
             </div>
             <input type="text" placeholder="من" 
             name="DestinationFrom"
+            className="arabic-align"
             onChange={(e) => handleChange(e)}
             />
           </div>

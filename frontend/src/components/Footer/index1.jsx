@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
 import axios from "axios";
+import { Timeline } from 'react-twitter-widgets'
 
 const Footer = ({ }) => {
   
@@ -224,15 +225,18 @@ const Footer = ({ }) => {
                     </div>
 
                 <div className="col-lg-3 footer-links">
-                  <h4>Newsletter</h4>
-                  <form action="" method="post">
-                    <div className="applynow">
-                      <input placeholder="Email" type="email" name="email" />
-                      <img src={Arrow} />
-                    </div>
-                  </form>
+                <Timeline
+                      dataSource={{
+                        sourceType: 'profile',
+                        screenName: 'FlyManasik'
+                      }}
+                      options={{
+                        height: '200',
+                        width:'250'
+                      }}
+                    />
                   <div className='socail-icons'>
-                  <a href=""> <i class="fa-brands fa-facebook-f"></i></a>
+                      <a href=""> <i class="fa-brands fa-facebook-f"></i></a>
                        <a href=""> <i class="fa-brands fa-instagram"></i></a>
                        <a href=""> <i class="fa-brands fa-linkedin-in"></i></a>
                   </div>
@@ -316,18 +320,20 @@ const Footer = ({ }) => {
                 </div>
 
                 <div className="col-lg-3 footer-links">
-                  <h4>Newsletter</h4>
-                  <form action="" method="post">
-                    <div className="applynow">
-                    <img src={BackArrow}  className="backarrowbutton"/>
-                      <input placeholder="البريد الإلكتروني" type="email" name="email" />
-                      
-                    </div>
-                  </form>
+                <Timeline
+                      dataSource={{
+                        sourceType: 'profile',
+                        screenName: 'FlyManasik'
+                      }}
+                      options={{
+                        height: '200',
+                        width:'250'
+                      }}
+                    />
                   <div className='socail-icons'>
-                       <a href=""> <i class="fa-brands fa-facebook-f"></i></a>
-                       <a href=""> <i class="fa-brands fa-instagram"></i></a>
-                       <a href=""> <i class="fa-brands fa-linkedin-in"></i></a>
+                  <i class="fa-brands fa-facebook-f"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-linkedin-in"></i>
                   </div>
                 </div>
               </div>

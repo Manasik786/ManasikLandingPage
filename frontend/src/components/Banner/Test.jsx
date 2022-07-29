@@ -32,9 +32,9 @@ const Test = () => {
        </div>
         </> : <>
         <div className="banner-content arabic-banner">
-         <h1>وظائف</h1>
-         <p>ماناسيك للطيران هي في الأساس شركة طيران</p>
-         <p>ويقوم بأعمال الطيران</p>
+         <h1 className="arabic-align">وظائف</h1>
+         <p className="arabic-align">ماناسيك للطيران هي في الأساس شركة طيران</p>
+         <p className="arabic-align">ويقوم بأعمال الطيران</p>
        </div>
         </>
        }
@@ -53,9 +53,9 @@ const Test = () => {
        </div>
         </> : <>
         <div className="banner-content arabic-banner">
-         <h1>وظائف</h1>
-         <p>ماناسيك للطيران هي في الأساس شركة طيران</p>
-         <p>ويقوم بأعمال الطيران</p>
+         <h1 className="arabic-align">وظائف</h1>
+         <p className="arabic-align">ماناسيك للطيران هي في الأساس شركة طيران</p>
+         <p className="arabic-align">ويقوم بأعمال الطيران</p>
        </div>
         </>
        }
@@ -74,9 +74,9 @@ const Test = () => {
           </div>
             </> : <>
             <div className="banner-content arabic-banner">
-            <h1>معلومات عنا</h1>
-            <p>ماناسيك للطيران هي في الأساس شركة طيران</p>
-            <p>ويقوم بأعمال الطيران</p>
+            <h1 className="arabic-align">معلومات عنا</h1>
+            <p className="arabic-align">ماناسيك للطيران هي في الأساس شركة طيران</p>
+            <p className="arabic-align">ويقوم بأعمال الطيران</p>
           </div>
             </>
           }
@@ -93,9 +93,9 @@ const Test = () => {
           </div>
             </>:<>
             <div className="banner-content arabic-banner">
-            <h1>خدمات المطاعم</h1>
-            <p>ماناسيك للطيران هي في الأساس شركة طيران</p>
-            <p>ويقوم بأعمال الطيران</p>
+            <h1 className="arabic-align">خدمات المطاعم</h1>
+            <p className="arabic-align">ماناسيك للطيران هي في الأساس شركة طيران</p>
+            <p className="arabic-align">ويقوم بأعمال الطيران</p>
           </div>
             </>
           }
@@ -113,9 +113,9 @@ const Test = () => {
           </div>
             </>:<>
             <div className="banner-content arabic-banner">
-            <h1>الوجهات المشهورة</h1>
-            <p>ماناسيك للطيران هي في الأساس شركة طيران</p>
-            <p>ويقوم بأعمال الطيران</p>
+            <h1 className="arabic-align">الوجهات المشهورة</h1>
+            <p className="arabic-align">ماناسيك للطيران هي في الأساس شركة طيران</p>
+            <p className="arabic-align">ويقوم بأعمال الطيران</p>
           </div>
             </>
           }
@@ -138,9 +138,9 @@ const Test = () => {
              </div>
             </>:<>
             <div className="banner-content arabic-banner">
-            <h1>الإسعاف الجوي</h1>
-            <p>ماناسيك للطيران هي في الأساس شركة طيران</p>
-            <p>ويقوم بأعمال الطيران</p>
+            <h1 className="arabic-align">الإسعاف الجوي</h1>
+            <p className="arabic-align">ماناسيك للطيران هي في الأساس شركة طيران</p>
+            <p className="arabic-align">ويقوم بأعمال الطيران</p>
           </div>
             </>
           }
@@ -159,9 +159,9 @@ const Test = () => {
           </div>
         </> : <>
         <div className="banner-content arabic-banner">
-            <h1>الوجهات المشهورة</h1>
-            <p>ماناسيك للطيران هي في الأساس شركة طيران</p>
-            <p>ويقوم بأعمال الطيران</p>
+            <h1 className="arabic-align">الوجهات المشهورة</h1>
+            <p className="arabic-align">ماناسيك للطيران هي في الأساس شركة طيران</p>
+            <p className="arabic-align">ويقوم بأعمال الطيران</p>
           </div>
         </>
        }
@@ -180,9 +180,9 @@ const Test = () => {
        </div>
         </> : <>
         <div className="banner-content arabic-banner">
-         <h1>اتصال</h1>
-         <p>مناسيك للطيران على استعداد لخدمتك</p>
-         <p> بكل طريقة لمزيد من المعلومات يرجى الاتصال بنا على</p>
+         <h1 className="arabic-align">اتصال</h1>
+         <p className="arabic-align">مناسيك للطيران على استعداد لخدمتك</p>
+         <p className="arabic-align"> بكل طريقة لمزيد من المعلومات يرجى الاتصال بنا على</p>
        </div>
         </>
        }

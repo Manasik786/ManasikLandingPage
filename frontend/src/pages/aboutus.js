@@ -54,9 +54,9 @@ const Whoweare = () => {
           </div>
             </> : <>
             <div className="banner-content arabic-banner">
-            <h1>معلومات عنا</h1>
-            <p>ماناسيك للطيران هي في الأساس شركة طيران</p>
-            <p>ويقوم بأعمال الطيران</p>
+            <h1 className="arabic-align">معلومات عنا</h1>
+            <p className="arabic-align">ماناسيك للطيران هي في الأساس شركة طيران</p>
+            <p className="arabic-align">ويقوم بأعمال الطيران</p>
           </div>
             </>
           }
@@ -119,7 +119,7 @@ const Whoweare = () => {
               <img src={item.images[0].url}/>
 
             </div>
-            <h5>{item.CardTypear}</h5>
+            <h5 className="arabic-align">{item.CardTypear}</h5>
             {/* <h6>From USD 47,535</h6> */}
             </div>
             

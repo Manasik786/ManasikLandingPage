@@ -8,6 +8,7 @@ import Cookies from "universal-cookie";
 import { useLocation } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
+import {Country_Name ,Country_NameAr} from '../../dummydata/category'
 
 // import Select from 'react-select'
 // import countryList from 'react-select-country-list'
@@ -17,6 +18,8 @@ const Popup = () => {
 
   const cookies = new Cookies();
 const [getlanguage,setLanguage] = useState(cookies.get("language"));
+const Country = window.localStorage.getItem('country',);
+
 const { pathname } = useLocation();
 
 
@@ -30,7 +33,7 @@ let str = pathname;
   const [oldImages, setOldImages] = useState([]);
   const [Name, setName] = useState(" ");
   const [Email, setEmail] = useState(" ");
-  const [country,setcountry] = useState(" ");
+  const [country,setcountry] = useState(Country);
   const [Phone, setPhone] = useState("");
   const [DOB, setDOB] = useState(" ");
   const [familyname,setfamilyname] = useState(" ")
@@ -51,7 +54,7 @@ let str = pathname;
     familyname: familyname,
     DOB:DOB,
     Email: Email,
-    country:country,
+    country:Country,
     Phone:Phone,
     passportno:passportno,
     nationalid:nationalid,
@@ -97,7 +100,7 @@ let str = pathname;
     myForm.append("Phone", data.Phone);
     myForm.append("familyname", data.familyname);
     myForm.append("DOB",data.DOB);
-    myForm.append("country",data.country)
+    myForm.append("country",Country)
     myForm.append("passportno",data.passportno)
     myForm.append("nationalid",data.nationalid)
     myForm.append("StayPeriod",data.StayPeriod)
@@ -171,7 +174,7 @@ let str = pathname;
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
             <div className="filetostyle">
-              <Form.Control type="date" placeholder="Date of Birth"  id="dob"
+              <Form.Control type="date" placeholder="Date of Birth" 
               name="DOB"
               onChange={(e) => handleChange(e)}
               />
@@ -190,10 +193,22 @@ let str = pathname;
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
               
-              <Form.Control type="text" placeholder="Country" 
+            <select class="form-control" id="exampleFormControlSelect1"
+           name="country"
+          >
+        {
+          Country_Name.map((item) => {
+            return(
+              <option key={item.country_id}
               name="country"
-              onChange={(e) => handleChange(e)}
-              />
+                onClick={() => {
+            window.localStorage.setItem('country', (item.country_name));
+          }}
+              >{item.country_name}</option>
+            )
+          })
+        }
+        </select>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridName">
@@ -300,8 +315,9 @@ let str = pathname;
       <div className="popup1">
         <Form className="popupform">
           <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridName" className="arabicfont">     
+            <Form.Group as={Col} controlId="formGridName" className="arabic-align">     
               <Form.Control type="text" placeholder="اسم" 
+              className="arabic-align"
               name="Name"
               onChange={(e) => handleChange(e)}
               />
@@ -310,7 +326,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="اسم العائلة" 
               name="familyname"
-              className="arabicfont"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -320,10 +336,10 @@ let str = pathname;
             <div className="filetostyle">
               <Form.Control type="date" placeholder="تاريخ الولادة" 
               name="DOB"
-              className="arabicfont"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
-              <label for="img1" className="label11">تاريخ الولادة</label>
+              <label for="img1" className="label11 arabic-align">تاريخ الولادة</label>
               </div>
 
             </Form.Group>
@@ -332,7 +348,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="البريد الإلكتروني" 
               name="Email"
-              className="arabicfont"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -340,18 +356,30 @@ let str = pathname;
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
               
-              <Form.Control type="text" placeholder="دولة" 
+            <select class="form-control" id="exampleFormControlSelect1"
+          
+          >
+        {
+          Country_NameAr.map((item) => {
+            return(
+              <option key={item.code}
               name="country"
-              className="arabicfont"
-              onChange={(e) => handleChange(e)}
-              />
+              className="arabic-align"
+                onClick={() => {
+            window.localStorage.setItem('country', (item.name));
+          }}
+              >{item.name}</option>
+            )
+          })
+        }
+        </select>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridName">
               
               <Form.Control type="number" placeholder="هاتف" 
               name="Phone"
-              className="arabicfont"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -361,7 +389,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="رقم جواز السفر" 
               name="passportno"
-              className="arabicfont"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -370,7 +398,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder=" الهوية الوطنية#"
               name="nationalid"
-              className="arabicfont"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -380,7 +408,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="تحميل المستند" 
               name="upload"
-              className="arabicfont"
+              className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -389,7 +417,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="فترة الإقامة (عدد الأيام)" 
                name="StayPeriod"
-               className="arabicfont"
+               className="arabic-align"
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -398,7 +426,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridEmail">
             <Form.Control placeholder="دِين"   
             name="Religion"
-            className="arabicfont"
+            className="arabic-align"
             onChange={(e) => handleChange(e)}
             />
            
@@ -408,7 +436,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder="الاتصال النسبي في المملكة العربية السعودية" 
                name="relativecontact"
-               className="arabicfont"
+               className="arabic-align"
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -442,9 +470,9 @@ let str = pathname;
           </fieldset>
           </Form.Group>
           <Form.Group className="mb-13 " controlId="formGridAddress1">
-            <Form.Control placeholder="سبب زيارة المملكة العربية السعودية" className="largetextreason" 
+            <Form.Control placeholder="سبب زيارة المملكة العربية السعودية" className="largetextreason arabic-align" 
              name="Reasontovisitksa"
-             val
+             
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>

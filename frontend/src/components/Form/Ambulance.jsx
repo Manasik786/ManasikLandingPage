@@ -7,6 +7,7 @@ import Capcha from '../../pages/Translator'
 import Cookies from "universal-cookie";
 import { useLocation } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
+import {Country_Name,Country_NameAr} from '../../dummydata/category'
 
 // import Select from 'react-select'
 // import countryList from 'react-select-country-list'
@@ -173,12 +174,12 @@ let str = pathname;
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
             <div className="filetostyle">
-              <Form.Control type="date" placeholder="Date of Birth"  id="dob"
+              <Form.Control type="date" placeholder="DOB"
               name="DOB"
               required
               onChange={(e) => handleChange(e)}
               />
-             <label for="img1" className="label11">Date Of Birth</label>
+             <label for="img1" className="label11">DOB</label>
              </div>
             </Form.Group>
 
@@ -194,11 +195,22 @@ let str = pathname;
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
               
-              <Form.Control type="text" placeholder="Country" 
+            <select class="form-control" id="exampleFormControlSelect1"
+           name="country"
+          >
+        {
+          Country_Name.map((item) => {
+            return(
+              <option key={item.country_id}
               name="country"
-              required
-              onChange={(e) => handleChange(e)}
-              />
+                onClick={() => {
+            window.localStorage.setItem('country', (item.country_name));
+          }}
+              >{item.country_name}</option>
+            )
+          })
+        }
+        </select>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridName">
@@ -317,6 +329,7 @@ let str = pathname;
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridName" className="arabic-align">     
               <Form.Control type="text" placeholder="اسم" 
+              className="arabic-align"
               name="Name"
               onChange={(e) => handleChange(e)}
               />
@@ -355,11 +368,29 @@ let str = pathname;
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
               
-              <Form.Control type="text" placeholder="دولة" 
+              {/* <Form.Control type="text" placeholder="دولة" 
               name="country"
               className="arabic-align"
               onChange={(e) => handleChange(e)}
-              />
+              /> */}
+
+<select class="form-control" id="exampleFormControlSelect1"
+          
+          >
+        {
+          Country_NameAr.map((item) => {
+            return(
+              <option key={item.code}
+              name="country"
+              className="arabic-align"
+                onClick={() => {
+            window.localStorage.setItem('country', (item.name));
+          }}
+              >{item.name}</option>
+            )
+          })
+        }
+        </select>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridName">
@@ -457,7 +488,9 @@ let str = pathname;
           </fieldset>
           </Form.Group>
           <Form.Group className="mb-13 " controlId="formGridAddress1">
-            <Form.Control placeholder="سبب زيارة المملكة العربية السعودية" className="largetextreason" 
+            <Form.Control placeholder="سبب زيارة المملكة العربية السعودية" 
+            
+            className="largetextreason arabic-align" 
              name="Reasontovisitksa"
              val
              onChange={(e) => handleChange(e)}

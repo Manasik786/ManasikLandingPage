@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import Capcha from '../../pages/Translator'
 import Cookies from "universal-cookie";
 import { useLocation } from "react-router-dom";
-
+import {Country_Name,Country_NameAr} from '../../dummydata/category'
 
 // import Select from 'react-select'
 // import countryList from 'react-select-country-list'
@@ -19,6 +19,12 @@ const Popup = () => {
   const cookies = new Cookies();
 const [getlanguage,setLanguage] = useState(cookies.get("language"));
 const { pathname } = useLocation();
+const [show, setShow] = useState(false);
+const ServiceName = window.localStorage.getItem('id',);
+const Country = window.localStorage.getItem('country',);
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
+
 
 let str = pathname;
   str = str.substring(16);
@@ -29,32 +35,32 @@ let str = pathname;
   const [oldImages, setOldImages] = useState([]);
   const [Name, setName] = useState(" ");
   const [Email, setEmail] = useState(" ");
-  const [country,setcountry] = useState(" ");
+  const [country,setcountry] = useState(Country);
   const [Phone, setPhone] = useState("");
   const [DOB, setDOB] = useState(" ");
   const [familyname,setfamilyname] = useState(" ")
   const [passportno, setpassportno] = useState(" ");
   const [nationalid, setnationalid] = useState(" ");
-  const [StayPeriod, setStayPeriod] = useState(" ");
+  const [stayperiod, setStayPeriod] = useState(" ");
   const [Visitedbefore, setVisitedbefore] = useState(" ");
   const [relativecontact, setrelativecontact] = useState(" ");
   const [Reasontovisitksa, setReasontovisitksa] = useState(" ");
   const [Religion, setReligion] = useState(" ");
-  const [Servicetype,SetservicesType] = useState(newpath)
+  const [Servicetype,SetservicesType] = useState(ServiceName)
   const [CardType,setCardType] = useState('service')
 
   const [data, setData] = useState({
-    Servicetype: newpath,
+    Servicetype: ServiceName,
     CardType: "service",
     Name: Name,
     familyname: familyname,
     DOB:DOB,
     Email: Email,
-    country:country,
+    country:Country,
     Phone:Phone,
     passportno:passportno,
     nationalid:nationalid,
-    StayPeriod:StayPeriod,
+    stayperiod:stayperiod,
     Visitedbefore: Visitedbefore,
     relativecontact:relativecontact,
     Reasontovisitksa:Reasontovisitksa,
@@ -80,7 +86,7 @@ let str = pathname;
     setfamilyname(familyname);
     setpassportno(passportno);
     setnationalid(nationalid);
-    setStayPeriod(StayPeriod);
+    setStayPeriod(stayperiod);
     setVisitedbefore(Visitedbefore);
     setReasontovisitksa(Reasontovisitksa);
     setReligion(Religion);
@@ -90,16 +96,16 @@ let str = pathname;
     
 
     const myForm = new FormData();
-    myForm.append("Servicetype",newpath)
+    myForm.append("Servicetype",ServiceName)
     myForm.append("Name", data.Name);
     myForm.append("Email", data.Email);
     myForm.append("Phone", data.Phone);
     myForm.append("familyname", data.familyname);
     myForm.append("DOB",data.DOB);
-    myForm.append("country",data.country)
+    myForm.append("country",Country)
     myForm.append("passportno",data.passportno)
     myForm.append("nationalid",data.nationalid)
-    myForm.append("StayPeriod",data.StayPeriod)
+    myForm.append("stayperiod",data.stayperiod)
     myForm.append("Visitedbefore",data.Visitedbefore)
     myForm.append("relativecontact",data.relativecontact)
     myForm.append("Reasontovisitksa",data.Reasontovisitksa)
@@ -117,6 +123,7 @@ let str = pathname;
       const response = await axios.post(`/api/v1/createBookingForm`, myForm);
       console.log(response);
       toast("Submitted");
+      handleShow(false)
     } catch (err) {
       const Error = err.response.data;
       toast(Error.message);
@@ -153,6 +160,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridName">     
               <Form.Control type="text" placeholder="Name" 
               name="Name"
+              
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -167,12 +175,13 @@ let str = pathname;
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
             <div className="filetostyle">
+            <label for="img1" className="label11">Date  of  Birth   </label>
               <Form.Control type="date" placeholder="Date of Birth"
               
               name="DOB"
               onChange={(e) => handleChange(e)}
               />
-             <label for="img1" className="label11">Date Of Birth</label>
+             
              </div>
             </Form.Group>
 
@@ -186,11 +195,23 @@ let str = pathname;
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
+            <select class="form-control" id="exampleFormControlSelect1"
+          
+            >
+          {
+            Country_Name.map((item) => {
+              return(
+                <option key={item.country_id}
+                name="country"
+                  onClick={() => {
+              window.localStorage.setItem('country', (item.country_name));
+            }}
+                >{item.country_name}</option>
+              )
+            })
+          }
+          </select>
               
-              <Form.Control type="text" placeholder="Country" 
-              name="country"
-              onChange={(e) => handleChange(e)}
-              />
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridName">
@@ -231,7 +252,7 @@ let str = pathname;
               </div>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridName">
-              <Form.Control type="text" placeholder="Stay Period (Number of Days)" 
+              <Form.Control type="number" placeholder="Stay Period (Number of Days)" 
                name="StayPeriod"
                onChange={(e) => handleChange(e)}
               />
@@ -290,7 +311,11 @@ let str = pathname;
             />
           </Form.Group>
          
-          <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
+          <button className="btnsubmit" onClick={createProductSubmitHandler}>
+            <span>
+            Submit
+            </span>
+          </button>
         </Form>
       </div>
       </> : <>
@@ -338,11 +363,24 @@ let str = pathname;
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
               
-              <Form.Control type="text" placeholder="دولة" 
+            <select class="form-control" id="exampleFormControlSelect1"
+          
+          >
+        {
+          Country_NameAr.map((item) => {
+            return(
+              <option key={item.code}
               name="country"
               className="arabic-align"
-              onChange={(e) => handleChange(e)}
-              />
+                onClick={() => {
+            window.localStorage.setItem('country', (item.name));
+          }}
+              >{item.name}</option>
+            )
+          })
+        }
+        </select>
+              
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridName">

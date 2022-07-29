@@ -16,7 +16,7 @@ const Services = (props) => {
     const cookies = new Cookies();
     const [getlanguage,setLanguage] = useState(cookies.get("language"));
     const [show, setShow] = useState(false);
-  
+    const ServiceName = window.localStorage.getItem('id',);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -63,7 +63,7 @@ const Services = (props) => {
                       (item.CardType) === 'service' ? <>
                       <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
-                        <h2 className='applyfromclass '>Services</h2>
+                        <h2 className='applyfromclass '>{ServiceName}</h2>
                         </Modal.Header>
                         <Popup />
                       </Modal>
@@ -83,13 +83,22 @@ const Services = (props) => {
                             </p>
       
                             <br />
-                            <Button
+                            <span
+                             onClick={() => {
+                              window.localStorage.setItem('id', (item.CardTitle));
+                            }}
+                            >
+                               <Button
                               variant="primary"
                               className="primarybutton"
                               onClick={handleShow}
+                              
                             >
-                              <Buttn1 text={"BOOK NOW"} />
+                              <Buttn1 
+                              text={"BOOK NOW"} />
                             </Button>
+                            </span>
+                           
                           </div>
                         </div>
                       </div>
@@ -126,18 +135,26 @@ const Services = (props) => {
                           <div className="col-12 col-xxl-10 col-xl-10 col-lg-10 col-md-11 ">
                             <h3 className="servicespage1 arabic-align">{item.CardTitlear}</h3>
                             <br />
-                            <p className="arabic-align">
+                            <h6 className="arabic-align">
                               {item.CardDescriptionsar}
-                            </p>
+                            </h6>
       
                             <br />
-                            <Button
+                            
+                            <span
+                             onClick={() => {
+                              window.localStorage.setItem('id', (item.CardTitle));
+                            }}
+                            >
+                               <Button
                               variant="primary"
                               className="primarybutton"
                               onClick={handleShow}
+                              
                             >
                               <Buttn2 text={"احجز الآن"} />
                             </Button>
+                            </span>
                           </div>
                         </div>
                       </div>

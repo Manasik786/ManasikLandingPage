@@ -32,7 +32,7 @@ const Index = () => {
                   key={item._id}
                 >
                   <h2>{item.CardTitle}</h2>
-                  <p>{item.CardDescriptions}</p>
+                  <p >{item.CardDescriptions}</p>
                 </div>
               </>
             ) : (
@@ -50,7 +50,7 @@ const Index = () => {
                   key={item._id}
                 >
                   <h2 className="arabic-align">{item.CardTitlear}</h2>
-                  <p className="arabic-align">{item.CardDescriptionsar}</p>
+                  <h6 className="arabic-align">{item.CardDescriptionsar}</h6>
                 </div>
               </>
             ) : (

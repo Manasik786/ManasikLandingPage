@@ -124,14 +124,14 @@ const Air_ambulance = () => {
           <div className="ambulance-11">
           
           <div className="abulance33 aligncard">
-            <p>
+            <h6 className="arabic-align">
             تقديم خدمة نقل المرضى بالإسعاف الجوي برحلات آمنه دون أي عناء و توفير كافة الخدمات و سبل الراحة منذ اللحظة الأولى حتى الأخيرة.
             الآن سنكون الشركة الرائدة في الخدمات المتنقلة مثل
               نحن سوف. تعمل طواقم الإسعاف الجوي والطواقم الطبية لدينا على مدار الساعة طوال أيام الأسبوع لتوفير أ
               خدمات الإسعاف الجوي الدولية المهنية باستخدام أحدث
               التقنيات والمعدات الطبية.
             
-            </p>
+            </h6>
            
            
           </div>
@@ -147,9 +147,9 @@ const Air_ambulance = () => {
                   <div className="ambulance-item">
                     <div className="ambulancetext">
                     <h2 className="arabic-align">{item.CardDetailar}</h2>
-                    <p className="arabic-align">
+                    <h6 className="arabic-align">
                       {item.CardDescriptionsar}
-                    </p>
+                    </h6>
                     <Link
                       to={{
                         pathname: `AmbulanceDetail/${(item.CardDetail).replace(/ /g,'')}`,

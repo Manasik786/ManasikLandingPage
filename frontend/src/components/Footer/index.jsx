@@ -326,10 +326,13 @@ const Footer = ({}) => {
                       }}
                     />
  
-                      <div className="socail-icons">
-                       <a href=""> <i class="fa-brands fa-facebook-f"></i></a>
-                       <a href=""> <i class="fa-brands fa-instagram"></i></a>
-                       <a href=""> <i class="fa-brands fa-linkedin-in"></i></a>
+                      <div className="socail-icons"> 
+                        <a href="https://www.facebook.com/ManasikAviation" target='blank'>  <i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/flymanasik/" target='blank'><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/manasik-aviation/" target='blank'> <i class="fa-brands fa-linkedin-in"></i></a>
+                     
+                       
+                      
                        
                       </div>
                     </div>
@@ -358,6 +361,7 @@ const Footer = ({}) => {
                           <form className="arabicplaceholder">
                             <input type="text" placeholder="اسم" />
                             <input
+                            className=".arabic-align"
                               type="email"
                               placeholder="البريد الإلكتروني"
                             />
@@ -455,21 +459,20 @@ const Footer = ({}) => {
                     </div>
 
                     <div className="col-lg-3 footer-links">
-                      <h4>Newsletter</h4>
-                      <form action="" method="post">
-                        <div className="applynow">
-                          <img src={BackArrow} className="backarrowbutton" />
-                          <input
-                            placeholder="البريد الإلكتروني"
-                            type="email"
-                            name="email"
-                          />
-                        </div>
-                      </form>
+                    <Timeline
+                      dataSource={{
+                        sourceType: 'profile',
+                        screenName: 'FlyManasik'
+                      }}
+                      options={{
+                        height: '200',
+                        width:'250'
+                      }}
+                    />
                       <div className="socail-icons">
-                      <a href=""> <i class="fa-brands fa-facebook-f"></i></a>
-                       <a href=""> <i class="fa-brands fa-instagram"></i></a>
-                       <a href=""> <i class="fa-brands fa-linkedin-in"></i></a>
+                     <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                       <i class="fa-brands fa-linkedin-in"></i>
                       </div>
                     </div>
                   </div>

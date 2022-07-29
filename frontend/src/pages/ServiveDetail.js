@@ -72,13 +72,21 @@ const ServiceDetails = () => {
                     <div className="packagesdetails_include">
                       <p>{item.CardDescriptions}</p>
                     </div>
-                    <Button
-                      variant="primary"
-                      className="primarybutton"
-                      onClick={handleShow}
-                    >
-                      <Buttn1 text={"BOOK NOW"} />
-                    </Button>
+                    <span
+                             onClick={() => {
+                              window.localStorage.setItem('id', (item.CardTitle));
+                            }}
+                            >
+                               <Button
+                              variant="primary"
+                              className="primarybutton"
+                              onClick={handleShow}
+                              
+                            >
+                              <Buttn1 
+                              text={"BOOK NOW"} />
+                            </Button>
+                     </span>
                   </div>
             </div>
             
@@ -95,8 +103,8 @@ const ServiceDetails = () => {
             (item.CardTitle === newpath ?
              <>
                <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                <h2 className='applyfromclass'>{item.CardTitlear}</h2>
+                <Modal.Header className='arabic-icon' closeButton>
+                <span className='arabic-icon1'><h2 className='applyfromclass'>{item.CardTitlear}</h2></span>
                 </Modal.Header>
                 <Popup />
               </Modal>
@@ -118,15 +126,23 @@ const ServiceDetails = () => {
                     <h2 className='arabic-align'>{item.CardTitlear} </h2>
                    
                     <div className="packagesdetails_include">
-                      <p className='arabic-align'>{item.CardDescriptionsar}</p>
+                      <h6 className='arabic-align'>{item.CardDescriptionsar}</h6>
                     </div>
-                    <Button
-                      variant="primary"
-                      className="primarybutton"
-                      onClick={handleShow}
-                    >
-                      <Buttn2 text={"احجز الآن"} />
-                    </Button>
+                   
+                    <span
+                             onClick={() => {
+                              window.localStorage.setItem('id', (item.CardTitle));
+                            }}
+                            >
+                               <Button
+                              variant="primary"
+                              className="primarybutton"
+                              onClick={handleShow}
+                              
+                            >
+                              <Buttn2 text={"احجز الآن"} />
+                            </Button>
+                            </span>
                   </div>
             </div>
             

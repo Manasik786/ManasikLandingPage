@@ -65,7 +65,7 @@ const Index = () => {
             </div>
           <div className='destination-right'>
               <h2 className='arabic-align'>{item.CardTitlear}</h2>
-              <p className='arabic-align'>{item.CardDescriptionsar}</p>
+              <h6 className='arabic-align'>{item.CardDescriptionsar}</h6>
               
             </div>
             

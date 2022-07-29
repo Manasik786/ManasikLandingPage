@@ -19,6 +19,7 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
   
   const [data, setData] = useState([]);
   const [card, setCard] = useState([]);
+  const [isOpened, setIsOpened] = useState(false);
 
   useEffect(() => {
     const getdata = async () => {
@@ -51,7 +52,9 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
     window.location.reload();
     }
   };
- 
+ function searchFun(){
+  setIsOpened(wasOpened => !wasOpened);
+ }
   return (
     <>
       <div className="header">
@@ -134,7 +137,7 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
                               className="dropdown-item"
                               
                               to={{
-                                pathname: `packages/${(item._id)}`,
+                                pathname: `packages/${(item.PkgName)}`,
                                 state: {
                                   // whatever you need to send with the route transition
                                 },
@@ -215,6 +218,7 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
                       <li className="nav-item">
                         <div className="header-search-btn">
                           <i className="fa fa-search"></i>
+                          
                         </div>
                       </li>
                       <li onClick={toggleLanguage} className="nav-item flag">
@@ -225,6 +229,12 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
                 </div>
               </div>
             </nav>
+            {/* {isOpened && (
+        <div className="searchboxstyle">
+          <input type='text' placeholder></input>
+        </div>
+      )} */}
+           
           </>
         ) : (
           <>
@@ -305,7 +315,7 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
                               className="dropdown-item"
                               
                               to={{
-                                pathname: `packages/${(item._id)}`,
+                                pathname: `packages/${(item.PkgName)}`,
                                 state: {
                                   // whatever you need to send with the route transition
                                 },

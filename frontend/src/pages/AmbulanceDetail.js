@@ -101,9 +101,9 @@ const Packages = (props) => {
           </Modal>
            <div className="contact-banner" key={item._id}>
             <div className="banner-content">
-                <h1>{item.CardDetailar}</h1>
-                <p>ماناسيك للطيران هي في الأساس شركة طيران</p>
-                <p>ويقوم بأعمال الطيران</p>
+                <h1 className="arabic-align">{item.CardDetailar}</h1>
+                <p className="arabic-align">ماناسيك للطيران هي في الأساس شركة طيران</p>
+                <p className="arabic-align">ويقوم بأعمال الطيران</p>
               </div>
               
               </div>
@@ -117,7 +117,7 @@ const Packages = (props) => {
                     <h2 className='arabic-align'>{item.CardDetailar} </h2>
                    {item.PkgDetailar}
                     <div className="packagesdetails_include">
-                      <p className='arabic-align'>{item.CardDescriptionsar}</p>
+                      <h6  className='arabic-align'>{item.CardDescriptionsar}</h6>
                     </div>
                     <Button
                       variant="primary"

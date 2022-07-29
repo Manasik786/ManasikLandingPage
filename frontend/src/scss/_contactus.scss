@@ -44,9 +44,7 @@
                 height: 50px;
                 font-size: 16px;
 
-                &::placeholder {
-                    letter-spacing: 4px;
-                }
+               
             }
 
             textarea {
@@ -60,9 +58,7 @@
                 height: 150px;
               
 
-                &::placeholder {
-                    letter-spacing: 4px;
-                }
+               
             }
             button{
                 background-color: $black;

@@ -7,7 +7,6 @@ import Img3 from "../../assets/images/phone.png";
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
-import { Form, Row, Col, Button } from "react-bootstrap";
 
 const Contact = () => {
   const cookies = new Cookies();
@@ -180,14 +179,7 @@ const Contact = () => {
                       <div className="row">
                         <div className="col-12">
                           <form className="arabicplaceholder">
-                          <Form.Control
-                            type="text"
-                            placeholder="اسم"
-                            name="images"
-                            required
-                           
-                          />
-                            
+                            <input type="text" placeholder="اسم" />
                             <input
                               type="email"
                               placeholder="البريد الإلكتروني"

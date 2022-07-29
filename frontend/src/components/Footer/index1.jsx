@@ -257,7 +257,7 @@ const Footer = ({ }) => {
                   <div className="row g-0">
                     <div className="col-10 col-xl-8 col-lg-10 ">
                       <img src={FooterLogo}></img>
-                      <p>
+                      <p >
                       تستخدم السعودية ملفات تعريف الارتباط الضرورية لتخصيص المحتوى والإعلانات ، ولتوفير ميزات وسائل التواصل الاجتماعي ، ولتحليل حركة المرور لدينا..
                       </p>
                     </div>
@@ -272,21 +272,22 @@ const Footer = ({ }) => {
                       <p>moin@blindtratorde</p>
                     </div>
                     <div className="col-4">
-                      <h4>روابط سريعة</h4>
+                      <h4 className="arabic-align">روابط سريعة</h4>
                       <ul>
-                        <li>
+                        
+                        <li className="arabic-align">
                           <a href="#">الإسعاف الجوي</a>
                         </li>
-                        <li>
+                        <li className="arabic-align">
                           <a href="#">الحزم</a>
                         </li>
-                        <li>
+                        <li className="arabic-align">
                           <a href="#">الفنادق حول</a>
                         </li>
-                        <li>
+                        <li className="arabic-align">
                           <a href="#">وظائف الولايات المتحدة</a>
                         </li>
-                        <li>
+                        <li className="arabic-align">
                           <Link to="/privacy">
                           <a href="#">سياسة الخصوصية</a>
                           </Link>
@@ -294,7 +295,7 @@ const Footer = ({ }) => {
                       </ul>
                     </div>
                     <div className="col-4 footer-links">
-                      <h4>خدمات</h4>
+                      <h4 >خدمات</h4>
                       <ul>
                         <li>
                           <a href="#">خدمات</a>

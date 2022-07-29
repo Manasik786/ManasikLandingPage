@@ -94,9 +94,11 @@ const Packages = (props) => {
             ((item.CardDetail).substring(0,5) === checkpath ?
              < >
              <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-            <h2 className='applyfromclass'>{item.CardDetailar}</h2>
-            </Modal.Header>
+             <Modal.Header className='arabic-icon' closeButton>
+                <span className='arabic-icon1'><h2 className='applyfromclass'>
+                {item.CardDetailar}
+                  </h2></span>
+             </Modal.Header>
             <Popup />
           </Modal>
            <div className="contact-banner" key={item._id}>

@@ -332,9 +332,9 @@ const Footer = ({ }) => {
                       }}
                     />
                   <div className='socail-icons'>
-                  <i class="fa-brands fa-facebook-f"></i>
-                  <i class="fa-brands fa-instagram"></i>
-                  <i class="fa-brands fa-linkedin-in"></i>
+                      <a href=""> <i class="fa-brands fa-facebook-f"></i></a>
+                       <a href=""> <i class="fa-brands fa-instagram"></i></a>
+                       <a href=""> <i class="fa-brands fa-linkedin-in"></i></a>
                   </div>
                 </div>
               </div>

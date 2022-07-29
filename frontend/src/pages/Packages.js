@@ -108,7 +108,7 @@ const Packages = () => {
              <Modal show={show} onHide={handleClose}>
              <Modal.Header className='arabic-icon' closeButton>
                 <span className='arabic-icon1'><h2 className='applyfromclass'>{item.PkgNamear}</h2></span>
-                </Modal.Header>
+             </Modal.Header>
               <Popup />
             </Modal>
             <div className="contact-banner">

@@ -321,11 +321,12 @@ const Fly = () => {
               <>
                 <>
                 <Modal show={show} onHide={handleClose} key={item._id}>
-                    <Modal.Header closeButton>
-                      <h2 className="applyfromclass arabic-align">
-                        {item.Typear}
-                      </h2>
-                    </Modal.Header>
+                <Modal.Header className='arabic-icon' closeButton>
+                <span className='arabic-icon1'><h2 className='applyfromclass'>
+                {item.Typear}
+                  </h2></span>
+             </Modal.Header>
+              
                     <div className="popup1" key={item._id}>
                       <Form className="popupform">
                         <Row className="mb-3">

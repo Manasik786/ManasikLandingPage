@@ -441,6 +441,7 @@ useEffect(() => {
         </div>
         <span className="Flight-line"></span>
         <div>
+        <div className="desktop">
         <form className="search-form myform">
           <div className="form-control">
             <div className="img-section">
@@ -481,6 +482,54 @@ useEffect(() => {
             />
           </div>
         </form>
+        </div>
+        <div className="mobilehide">
+        <form className="search-form myform">
+          <span>
+          <div className="form-control">
+            <div className="img-section">
+              <img src={airlineIcon} />{" "}
+            </div>
+            <input type="text" placeholder="from" 
+            name="DestinationFrom"
+            onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <div className="form-control">
+            <div className="img-section">
+              <img src={airline2Icon} />{" "}
+            </div>
+            <input type="text" placeholder="to"
+            name="DestinationTo"
+            onChange={(e) => handleChange(e)}
+            />
+          </div>
+          </span>
+          <span>
+          <div className="form-control">
+            <div className="img-section">
+              <img src={userIcon} />{" "}
+            </div>
+            <input type="number" placeholder="2" 
+            name="NumberOfPasseneger"
+            onChange={(e) => handleChangeUserName(e)}
+            pattern="^(?=.*[1-9])\d*(?:\.\d{1,2})?$"
+            />
+          </div>
+          <div className="form-control">
+            <div className="img-section">
+              <img src={calenderIcon} />{" "}
+            </div>
+            <input type="date" placeholder="date" 
+            name="Date"
+            min="27-07-1977" max="2022-12-31"
+            onChange={(e) => handleChange(e)}
+            />
+          </div>
+          </span>
+        </form>
+        </div>
+        
         </div>
       </div>
         </> : <>

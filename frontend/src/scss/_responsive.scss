@@ -340,6 +340,7 @@
         padding: 1rem 1rem 1rem 3rem;
     }
     .header-banner .search-main{
+        width: 80%;
         margin-top: -7vh;
     }
     .newabc {
@@ -700,7 +701,7 @@
         width: 40px;
     }
     .header-banner .search-main {
-        width:100% ;
+        width:80% ;
         margin-top: -6vh;
     }
     .header-banner .banner-main {
@@ -713,7 +714,7 @@
         margin-left: 22vw;
     }
     .home-main {
-        margin-top: 26vh;
+        margin-top: 35vh;
     }
     .home-main .package-section {
         height: 730px;
@@ -999,7 +1000,7 @@
         height: 102px;
     }
     .home-main .hotel-services {
-        margin: 5rem 0;
+        margin: 6rem 0;
     }
     .home-main .hotel-services h2 {
         line-height: 1rem;
@@ -1132,6 +1133,21 @@
     .header .navbar .navbar-toggler .arabictoggle{
         float: right !important;
     }
+   .mobilehide{
+    display: flex;
+   }
+   .desktop{
+    display: none;
+   }
+   .header-banner .search-main .search-section .search-form .form-control {
+    display: flex;
+    background-color: #ffca3b;
+    border: none;
+    border-radius: 0px;
+    margin-left: 10px;
+    padding: 0;
+    width: 250px;
+}
     .careertabs {
         display: block;
         width: 50%;
@@ -1332,6 +1348,11 @@
         padding: 1rem 1rem 1rem 3rem;
         display: table;
     }
+    .header-banner .search-main .button-section {
+        height: 85px;
+        width: 90px;
+        margin-top: 20px;
+    }
     // .header-banner .search-main {
     //     bottom: -10%;
     // }
@@ -1426,7 +1447,7 @@
     .header-banner .search-main {
         width:100% ;
         position: absolute;
-        margin-top: -6vh;
+        margin-top: -9vh;
     }
 
     .col-12.col-md-6.col-xxl-5.about {
@@ -1523,12 +1544,15 @@
         font-size: 13px;
         color: rgb(153, 151, 151) !important;
     }
+    
 }
 @media (max-width: 689px) and (min-width: 576px){
     .vision {
         width: 90%;
         margin: auto;
     }
+    
+   
     legend {
         text-align: left;
         float: left;
@@ -1818,7 +1842,8 @@
         font-size: 12px;
     }
     .header-banner .search-main .button-section {
-        height: 102px;
+        height: 85px;
+        margin-top: 25px;
     }
     .home-main .hotel-services {
         margin: 1rem 0;
@@ -2018,17 +2043,32 @@
     height: 340px;
     margin-top: 2vh;
 }
-.search-section{
+
+.mobilehide{
+    display: flex;
+   }
+   .desktop{
     display: none;
+   }
+   .header-banner .search-main .search-section .search-form .form-control {
+    display: flex;
+    background-color: #ffca3b;
+    border: none;
+    border-radius: 0px;
+    margin-left: 10px;
+    padding: 0;
+    width: 190px;
 }
 }
-@media (max-width: 576px) and (min-width: 320px) {
+@media (max-width: 576px) and (min-width: 480px) {
     .newabc {
         height: 45vh;
         width: 100% !important;
         position: relative;
         font-family: Arial;
     }
+    
+  
     legend {
         text-align: left;
         float: left;
@@ -2322,7 +2362,7 @@
     //     bottom: -10%;
     // }
     .col-12.col-md-6.col-xxl-5.about {
-        margin-top: 60px !important;
+        margin-top: 40px !important;
         margin-right: 1px !important;
         width: 100%;
     }
@@ -2332,7 +2372,7 @@
         background-position: center center;
         background-repeat: no-repeat;
         z-index: 999;
-        height: 75vh;
+        height: 460px;
     }
     .header-banner .banner-main h1 {
         font-size: 1.5rem;
@@ -2350,7 +2390,7 @@
         margin-top: 15px;
     }
     .home-main .hotel-services {
-        margin: 10rem 0;
+        margin: 15rem 0;
     }
     
     .home-main .hotel-services h2 {
@@ -2468,8 +2508,8 @@
     }
     .gallery-text h6 {
         padding-left: 20px;
-        padding-top: 10px;
-        font-size: 14px;
+        padding-top: 0px;
+        font-size: 12px;
         color: #473939;
     }
     .gallery-text h3 {
@@ -2621,7 +2661,7 @@
         /* min-height: 400px; */
         /* max-height: 500px; */
         margin: auto;
-        margin-top: 15px;
+        margin-top: 0;
     }
     .inner-destination-centent img {
         height: 198px;
@@ -2722,9 +2762,780 @@
     display: flex;
     width: 100%;
     /* margin-top: 30vh; */
-    height: 200px;
+    height: 140px;
 }
 .home-main {
     margin-top: 25vh;
+}
+
+.mobilehide{
+    display: flex;
+   }
+   .desktop{
+    display: none;
+   }
+   .header-banner .search-main .search-section .search-form .form-control {
+    display: flex;
+    background-color: #ffca3b;
+    border: none;
+    border-radius: 0px;
+    margin-left: 0px;
+    padding: 0;
+    
+    width: 130px;
+}
+.header-banner .search-main .button-section {
+    background-color: #fff;
+    box-shadow: 2px 0px 20px -5px rgb(128 128 128 / 41%);
+    width: 80px;
+    height: 85px !important;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+}
+@media (max-width: 479px) and (min-width: 320px) {
+    .newabc {
+        height: 45vh;
+        width: 100% !important;
+        position: relative;
+        font-family: Arial;
+    }
+    
+  
+    legend {
+        text-align: left;
+        float: left;
+        width: 56% !important;
+        padding: 0;
+        margin-bottom: 0.5rem;
+        font-size: calc(1.275rem + .3vw);
+        line-height: inherit;
+      }
+      .radiobtnform {
+        display: flex;
+        background-color: #fff;
+        height: 35px;
+        padding-right: 18px;
+    }
+    .header .custom-nav .navbar-nav li .nav-link {
+        padding-right: 0.5rem;
+        padding-left: .5rem;
+        font-size: 12px;
+    }
+    .header .custom-nav .navbar-nav li .header-search-btn {
+        padding: 2px 5px;
+        border-radius: 5px;
+        margin-right: 1rem;
+    }
+    .header .custom-nav .navbar-nav li .header-search-btn i{
+        font-size: 12px;
+    }
+    .header-banner .search-main .search-section .search-form .form-control input[type=number] {
+        width: 40px;
+    }
+    .header-banner .search-main {
+        width:100% ;
+        position: absolute;
+        margin-top: -6vh;
+    }
+    .careertabs {
+        display: block;
+        width: 100%;
+        margin: auto;
+        height: 180px !important;
+    }
+    
+    button#uncontrolled-tab-example-tab-contact {
+        text-transform: uppercase;
+        color: #000;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+    }
+    button#uncontrolled-tab-example-tab-profile {
+        text-transform: uppercase;
+        color: #000;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+    }
+    button#uncontrolled-tab-example-tab-home {
+        text-transform: uppercase;
+        color: #000;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+        height: 50px;
+        width: 100%;
+    }
+    .career-left img {
+        height: 320px;
+        width: 100%;
+        /* margin: 10px; */
+    }
+    .career-cards {
+        display: block;
+    }
+    .career-left {
+        height: 320px;
+        width: 100%;
+        margin: auto;
+    }
+    .career-right {
+        height: 300px;
+        width: 100%;
+        margin: auto;
+        margin-top: 10px;
+    }
+    .career_section {
+        min-height: 540px;
+        width: 80%;
+        margin: auto;
+        margin-top: 40px;
+    }
+    
+    .text-block {
+        position: absolute;
+        top: 110px;
+        left: 20px;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 380px;
+    }
+    .text-block p {
+        color: #fff !important;
+        font-size: 1.1rem !important;
+        letter-spacing: -1px;
+        line-height: 2rem;
+        font-weight: 300;
+    }
+    
+    
+    .text-block h1 {
+        font-size: 1.8rem;
+        font-family: "DM Serif Text", serif;
+    }
+    .newabc img{
+        height: 45vh;
+        width: 100%;
+      }
+    .home-main .hotel-services .image-section img {
+        width: auto;
+        height: 300px;
+        margin-top: 4vh;
+    }
+    .header .navbar-brand {
+        height: 100%;
+        width: 160px;
+    }
+    .packagesdetails {
+        min-height: 800px;
+        width: 80% !important;
+        margin: auto;
+    }
+    .ambulance-item h2 {
+        color: #d4af37;
+        font-size: 22px;
+        font-weight: 500;
+        margin: 15px;
+        margin-top: 30px;
+        font-family: 'DM SERIF TEXT';
+    }
+    .dropdown-menu-dark .dropdown-item:hover{
+        color: rgb(44, 43, 43) !important;
+    }
+    .header .navbar .navbar-toggler .arabictoggle{
+        float: right !important;
+    }
+    .header .navbar .navbar-toggler {
+        border-color: transparent;
+        float: right;
+    }
+    
+    .header .navbar .navbar-toggler .arabictoggle{
+        float: right !important;
+    }
+    .dropdown-menu-dark .dropdown-item:hover{
+        color: rgb(44, 43, 43) !important;
+    }
+    .header .navbar .navbar-toggler {
+        border-color: transparent;
+        float: right;
+    }
+    
+    .ambulanec-content {
+        width: 100%;
+        margin: auto;
+    }
+    .ambulanec-banner {
+        
+        height: 200px;
+        width: 70%;
+        margin: auto;
+    }
+    .ambulancetext {
+        margin-left: 0px;
+        margin-top: 5vh;
+    }
+    .ambulance-item {
+        height: 240px;
+        width: 100%;
+        margin: 2px;
+    }
+    .ambulanceGallery {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 30px;
+        /* margin-top: 40px; */
+        /* margin-left: 18vw; */
+    }
+    .ambulance-item p {
+        font-size: 12px !important;
+        text-align: justify;
+        line-height: 20px;
+        margin: 15px;
+    }
+    .col-12.col-md-10.mobilemenu {
+        width: 100% !important;
+        position: absolute;
+        right: 0;
+    }
+    .row.g-0.justify-content-end.w-100.h-100 .col-md-10 {
+        width: 100% !important;
+       }
+    ul.dropdown-menu.dropdown-menu-dark.show {
+        background: transparent;
+        border: unset;
+    }
+    ul.dropdown-menu.dropdown-menu-dark.show {
+        text-align: center;
+    }
+    ul.dropdown-menu.dropdown-menu-dark.show a.nav-link {
+        font-size: 10px;
+    }
+    
+    li.nav-item.dropdown {
+        text-align: center;
+    }
+    .dropdown-menu-dark .dropdown-item {
+        color: #000;
+        font-size: 12px;
+    }
+    .arabicstyle {
+        flex-direction: row-reverse;
+        font-family: Noto-Sans-Arabic;
+        /* height: 100px !important; */
+        display: block !important;
+    }
+    .custom-container {
+        margin: 0 2rem;
+    }
+    .col-12.col-md-10.mobilemenu {
+        width: 100% !important;
+        position: absolute;
+        right: 0;
+    }
+    .row.g-0.justify-content-end.w-100.h-100 .col-md-10 {
+        width: 100% !important;
+       }
+    ul.dropdown-menu.dropdown-menu-dark.show {
+        background: transparent;
+        border: unset;
+    }
+    ul.dropdown-menu.dropdown-menu-dark.show {
+        text-align: center;
+    }
+    ul.dropdown-menu.dropdown-menu-dark.show a.nav-link {
+        font-size: 10px;
+    }
+    .ambulanec-content p {
+        font-size: 12px !important;
+        width: 90%;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+    .dropdown-menu-dark .dropdown-item {
+        color: #000;
+        font-size: 12px;
+    }
+    .header-banner .banner-main {
+        z-index: 5;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: absolute;
+        top: 40%;
+        bottom: 0;
+        left: 12%;
+        right: 0;
+        margin: auto;
+    }
+    .home-main {
+        margin-top: 10px;
+    }
+    .custom-container {
+        width: 90%;
+        margin: auto;
+    }
+    .header-banner .bg-video-wrap {
+        height: 30vh;
+    }
+    .header-banner {
+        height: 30vh;
+    }
+    .header-banner .search-main .search-section {
+        padding: 1rem 1rem 1rem 3rem;
+    }
+    // .header-banner .search-main {
+    //     bottom: -10%;
+    // }
+    .col-12.col-md-6.col-xxl-5.about {
+        margin-top: 40px !important;
+        margin-right: 1px !important;
+        width: 100%;
+    }
+    .home-main .aircraft-section {
+      
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        z-index: 999;
+        height: 460px;
+    }
+    .header-banner .banner-main h1 {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+    .header-banner .banner-main p {
+        font-size: 1rem !important;
+    }
+    .header-banner .search-main .search-section .search-form .form-control input {
+        width: 100px;
+        font-size: 12px;
+    }
+    .header-banner .search-main .button-section {
+        height: 150px;
+        margin-top: 15px;
+    }
+    .home-main .hotel-services {
+        margin: 11rem 0;
+        margin-bottom: 18px;
+    }
+    
+    .home-main .hotel-services h2 {
+        line-height: 1rem;
+        font-size: 2rem !important;
+    }
+    .home-main .hotel-services p { 
+        font-size: .8rem !important;
+        
+    }
+    .home-main .aircraft-section .about h2 {
+        font-size: 1.5rem !important;
+    }
+    .home-main .aircraft-section .about p {
+        font-size: .8rem !important;
+    }
+    .home-main .aircraft-section .about {
+        margin-top: 10rem;
+    }
+    .home-main .package-section{
+        padding: 4rem 0;
+    }
+
+    .home-main .package-section h2 {
+        font-size: 1.5rem !important;  
+    }
+    .home-main .package-section .card .card-body p {
+        text-align: center;
+        font-size: 0.9rem !important;
+    }
+    .home-main .package-section .card .card-img {
+        width: 100px;
+        height: 100px;
+    }
+    .home-main .package-section .card {
+        padding: 2rem 1rem;
+    }
+    .contactus .info-details h2 {
+        font-size: 1.5rem !important;
+    }
+    .contactus .contactus-form form input {
+        text-transform: uppercase;
+        margin: 10px 0;
+        padding-left: 20px;
+        border: none;
+        width: 100%;
+        height: 35px;
+        font-size: 12px;
+    }
+    .contactus .contactus-form form textarea {
+        text-transform: uppercase;
+        margin: 10px 0;
+        padding-top: 20px;
+        padding-left: 20px;
+        border: none;
+        width: 100%;
+        font-size: 12px;
+        height: 130px;
+    }
+    .footer .footer-top .footer-logo img {
+        width: 70%;
+    }
+
+    .contactus .contactus-form form button {
+        height: 45px;
+    }
+
+    .footer .footer-top .footer-links p {
+        font-size: 12px !important;
+    }
+    .footer .footer-top .footer-logo p{
+        font-size: 12px !important;
+    }
+    .footer .footer-top .footer-logo img {
+        width: 90%
+    }
+    .header .custom-nav .navbar-nav li .nav-link {
+        padding-right: 0.5rem;
+        padding-left: .5rem;
+        font-size: 12px;
+    }
+    .header .custom-nav .navbar-nav li .header-search-btn {
+        padding: 2px 5px;
+        border-radius: 5px;
+        margin-right: 1rem;
+    }
+    .header-banner .search-main .search-section {
+        width: 100%;
+        padding: 3rem 2rem 3rem 3rem;
+        display: block;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+    }
+    .search-form {
+        
+        display: flex;
+        height: -moz-fit-content;
+        height: fit-content;
+        align-content: center;
+        flex-wrap: wrap;
+        z-index: 100;
+    }
+    .header .custom-nav .navbar-nav li .header-search-btn i{
+        font-size: 12px;
+    }
+    .header-banner .search-main .search-section .search-form .form-control input[type=number] {
+        width: 40px;
+    }
+   
+    .gallerydiv {
+        height: 730px;
+        display: block;
+    }
+    .gallery-text h6 {
+        padding-left: 20px;
+        padding-top: 0px;
+        font-size: 12px;
+        color: #473939;
+    }
+    .gallery-text h3 {
+        color: #d4af37;
+        font-size: 28px;
+        font-weight: 600;
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+    .gallery-right1 {
+        height: 250px;
+        flex: 1 1;
+        background-color: #473939;
+    }
+    .hotel-services1 {
+        height: 830px;
+        margin-top: 10px;
+    }
+    .card1 img {
+        padding-top: 0px;
+        margin: auto;
+    }
+    .card-images{
+        height: 70px;
+        width: 70px;
+    }
+    /////
+    .header-banner .search-main .search-section {
+        width: 100%;
+        padding: 3rem 2rem 3rem 3rem;
+        display: block;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .col-md-10 {
+        flex: 0 0 auto;
+        width: 100%;
+        background-color: #eaecee !important;
+    }
+    .header-search-btn{
+        display: none;
+    }
+    .nav-item img{
+        // display: block;
+    }
+    .dropdown-menu-dark {
+        color: #dee2e6;
+        font-size: 11px;
+        background-color: #eaecee !important;
+        color: black !important;
+    }
+    .dropdown-menu {
+      border: none;
+        color: black;
+       
+    }
+    .airambulance-cards {
+        display: block;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .ambulance-item {
+        height: 290px;
+        width: 90%;
+        margin: 2px;
+    }
+    .destination-right p {
+        font-size: 13px !important;
+        padding-top: 10px;
+        padding-left: 30px;
+        margin-right: 10px;
+    }
+    .vision {
+        width: 90%;
+        margin: auto;
+        height: auto;
+        margin-bottom: 50px;
+    }
+    .whymanasikright {
+        flex: 2 1;
+        display: none;
+    }
+    .whymanasikleft p {
+        font-size: 13px !important;
+    }
+    .whymanasikleft h6 {
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .career-cards {
+        display: block;
+    }
+    .career_section {
+        min-height: 550px;
+        width: 90%;
+        /* margin: auto; */
+        margin-top: 40px;
+    }
+    .career-left {
+        height: 650;
+        width: 100%;
+        margin: 10px;
+        
+    }
+    .career-left img {
+        height: 320px;
+        width: 90%;
+        margin: auto;
+        /* margin: 10px; */
+    }
+    .career-warning {
+        height: 400px;
+        width: 100%;
+        display: none;
+    }
+    .hq-careers {
+        max-height: 820px;
+        width: 100%;
+        margin: auto;
+        background-color: #f1f1f1;
+        margin-top: 20px;
+    }
+    .col-md-6 {
+        flex: 0 0 auto;
+        width: 90%;
+    }
+    .inner-destination-centent {
+        display: block;
+        height: 460px;
+    }
+    .inner-destination-centent p {
+        font-size: 14px !important;
+        margin: 10px;
+        color: #fff;
+    }
+    .destination-centent {
+        min-height: 470px;
+        background-color: #d4af37;
+        width: 90%;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .form-destination {
+        display: none;
+    }
+    .destination-main {
+        /* min-height: 400px; */
+        /* max-height: 500px; */
+        margin: auto;
+        margin-top: 0;
+    }
+    .inner-destination-centent img {
+        height: 198px;
+        width: 100%;
+        /* width: 35vw; */
+        /* margin-right: 10px; */
+        margin: auto;
+    }
+    .search-section{
+        display: none;
+    }
+    .home-main .package-section {
+        
+        height: 730px;
+    }
+    .card-images {
+        padding-top: 0px;
+        width: 70px;
+        height: 70px;
+    }
+    .home-main {
+        margin-top: 3vh;
+    }
+    .destination-cards {
+        display: block;
+        
+    }
+    .destination-right {
+        height: 290px;
+        width: 90%;
+        margin-top: 15px;
+    }
+    .destination-left {
+        height: 320px;
+        width: 90%;
+        margin: auto;
+    }
+    .mappingstyabout:nth-child(even) {
+        margin-top: 50px;
+        flex-direction: row-reverse;
+        height: auto;
+    }
+    .warning-card {
+        width: 90%;
+        display: block;
+        height: auto;
+        margin: auto;
+    }
+    .imgceo {
+        background-color: #c5c5c5;
+        height: 260px;
+        margin-top: 70px;
+    }
+    .career-warning1 {
+        height: auto;
+        width: 100%;
+    }
+    .aboutcard11 {
+        /* margin-left: 30px; */
+        margin: auto;
+        margin-top: 10vh;
+        width: 60%;
+    }
+    .images1 img {
+        height: 234px;
+        width: 190px;
+        z-index: 999;
+    }
+    label {
+        display: inline-block;
+        margin: 1px;
+        font-size: 13px;
+        color: rgb(153, 151, 151) !important;
+    }
+    .popular-card {
+        background-color: #f7f5f1;
+        height: 298px;
+        width: 180px;
+        margin: 20px;
+        box-shadow: 2px 2px 12px rgb(170 168 168);
+        transform: scaleX(20deg);
+    }
+    .about-bg {
+      
+        height: 680px;
+        width: 100%;
+    }
+    
+
+.header-banner .search-main {
+    display: flex;
+    width: 100%;
+    /* margin-top: 30vh; */
+    height: 200px;
+}
+
+.header-banner .search-main {
+    display: flex;
+    width: 100%;
+    /* margin-top: 30vh; */
+    height: 140px;
+}
+.home-main {
+    margin-top: 25vh;
+}
+
+.mobilehide{
+    display: flex;
+   }
+   .desktop{
+    display: none;
+   }
+   .header-banner .search-main .search-section .search-form .form-control {
+    display: flex;
+    background-color: #ffca3b;
+    border: none;
+    border-radius: 0px;
+    margin-left: 0px;
+    padding: 0;
+    
+    width: 100px;
+}
+.header-banner .search-main .button-section {
+    background-color: #fff;
+    box-shadow: 2px 0px 20px -5px rgb(128 128 128 / 41%);
+    width: 80px;
+    height: 85px !important;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}  
+.header-banner .search-main .search-section .search-form {
+    margin-left: -20px;
+    display: flex;
+    height: -moz-fit-content;
+    height: fit-content;
+    align-content: center;
+    z-index: 1;
 }
 }

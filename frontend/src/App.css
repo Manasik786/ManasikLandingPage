@@ -1905,3 +1905,7 @@ background-color: #fff;
   font-weight: 500;
   font-family: Noto+Sans+Arabic;
 }
+
+.mobilehide{
+  display: none;
+}

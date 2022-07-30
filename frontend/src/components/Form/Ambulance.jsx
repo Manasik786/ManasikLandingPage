@@ -251,7 +251,7 @@ let str = pathname;
             onChange={createServiceImagesChange}
             multiple
               />
-              <label for="upload1" className="label11">Profile Picture</label>
+              <label for="upload1" className="label11">Profile</label>
               </div>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridName">

@@ -175,7 +175,7 @@ let str = pathname;
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
             <div className="filetostyle">
-            <label for="img1" className="label11">Date  of  Birth   </label>
+            <label for="img1" className="label11">DOB  </label>
               <Form.Control type="date" placeholder="Date of Birth"
               
               name="DOB"
@@ -248,7 +248,7 @@ let str = pathname;
             onChange={createServiceImagesChange}
             multiple
               />
-              <label for="upload1" className="label11">Profile Picture</label>
+              <label for="upload1" className="label11">Profile</label>
               </div>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridName">

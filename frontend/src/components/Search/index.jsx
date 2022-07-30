@@ -564,7 +564,7 @@ useEffect(() => {
             </div>
             <input type="text" placeholder="إلى"
             name="DestinationTo"
-            className="arabic-align"
+           
             onChange={(e) => handleChange(e)}
             />
           </div>
@@ -574,7 +574,7 @@ useEffect(() => {
             </div>
             <input type="text" placeholder="من" 
             name="DestinationFrom"
-            className="arabic-align"
+            
             onChange={(e) => handleChange(e)}
             />
           </div>

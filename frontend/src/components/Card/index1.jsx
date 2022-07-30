@@ -48,8 +48,10 @@ const Index = () => {
                   return(
                     (item.CardType) === 'service' ? <>
                     <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton></Modal.Header>
+                    <Modal.Header closeButton>
                     <h2 className="h2.applyfromclass"> {item.CardTitle}</h2>
+                    </Modal.Header>
+                    
                     <Popup />
                   </Modal>
                 <div className="row g-0 g-lg-4 g-xxl-4 justify-content-center align-items-center mappingstyle" key={item._id}>
@@ -91,8 +93,12 @@ const Index = () => {
                   return(
                     (item.CardType) === 'service' ? <>
                     <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton></Modal.Header>
-                    <h2 className="h2.applyfromclass"> {item.CardTitle}</h2>
+                    <Modal.Header className='arabic-icon' closeButton>
+                <span className='arabic-icon1'><h2 className='applyfromclass'>
+                {item.CardTitlear}
+                  </h2></span>
+             </Modal.Header>
+                    
                     <Popup />
                   </Modal>
                 <div className="row g-0 g-lg-4 g-xxl-4 justify-content-center align-items-center mappingstyle" key={item._id}>
@@ -104,10 +110,10 @@ const Index = () => {
                   <div className="col-12 col-md-6 col-xxl-5 z-index cardtext1">
                     <div className="row g-0">
                       <div className="col-12 col-xxl-10 col-xl-10 col-lg-10 col-md-11 ">
-                      <h3 className="servicespage1 arabic-align">{item.CardTitle}</h3>
+                      <h3 className="servicespage1 arabic-align">{item.CardTitlear}</h3>
                         <br />
                         <p className="arabic-align">
-                        {item.CardDescriptions}
+                        {item.CardDescriptionsar}
                         </p>
 
                         <br />

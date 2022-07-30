@@ -226,21 +226,22 @@
                     text-transform: uppercase;
                     padding-right: 1rem;
                     padding-left: 1rem;
-                    font-size: 14px;
+                    font-size: 13px;
                     color: rgb(43, 42, 42);
                 }
                 .header-search-btn{
                     // display: none;
                     padding: 5px 10px;
+                    color: rgb(43, 42, 42);
                     border-radius: 10px;
-                    background-color: $white;
+                    // background-color: $white;
                     margin-right: 1.5rem;
                 }
             }
         }
 
         .fullfilment {
-            background: $primary-gradient;
+            // background: $primary-gradient;
             height: 100%;
             border-bottom-left-radius: 2.5rem;
             color: $white;

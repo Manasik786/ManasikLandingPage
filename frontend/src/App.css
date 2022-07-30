@@ -748,7 +748,7 @@ display: flex;
   display: flex;
 }
 .gallery-left1{
-height: 500px;
+min-height: 300px;
 flex: 1;
 }
 .gallery-right1{
@@ -1760,6 +1760,28 @@ label input:checked+span:after {
 
 .btn-primary:focus {
   border-color: #d4af37 !important;
+
+  outline: none !important;
+  box-shadow: none !important;
+}
+button#dropdown-basic {
+  border-color: transparent !important;
+  color: #606163;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.searchdatafield{
+  border: none !important;
+  font-size: 15px;
+
+}
+.searchdropdown{
+  color: #606163;
+  font-size: 15px  !important;
+
+}
+.dropdown:active{
+  border-color: transparent !important;
 }
 .button:focus {
   outline: none !important;
@@ -1908,4 +1930,7 @@ background-color: #fff;
 
 .mobilehide{
   display: none;
+}
+.txtfield1{
+
 }

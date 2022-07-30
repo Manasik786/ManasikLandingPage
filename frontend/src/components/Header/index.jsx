@@ -7,7 +7,7 @@ import Banner from "../Banner";
 import Button from "../Button";
 import Cookies from "universal-cookie";
 import axios from 'axios'
-
+import Dropdown from 'react-bootstrap/Dropdown';
 
 export const Header = ({ selectedBanner, onHandleClick }) => {
   const [isShow, setShow] = useState(false);
@@ -55,6 +55,36 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
  function searchFun(){
   setIsOpened(wasOpened => !wasOpened);
  }
+
+ const people = [
+  { name: "Services",namear:"خدمات",  id: 1,link:"/services" },
+  { name: "About",namear:"حول", id: 2,link:"/aboutus" },
+  { name: "Contact",namear:"اتصال", id: 3,link:"/contactus" },
+  { name: "Air Ambulance",namear:"اتصال", id: 4,link:"/ambulance" },
+  { name: "Careers",namear:"وظائف", id: 5,link:"/careers" },
+  { name: "Gallery",namear:"صالة عرض  ", id: 6,link:"/gallery" },
+  { name: "Destination",namear:"المكان المقصود", id: 7,link:"/aviationdestination" },
+];
+
+const pages1 = []
+const [search, setNewSearch] = useState("");
+
+const handleSearchChange = (e) => {
+  setNewSearch(e.target.value);
+};
+
+const filtered = !search
+  ? pages1
+  : people.filter((person) =>
+      person.name.toLowerCase().includes(search.toLowerCase())
+      
+    );
+
+    const filteredar = !search
+  ? pages1
+  : people.filter((person) =>
+      person.namear.toLowerCase().includes(search.toLowerCase())
+    );
   return (
     <>
       <div className="header">
@@ -215,9 +245,30 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
                           Contact
                         </Link>
                       </li>
+
                       <li className="nav-item">
+                      
                         <div className="header-search-btn">
-                          <i className="fa fa-search"></i>
+                        <Dropdown>
+                      <Dropdown.Toggle variant="success" id="dropdown-basic">
+                      <i className="fa fa-search"></i>
+                      </Dropdown.Toggle>
+
+                      <Dropdown.Menu>
+                      <input type="text" value={search}
+                      className="searchdatafield"
+                      onChange={handleSearchChange} />
+                      {filtered.map((person) => {
+                        return (
+                          <span  key={person.id}>
+                           <Link to={person.link}> 
+                             <p className="searchdropdown">{person.name}</p>
+                           </Link>
+                          </span>
+                        );
+                      })}
+                      </Dropdown.Menu>
+                    </Dropdown>
                           
                         </div>
                       </li>
@@ -238,7 +289,7 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
           </>
         ) : (
           <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-white arabicstyle">
+            <nav className="navbar navbar-expand-lg navbar-light bg-white">
               <Link className="navbar-brand" to="/">
                 <img src={logo} alt="logo" />
               </Link>
@@ -254,9 +305,9 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
                   isShow ? "show" : ""
                 }`}
               >
-                <div className="row g-0 justify-content-end w-100 h-100 arabicstyle">
+                <div className="row g-0 justify-content-end w-100 h-100 ">
                   <div className={`col-12 col-md-10 mobilemenu`}>
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end align-items-center arabicstyle">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end align-items-center">
                       <li className="nav-item" onClick={() => setShow(!isShow)}>
                         <Link className="nav-link active" to="/">
                           مسكن
@@ -391,7 +442,29 @@ export const Header = ({ selectedBanner, onHandleClick }) => {
                       </li>
                       <li className="nav-item">
                         <div className="header-search-btn">
-                          <i className="fa fa-search"></i>
+                        <div className="header-search-btn">
+                        <Dropdown>
+                      <Dropdown.Toggle variant="success" id="dropdown-basic">
+                      <i className="fa fa-search"></i>
+                      </Dropdown.Toggle>
+
+                      <Dropdown.Menu>
+                      <input type="text" value={search}
+                      className="searchdatafield arabic-align"
+                      onChange={handleSearchChange} />
+                      {filteredar.map((person) => {
+                        return (
+                          <span  key={person.id}>
+                           <Link to={person.link}> 
+                             <p className="searchdropdown arabic-align">{person.namear}</p>
+                           </Link>
+                          </span>
+                        );
+                      })}
+                      </Dropdown.Menu>
+                    </Dropdown>
+                          
+                        </div>
                         </div>
                       </li>
                       <li onClick={toggleLanguage}  className="nav-item flag">

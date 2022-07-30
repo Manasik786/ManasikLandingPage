@@ -1126,6 +1126,11 @@
         height: 490px;
 
     }
+    li.nav-item.dropdown {
+        width: 100% !important;
+        /* text-align: center !important; */
+        /* flex-direction: row-reverse !important; */
+    }
     
 }
 
@@ -1545,6 +1550,11 @@
         color: rgb(153, 151, 151) !important;
     }
     
+    li.nav-item.dropdown {
+        width: 100% !important;
+        /* text-align: center !important; */
+        /* flex-direction: row-reverse !important; */
+    }
 }
 @media (max-width: 689px) and (min-width: 576px){
     .vision {
@@ -1552,7 +1562,11 @@
         margin: auto;
     }
     
-   
+    li.nav-item.dropdown {
+        width: 100% !important;
+        /* text-align: center !important; */
+        /* flex-direction: row-reverse !important; */
+    }
     legend {
         text-align: left;
         float: left;
@@ -2279,6 +2293,11 @@
     ul.dropdown-menu.dropdown-menu-dark.show {
         text-align: center;
     }
+    ul.dropdown-menu.dropdown-menu-dark.show {
+        text-align: center !important;
+        width: 100%;
+        padding-left: 35px !important;
+    }
     ul.dropdown-menu.dropdown-menu-dark.show a.nav-link {
         font-size: 10px;
     }
@@ -2316,6 +2335,11 @@
     }
     ul.dropdown-menu.dropdown-menu-dark.show a.nav-link {
         font-size: 10px;
+    }
+    ul.dropdown-menu.dropdown-menu-dark.show {
+        text-align: center !important;
+        width: 100%;
+        padding-left: 35px !important;
     }
     .ambulanec-content p {
         font-size: 12px !important;
@@ -2794,6 +2818,11 @@
     justify-content: center;
     align-items: center;
 }
+li.nav-item.dropdown {
+    width: 100% !important;
+    /* text-align: center !important; */
+    /* flex-direction: row-reverse !important; */
+}
 }
 @media (max-width: 479px) and (min-width: 320px) {
     .newabc {
@@ -3047,7 +3076,9 @@
         border: unset;
     }
     ul.dropdown-menu.dropdown-menu-dark.show {
-        text-align: center;
+        text-align: center !important;
+        width: 100%;
+        padding-left: 35px !important;
     }
     ul.dropdown-menu.dropdown-menu-dark.show a.nav-link {
         font-size: 10px;
@@ -3493,7 +3524,11 @@
     /* margin-top: 30vh; */
     height: 200px;
 }
-
+li.nav-item.dropdown {
+    width: 100% !important;
+    /* text-align: center !important; */
+    /* flex-direction: row-reverse !important; */
+}
 .header-banner .search-main {
     display: flex;
     width: 100%;

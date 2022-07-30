@@ -77,7 +77,6 @@ const filtered = !search
   ? pages1
   : people.filter((person) =>
       person.name.toLowerCase().includes(search.toLowerCase())
-      
     );
 
     const filteredar = !search
@@ -289,7 +288,7 @@ const filtered = !search
           </>
         ) : (
           <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-white">
+            <nav className="navbar navbar-expand-lg navbar-light bg-white arabicstyle">
               <Link className="navbar-brand" to="/">
                 <img src={logo} alt="logo" />
               </Link>
@@ -305,9 +304,9 @@ const filtered = !search
                   isShow ? "show" : ""
                 }`}
               >
-                <div className="row g-0 justify-content-end w-100 h-100 ">
+                <div className="row g-0 justify-content-end w-100 h-100 arabicstyle">
                   <div className={`col-12 col-md-10 mobilemenu`}>
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end align-items-center">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end align-items-center arabicstyle">
                       <li className="nav-item" onClick={() => setShow(!isShow)}>
                         <Link className="nav-link active" to="/">
                           مسكن

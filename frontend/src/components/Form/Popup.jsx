@@ -75,6 +75,7 @@ let str = pathname;
     });
     console.log(data);
   };
+  console.log("country",country)
   useEffect(() => {}, []);
   const createProductSubmitHandler = async (e) => {
     e.preventDefault();
@@ -129,6 +130,7 @@ let str = pathname;
       toast(Error.message);
     }
   };
+  
   
   const createServiceImagesChange = (e) => {
     const files = Array.from(e.target.files);
@@ -199,6 +201,7 @@ let str = pathname;
             onSelect={(e) => handleChange(e)}
             name="country"
             >
+            
           {
             Country_Name.map((item) => {
               return(

@@ -373,6 +373,7 @@ button.custom-btn.airambulance {
 .ambulance-item img{
  height: 315px;
  width: 100%;
+ object-fit: cover;
 }
 
 
@@ -405,6 +406,7 @@ margin-top: 45px;
 }
 .destination-left img{
  width: 100%;
+ object-fit: cover;
  height: 360px;
 }
 .destination-right{
@@ -558,6 +560,7 @@ input[type=date]:focus::-webkit-datetime-edit {
  height: 340px;
  width: 260px;
  z-index: 999;
+ object-fit: cover;
 }
 .images1 {
  transform: translateY(-30px);
@@ -787,6 +790,7 @@ height: 100%;
 .gallery-right1 img{
   width: 100%;
 height: 100%;
+object-fit: cover;
 cursor: pointer;
 }
 .gallery-text h6 {
@@ -1228,6 +1232,7 @@ p.serviceheading {
 .packagesdetails_image img{
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .packagesdetails_include{
@@ -1456,6 +1461,7 @@ iframe {
 .card2 img {
   height: 110px;
   width: 100%;
+  object-fit: cover;
 }
 
 .popular-card1 {
@@ -1630,6 +1636,7 @@ legend {
 .newabc img{
   height: 75vh;
   width: 100%;
+  object-fit: cover;
 }
 .text-block h1{
 font-size: 3rem;

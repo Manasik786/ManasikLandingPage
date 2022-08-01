@@ -24,7 +24,7 @@ const Index = () => {
         <Popup/>
       </Modal>
       <div className="destination-main">
-        <div className="custom-container  ">
+        <div className="custom-container">
           {getlanguage != "english" ? (
             <>
               <div className="row g-0 g-lg-4 g-xxl-4 justify-content-center align-items-center ">

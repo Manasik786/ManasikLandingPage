@@ -58,9 +58,9 @@ const [getlanguage,setLanguage] = useState(cookies.get("language"));
          card.map((item) => {
           return(
             
-            <div class="newabc" key={item._id}>
+            <div className="newabc" key={item._id}>
           <img src={item.images[0].url} alt="Nature"/>
-          <div class="text-block">
+          <div className="text-block11">
             <h2 className='arabic-align'>{item.titlear}</h2>
             <p className="arabic-align">{item.Descriptionar}</p>
            

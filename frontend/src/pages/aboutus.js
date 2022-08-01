@@ -54,9 +54,9 @@ const Whoweare = () => {
           </div>
             </> : <>
             <div className="banner-content arabic-banner">
-            <h1 className="arabic-align">معلومات عنا</h1>
-            <p className="arabic-align">ماناسيك للطيران هي في الأساس شركة طيران</p>
-            <p className="arabic-align">ويقوم بأعمال الطيران</p>
+            <h1 className="arabic-align11">معلومات عنا</h1>
+            <p className="arabic-align11">ماناسيك للطيران هي في الأساس شركة طيران</p>
+            <p className="arabic-align11">ويقوم بأعمال الطيران</p>
           </div>
             </>
           }

@@ -950,6 +950,25 @@ text-align: end !important;
 padding-right: 12px !important;
 font-weight: 500;
 }
+
+
+.arabic-align11{
+  text-align: end !important;
+  padding-right: 15vw !important;
+  font-weight: 500;
+  }
+
+  .arabic11{
+    
+    position: absolute;
+    top: 190px;
+    right: 0;
+    left:inherit;
+    color: white;
+    width: 380px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+  
 .arabic-align::placeholder{
   text-align: end !important;
 }
@@ -1126,6 +1145,7 @@ button#uncontrolled-tab-example-tab-contact {
 
 .cardimg img{
 height: 350px !important;
+width: auto;
 }
 .whymanasik{
   height: 580px;
@@ -1589,6 +1609,18 @@ legend {
   position: absolute;
   top: 190px;
   left: 190px; 
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 380px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.text-block11 {
+  position: absolute;
+  top: 190px;
+  right: 0; 
   color: white;
   padding-left: 20px;
   padding-right: 20px;

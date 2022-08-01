@@ -5,6 +5,7 @@ import SubmitButton1 from '../Button/ArabicLarge'
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
+
 import Capcha from '../../pages/Translator'
 import Cookies from "universal-cookie";
 import { useLocation } from "react-router-dom";
@@ -75,6 +76,15 @@ let str = pathname;
     });
     console.log(data);
   };
+
+  const handleChange1 = (event) => {
+    setData({
+      ...data,
+      [event.target.name]: value,
+    });
+    console.log(data);
+  };
+
   useEffect(() => {}, []);
   const createProductSubmitHandler = async (e) => {
     e.preventDefault();
@@ -123,12 +133,10 @@ let str = pathname;
       const response = await axios.post(`/api/v1/createBookingForm`, myForm);
       console.log(response);
       toast("Submitted");
-      
+      handleShow(false)
     } catch (err) {
       const Error = err.response.data;
       toast(Error.message);
-      
-      
     }
   };
   
@@ -149,11 +157,6 @@ let str = pathname;
       reader.readAsDataURL(file);
     });
   };
-  const [value,setValue]=useState('');
-  const handleSelect=(e)=>{ 
-    setValue(country)
-    console.log(value);
-  }
 
   
 
@@ -203,13 +206,14 @@ let str = pathname;
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
             <select class="form-control" id="exampleFormControlSelect1"
-            onSelect={handleSelect}
-      >
+          
+            >
           {
             Country_Name.map((item) => {
               return(
                 <option key={item.country_id}
                 name="country"
+                onChange={(e) => handleChange1(e)}
                 value={item.country_name}
                 >{item.country_name}</option>
               )

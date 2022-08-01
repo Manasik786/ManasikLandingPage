@@ -12,6 +12,10 @@ import SubmitButton from "../Button/large";
 import Capcha from "../../pages/Translator";
 import Moment from "react-moment";
 
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+
+
 const Fly = () => {
   const cookies = new Cookies();
   const [getlanguage, setLanguage] = useState(cookies.get("language"));
@@ -88,10 +92,10 @@ const Fly = () => {
       const response = await axios.post(`/api/v1/createapplicants`, myForm);
       console.log(response);
       console.log(myForm);
-      alert("Submitted");
+      toast("Submitted");
     } catch (err) {
       const Error = err.response.data;
-      alert(Error.message);
+      toast(Error.message);
     }
   };
   const createServiceImagesChange = (e) => {

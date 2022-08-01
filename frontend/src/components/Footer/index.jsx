@@ -8,6 +8,8 @@ import Cookies from "universal-cookie";
 import axios from "axios";
 import { Timeline } from 'react-twitter-widgets'
 import { Form, Row, Col, Button } from "react-bootstrap";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Footer = ({}) => {
   const cookies = new Cookies();
@@ -34,7 +36,7 @@ const Footer = ({}) => {
     } catch (err) {
       const Error = err.response.data;
       console.log(Error.message)
-      alert(Error.message)
+      toast(Error.message)
      
     }
   

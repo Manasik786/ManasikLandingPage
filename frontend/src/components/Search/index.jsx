@@ -57,7 +57,7 @@ useEffect(() => {
       setData({ ...data, [name]: value });
     }
     else{
-      alert("Passeneger should greater then 0")
+      toast("Passeneger should greater then 0")
     }
    
  }

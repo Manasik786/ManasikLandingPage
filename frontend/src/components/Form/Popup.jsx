@@ -35,7 +35,7 @@ let str = pathname;
   const [oldImages, setOldImages] = useState([]);
   const [Name, setName] = useState(" ");
   const [Email, setEmail] = useState(" ");
-  const [country,setcountry] = useState(Country);
+  const [country,setcountry] = useState(" ");
   const [Phone, setPhone] = useState("");
   const [DOB, setDOB] = useState(" ");
   const [familyname,setfamilyname] = useState(" ")
@@ -56,7 +56,7 @@ let str = pathname;
     familyname: familyname,
     DOB:DOB,
     Email: Email,
-    country:Country,
+    country:country,
     Phone:Phone,
     passportno:passportno,
     nationalid:nationalid,
@@ -75,6 +75,7 @@ let str = pathname;
     });
     console.log(data);
   };
+  console.log("country",country)
   useEffect(() => {}, []);
   const createProductSubmitHandler = async (e) => {
     e.preventDefault();
@@ -102,7 +103,7 @@ let str = pathname;
     myForm.append("Phone", data.Phone);
     myForm.append("familyname", data.familyname);
     myForm.append("DOB",data.DOB);
-    myForm.append("country",Country)
+    myForm.append("country",data.country)
     myForm.append("passportno",data.passportno)
     myForm.append("nationalid",data.nationalid)
     myForm.append("stayperiod",data.stayperiod)
@@ -129,6 +130,7 @@ let str = pathname;
       toast(Error.message);
     }
   };
+  
   
   const createServiceImagesChange = (e) => {
     const files = Array.from(e.target.files);
@@ -196,16 +198,16 @@ let str = pathname;
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
             <select class="form-control" id="exampleFormControlSelect1"
-          
+            onSelect={(e) => handleChange(e)}
+            name="country"
             >
+            
           {
             Country_Name.map((item) => {
               return(
                 <option key={item.country_id}
                 name="country"
-                  onClick={() => {
-              window.localStorage.setItem('country', (item.country_name));
-            }}
+                value={item.country_name}
                 >{item.country_name}</option>
               )
             })

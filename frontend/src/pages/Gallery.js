@@ -56,8 +56,8 @@ const Aviation_Destination = () => {
       <div className="contact-banner">
           <div className="banner-content">
             <h1>معرضنا</h1>
-            <p>Manasik aviation is basically airline</p>
-            <p>and does business of airline</p>
+            <p className="arabic-align">ماناسيك للطيران هي في الأساس شركة طيران</p>
+            <p className="arabic-align">ويقوم بأعمال الطيران</p>
           </div>
         </div>
         <div className="gap"></div>

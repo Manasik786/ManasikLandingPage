@@ -35,7 +35,7 @@ let str = pathname;
   const [oldImages, setOldImages] = useState([]);
   const [Name, setName] = useState(" ");
   const [Email, setEmail] = useState(" ");
-  const [country,setcountry] = useState(Country);
+  const [country,setcountry] = useState(" ");
   const [Phone, setPhone] = useState("");
   const [DOB, setDOB] = useState(" ");
   const [familyname,setfamilyname] = useState(" ")
@@ -56,7 +56,7 @@ let str = pathname;
     familyname: familyname,
     DOB:DOB,
     Email: Email,
-    country:Country,
+    country:country,
     Phone:Phone,
     passportno:passportno,
     nationalid:nationalid,
@@ -102,7 +102,7 @@ let str = pathname;
     myForm.append("Phone", data.Phone);
     myForm.append("familyname", data.familyname);
     myForm.append("DOB",data.DOB);
-    myForm.append("country",Country)
+    myForm.append("country",data.country)
     myForm.append("passportno",data.passportno)
     myForm.append("nationalid",data.nationalid)
     myForm.append("stayperiod",data.stayperiod)
@@ -123,12 +123,10 @@ let str = pathname;
       const response = await axios.post(`/api/v1/createBookingForm`, myForm);
       console.log(response);
       toast("Submitted");
-      
+      handleShow(false)
     } catch (err) {
       const Error = err.response.data;
       toast(Error.message);
-      
-      
     }
   };
   
@@ -149,11 +147,6 @@ let str = pathname;
       reader.readAsDataURL(file);
     });
   };
-  const [value,setValue]=useState('');
-  const handleSelect=(e)=>{ 
-    setValue(country)
-    console.log(value);
-  }
 
   
 
@@ -203,8 +196,9 @@ let str = pathname;
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
             <select class="form-control" id="exampleFormControlSelect1"
-            onSelect={handleSelect}
-      >
+            onSelect={(e) => handleChange(e)}
+            name="country"
+            >
           {
             Country_Name.map((item) => {
               return(

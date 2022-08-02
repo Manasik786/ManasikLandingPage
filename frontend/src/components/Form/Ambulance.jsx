@@ -196,16 +196,15 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridEmail">
               
             <select class="form-control" id="exampleFormControlSelect1"
-           name="country"
+               onChange={(e) => handleChange(e)}
+               name="country"
           >
         {
           Country_Name.map((item) => {
             return(
               <option key={item.country_id}
               name="country"
-                onClick={() => {
-            window.localStorage.setItem('country', (item.country_name));
-          }}
+            
               >{item.country_name}</option>
             )
           })
@@ -375,7 +374,9 @@ let str = pathname;
               /> */}
 
 <select class="form-control" id="exampleFormControlSelect1"
-          
+                  onChange={(e) => handleChange(e)}
+                  name="country"
+
           >
         {
           Country_NameAr.map((item) => {
@@ -383,9 +384,7 @@ let str = pathname;
               <option key={item.code}
               name="country"
               className="arabic-align"
-                onClick={() => {
-            window.localStorage.setItem('country', (item.name));
-          }}
+            
               >{item.name}</option>
             )
           })

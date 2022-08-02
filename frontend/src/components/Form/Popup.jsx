@@ -123,6 +123,10 @@ let str = pathname;
       const response = await axios.post(`/api/v1/createBookingForm`, myForm);
       console.log(response);
       toast("Submitted");
+      
+      setData( null )
+      
+
     } catch (err) {
       const Error = err.response.data;
       toast(Error.message);
@@ -196,7 +200,7 @@ let str = pathname;
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
             <select class="form-control" id="exampleFormControlSelect1"
-            onSelect={(e) => handleChange(e)}
+            onChange={(e) => handleChange(e)}
             name="country"
             >
           {
@@ -363,7 +367,8 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridEmail">
               
             <select class="form-control" id="exampleFormControlSelect1"
-          
+          onChange={(e) => handleChange(e)}
+          name="country"
           >
         {
           Country_NameAr.map((item) => {
@@ -371,9 +376,7 @@ let str = pathname;
               <option key={item.code}
               name="country"
               className="arabic-align"
-                onClick={() => {
-            window.localStorage.setItem('country', (item.name));
-          }}
+                
               >{item.name}</option>
             )
           })

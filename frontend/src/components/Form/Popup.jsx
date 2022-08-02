@@ -9,6 +9,7 @@ import Capcha from '../../pages/Translator'
 import Cookies from "universal-cookie";
 import { useLocation } from "react-router-dom";
 import {Country_Name,Country_NameAr} from '../../dummydata/category'
+import Modal from "react-bootstrap/Modal";
 
 // import Select from 'react-select'
 // import countryList from 'react-select-country-list'
@@ -48,6 +49,7 @@ let str = pathname;
   const [Religion, setReligion] = useState(" ");
   const [Servicetype,SetservicesType] = useState(ServiceName)
   const [CardType,setCardType] = useState('service')
+  const [loading, setLoading] = useState(false);
 
   const [data, setData] = useState({
     Servicetype: ServiceName,
@@ -120,17 +122,22 @@ let str = pathname;
     
     console.log(data, "dsad");
     try {
+      setLoading(true)
       const response = await axios.post(`/api/v1/createBookingForm`, myForm);
       console.log(response);
       toast("Submitted");
       
       setData( null )
+      setLoading(false);
+      handleClose();
+      
       
 
     } catch (err) {
       const Error = err.response.data;
       toast(Error.message);
-      handleClose()
+      
+
     }
   };
   
@@ -314,9 +321,10 @@ let str = pathname;
             />
           </Form.Group>
          <Capcha/>
+
           <button className="btnsubmit" onClick={createProductSubmitHandler}>
             <span>
-            Submit
+            {loading ? <>Submit ...</> : <>Submit</>}
             </span>
           </button>
         </Form>

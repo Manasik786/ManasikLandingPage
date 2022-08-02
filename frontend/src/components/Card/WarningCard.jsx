@@ -3,44 +3,13 @@ import axios from 'axios';
 
 const WarningCard = () => {
     
-  const [card, setCard] = useState([]);
-  useEffect(() => {
-    const getdata = async () => {
-      const { data } = await axios.get(`/api/v1/CardItems`);
-      setCard(data.data);
-      console.log("New Data",card)
-    };
-    getdata();
-  }, []);
   return (
     <>
-    {
-       card.map((item) => { 
-      return(
-        (item.CardType) === 'Recruitment Fraud Warning' ? 
-        <>
-        <div className="career-warning" key={item._id}>
-       <div className="warning-card">
-         <div className="warning-left">
-           <div className="img1">
-             
-           </div>
-         </div>
-         <div className="warning-right">
-           <div className="warning-section">
-             <h2>{item.CardTitle}</h2>
-             <p>{item.CardDescriptions}</p>
-           </div>
-         </div>
-       </div>
-     </div>
-        </>
-         : 
-         <>
-          </>
-      )  
-      })
-      }
+              <div className='outerloader'>
+                <div class="loader">
+                </div>
+                </div>
+      
     </>
   )
 }

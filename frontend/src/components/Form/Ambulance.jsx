@@ -8,6 +8,8 @@ import Cookies from "universal-cookie";
 import { useLocation } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import {Country_Name,Country_NameAr} from '../../dummydata/category'
+import Loader from '../Card/WarningCard'
+
 
 // import Select from 'react-select'
 // import countryList from 'react-select-country-list'
@@ -46,6 +48,7 @@ let str = pathname;
   const [Religion, setReligion] = useState(" ");
   const [Servicetype,SetservicesType] = useState(str)
   const [CardType,setCardType] = useState('Air Ambulance')
+  const [loading, setLoading] = useState(false);
 
   const [data, setData] = useState({
     Servicetype: str,
@@ -116,10 +119,15 @@ let str = pathname;
     });
     
     try {
+
+      setLoading(true);
       const response = await axios.post(`/api/v1/createBookingForm`, myForm);
       console.log(response);
       console.log(myForm);
       toast("Submitted")
+      setLoading(false);
+      handleClose()
+
     } catch (err) {
       console.log(err);
       const Error = err.response.data;
@@ -317,7 +325,7 @@ let str = pathname;
             />
           </Form.Group>
           <Capcha/>
-         <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
+         <button className="btnsubmit" onClick={createProductSubmitHandler}>{loading ? <>Submit ...</> : <>Submit</>}</button>
          
          
         </Form>

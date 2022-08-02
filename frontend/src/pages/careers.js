@@ -155,7 +155,6 @@ const Careers = () => {
       </Tabs>
       </div>
      </div>
-     <WarningCard/>
      
    </div>
     </>

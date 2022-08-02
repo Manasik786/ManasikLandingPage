@@ -75,6 +75,7 @@ useEffect(() => {
         `/api/v1/createAirCraftService`,data,config
       );
     toast("Submitted");
+    handleClose();
     } catch (err) {
       const Error = err.response.data;
       toast(Error.message)

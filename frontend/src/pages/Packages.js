@@ -67,7 +67,7 @@ const Packages = () => {
                 {
                   item.PkgName == 'Ummrah' ? <>
                   <img src={img4}/>
-                  </> : <>
+                  </> : item.PkgName == 'Holiday' ? <img src={img2}/> : <>
                   <img src={img5}/>
                   </>
                  
@@ -126,7 +126,7 @@ const Packages = () => {
               {
                   item.PkgName == 'Ummrah' ? <>
                   <img src={img4}/>
-                  </> : <>
+                  </> : item.PkgName == 'Holiday' ? <img src={img2}/> : <>
                   <img src={img5}/>
                   </>
                  

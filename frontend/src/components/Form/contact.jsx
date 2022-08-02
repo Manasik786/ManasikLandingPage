@@ -32,7 +32,9 @@ const Contact = () => {
       const response = await axios.post(
         `/api/v1/createContactLead`,message,config
       );
-      toast("Message Post Successfully")
+      toast("Message Possst Successfully")
+      window.location.reload();
+
     } catch (err) {
       const Error = err.response.data;
       console.log(Error.message)
@@ -58,7 +60,9 @@ const Contact = () => {
     };
     getdata();
   }, []);
-
+  function myFunction(){
+    toast("Please Fill the Field")
+  }
   return (
     <footer className="footer1">
       <div className="footer-top">
@@ -124,14 +128,15 @@ const Contact = () => {
                               onChange={(e) => handleChange(e)}
                               required
                             />
-                            {/* <textarea
-                              rows={8}
-                              placeholder="Details"
-                              name="Detail"
-                              onChange={(e) => handleChange(e)}
-                              required
-                            /> */}
+                           
+                            {
+                            message.Name === ' ' || message.Email === " " || message.Message === '' ? <>
+                              <button onClick={myFunction}>Send</button>
+                            </> : <>
                             <button onClick={PostMessage}>Send</button>
+                            </>
+                           }
+                          
                           </form>
                         </div>
                       </div>

@@ -1,10 +1,6 @@
 import React, { useEffect,useState } from "react";
 import Buttn1 from "../components/Button";
 import Buttn2 from "../components/Button/Arabic";
-import HajjImage from "../assets/images/hajj.png";
-import HolidayImage from "../assets/images/holiday.png";
-import HotelImage from "../assets/images/hotel.png";
-import GalleryImage from "../assets/images/gallery.png";
 import { Tooltip } from "bootstrap/dist/js/bootstrap.esm.min.js";
 import Banner from "../components/Banner";
 import Search from "../components/Search";
@@ -173,8 +169,8 @@ const Home = ({ onHandleClick }) => {
                 </div>
               </div>
               <div className="gallery-right1">
-              {
-        card.map((item) => {
+              
+        {card.slice(0,6).map((item) => {
           return(
             <>
             {toggle === item._id ? (
@@ -215,7 +211,7 @@ const Home = ({ onHandleClick }) => {
                
                 </span>
                  <div class="row2">
-                 {card.map((item) => {
+                 {card.slice(0,6).map((item) => {
                   return (
                     <>
                       <div className="column2">

@@ -14,6 +14,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const Footer = ({}) => {
   const cookies = new Cookies();
   const [getlanguage, setLanguage] = useState(cookies.get("language"));
+
   const [data, setData] = useState([]);
   const [message, setMessage] = useState({
     Name: "",
@@ -21,7 +22,7 @@ const Footer = ({}) => {
     Message: "",
     Details:" PostMessage Test"
   });
-
+console.log(message.Details)
   const PostMessage = async (e) => {
     e.preventDefault();
     try {
@@ -31,8 +32,8 @@ const Footer = ({}) => {
       const response = await axios.post(
         `/api/v1/createContactLead`,message,config
       );
-      
-     console.log(response)
+      toast("Message Post Successfully");
+      window.location.reload();
     } catch (err) {
       const Error = err.response.data;
       console.log(Error.message)
@@ -44,7 +45,9 @@ const Footer = ({}) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setMessage({ ...message, [name]: value });
+
   };
+
   useEffect(() => {
     PostMessage();
   }, []);
@@ -63,6 +66,9 @@ const Footer = ({}) => {
   console.log(pathname);
   if (pathname === "/contactus") return null;
 
+  function myFunction(){
+    toast("Please Fill the Field")
+  }
 
   return (
     <footer className="footer">
@@ -91,6 +97,7 @@ const Footer = ({}) => {
                               type="text"
                               placeholder="Name"
                               name="Name"
+                              required
                               onChange={(e) => handleChange(e)}
                               required
                             />
@@ -98,6 +105,7 @@ const Footer = ({}) => {
                               type="email"
                               placeholder="Email"
                               name="Email"
+                              required
                               onChange={(e) => handleChange(e)}
                               required
                             />
@@ -105,17 +113,18 @@ const Footer = ({}) => {
                               rows={8}
                               placeholder="Message"
                               name="Message"
+                              required
                               onChange={(e) => handleChange(e)}
                               required
                             />
-                            {/* <textarea
-                              rows={8}
-                              placeholder="Details"
-                              name="Detail"
-                              onChange={(e) => handleChange(e)}
-                              required
-                            /> */}
+                            
+                            {
+                            message.Name === ' ' || message.Email === " " || message.Message === '' ? <>
+                              <button onClick={myFunction}>Send</button>
+                            </> : <>
                             <button onClick={PostMessage}>Send</button>
+                            </>
+                           }
                           </form>
                         </div>
                       </div>

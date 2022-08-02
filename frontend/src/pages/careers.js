@@ -103,7 +103,7 @@ const Careers = () => {
       </div>
      </div>
 
-     <WarningCard/>
+     
    </div>
     </> : <>
     <div className="contact-form1">

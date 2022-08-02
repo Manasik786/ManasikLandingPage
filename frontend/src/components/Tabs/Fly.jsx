@@ -11,6 +11,7 @@ import { Form, Row, Col } from "react-bootstrap";
 import SubmitButton from "../Button/large";
 import Capcha from "../../pages/Translator";
 import Moment from "react-moment";
+import { useNavigate  } from "react-router-dom";
 
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -24,7 +25,7 @@ const Fly = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [card, setCard] = useState([]);
-
+const history = useNavigate ();
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get(`/api/v1/CareerInquiry`);
@@ -93,9 +94,11 @@ const Fly = () => {
       console.log(response);
       console.log(myForm);
       toast("Submitted");
+      handleClose();
+
     } catch (err) {
       const Error = err.response.data;
-      toast(Error.message);
+      toast("Enter Valid Input");
     }
   };
   const createServiceImagesChange = (e) => {
@@ -147,7 +150,7 @@ const Fly = () => {
                 <>
                 <Modal show={show} onHide={handleClose} key={item._id}>
                     <Modal.Header closeButton>
-                      <h2 className="applyfromclass">{item.Type}</h2>
+                      <h2 className="applyfromclass">Careers Apply Form</h2>
                     </Modal.Header>
                     <div className="popup1" key={item._id}>
                       <Form className="popupform">
@@ -196,10 +199,12 @@ const Fly = () => {
 
                         <Row className="mb-3">
                           <Form.Group as={Col} controlId="formGridEmail">
+                            
                             <Form.Control
                               type="text"
                               placeholder="Position"
                               name="Position"
+                              disabled 
                               value={DesignName}
                               onChange={handleChange}
                             />
@@ -242,7 +247,7 @@ const Fly = () => {
                               id="image"
                             />
                             <label for="image" className="label11">
-                              Upload Profile Picture
+                              Upload Profile
                             </label>
                           </div>
                         </Form.Group>
@@ -260,7 +265,7 @@ const Fly = () => {
                               id="cv"
                             />
                             <label for="id" className="label11">
-                              Upload CV
+                               CV
                             </label>
                           </div>
                         </Form.Group>
@@ -385,6 +390,7 @@ const Fly = () => {
                               type="text"
                               placeholder="موقع"
                               name="Position"
+                              disabled 
                               value={item.Designationar}
                               onChange={handleChange}
                               className="arabic-align"

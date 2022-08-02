@@ -112,7 +112,7 @@ const Popup = (props) => {
                   <Form.Control
                     type="text"
                     placeholder="Position"
-                   
+                     readonly
                     name="Position"
                     required={true}
                     onChange={(e) => handleChange(e)}

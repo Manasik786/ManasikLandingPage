@@ -120,18 +120,14 @@ let str = pathname;
       myForm.append("upload", image);
     });
     
-    console.log(data, "dsad");
+    
     try {
       setLoading(true)
       const response = await axios.post(`/api/v1/createBookingForm`, myForm);
       console.log(response);
       toast("Submitted");
-      
-      setData( null )
       setLoading(false);
       handleClose();
-      
-      
 
     } catch (err) {
       const Error = err.response.data;
@@ -187,7 +183,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridEmail">
             <div className="filetostyle">
             <label for="img1" className="label11">DOB  </label>
-              <Form.Control type="date" placeholder="Date of Birth"
+              <Form.Control type="date"
               
               name="DOB"
               onChange={(e) => handleChange(e)}

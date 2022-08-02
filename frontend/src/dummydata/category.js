@@ -1,4 +1,5 @@
   export const Country_Name = [
+    {"country_id":"191","sortname":"SA","country_name":"Saudi Arabia"},
     {"country_id":"1","sortname":"AF","country_name":"Afghanistan"},
     {"country_id":"2","sortname":"AL","country_name":"Albania"},
     {"country_id":"3","sortname":"DZ","country_name":"Algeria"},
@@ -189,7 +190,6 @@
     {"country_id":"188","sortname":"WS","country_name":"Samoa"},
     {"country_id":"189","sortname":"SM","country_name":"San Marino"},
     {"country_id":"190","sortname":"ST","country_name":"Sao Tome and Principe"},
-    {"country_id":"191","sortname":"SA","country_name":"Saudi Arabia"},
     {"country_id":"192","sortname":"SN","country_name":"Senegal"},
     {"country_id":"193","sortname":"RS","country_name":"Serbia"},
     {"country_id":"194","sortname":"SC","country_name":"Seychelles"},
@@ -248,6 +248,11 @@
     ]
 
     export const Country_NameAr = [
+        {
+            "code": "SA",
+            "name": "المملكة العربية السعودية",
+            "dialCode": "+966"
+        },
       {
           "code": "AD",
           "name": "أندورا",
@@ -1208,11 +1213,7 @@
           "name": "رواندا",
           "dialCode": "+250"
       },
-      {
-          "code": "SA",
-          "name": "المملكة العربية السعودية",
-          "dialCode": "+966"
-      },
+      
       {
           "code": "SB",
           "name": "جزر سليمان",

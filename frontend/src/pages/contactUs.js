@@ -14,7 +14,6 @@ const ContactUs = () => {
    <div className="contact-form">
      <Banner/>
      
-     <div className="gap1"></div>
      <ContactForm/>
      <div className="-macontactp">
      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13399.460487258872!2d39.141784!3d21.700575!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1c48ddee114fa36c!2z2YXZhtin2LPZgyDZhNmE2LfZitix2KfZhiAtIE1BTkFTSUsgQVZJQVRJT04!5e1!3m2!1sen!2sus!4v1658908573753!5m2!1sen!2sus" ></iframe>

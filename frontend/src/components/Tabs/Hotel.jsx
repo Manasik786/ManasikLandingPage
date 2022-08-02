@@ -92,9 +92,10 @@ const Fly = () => {
       console.log(response);
       console.log(myForm);
       toast("Submitted");
+      handleClose();
     } catch (err) {
       const Error = err.response.data;
-      toast(Error.message);
+      toast("Enter Valid Input");
     }
   };
   const createServiceImagesChange = (e) => {
@@ -146,7 +147,7 @@ const Fly = () => {
                 <>
                 <Modal show={show} onHide={handleClose} key={item._id}>
                     <Modal.Header closeButton>
-                      <h2 className="applyfromclass">{item.Type}</h2>
+                    <h2 className="applyfromclass">Careers Apply Form</h2>
                     </Modal.Header>
                     <div className="popup1" key={item._id}>
                       <Form className="popupform">
@@ -199,6 +200,7 @@ const Fly = () => {
                               type="text"
                               placeholder="Position"
                               name="Position"
+                              disabled 
                               value={DesignName}
                               onChange={handleChange}
                             />
@@ -241,7 +243,7 @@ const Fly = () => {
                               id="image"
                             />
                             <label for="image" className="label11">
-                              Upload Profile Picture
+                              Upload Profile
                             </label>
                           </div>
                         </Form.Group>
@@ -259,7 +261,7 @@ const Fly = () => {
                               id="cv"
                             />
                             <label for="id" className="label11">
-                              Upload CV
+                               CV
                             </label>
                           </div>
                         </Form.Group>
@@ -385,6 +387,7 @@ const Fly = () => {
                               type="text"
                               placeholder="موقع"
                               name="Position"
+                              disabled 
                               value={item.Designationar}
                               onChange={handleChange}
                               className="arabic-align"

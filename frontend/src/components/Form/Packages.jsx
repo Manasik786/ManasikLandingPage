@@ -124,10 +124,12 @@ let str = pathname;
       console.log(response);
       console.log(myForm);
       toast("Submitted")
+      window.location.reload();
+
     } catch (err) {
       console.log(err);
       const Error = err.response.data;
-    toast(Error.message)
+      toast("Enter Valid Input");
     }
   };
   const createServiceImagesChange = (e) => {
@@ -307,7 +309,7 @@ let str = pathname;
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-         
+         <Capcha/>
           <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
         </Form>
       </div>

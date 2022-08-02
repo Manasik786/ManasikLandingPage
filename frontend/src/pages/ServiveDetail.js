@@ -137,7 +137,7 @@ const ServiceDetails = () => {
 
     } catch (err) {
       const Error = err.response.data;
-      toast(Error.message);
+      toast("Enter Valid Input");
     }
   };
   

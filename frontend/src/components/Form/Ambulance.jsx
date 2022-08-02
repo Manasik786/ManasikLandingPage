@@ -317,7 +317,7 @@ let str = pathname;
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-        
+          <Capcha/>
          <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
          
          
@@ -496,7 +496,8 @@ let str = pathname;
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          {/* <Capcha/> */}
+          <Capcha/>
+
           <button className="btnsubmit" onClick={createProductSubmitHandler}>يُقدِّم</button>
 
         </Form>

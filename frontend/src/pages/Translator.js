@@ -1,40 +1,58 @@
+import React from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
-import React, { useState } from "react";
+const TEST_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+const DELAY = 1500;
 
-const App = (props) => {
-  const people = [
-    { name: "Alan Turing", number: "040-123456", id: 1 },
-    { name: "Ada Lovelace", number: "39-44-5323523", id: 2 },
-    { name: "Barbara Liskov", number: "12-43-234345", id: 3 },
-    { name: "Mary Poppendieck", number: "39-23-6423122", id: 4 }
-  ];
+class App extends React.Component {
+  constructor(props, ...args) {
+    super(props, ...args);
+    this.state = {
+      callback: "not fired",
+      value: "[empty]",
+      load: false,
+      expired: "false"
+    };
+    this._reCaptchaRef = React.createRef();
+  }
 
-  const [search, setNewSearch] = useState("");
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ load: true });
+    }, DELAY);
+    console.log("didMount - reCaptcha Ref-", this._reCaptchaRef);
+  }
 
-  const handleSearchChange = (e) => {
-    setNewSearch(e.target.value);
+  handleChange = value => {
+    console.log("Captcha value:", value);
+    this.setState({ value });
+    // if value is null recaptcha expired
+    if (value === null) this.setState({ expired: "true" });
   };
 
-  const filtered = !search
-    ? people
-    : people.filter((person) =>
-        person.name.toLowerCase().includes(search.toLowerCase())
-      );
+  asyncScriptOnLoad = () => {
+    this.setState({ callback: "called!" });
+    console.log("scriptLoad - reCaptcha Ref-", this._reCaptchaRef);
+  };
 
-  return (
-    <>
-      <h2>Phone book</h2>
-      Filter persons:{" "}
-      <input type="text" value={search} onChange={handleSearchChange} />
-      {filtered.map((person) => {
-        return (
-          <p key={person.id}>
-            {person.name} - {person.number}
-          </p>
-        );
-      })}
-    </>
-  );
-};
+  render() {
+    const { value, callback, load, expired } = this.state || {};
+    return (
+      <div className="captcha">
+        
+        {load && (
+          <ReCAPTCHA
+            style={{ display: "inline-block" }}
+            theme="dark"
+            ref={this._reCaptchaRef}
+            sitekey={TEST_SITE_KEY}
+            onChange={this.handleChange}
+            asyncScriptOnLoad={this.asyncScriptOnLoad}
+          />
+        )}
+      </div>
+    );
+  }
+}
 
 export default App;

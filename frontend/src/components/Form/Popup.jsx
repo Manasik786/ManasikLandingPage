@@ -123,10 +123,10 @@ let str = pathname;
       const response = await axios.post(`/api/v1/createBookingForm`, myForm);
       console.log(response);
       toast("Submitted");
-      handleShow(false)
     } catch (err) {
       const Error = err.response.data;
       toast(Error.message);
+      handleClose()
     }
   };
   
@@ -309,7 +309,7 @@ let str = pathname;
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-         
+         <Capcha/>
           <button className="btnsubmit" onClick={createProductSubmitHandler}>
             <span>
             Submit

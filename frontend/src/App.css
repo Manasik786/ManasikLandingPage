@@ -1642,6 +1642,7 @@ legend {
 .newabc img{
   height: 75vh;
   width: 100%;
+  object-fit: cover;
 }
 .text-block h1{
 font-size: 3rem;
@@ -1667,6 +1668,7 @@ p {
 }
 .captcha{
   height: 80px !important;
+  margin-top: 30px;
 }
 
 .modal-content {
@@ -1974,4 +1976,9 @@ background-color: #fff;
 
 .mobilehide{
   display: none;
+}
+
+
+#rc-anchor-alert, .rc-anchor-alert{
+  display: none !important;
 }

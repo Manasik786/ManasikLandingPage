@@ -154,7 +154,7 @@ const Home = ({ onHandleClick }) => {
                 <h6> To guide you with legal procedure, Manasik aviation online portal will assist you to get your process done ,for apply please fill the forum below</h6>
                 </span>
                  <div class="row2">
-                 {card.map((item) => {
+                 {card.slice(0,6).map((item) => {
                   return (
                     <>
                       <div className="column2">

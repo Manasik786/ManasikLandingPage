@@ -466,13 +466,24 @@ const Fly = () => {
                             </label>
                           </div>
                         </Form.Group>
-                        {/* <Capcha/> */}
-                        <button
+                        <Capcha/>
+                        {
+                          images == '' || images == undefined && Cv == '' || Cv == undefined  ? <>
+                           <button
+                          className="btnsubmit"
+                          onClick={HandleImage}
+                        >
+                          يُقدِّم
+                        </button>
+                          </> : <>
+                           <button
                           className="btnsubmit"
                           onClick={createProductSubmitHandler}
                         >
                           يُقدِّم
                         </button>
+                          </>
+                        }
                       </Form>
                     </div>
                   </Modal>

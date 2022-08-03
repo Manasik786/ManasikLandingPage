@@ -150,7 +150,9 @@ let str = pathname;
     });
   };
 
-  
+  function HandleImage(){
+    toast("Enter Valid Image")
+  }
 
   return (
     <>
@@ -324,7 +326,23 @@ let str = pathname;
             />
           </Form.Group>
          <Capcha/>
-          <button className="btnsubmit" onClick={createProductSubmitHandler}>Submit</button>
+         {
+                          upload == '' || upload == undefined? <>
+                           <button
+                          className="btnsubmit"
+                          onClick={HandleImage}
+                        >
+                          Submit
+                        </button>
+                          </> : <>
+                           <button
+                          className="btnsubmit"
+                          onClick={createProductSubmitHandler}
+                        >
+                          Submit
+                        </button>
+                          </>
+                        }
         </Form>
       </div>
       </> : <>
@@ -504,9 +522,24 @@ let str = pathname;
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          {/* <Capcha/> */}
-          <button className="btnsubmit" onClick={createProductSubmitHandler}>يُقدِّم</button>
-
+          <Capcha/>
+          {
+                          upload == '' || upload == undefined? <>
+                           <button
+                          className="btnsubmit"
+                          onClick={HandleImage}
+                        >
+                          يُقدِّم
+                        </button>
+                          </> : <>
+                           <button
+                          className="btnsubmit"
+                          onClick={createProductSubmitHandler}
+                        >
+                          يُقدِّم
+                        </button>
+                          </>
+                        }
         </Form>
       </div>
       </>

@@ -541,8 +541,23 @@ const ServiceDetails = () => {
           </Form.Group>
           <Capcha/>
 
-          <button className="btnsubmit" onClick={createProductSubmitHandler}>يُقدِّم</button>
-
+          {
+                          upload == '' || upload == undefined? <>
+                           <button
+                          className="btnsubmit"
+                          onClick={HandleImage}
+                        >
+                          يُقدِّم
+                        </button>
+                          </> : <>
+                           <button
+                          className="btnsubmit"
+                          onClick={createProductSubmitHandler}
+                        >
+                          يُقدِّم
+                        </button>
+                          </>
+                        }
         </Form>
       </div>
       </>

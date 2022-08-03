@@ -331,7 +331,7 @@ let str = pathname;
             />
           </Form.Group>
          <ReCAPTCHA
-          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1"
+          sitekey="6LcsUUMhAAAAAF7iAdtMh4Qs9DtxMT-KNjsovGCM"
           onChange={onChangeCaptcha}
           className="captchaclass"
         />
@@ -535,7 +535,7 @@ let str = pathname;
             />
           </Form.Group>
           <ReCAPTCHA
-          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1"
+          sitekey="6LcsUUMhAAAAAF7iAdtMh4Qs9DtxMT-KNjsovGCM"
           onChange={onChangeCaptcha}
           className="captchaclass"
         />

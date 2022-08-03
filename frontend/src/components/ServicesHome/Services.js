@@ -374,7 +374,7 @@ required
                                   Submit
                                 </button>
                                   </> : <>
-                                  <button className="btnsubmit onClick={createProductSubmitHandler}">
+                                  <button className="btnsubmit" onClick={createProductSubmitHandler}>
                                   Submit
                                 </button>
                                   </>

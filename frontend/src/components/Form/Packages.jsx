@@ -129,7 +129,7 @@ let str = pathname;
     } catch (err) {
       console.log(err);
       const Error = err.response.data;
-      toast("Enter Valid Input");
+      toast(Error.message);
     }
   };
   const createServiceImagesChange = (e) => {
@@ -162,6 +162,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridName">     
               <Form.Control type="text" placeholder="Name" 
               name="Name"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -169,6 +170,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="Family Name" 
               name="familyname"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -178,6 +180,7 @@ let str = pathname;
             <div className="filetostyle">
               <Form.Control type="date" placeholder="DOB" 
               name="DOB"
+              required
               onChange={(e) => handleChange(e)}
               />
              <label for="img1" className="label11">DOB</label>
@@ -186,8 +189,9 @@ let str = pathname;
 
             <Form.Group as={Col} controlId="formGridEmail">
               
-              <Form.Control type="text" placeholder="Email" 
+              <Form.Control type="email" placeholder="Email" 
               name="Email"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -203,6 +207,7 @@ let str = pathname;
             return(
               <option key={item.country_id}
               name="country"
+              required
                 onClick={() => {
             window.localStorage.setItem('country', (item.country_name));
           }}
@@ -217,6 +222,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder="Mobile" 
               name="Phone"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -226,6 +232,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="Passport Number" 
               name="passportno"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -234,6 +241,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder=" National ID#"
               name="nationalid"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -243,6 +251,7 @@ let str = pathname;
             <div className="filetostyle">
               <Form.Control type="file" placeholder="Upload Document"
               name="upload"
+              required
               accept="image/*"
             onChange={createServiceImagesChange}
             multiple
@@ -253,6 +262,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="Stay Period (Number of Days)" 
                name="StayPeriod"
+               required
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -261,6 +271,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridEmail">
             <Form.Control placeholder="Religion"   
             name="Religion"
+            required
             onChange={(e) => handleChange(e)}
             />
            
@@ -270,6 +281,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder="Relative contact in KSA" 
                name="relativecontact"
+               required
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -285,6 +297,7 @@ let str = pathname;
           name="Visitedbefore"
           value="1"
           className="textbtn2"
+          required
           onChange={handleChange}
           />
           <span className="yestext">Yes</span>
@@ -294,6 +307,7 @@ let str = pathname;
           <input type="radio"
           name="Visitedbefore"
           className="textbtn2"
+          
           value="0"
           onChange={handleChange}
           />
@@ -321,6 +335,7 @@ let str = pathname;
               <Form.Control type="text" placeholder="اسم" 
               className="arabic-align"
               name="Name"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -328,6 +343,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridName">
               <Form.Control type="text" placeholder="اسم العائلة" 
               name="familyname"
+              required
               className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
@@ -338,6 +354,7 @@ let str = pathname;
             <div className="filetostyle">
               <Form.Control type="date" placeholder="تاريخ الولادة" 
               name="DOB"
+              required
               className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
@@ -348,9 +365,10 @@ let str = pathname;
             
             <Form.Group as={Col} controlId="formGridEmail">
               
-              <Form.Control type="text" placeholder="البريد الإلكتروني" 
+              <Form.Control type="email" placeholder="البريد الإلكتروني" 
               name="Email"
               className="arabic-align"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -367,6 +385,7 @@ let str = pathname;
               <option key={item.code}
               name="country"
               className="arabic-align"
+              required
                 onClick={() => {
             window.localStorage.setItem('country', (item.name));
           }}
@@ -381,6 +400,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder="هاتف" 
               name="Phone"
+              required
               className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
@@ -391,6 +411,7 @@ let str = pathname;
               
               <Form.Control type="text" placeholder="رقم جواز السفر" 
               name="passportno"
+              required
               className="arabic-align"
               onChange={(e) => handleChange(e)}
               />
@@ -401,6 +422,7 @@ let str = pathname;
               <Form.Control type="number" placeholder=" الهوية الوطنية#"
               name="nationalid"
               className="arabic-align"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -411,6 +433,7 @@ let str = pathname;
               <Form.Control type="text" placeholder="تحميل المستند" 
               name="upload"
               className="arabic-align"
+              required
               onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -420,6 +443,7 @@ let str = pathname;
               <Form.Control type="text" placeholder="فترة الإقامة (عدد الأيام)" 
                name="StayPeriod"
                className="arabic-align"
+               required
                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
@@ -428,6 +452,7 @@ let str = pathname;
             <Form.Group as={Col} controlId="formGridEmail">
             <Form.Control placeholder="دِين"   
             name="Religion"
+            required
             className="arabic-align"
             onChange={(e) => handleChange(e)}
             />
@@ -438,6 +463,7 @@ let str = pathname;
               
               <Form.Control type="number" placeholder="الاتصال النسبي في المملكة العربية السعودية" 
                name="relativecontact"
+               required
                className="arabic-align"
                onChange={(e) => handleChange(e)}
               />

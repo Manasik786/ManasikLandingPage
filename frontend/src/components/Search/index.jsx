@@ -448,7 +448,7 @@ useEffect(() => {
             <div className="img-section">
               <img src={airlineIcon} />{" "}
             </div>
-            <input type="text" placeholder="from" 
+            <input type="text" placeholder="From" 
             name="DestinationFrom"
             onChange={(e) => handleChange(e)}
             />
@@ -457,7 +457,7 @@ useEffect(() => {
             <div className="img-section">
               <img src={airline2Icon} />{" "}
             </div>
-            <input type="text" placeholder="to"
+            <input type="text" placeholder="To"
             name="DestinationTo"
             onChange={(e) => handleChange(e)}
             />

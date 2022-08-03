@@ -255,6 +255,7 @@ const filtered = !search
 
                       <Dropdown.Menu>
                       <input type="text" value={search}
+                      placeholder="Search"
                       className="searchdatafield"
                       onChange={handleSearchChange} />
                       {filtered.map((person) => {
@@ -449,6 +450,7 @@ const filtered = !search
 
                       <Dropdown.Menu>
                       <input type="text" value={search}
+                      placeholder="بحث "
                       className="searchdatafield arabic-align"
                       onChange={handleSearchChange} />
                       {filteredar.map((person) => {

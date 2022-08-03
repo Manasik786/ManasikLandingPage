@@ -184,13 +184,24 @@ const Contact = () => {
                       <div className="row">
                         <div className="col-12">
                           <form className="arabicplaceholder">
-                            <input type="text" placeholder="اسم" />
+                            <input type="text" placeholder="اسم"
+                            name="Name"
+                            onChange={(e) => handleChange(e)}
+                            required
+                            />
                             <input
                               type="email"
                               placeholder="البريد الإلكتروني"
+                              name="Email"
+                              onChange={(e) => handleChange(e)}
+                              required
                             />
-                            <textarea rows={8} placeholder="دِين" />
-                            <button>يُقدِّم</button>
+                            <textarea rows={8} placeholder="دِين" 
+                            name="Message"
+                            onChange={(e) => handleChange(e)}
+                            required
+                            />
+                            <button onClick={PostMessage}>يُقدِّم</button>
                           </form>
                         </div>
                       </div>

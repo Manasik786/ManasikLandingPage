@@ -51,7 +51,7 @@ const Packages = () => {
               <h2 className='applyfromclass'>{item.PkgName}</h2>
               </Modal.Header>
               <Popup />
-            </Modal>
+            </Modal> 
             <div className="contact-banner">
             <div className="banner-content">
                 <h1>{item.PkgName}</h1>

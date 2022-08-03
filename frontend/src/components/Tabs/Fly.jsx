@@ -52,7 +52,7 @@ const history = useNavigate ();
     Nationality: Nationality,
     Position: DesignName,
     Gender: Gender,
-    Cv: " ",
+    Cv: " ", 
     images: " ",
   });
   const handleChange = (event) => {
@@ -98,7 +98,7 @@ const history = useNavigate ();
 
     } catch (err) {
       const Error = err.response.data;
-      toast("Enter Valid Input");
+      toast(Error.message);
     }
   };
   const createServiceImagesChange = (e) => {
@@ -136,6 +136,9 @@ const history = useNavigate ();
     });
   };
 
+  function HandleImage(){
+    toast("Enter Valid Image")
+  }
   return (
     <>
       {getlanguage != "english" ? (
@@ -214,6 +217,7 @@ const history = useNavigate ();
                           <label>
                             <input
                               type="radio"
+                              required
                               name="Gender"
                               value="male"
                               className="textbtn2"
@@ -227,6 +231,7 @@ const history = useNavigate ();
                               type="radio"
                               name="Gender"
                               className="textbtn2"
+                              required
                               value="female"
                               onChange={handleChange}
                             />
@@ -245,6 +250,7 @@ const history = useNavigate ();
                               onChange={createServiceImagesChange}
                               multiple
                               id="image"
+                              required
                             />
                             <label for="image" className="label11">
                               Upload Profile
@@ -258,6 +264,7 @@ const history = useNavigate ();
                           <div className="filetostyle">
                             <Form.Control
                               type="file"
+                              required
                               name="Cv"
                               accept="image/*"
                               onChange={createServiceImagesChange1}
@@ -269,13 +276,25 @@ const history = useNavigate ();
                             </label>
                           </div>
                         </Form.Group>
-                        {/* <Capcha/> */}
-                        <button
+                        <Capcha/>
+                        {
+                          images == '' || images == undefined && Cv == '' || Cv == undefined  ? <>
+                           <button
+                          className="btnsubmit"
+                          onClick={HandleImage}
+                        >
+                          Submit
+                        </button>
+                          </> : <>
+                           <button
                           className="btnsubmit"
                           onClick={createProductSubmitHandler}
                         >
                           Submit
                         </button>
+                          </>
+                        }
+                       
                       </Form>
                     </div>
                   </Modal>
@@ -403,6 +422,7 @@ const history = useNavigate ();
                               type="radio"
                               name="Gender"
                               value="male"
+                              required
                               className="textbtn2"
                               onChange={handleChange}
                             />
@@ -415,6 +435,7 @@ const history = useNavigate ();
                               name="Gender"
                               className="textbtn2"
                               value="female"
+                              required
                               onChange={handleChange}
                             />
                             <span>أنثى</span>
@@ -430,6 +451,7 @@ const history = useNavigate ();
                               type="file"
                               name="images"
                               accept="image/*"
+                              required
                               onChange={createServiceImagesChange}
                               multiple
                               id="image"
@@ -446,6 +468,7 @@ const history = useNavigate ();
                           <div className="filetostyle">
                             <Form.Control
                               type="file"
+                              required
                               name="Cv"
                               accept="image/*"
                               onChange={createServiceImagesChange1}
@@ -495,7 +518,7 @@ const history = useNavigate ();
                         className="primarybutton"
                         onClick={handleShow}
                       >
-                        <Buttn1 className={"mt-4"} text="قدم الآن" />
+                        <ArabicButton className={"mt-4"} text="قدم الآن" />
                       </Button>
                     </span>
                   </div>

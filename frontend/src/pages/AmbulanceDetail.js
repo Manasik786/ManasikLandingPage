@@ -137,8 +137,7 @@ const Packages = (props) => {
     } catch (err) {
       console.log(err);
       const Error = err.response.data;
-      toast("Enter Valid Input");
-    }
+      toast(Error.message);    }
     
   };
   const createServiceImagesChange = (e) => {
@@ -160,7 +159,9 @@ const Packages = (props) => {
   };
 
   console.log("Service Type",str)
-  
+  function HandleImage(){
+    toast("Enter Valid Image")
+  }
   return (
    
     <>
@@ -343,8 +344,24 @@ const Packages = (props) => {
             />
           </Form.Group>
           <Capcha/>
-         <button className="btnsubmit" onClick={createProductSubmitHandler}>{loading ? <>Submit ...</> : <>Submit</>}</button>
-         
+          {
+                          upload == '' || upload == undefined? <>
+                           <button
+                          className="btnsubmit"
+                          onClick={HandleImage}
+                        >
+                          Submit
+                        </button>
+                          </> : <>
+                           <button
+                          className="btnsubmit"
+                          onClick={createProductSubmitHandler}
+                        >
+                          Submit
+                        </button>
+                          </>
+                        }
+                       
          
         </Form>
       </div>
@@ -522,8 +539,23 @@ const Packages = (props) => {
             />
           </Form.Group>
           <Capcha/>
-
-          <button className="btnsubmit" onClick={createProductSubmitHandler}>يُقدِّم</button>
+          {
+                          upload == '' || upload == undefined? <>
+                           <button
+                          className="btnsubmit"
+                          onClick={HandleImage}
+                        >
+                          يُقدِّم
+                        </button>
+                          </> : <>
+                           <button
+                          className="btnsubmit"
+                          onClick={createProductSubmitHandler}
+                        >
+                          يُقدِّم
+                        </button>
+                          </>
+                        }
 
         </Form>
       </div>

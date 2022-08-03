@@ -23,7 +23,7 @@ const Services = (props) => {
   const [getlanguage, setLanguage] = useState(cookies.get("language"));
   const [show, setShow] = useState(false);
   const { pathname } = useLocation();
-
+  
   const ServiceName = window.localStorage.getItem('id',);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -155,11 +155,13 @@ const Services = (props) => {
     } catch (err) {
       console.log(err);
       const Error = err.response.data;
-      toast("Enter Valid Input");
+      toast(Error.message);
     }
 
   };
+  
   const createServiceImagesChange = (e) => {
+    
     const files = Array.from(e.target.files);
 
     setupload([]);
@@ -176,7 +178,9 @@ const Services = (props) => {
       reader.readAsDataURL(file);
     });
   };
-
+  function HandleImage(){
+    toast("Enter Valid Image")
+  }
   return (
     <>
 
@@ -203,7 +207,7 @@ const Services = (props) => {
                                   <Form.Group as={Col} controlId="formGridName">
                                     <Form.Control type="text" placeholder="Name"
                                       name="Name"
-
+                                        required
                                       onChange={(e) => handleChange(e)}
                                     />
                                   </Form.Group>
@@ -211,6 +215,7 @@ const Services = (props) => {
                                   <Form.Group as={Col} controlId="formGridName">
                                     <Form.Control type="text" placeholder="Family Name"
                                       name="familyname"
+                                      required
                                       onChange={(e) => handleChange(e)}
                                     />
                                   </Form.Group>
@@ -220,7 +225,7 @@ const Services = (props) => {
                                     <div className="filetostyle">
                                       <label for="img1" className="label11">DOB  </label>
                                       <Form.Control type="date"
-
+required
                                         name="DOB"
                                         onChange={(e) => handleChange(e)}
                                       />
@@ -230,8 +235,9 @@ const Services = (props) => {
 
                                   <Form.Group as={Col} controlId="formGridEmail">
 
-                                    <Form.Control type="text" placeholder="Email"
+                                    <Form.Control type="email" placeholder="Email"
                                       name="Email"
+                                      required
                                       onChange={(e) => handleChange(e)}
                                     />
                                   </Form.Group>
@@ -240,6 +246,7 @@ const Services = (props) => {
                                   <Form.Group as={Col} controlId="formGridEmail">
                                     <select class="form-control" id="exampleFormControlSelect1"
                                       onChange={(e) => handleChange(e)}
+                                      required
                                       name="country"
                                     >
                                       {
@@ -260,6 +267,7 @@ const Services = (props) => {
 
                                     <Form.Control type="number" placeholder="Mobile"
                                       name="Phone"
+                                      required
                                       onChange={(e) => handleChange(e)}
                                     />
                                   </Form.Group>
@@ -269,6 +277,7 @@ const Services = (props) => {
 
                                     <Form.Control type="text" placeholder="Passport Number"
                                       name="passportno"
+                                      required
                                       onChange={(e) => handleChange(e)}
                                     />
                                   </Form.Group>
@@ -277,6 +286,7 @@ const Services = (props) => {
 
                                     <Form.Control type="number" placeholder=" National ID#"
                                       name="nationalid"
+                                      required
                                       onChange={(e) => handleChange(e)}
                                     />
                                   </Form.Group>
@@ -286,6 +296,8 @@ const Services = (props) => {
                                     <div className="filetostyle">
                                       <Form.Control type="file" placeholder="Upload Document"
                                         name="upload"
+                                        id="imgid"
+                                        required
                                         accept="image/*"
                                         onChange={createServiceImagesChange}
                                         multiple
@@ -296,6 +308,7 @@ const Services = (props) => {
                                   <Form.Group as={Col} controlId="formGridName">
                                     <Form.Control type="number" placeholder="Stay Period (Number of Days)"
                                       name="StayPeriod"
+                                      required
                                       onChange={(e) => handleChange(e)}
                                     />
                                   </Form.Group>
@@ -304,6 +317,7 @@ const Services = (props) => {
                                   <Form.Group as={Col} controlId="formGridEmail">
                                     <Form.Control placeholder="Religion"
                                       name="Religion"
+                                      required
                                       onChange={(e) => handleChange(e)}
                                     />
 
@@ -313,6 +327,7 @@ const Services = (props) => {
 
                                     <Form.Control type="number" placeholder="Relative contact in KSA"
                                       name="relativecontact"
+                                      required
                                       onChange={(e) => handleChange(e)}
                                     />
                                   </Form.Group>
@@ -348,17 +363,23 @@ const Services = (props) => {
                                 <Form.Group className="mb-13 " controlId="formGridAddress1">
                                   <Form.Control placeholder="Reason to visit Saudi Arabia" className="largetextreason"
                                     name="Reasontovisitksa"
-                                    val
+                                    required
                                     onChange={(e) => handleChange(e)}
                                   />
                                 </Form.Group>
                                 <Capcha />
-
-                                <button className="btnsubmit" onClick={createProductSubmitHandler}>
-                                  <span>
-                                    {loading ? <>Submit ...</> : <>Submit</>}
-                                  </span>
+                                {
+                                  upload == '' || upload == undefined ? <>
+                                  <button className="btnsubmit" onClick={HandleImage}>
+                                  Submit
                                 </button>
+                                  </> : <>
+                                  <button className="btnsubmit onClick={createProductSubmitHandler}">
+                                  Submit
+                                </button>
+                                  </>
+                                }
+                                
                               </Form>
                             </div>
                           </Modal>

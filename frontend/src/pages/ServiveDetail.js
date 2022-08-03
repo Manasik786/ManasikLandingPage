@@ -160,7 +160,9 @@ const ServiceDetails = () => {
   };
 
   
-
+  function HandleImage(){
+    toast("Enter Valid Image")
+  }
 
   return (
     <>
@@ -343,8 +345,24 @@ const ServiceDetails = () => {
             />
           </Form.Group>
           <Capcha/>
-         <button className="btnsubmit" onClick={createProductSubmitHandler}>{loading ? <>Submit ...</> : <>Submit</>}</button>
-         
+          {
+                          upload == '' || upload == undefined? <>
+                           <button
+                          className="btnsubmit"
+                          onClick={HandleImage}
+                        >
+                          Submit
+                        </button>
+                          </> : <>
+                           <button
+                          className="btnsubmit"
+                          onClick={createProductSubmitHandler}
+                        >
+                          Submit
+                        </button>
+                          </>
+                        }
+                       
          
         </Form>
       </div>

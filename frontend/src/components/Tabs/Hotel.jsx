@@ -132,7 +132,9 @@ const Fly = () => {
       reader.readAsDataURL(file);
     });
   };
-
+  function HandleImage(){
+    toast("Enter Valid Image")
+  }
   return (
     <>
       {getlanguage != "english" ? (
@@ -265,13 +267,25 @@ const Fly = () => {
                             </label>
                           </div>
                         </Form.Group>
-                        {/* <Capcha/> */}
-                        <button
+                        <Capcha/>
+                        {
+                          images == '' || images == undefined && Cv == '' || Cv == undefined  ? <>
+                           <button
+                          className="btnsubmit"
+                          onClick={HandleImage}
+                        >
+                          Submit
+                        </button>
+                          </> : <>
+                           <button
                           className="btnsubmit"
                           onClick={createProductSubmitHandler}
                         >
                           Submit
                         </button>
+                          </>
+                        }
+                       
                       </Form>
                     </div>
                   </Modal>
@@ -492,7 +506,7 @@ const Fly = () => {
                         className="primarybutton"
                         onClick={handleShow}
                       >
-                        <Buttn1 className={"mt-4"} text="قدم الآن" />
+                        <ArabicButton className={"mt-4"} text="قدم الآن" />
                       </Button>
                     </span>
                   </div>

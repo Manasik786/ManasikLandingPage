@@ -341,7 +341,7 @@ const Fly = () => {
                 <Modal show={show} onHide={handleClose} key={item._id}>
                 <Modal.Header className='arabic-icon' closeButton>
                 <span className='arabic-icon1'><h2 className='applyfromclass'>
-                {item.Typear}
+                نموذج طلب وظائف
                   </h2></span>
              </Modal.Header>
                     <div className="popup1" key={item._id}>

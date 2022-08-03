@@ -11,19 +11,26 @@ import Capcha from '../pages/Translator'
 import Cookies from "universal-cookie";
 import { ToastContainer, toast } from 'react-toastify';
 import {Country_Name,Country_NameAr} from '../dummydata/category'
-
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ServiceDetails = () => {
 
   const [card, setCard] = useState([]);
   const { pathname } = useLocation();
   const ServiceName = window.localStorage.getItem('id',);
+  const [verfied, setVerifed] = useState(false);
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const cookies = new Cookies();
   const [getlanguage,setLanguage] = useState(cookies.get("language"));
+
+  function onChangeCaptcha(value) {
+    console.log("Captcha value:", value);
+    setVerifed(true);
+  }
+
   useEffect(() => {
     const getdata = async () => {
       const { data } = await axios.get(`/api/v1/CardItems`);
@@ -344,11 +351,16 @@ const ServiceDetails = () => {
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          <Capcha/>
+          <ReCAPTCHA
+          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1"
+          onChange={onChangeCaptcha}
+          className="captchaclass"
+        />
           {
                           upload == '' || upload == undefined? <>
                            <button
                           className="btnsubmit"
+                          disabled={!verfied}
                           onClick={HandleImage}
                         >
                           Submit
@@ -356,6 +368,7 @@ const ServiceDetails = () => {
                           </> : <>
                            <button
                           className="btnsubmit"
+                          disabled={!verfied}
                           onClick={createProductSubmitHandler}
                         >
                           Submit
@@ -539,7 +552,11 @@ const ServiceDetails = () => {
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          <Capcha/>
+          <ReCAPTCHA
+          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1"
+          onChange={onChangeCaptcha}
+          className="captchaclass"
+        />
 
           {
                           upload == '' || upload == undefined? <>

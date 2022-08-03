@@ -407,6 +407,18 @@ margin-top: 45px;
 
  
 }
+.btnsubmit[disabled]
+{
+ background: rgb(83, 82, 82);
+}
+.custom-btn1[disabled]
+{
+ background: rgb(83, 82, 82);
+}
+.btnsubmit [disabled]
+{
+ background: rgb(83, 82, 82);
+}
 .destination-left img{
  width: 100%;
  height: 100%;
@@ -415,6 +427,9 @@ margin-top: 45px;
 .destination-right{
   height: 390px;
  width: 46%;
+}
+div#rc-anchor-container {
+  margin-top: 10px !important;
 }
 .destination-img1{
   margin: 20px;
@@ -1259,6 +1274,7 @@ p.serviceheading {
 }
 
 .largetextreason {padding-bottom: 80px !important;
+  margin-bottom: 25px !important;
   
 }
 .popupform {
@@ -1982,4 +1998,11 @@ background-color: #fff;
 
 #rc-anchor-alert, .rc-anchor-alert{
   display: none !important;
+}
+
+
+.modal-dialog {
+  max-width: 500px;
+  height: 500px !important;
+  margin: 1.75rem auto;
 }

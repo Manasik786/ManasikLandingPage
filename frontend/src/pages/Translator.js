@@ -1,7 +1,7 @@
 import React from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const TEST_SITE_KEY = "6LduMJ0aAAAAAEBoKYRc_lDdGqRKHzMlAN-ROexm";
+const TEST_SITE_KEY = "6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1";
 const DELAY = 1500;
 
 class App extends React.Component {

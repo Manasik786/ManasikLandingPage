@@ -11,6 +11,7 @@ import { Form, Row, Col } from "react-bootstrap";
 import SubmitButton from "../Button/large";
 import Capcha from "../../pages/Translator";
 import Moment from "react-moment";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -23,7 +24,12 @@ const Fly = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [card, setCard] = useState([]);
+  const [verfied, setVerifed] = useState(false);
 
+  function onChangeCaptcha(value) {
+    console.log("Captcha value:", value);
+    setVerifed(true);
+  }
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get(`/api/v1/CareerInquiry`);
@@ -267,11 +273,16 @@ const Fly = () => {
                             </label>
                           </div>
                         </Form.Group>
-                        <Capcha/>
+                         <ReCAPTCHA
+          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1"
+          onChange={onChangeCaptcha}
+          className="captchaclass"
+        />
                         {
                           images == '' || images == undefined && Cv == '' || Cv == undefined  ? <>
                            <button
                           className="btnsubmit"
+                          disabled={!verfied}
                           onClick={HandleImage}
                         >
                           Submit
@@ -279,6 +290,7 @@ const Fly = () => {
                           </> : <>
                            <button
                           className="btnsubmit"
+                          disabled={!verfied}
                           onClick={createProductSubmitHandler}
                         >
                           Submit
@@ -468,11 +480,16 @@ const Fly = () => {
                             </label>
                           </div>
                         </Form.Group>
-                        <Capcha/>
+                         <ReCAPTCHA
+          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1"
+          onChange={onChangeCaptcha}
+          className="captchaclass"
+        />
                         {
                           images == '' || images == undefined && Cv == '' || Cv == undefined  ? <>
                            <button
                           className="btnsubmit"
+                          disabled={!verfied}
                           onClick={HandleImage}
                         >
                           يُقدِّم
@@ -480,6 +497,7 @@ const Fly = () => {
                           </> : <>
                            <button
                           className="btnsubmit"
+                          disabled={!verfied}
                           onClick={createProductSubmitHandler}
                         >
                           يُقدِّم

@@ -8,7 +8,8 @@ import Cookies from "universal-cookie";
 import { useLocation } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
-import {Country_Name ,Country_NameAr} from '../../dummydata/category'
+import {Country_Name ,Country_NameAr} from '../../dummydata/category';
+import ReCAPTCHA from "react-google-recaptcha";
 
 // import Select from 'react-select'
 // import countryList from 'react-select-country-list'
@@ -153,7 +154,11 @@ let str = pathname;
   function HandleImage(){
     toast("Enter Valid Image")
   }
-
+  const [verfied, setVerifed] = useState(false);
+  function onChangeCaptcha(value) {
+    console.log("Captcha value:", value);
+    setVerifed(true);
+  }
   return (
     <>
     {
@@ -325,12 +330,18 @@ let str = pathname;
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-         <Capcha/>
+         <ReCAPTCHA
+          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1"
+          onChange={onChangeCaptcha}
+          className="captchaclass"
+        />
          {
                           upload == '' || upload == undefined? <>
                            <button
                           className="btnsubmit"
+                          
                           onClick={HandleImage}
+                          disabled={!verfied}
                         >
                           Submit
                         </button>
@@ -338,6 +349,7 @@ let str = pathname;
                            <button
                           className="btnsubmit"
                           onClick={createProductSubmitHandler}
+                          disabled={!verfied}
                         >
                           Submit
                         </button>
@@ -522,12 +534,17 @@ let str = pathname;
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          <Capcha/>
+          <ReCAPTCHA
+          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1"
+          onChange={onChangeCaptcha}
+          className="captchaclass"
+        />
           {
                           upload == '' || upload == undefined? <>
                            <button
                           className="btnsubmit"
                           onClick={HandleImage}
+                          disabled={!verfied}
                         >
                           يُقدِّم
                         </button>
@@ -535,6 +552,7 @@ let str = pathname;
                            <button
                           className="btnsubmit"
                           onClick={createProductSubmitHandler}
+                          disabled={!verfied}
                         >
                           يُقدِّم
                         </button>

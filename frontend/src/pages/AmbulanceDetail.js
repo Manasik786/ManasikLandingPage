@@ -11,6 +11,7 @@ import Capcha from '../pages/Translator'
 import Cookies from "universal-cookie";
 import { ToastContainer, toast } from 'react-toastify';
 import {Country_Name,Country_NameAr} from '../dummydata/category'
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Packages = (props) => {
 
@@ -18,11 +19,15 @@ const Packages = (props) => {
   const { pathname } = useLocation();
   const cookies = new Cookies();
   const [getlanguage,setLanguage] = useState(cookies.get("language"));
+  const [verfied, setVerifed] = useState(false);
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  function onChangeCaptcha(value) {
+    console.log("Captcha value:", value);
+    setVerifed(true);
+  }
   useEffect(() => {
     const getdata = async () => {
       const { data } = await axios.get(`/api/v1/AirAmbulance`);
@@ -212,7 +217,7 @@ const Packages = (props) => {
 
             <Form.Group as={Col} controlId="formGridEmail">
               
-              <Form.Control type="text" placeholder="Email" 
+              <Form.Control type="email" placeholder="Email" 
               name="Email"
               required
               onChange={(e) => handleChange(e)}
@@ -225,6 +230,7 @@ const Packages = (props) => {
             <select class="form-control" id="exampleFormControlSelect1"
                onChange={(e) => handleChange(e)}
                name="country"
+               required
           >
         {
           Country_Name.map((item) => {
@@ -343,12 +349,17 @@ const Packages = (props) => {
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          <Capcha/>
+          <ReCAPTCHA
+          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1         "
+          onChange={onChangeCaptcha}
+          className="captchaclass"
+        />
           {
                           upload == '' || upload == undefined? <>
                            <button
                           className="btnsubmit"
                           onClick={HandleImage}
+                          disabled={!verfied}
                         >
                           Submit
                         </button>
@@ -356,6 +367,7 @@ const Packages = (props) => {
                            <button
                           className="btnsubmit"
                           onClick={createProductSubmitHandler}
+                          disabled={!verfied}
                         >
                           Submit
                         </button>
@@ -538,7 +550,12 @@ const Packages = (props) => {
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          <Capcha/>
+          <ReCAPTCHA
+          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1
+          "
+          onChange={onChangeCaptcha}
+          className="captchaclass"
+        />
           {
                           upload == '' || upload == undefined? <>
                            <button

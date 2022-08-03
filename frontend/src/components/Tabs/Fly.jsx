@@ -12,6 +12,7 @@ import SubmitButton from "../Button/large";
 import Capcha from "../../pages/Translator";
 import Moment from "react-moment";
 import { useNavigate  } from "react-router-dom";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -25,6 +26,11 @@ const Fly = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [card, setCard] = useState([]);
+  const [verfied, setVerifed] = useState(false);
+  function onChangeCaptcha(value) {
+    console.log("Captcha value:", value);
+    setVerifed(true);
+  }
 const history = useNavigate ();
   useEffect(() => {
     const getData = async () => {
@@ -276,18 +282,24 @@ const history = useNavigate ();
                             </label>
                           </div>
                         </Form.Group>
-                        <Capcha/>
+                        <ReCAPTCHA
+          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1"
+          onChange={onChangeCaptcha}
+          className="captchaclass"
+        />
                         {
                           images == '' || images == undefined && Cv == '' || Cv == undefined  ? <>
                            <button
                           className="btnsubmit"
                           onClick={HandleImage}
+                          disabled={!verfied}
                         >
                           Submit
                         </button>
                           </> : <>
                            <button
                           className="btnsubmit"
+                          disabled={!verfied}
                           onClick={createProductSubmitHandler}
                         >
                           Submit
@@ -480,11 +492,16 @@ const history = useNavigate ();
                             </label>
                           </div>
                         </Form.Group>
-                        <Capcha/>
+                        <ReCAPTCHA
+          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1"
+          onChange={onChangeCaptcha}
+          className="captchaclass"
+        />
                         {
                           images == '' || images == undefined && Cv == '' || Cv == undefined  ? <>
                            <button
                           className="btnsubmit"
+                          disabled={!verfied}
                           onClick={HandleImage}
                         >
                           يُقدِّم
@@ -492,6 +509,7 @@ const history = useNavigate ();
                           </> : <>
                            <button
                           className="btnsubmit"
+                          disabled={!verfied}
                           onClick={createProductSubmitHandler}
                         >
                           يُقدِّم

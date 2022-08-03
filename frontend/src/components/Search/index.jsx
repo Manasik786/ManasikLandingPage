@@ -14,7 +14,7 @@ import axios from "axios";
 // import Capcha from '../../pages/Translator'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
-
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Search = () => {
   const cookies = new Cookies();
@@ -23,7 +23,7 @@ const Search = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [show, setShow] = useState(false);
-
+  const [verfied, setVerifed] = useState(false);
 
   const [data,setData] = useState({
     Name:"",
@@ -83,6 +83,12 @@ useEffect(() => {
     }
 
   console.log(data)
+
+ 
+  }
+  function onChangeCaptcha(value) {
+    console.log("Captcha value:", value);
+    setVerifed(true);
   }
   return (
     <>
@@ -94,7 +100,7 @@ useEffect(() => {
         {
        getlanguage != 'english'? <>
         <div className="popup1">
-        <Form className="popupform" onSubmit={PostForm}>
+        <Form className="popupform" onSubmit={PostForm}  disabled={!verfied}>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridName">     
               <Form.Control type="text" placeholder="Name" 
@@ -258,8 +264,18 @@ useEffect(() => {
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          {/* <Capcha/> */}
-          <SubmitButton text={"Submit"}/>
+          <ReCAPTCHA
+          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1         "
+          onChange={onChangeCaptcha}
+          className="captchaclass"
+        />
+          <button
+                          className="btnsubmit"
+                         
+                          disabled={!verfied}
+                        >
+                          Submit
+                        </button>
         </Form>
       </div>
        </> : <>
@@ -426,8 +442,20 @@ useEffect(() => {
              onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          {/* <Capcha/> */}
-          <SubmitButton text={"يُقدِّم"}/>
+          <ReCAPTCHA
+          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1         "
+          onChange={onChangeCaptcha}
+          className="captchaclass"
+        />
+        <button
+                          className="btnsubmit"
+                         
+                          disabled={!verfied}
+                        >
+                          يُقدِّم
+                        </button>
+          
+         
         </Form>
       </div>
        </>

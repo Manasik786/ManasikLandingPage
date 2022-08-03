@@ -6,6 +6,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import BackArrow from '../Button/Arabic';
 import { Form, Row, Col, Button } from "react-bootstrap";
 import Capcha from '../../pages/Translator';
+import ReCAPTCHA from "react-google-recaptcha";
 
 // import Slider from "react-slick";
 import { Link } from "react-router-dom";
@@ -23,11 +24,15 @@ const Services = (props) => {
   const [getlanguage, setLanguage] = useState(cookies.get("language"));
   const [show, setShow] = useState(false);
   const { pathname } = useLocation();
-  
+  const [verfied, setVerifed] = useState(false);
+
   const ServiceName = window.localStorage.getItem('id',);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  function onChangeCaptcha(value) {
+    console.log("Captcha value:", value);
+    setVerifed(true);
+  }
   let str = pathname;
   str = str.substring(16);
   let newpath = str.replace(/([A-Z])/g, ' $1').trim();
@@ -367,14 +372,22 @@ required
                                     onChange={(e) => handleChange(e)}
                                   />
                                 </Form.Group>
-                                <Capcha />
+                                <ReCAPTCHA
+          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1"
+          onChange={onChangeCaptcha}
+          className="captchaclass"
+        />
                                 {
                                   upload == '' || upload == undefined ? <>
-                                  <button className="btnsubmit" onClick={HandleImage}>
+                                  <button className="btnsubmit" onClick={HandleImage}
+                                  disabled={!verfied}
+                                  >
                                   Submit
                                 </button>
                                   </> : <>
-                                  <button className="btnsubmit" onClick={createProductSubmitHandler}>
+                                  <button className="btnsubmit" onClick={createProductSubmitHandler}
+                                  disabled={!verfied}
+                                  >
                                   Submit
                                 </button>
                                   </>
@@ -602,9 +615,29 @@ required
                                     onChange={(e) => handleChange(e)}
                                   />
                                 </Form.Group>
-                                {/* <Capcha/> */}
-                                <button className="btnsubmit" onClick={createProductSubmitHandler}>يُقدِّم</button>
-
+                                <ReCAPTCHA
+          sitekey="6LefK0MhAAAAAKZzWm82tniHeLlWTTxFWYXh4Xo1"
+          onChange={onChangeCaptcha}
+          className="captchaclass"
+        />
+                               {
+                          upload == '' || upload == undefined? <>
+                           <button
+                          className="btnsubmit"
+                          disabled={!verfied}
+                          onClick={HandleImage}
+                        >
+                          يُقدِّم
+                        </button>
+                          </> : <>
+                           <button
+                          className="btnsubmit"
+                          onClick={createProductSubmitHandler}
+                        >
+                          يُقدِّم
+                        </button>
+                          </>
+                        }
                               </Form>
                             </div>
                           </Modal>

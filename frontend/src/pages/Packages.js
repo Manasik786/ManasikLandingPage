@@ -229,7 +229,8 @@ const Packages = () => {
             <Form.Group as={Col} controlId="formGridEmail">
               
             <select class="form-control" id="exampleFormControlSelect1"
-           name="country"
+             onChange={(e) => handleChange(e)}
+             name="country"
           >
         {
           Country_Name.map((item) => {
@@ -237,9 +238,8 @@ const Packages = () => {
               <option key={item.country_id}
               name="country"
               required
-                onClick={() => {
-            window.localStorage.setItem('country', (item.country_name));
-          }}
+               
+          
               >{item.country_name}</option>
             )
           })
@@ -489,7 +489,8 @@ const Packages = () => {
             <Form.Group as={Col} controlId="formGridEmail">
               
             <select class="form-control" id="exampleFormControlSelect1"
-          
+            onChange={(e) => handleChange(e)}
+            name="country"
           >
         {
           Country_NameAr.map((item) => {
@@ -498,9 +499,7 @@ const Packages = () => {
               name="country"
               className="arabic-align"
               required
-                onClick={() => {
-            window.localStorage.setItem('country', (item.name));
-          }}
+             
               >{item.name}</option>
             )
           })

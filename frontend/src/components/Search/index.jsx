@@ -7,13 +7,11 @@ import arrowIcon from "../../assets/images/arrow.png";
 import Cookies from "universal-cookie";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Popup from "../Form/index";
 import { Form, Row, Col } from "react-bootstrap";
-import SubmitButton from '../Button/large'
 import axios from "axios";
 // import Capcha from '../../pages/Translator'
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import ReCAPTCHA from "react-google-recaptcha";
 
 const Search = () => {

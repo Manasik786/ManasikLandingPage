@@ -230,7 +230,7 @@ const Services = (props) => {
                                     <div className="filetostyle">
                                       <label for="img1" className="label11">DOB  </label>
                                       <Form.Control type="date"
-required
+                                        required
                                         name="DOB"
                                         onChange={(e) => handleChange(e)}
                                       />

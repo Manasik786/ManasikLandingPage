@@ -209,13 +209,14 @@ const ServiceDetails = () => {
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
             <div className="filetostyle">
-              <Form.Control type="date" placeholder="DOB"
-              name="DOB"
-              required
-              onChange={(e) => handleChange(e)}
-              />
-             <label for="img1" className="label11">DOB</label>
-             </div>
+                                      <label for="img1" className="label11">DOB  </label>
+                                      <Form.Control type="date"
+                                        required
+                                        name="DOB"
+                                        onChange={(e) => handleChange(e)}
+                                      />
+
+                                    </div>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridEmail">
@@ -608,15 +609,15 @@ const ServiceDetails = () => {
                               window.localStorage.setItem('id', (item.CardTitle));
                             }}
                             >
-                               <Button
-                              variant="primary"
-                              className="primarybutton"
-                              onClick={handleShow}
-                              
-                            >
-                              <Buttn1 
-                              text={"BOOK NOW"} />
-                            </Button>
+                              <span className="btnalignment">
+                    <Button
+                      variant="primary"
+                      className="primarybutton"
+                      onClick={handleShow}
+                    >
+                      <Buttn1 text={"BOOK NOW"} />
+                    </Button>
+                    </span>
                      </span>
                   </div>
             </div>

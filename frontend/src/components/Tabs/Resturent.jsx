@@ -2,19 +2,14 @@ import React, { useState, useEffect } from "react";
 import Cookies from "universal-cookie";
 import Buttn1 from "../Button/index";
 import ArabicButton from "../Button/Arabic";
-import ApplyForm from "../Form/ApplyForm";
 import Modal from "react-bootstrap/Modal";
-import Popup from "../Form/ApplyForm";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import { Form, Row, Col } from "react-bootstrap";
-import SubmitButton from "../Button/large";
-import Capcha from "../../pages/Translator";
 import Moment from "react-moment";
 import ReCAPTCHA from "react-google-recaptcha";
-
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 
 const Fly = () => {
   const cookies = new Cookies();

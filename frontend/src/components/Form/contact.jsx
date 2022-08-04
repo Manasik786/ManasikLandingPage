@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { GoLocation } from "react-icons/go";
 import Cookies from "universal-cookie";
 import Img1 from "../../assets/images/message.png";
 import Img2 from "../../assets/images/location.png";
 import Img3 from "../../assets/images/phone.png";
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 
 const Contact = () => {
   const cookies = new Cookies();
@@ -17,7 +16,7 @@ const Contact = () => {
   
 
   const [message, setMessage] = useState({
-    Name: "",
+    Name: " ",
     Email: "",
     Message: "",
     Details:" PostMessage Test"
@@ -75,25 +74,25 @@ const Contact = () => {
                     <div className="col-12 col-lg-4 info-details mb-4 mb-lg-0">
                       {data.map((item, i) => {
                         return (
-                          <div className="row g-0">
+                          <div className="row g-0" key={item._id}>
                             <div className="col-11 col-xxl-10 col-xl-10 col-lg-10 col-md-11">
                               <div className="contact-icon">
                                 {" "}
-                                <img src={Img2} />
+                                <img src={Img2} alt="image"/>
                                 <span className="contacttext1">
                                   <span>{item.location}</span>
                                 </span>
                                 <br />
                               </div>
                               <div className="contact-icon">
-                                <img src={Img3} />
+                                <img src={Img3}  alt="Image1"/>
                                 <span className="contacttext1">
                                   <span>{item.phone}</span>
                                 </span>
                                 <br />
                               </div>
                               <div className="contact-icon">
-                                <img src={Img1} />
+                                <img src={Img1} alt="Image2"/>
                                 <span className="contacttext1">
                                   <span>{item.email}</span>
                                 </span>
@@ -152,25 +151,25 @@ const Contact = () => {
                     <div className="col-12 col-lg-4 info-details mb-4 mb-lg-0">
                       {data.map((item, i) => {
                         return (
-                          <div className="row g-0">
+                          <div className="row g-0" >
                             <div className="col-11 col-xxl-10 col-xl-10 col-lg-10 col-md-11">
                               <div className="contact-icon">
                                 {" "}
-                                <img src={Img2} />
+                                <img src={Img2} alt="Image1"/>
                                 <span className="contacttext1">
                                   <span>{item.location}</span>
                                 </span>
                                 <br />
                               </div>
                               <div className="contact-icon">
-                                <img src={Img3} />
+                                <img src={Img3} alt="Image1" />
                                 <span className="contacttext1">
                                   <span>{item.phone}</span>
                                 </span>
                                 <br />
                               </div>
                               <div className="contact-icon">
-                                <img src={Img1} />
+                                <img src={Img1} alt="Image1"/>
                                 <span className="contacttext1">
                                   <span>{item.email}</span>
                                 </span>

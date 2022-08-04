@@ -1,5 +1,5 @@
   export const Country_Name = [
-    {"country_id":"191","sortname":"SA","country_name":"Saudi Arabia"},
+    {"country_id":"0","sortname":"SA","country_name":"Saudi Arabia"},
     {"country_id":"1","sortname":"AF","country_name":"Afghanistan"},
     {"country_id":"2","sortname":"AL","country_name":"Albania"},
     {"country_id":"3","sortname":"DZ","country_name":"Algeria"},
@@ -244,7 +244,8 @@
     {"country_id":"243","sortname":"YE","country_name":"Yemen"},
     {"country_id":"244","sortname":"YU","country_name":"Yugoslavia"},
     {"country_id":"245","sortname":"ZM","country_name":"Zambia"},
-    {"country_id":"246","sortname":"ZW","country_name":"Zimbabwe"}
+    {"country_id":"246","sortname":"ZW","country_name":"Zimbabwe"},
+    {"country_id":"246","sortname":"SA","country_name":"Saudi Arabia"},
     ]
 
     export const Country_NameAr = [
@@ -1499,4 +1500,9 @@
           "name": "زيمبابوي",
           "dialCode": "+263"
       }
+      {
+        "code": "SA",
+        "name": "المملكة العربية السعودية",
+        "dialCode": "+966"
+    },
   ]

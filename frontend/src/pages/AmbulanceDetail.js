@@ -256,7 +256,7 @@ const Packages = (props) => {
                           <Row className="mb-3">
                             <Form.Group as={Col} controlId="formGridEmail">
                               <Form.Control
-                                type="text"
+                                type="number"
                                 placeholder="Passport Number"
                                 name="passportno"
                                 required
@@ -513,7 +513,7 @@ const Packages = (props) => {
                           <Row className="mb-3">
                             <Form.Group as={Col} controlId="formGridEmail">
                               <Form.Control
-                                type="text"
+                                type="file"
                                 placeholder="تحميل المستند"
                                 name="upload"
                                 className="arabic-align"

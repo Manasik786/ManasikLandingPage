@@ -229,17 +229,15 @@ const Packages = () => {
             <Form.Group as={Col} controlId="formGridEmail">
               
             <select class="form-control" id="exampleFormControlSelect1"
-             onChange={(e) => handleChange(e)}
-             name="country"
+               onChange={(e) => handleChange(e)}
+               name="country"
           >
         {
           Country_Name.map((item) => {
             return(
-              <option key={item.country_id}
+              <option selected = "Saudia" key={item.country_id}
               name="country"
-              required
-               
-          
+            
               >{item.country_name}</option>
             )
           })

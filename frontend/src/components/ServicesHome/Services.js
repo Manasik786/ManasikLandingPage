@@ -75,13 +75,13 @@ const Services = (props) => {
   const [relativecontact, setrelativecontact] = useState(" ");
   const [Reasontovisitksa, setReasontovisitksa] = useState(" ");
   const [Religion, setReligion] = useState(" ");
-  const [Servicetype, SetservicesType] = useState(str);
-  const [CardType, setCardType] = useState('Air Ambulance');
+  const [Servicetype, SetservicesType] = useState(ServiceName);
+  const [CardType, setCardType] = useState('service');
   const [loading, setLoading] = useState(false);
 
   const [data, setData] = useState({
-    Servicetype: str,
-    CardType: "Air Ambulance",
+    Servicetype: ServiceName,
+    CardType: "service",
     Name: Name,
     familyname: familyname,
     DOB: DOB,
@@ -121,10 +121,10 @@ const Services = (props) => {
     setReligion(Religion);
     setcountry(country);
     SetservicesType(Servicetype);
-    setCardType('Air Ambulance');
+    setCardType('service');
 
     const myForm = new FormData();
-    myForm.append("Servicetype", str);
+    myForm.append("Servicetype", ServiceName);
     myForm.append("Name", data.Name);
     myForm.append("Email", data.Email);
     myForm.append("Phone", data.Phone);
@@ -138,7 +138,7 @@ const Services = (props) => {
     myForm.append("relativecontact", data.relativecontact);
     myForm.append("Reasontovisitksa", data.Reasontovisitksa);
     myForm.append("Religion", data.Religion);
-    myForm.append("CardType", 'Air Ambulance');
+    myForm.append("CardType", 'service');
 
 
     // myForm.append("images", data.images);

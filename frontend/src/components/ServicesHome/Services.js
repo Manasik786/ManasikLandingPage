@@ -545,7 +545,7 @@ const Services = (props) => {
                                 <Row className="mb-3">
                                   <Form.Group as={Col} controlId="formGridEmail">
 
-                                    <Form.Control type="text" placeholder="تحميل المستند"
+                                    <Form.Control type="file" placeholder="تحميل المستند"
                                       name="upload"
                                       className="arabic-align"
                                       onChange={(e) => handleChange(e)}

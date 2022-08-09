@@ -99,7 +99,7 @@ console.log(message.Details)
                               name="Name"
                               required
                               onChange={(e) => handleChange(e)}
-                              required
+                              
                             />
                             <input
                               type="email"
@@ -107,7 +107,7 @@ console.log(message.Details)
                               name="Email"
                               required
                               onChange={(e) => handleChange(e)}
-                              required
+                              
                             />
                             <textarea
                               rows={8}
@@ -115,7 +115,7 @@ console.log(message.Details)
                               name="Message"
                               required
                               onChange={(e) => handleChange(e)}
-                              required
+                              
                             />
                             
                             {
@@ -370,14 +370,31 @@ console.log(message.Details)
                       <div className="row">
                         <div className="col-12">
                           <form className="arabicplaceholder">
-                            <input type="text" placeholder="اسم" />
+                            <input type="text" placeholder="اسم"
+                             name="Name"
+                             required
+                             onChange={(e) => handleChange(e)}
+                            />
                             <input
                             className=".arabic-align"
                               type="email"
                               placeholder="البريد الإلكتروني"
+                              name="Email"
+                              required
+                              onChange={(e) => handleChange(e)}
                             />
-                            <textarea rows={8} placeholder="رسالة" />
-                            <button>إرسال</button>
+                            <textarea rows={8} placeholder="رسالة"
+                             name="Message"
+                             required
+                             onChange={(e) => handleChange(e)}
+                            />
+                            {
+                            message.Name === ' ' || message.Email === " " || message.Message === '' ? <>
+                              <button onClick={myFunction}>يُقدِّم</button>
+                            </> : <>
+                            <button onClick={PostMessage}>يُقدِّم</button>
+                            </>
+                           }
                           </form>
                         </div>
                       </div>

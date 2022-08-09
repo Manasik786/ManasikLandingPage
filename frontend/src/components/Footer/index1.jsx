@@ -331,11 +331,12 @@ const Footer = ({ }) => {
                         width:'250'
                       }}
                     />
-                  <div className='socail-icons'>
-                      <a href=""> <i class="fa-brands fa-facebook-f"></i></a>
-                       <a href=""> <i class="fa-brands fa-instagram"></i></a>
-                       <a href=""> <i class="fa-brands fa-linkedin-in"></i></a>
-                  </div>
+                   <div className="socail-icons"> 
+                        <a href="https://www.facebook.com/ManasikAviation" target='blank'>  <i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/flymanasik/" target='blank'><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/manasik-aviation/" target='blank'> <i class="fa-brands fa-linkedin-in"></i></a>
+                     
+                      </div>
                 </div>
               </div>
             </div>

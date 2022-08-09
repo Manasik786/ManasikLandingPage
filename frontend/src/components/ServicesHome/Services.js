@@ -454,17 +454,18 @@ const Services = (props) => {
                             <div className="popup1">
                               <Form className="popupform">
                                 <Row className="mb-3">
-                                  <Form.Group as={Col} controlId="formGridName" className="arabic-align">
-                                    <Form.Control type="text" placeholder="اسم"
-                                      name="Name"
-                                      className="arabic-align"
-                                      onChange={(e) => handleChange(e)}
-                                    />
-                                  </Form.Group>
+                                  
 
                                   <Form.Group as={Col} controlId="formGridName">
                                     <Form.Control type="text" placeholder="اسم العائلة"
                                       name="familyname"
+                                      className="arabic-align"
+                                      onChange={(e) => handleChange(e)}
+                                    />
+                                  </Form.Group>
+                                  <Form.Group as={Col} controlId="formGridName" className="arabic-align">
+                                    <Form.Control type="text" placeholder="اسم"
+                                      name="Name"
                                       className="arabic-align"
                                       onChange={(e) => handleChange(e)}
                                     />
@@ -478,7 +479,7 @@ const Services = (props) => {
                                         className="arabic-align"
                                         onChange={(e) => handleChange(e)}
                                       />
-                                      <label for="img1" className="label11 arabic-align">تاريخ الولادة</label>
+                                      <label for="img1" className="label11 arabic-align"> الولادة</label>
                                     </div>
 
                                   </Form.Group>
@@ -543,13 +544,20 @@ const Services = (props) => {
                                   </Form.Group>
                                 </Row>
                                 <Row className="mb-3">
+                                  
                                   <Form.Group as={Col} controlId="formGridEmail">
-
-                                    <Form.Control type="file" placeholder="تحميل المستند"
-                                      name="upload"
-                                      className="arabic-align"
-                                      onChange={(e) => handleChange(e)}
-                                    />
+                                   
+                                    <div className="filetostyle">
+                                      <Form.Control type="file" placeholder="Upload Document"
+                                        name="upload"
+                                        id="imgid"
+                                        required
+                                        accept="image/*"
+                                        onChange={createServiceImagesChange}
+                                        multiple
+                                      />
+                                  <label for="upload1" className="label11"> الشخصي</label>
+                                    </div>
                                   </Form.Group>
 
                                   <Form.Group as={Col} controlId="formGridName">

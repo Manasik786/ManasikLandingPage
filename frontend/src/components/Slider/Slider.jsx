@@ -20,7 +20,7 @@ const Slider1 = () => {
   const cookies = new Cookies();
 const [getlanguage,setLanguage] = useState(cookies.get("language"));
 
-
+//test
 
   const [data, setData] = useState([]);
 

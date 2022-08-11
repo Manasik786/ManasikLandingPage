@@ -1,9 +1,6 @@
 import React, {useState,useEffect} from "react";
 import Button from "../components/Button";
 import bottomleft from "../assets/images/b1.png";
-import MobilePlatform from "../assets/images/onlinePlatform.png";
-import HotelServiceImage from "../assets/images/catering.png";
-import LeftCloud from '../assets/images/leftcloud.png'
 import Card from '../components/Card/vision'
 import Mission from '../components/Card/mission'
 

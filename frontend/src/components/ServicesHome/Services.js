@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Buttn1 from "../Button/index";
 import Buttn2 from "../Button/Arabic";
-import HotelServiceImage from "../../assets/images/hotelservice.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import BackArrow from '../Button/Arabic';
 import { Form, Row, Col, Button } from "react-bootstrap";
-import Capcha from '../../pages/Translator';
 import ReCAPTCHA from "react-google-recaptcha";
 
 // import Slider from "react-slick";

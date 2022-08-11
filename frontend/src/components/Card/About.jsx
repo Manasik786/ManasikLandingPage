@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Button from "../Button";
-import Img3 from "../../assets/images/airplane1.jpg";
-import Img4 from "../../assets/images/Makkah.jpg";
 import Form from "../AmbulanceBook/index";
 import Cookies from "universal-cookie";
 import axios from "axios";

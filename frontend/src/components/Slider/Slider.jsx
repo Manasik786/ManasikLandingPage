@@ -1,8 +1,6 @@
 import React,{useState,useEffect} from "react";
 import Slider from "react-slick";
-import img1 from "../../assets/images/hajj.png";
-import img2 from "../../assets/images/holiday.png";
-import img3 from "../../assets/images/hotel.png";
+
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Popup from '../Form/Popup'
@@ -22,12 +20,7 @@ const Slider1 = () => {
   const cookies = new Cookies();
 const [getlanguage,setLanguage] = useState(cookies.get("language"));
 
-const images_arr = [
-  { image: img1 },
-  { image: img2 },
-  { image: img3 }
-  
-]
+
 
   const [data, setData] = useState([]);
 

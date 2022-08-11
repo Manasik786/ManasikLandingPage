@@ -2,8 +2,6 @@ import React,{useState,useEffect} from 'react'
 import Cookies from "universal-cookie";
 import { useLocation } from "react-router-dom";
 import axios from 'axios';
-import Banner1 from '../../assets/images/destination-banner.png'
-import HajjImage from "../../assets/images/hajj.png";
 
 const Test = () => {
   const cookies = new Cookies();

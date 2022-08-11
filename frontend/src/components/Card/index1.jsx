@@ -1,8 +1,5 @@
 import React, { useState,useEffect } from "react";
 import Buttn1 from "../Button";
-import Img4 from "../../assets/images/food1.jpg";
-import Img3 from "../../assets/images/airplane1.jpg";
-import Img2 from "../../assets/images/visa.jpg";
 import Form from "../AmbulanceBook/index";
 import Cookies from "universal-cookie";
 import BackArrow from "../Button/Arabic";

@@ -256,7 +256,7 @@ const Packages = (props) => {
                           <Row className="mb-3">
                             <Form.Group as={Col} controlId="formGridEmail">
                               <Form.Control
-                                type="text"
+                                type="number"
                                 placeholder="Passport Number"
                                 name="passportno"
                                 required
@@ -399,232 +399,202 @@ const Packages = (props) => {
                   ) : (
                     <>
                       <div className="popup1">
-                        <Form className="popupform">
-                          <Row className="mb-3">
-                            <Form.Group
-                              as={Col}
-                              controlId="formGridName"
-                              className="arabic-align"
-                            >
-                              <Form.Control
-                                type="text"
-                                placeholder="اسم"
-                                className="arabic-align"
-                                name="Name"
-                                onChange={(e) => handleChange(e)}
-                              />
-                            </Form.Group>
+                              <Form className="popupform">
+                                <Row className="mb-3">
+                                  
 
-                            <Form.Group as={Col} controlId="formGridName">
-                              <Form.Control
-                                type="text"
-                                placeholder="اسم العائلة"
-                                name="familyname"
-                                className="arabic-align"
-                                onChange={(e) => handleChange(e)}
-                              />
-                            </Form.Group>
-                          </Row>
-                          <Row className="mb-3">
-                            <Form.Group as={Col} controlId="formGridEmail">
-                              <div className="filetostyle">
-                                <Form.Control
-                                  type="date"
-                                  placeholder="تاريخ الولادة"
-                                  name="DOB"
-                                  className="arabic-align"
-                                  onChange={(e) => handleChange(e)}
-                                />
-                                <label for="img1" className="label11">
-                                  تاريخ الولادة
-                                </label>
-                              </div>
-                            </Form.Group>
-
-                            <Form.Group as={Col} controlId="formGridEmail">
-                              <Form.Control
-                                type="text"
-                                placeholder="البريد الإلكتروني"
-                                name="Email"
-                                className="arabic-align"
-                                onChange={(e) => handleChange(e)}
-                              />
-                            </Form.Group>
-                          </Row>
-                          <Row className="mb-3">
-                            <Form.Group as={Col} controlId="formGridEmail">
-                              {/* <Form.Control type="text" placeholder="دولة" 
-              name="country"
-              className="arabic-align"
-              onChange={(e) => handleChange(e)}
-              /> */}
-
-                              <select
-                                class="form-control"
-                                id="exampleFormControlSelect1"
-                                onChange={(e) => handleChange(e)}
-                                name="country"
-                              >
-                                {Country_NameAr.map((item) => {
-                                  return (
-                                    <option
-                                      key={item.code}
-                                      name="country"
+                                  <Form.Group as={Col} controlId="formGridName">
+                                    <Form.Control type="text" placeholder="اسم العائلة"
+                                      name="familyname"
                                       className="arabic-align"
+                                      onChange={(e) => handleChange(e)}
+                                    />
+                                  </Form.Group>
+                                  <Form.Group as={Col} controlId="formGridName" className="arabic-align">
+                                    <Form.Control type="text" placeholder="اسم"
+                                      name="Name"
+                                      className="arabic-align"
+                                      onChange={(e) => handleChange(e)}
+                                    />
+                                  </Form.Group>
+                                </Row>
+                                <Row className="mb-3">
+                                  <Form.Group as={Col} controlId="formGridEmail">
+                                    <div className="filetostyle">
+                                      <Form.Control type="date" placeholder=" الولادة"
+                                        name="DOB"
+                                        className="arabic-align"
+                                        onChange={(e) => handleChange(e)}
+                                      />
+                                      <label for="img1" className="label11 arabic-align"> الولادة</label>
+                                    </div>
+
+                                  </Form.Group>
+
+                                  <Form.Group as={Col} controlId="formGridEmail">
+
+                                    <Form.Control type="text" placeholder="البريد الإلكتروني"
+                                      name="Email"
+                                      className="arabic-align"
+                                      onChange={(e) => handleChange(e)}
+                                    />
+                                  </Form.Group>
+                                </Row>
+                                <Row className="mb-3">
+                                  <Form.Group as={Col} controlId="formGridEmail">
+
+                                    <select class="form-control" id="exampleFormControlSelect1"
+                                      onChange={(e) => handleChange(e)}
+                                      name="country"
                                     >
-                                      {item.name}
-                                    </option>
-                                  );
-                                })}
-                              </select>
-                            </Form.Group>
+                                      {
+                                        Country_NameAr.map((item) => {
+                                          return (
+                                            <option key={item.code}
+                                              name="country"
+                                              className="arabic-align"
 
-                            <Form.Group as={Col} controlId="formGridName">
-                              <Form.Control
-                                type="number"
-                                placeholder="هاتف"
-                                name="Phone"
-                                className="arabic-align"
-                                onChange={(e) => handleChange(e)}
-                              />
-                            </Form.Group>
-                          </Row>
-                          <Row className="mb-3">
-                            <Form.Group as={Col} controlId="formGridEmail">
-                              <Form.Control
-                                type="text"
-                                placeholder="رقم جواز السفر"
-                                name="passportno"
-                                className="arabic-align"
-                                onChange={(e) => handleChange(e)}
-                              />
-                            </Form.Group>
+                                            >{item.name}</option>
+                                          );
+                                        })
+                                      }
+                                    </select>
 
-                            <Form.Group as={Col} controlId="formGridName">
-                              <Form.Control
-                                type="number"
-                                placeholder=" الهوية الوطنية#"
-                                name="nationalid"
-                                className="arabic-align"
-                                onChange={(e) => handleChange(e)}
-                              />
-                            </Form.Group>
-                          </Row>
-                          <Row className="mb-3">
-                            <Form.Group as={Col} controlId="formGridEmail">
-                              <Form.Control
-                                type="text"
-                                placeholder="تحميل المستند"
-                                name="upload"
-                                className="arabic-align"
-                                onChange={(e) => handleChange(e)}
-                              />
-                            </Form.Group>
+                                  </Form.Group>
 
-                            <Form.Group as={Col} controlId="formGridName">
-                              <Form.Control
-                                type="text"
-                                placeholder="فترة الإقامة (عدد الأيام)"
-                                name="StayPeriod"
-                                className="arabic-align"
-                                onChange={(e) => handleChange(e)}
-                              />
-                            </Form.Group>
-                          </Row>
-                          <Row className="mb-3">
-                            <Form.Group as={Col} controlId="formGridEmail">
-                              <Form.Control
-                                placeholder="دِين"
-                                name="Religion"
-                                className="arabic-align"
-                                onChange={(e) => handleChange(e)}
-                              />
-                            </Form.Group>
+                                  <Form.Group as={Col} controlId="formGridName">
 
-                            <Form.Group as={Col} controlId="formGridName">
-                              <Form.Control
-                                type="number"
-                                placeholder="الاتصال النسبي في المملكة العربية السعودية"
-                                name="relativecontact"
-                                className="arabic-align"
-                                onChange={(e) => handleChange(e)}
-                              />
-                            </Form.Group>
-                          </Row>
+                                    <Form.Control type="number" placeholder="هاتف"
+                                      name="Phone"
+                                      className="arabic-align"
+                                      onChange={(e) => handleChange(e)}
+                                    />
+                                  </Form.Group>
+                                </Row>
+                                <Row className="mb-3">
+                                  <Form.Group as={Col} controlId="formGridEmail">
 
-                          <Form.Group
-                            className="mb-3 "
-                            controlId="formGridAddress2"
-                          >
-                            <fieldset>
-                              <div className="radiobtnform">
-                                <label className="labeltext">
-                                  <input
-                                    type="radio"
-                                    name="Visitedbefore"
-                                    value="1"
-                                    className="textbtn2"
-                                    onChange={handleChange}
+                                    <Form.Control type="text" placeholder="رقم جواز السفر"
+                                      name="passportno"
+                                      className="arabic-align"
+                                      onChange={(e) => handleChange(e)}
+                                    />
+                                  </Form.Group>
+
+                                  <Form.Group as={Col} controlId="formGridName">
+
+                                    <Form.Control type="number" placeholder=" الهوية الوطنية#"
+                                      name="nationalid"
+                                      className="arabic-align"
+                                      onChange={(e) => handleChange(e)}
+                                    />
+                                  </Form.Group>
+                                </Row>
+                                <Row className="mb-3">
+                                  
+                                  <Form.Group as={Col} controlId="formGridEmail">
+                                   
+                                    <div className="filetostyle">
+                                      <Form.Control type="file" placeholder="Upload Document"
+                                        name="upload"
+                                        id="imgid"
+                                        required
+                                        accept="image/*"
+                                        onChange={createServiceImagesChange}
+                                        multiple
+                                      />
+                                  <label for="upload1" className="label11"> الشخصي</label>
+                                    </div>
+                                  </Form.Group>
+
+                                  <Form.Group as={Col} controlId="formGridName">
+
+                                    <Form.Control type="text" placeholder="فترة الإقامة (عدد الأيام)"
+                                      name="StayPeriod"
+                                      className="arabic-align"
+                                      onChange={(e) => handleChange(e)}
+                                    />
+                                  </Form.Group>
+                                </Row>
+                                <Row className="mb-3">
+                                  <Form.Group as={Col} controlId="formGridEmail">
+                                    <Form.Control placeholder="دِين"
+                                      name="Religion"
+                                      className="arabic-align"
+                                      onChange={(e) => handleChange(e)}
+                                    />
+
+                                  </Form.Group>
+
+                                  <Form.Group as={Col} controlId="formGridName" >
+
+                                    <Form.Control type="number" placeholder="الاتصال النسبي في المملكة العربية السعودية"
+                                      name="relativecontact"
+                                      className="arabic-align"
+                                      onChange={(e) => handleChange(e)}
+                                    />
+                                  </Form.Group>
+                                </Row>
+
+                                <Form.Group className="mb-3 " controlId="formGridAddress2">
+                                  <fieldset>
+                                    <div className="radiobtnform">
+                                      <label className="labeltext">
+                                        <input type="radio"
+                                          name="Visitedbefore"
+                                          value="1"
+                                          className="textbtn2"
+                                          onChange={handleChange}
+                                        />
+                                        <span className="yestext">نعم</span>
+                                      </label>
+
+                                      <label className="labeltext">
+                                        <input type="radio"
+                                          name="Visitedbefore"
+                                          className="textbtn2"
+                                          value="0"
+                                          onChange={handleChange}
+                                        />
+                                        <span className="yestext">رقم</span>
+                                      </label>
+                                    </div>
+
+                                    <legend className="arabic-align">هل زرت المملكة العربية السعودية من قبل؟</legend>
+                                  </fieldset>
+                                </Form.Group>
+                                <Form.Group className="mb-13 " controlId="formGridAddress1">
+                                  <Form.Control placeholder="سبب زيارة المملكة العربية السعودية" className="largetextreason arabic-align"
+                                    name="Reasontovisitksa"
+                                    val
+                                    onChange={(e) => handleChange(e)}
                                   />
-                                  <span className="yestext">نعم</span>
-                                </label>
-
-                                <label className="labeltext">
-                                  <input
-                                    type="radio"
-                                    name="Visitedbefore"
-                                    className="textbtn2"
-                                    value="0"
-                                    onChange={handleChange}
-                                  />
-                                  <span className="yestext">رقم</span>
-                                </label>
-                              </div>
-
-                              <legend className="arabic-align">
-                                هل زرت المملكة العربية السعودية من قبل؟
-                              </legend>
-                            </fieldset>
-                          </Form.Group>
-                          <Form.Group
-                            className="mb-13 "
-                            controlId="formGridAddress1"
-                          >
-                            <Form.Control
-                              placeholder="سبب زيارة المملكة العربية السعودية"
-                              className="largetextreason arabic-align"
-                              name="Reasontovisitksa"
-                              val
-                              onChange={(e) => handleChange(e)}
-                            />
-                          </Form.Group>
-                          <ReCAPTCHA
-                            sitekey="6LcsUUMhAAAAAF7iAdtMh4Qs9DtxMT-KNjsovGCM
-          "
-                            onChange={onChangeCaptcha}
-                            className="captchaclass"
-                          />
-                          {upload == "" || upload == undefined ? (
-                            <>
-                              <button
-                                className="btnsubmit"
-                                onClick={HandleImage}
-                              >
-                                يُقدِّم
-                              </button>
-                            </>
-                          ) : (
-                            <>
-                              <button
-                                className="btnsubmit"
-                                onClick={createProductSubmitHandler}
-                              >
-                                يُقدِّم
-                              </button>
-                            </>
-                          )}
-                        </Form>
-                      </div>
+                                </Form.Group>
+                                <ReCAPTCHA
+          sitekey="6LcsUUMhAAAAAF7iAdtMh4Qs9DtxMT-KNjsovGCM"
+          onChange={onChangeCaptcha}
+          className="captchaclass"
+        />
+                               {
+                          upload == '' || upload == undefined? <>
+                           <button
+                          className="btnsubmit"
+                          disabled={!verfied}
+                          onClick={HandleImage}
+                        >
+                          يُقدِّم
+                        </button>
+                          </> : <>
+                           <button
+                          className="btnsubmit"
+                          onClick={createProductSubmitHandler}
+                        >
+                          يُقدِّم
+                        </button>
+                          </>
+                        }
+                              </Form>
+                            </div>
                     </>
                   )}
                 </Modal>
